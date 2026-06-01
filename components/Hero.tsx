@@ -1,0 +1,251 @@
+import HeroVideo from "./HeroVideo";
+import Navbar from "./Navbar";
+
+/**
+ * Full-screen cinematic hero section.
+ * ─ 5.mp4 fills the viewport as a video background
+ * ─ Three-layer overlay for depth and readability
+ * ─ Navbar floats on top of the video
+ * ─ Headline / sub-headline / CTAs animate in via CSS
+ * ─ Scroll indicator at the bottom
+ *
+ * Server component: no runtime JS required beyond HeroVideo & Navbar (both "use client").
+ */
+export default function Hero() {
+  return (
+    <section
+      className='relative w-full overflow-hidden'
+      style={{ minHeight: "100svh" }}
+      aria-label='Hero'
+    >
+      {/* ── Video Background ── */}
+      <HeroVideo src='/assets/video/5.mp4' />
+
+      {/* ── Cinematic Overlay Stack ── */}
+
+      {/* Layer 1 — base dark tint (prevents washed-out look) */}
+      <div
+        className='absolute inset-0 z-[2] pointer-events-none'
+        style={{ background: "rgba(0,0,0,0.42)" }}
+      />
+
+      {/* Layer 2 — vertical gradient (darkens top & bottom, opens up mid) */}
+      <div
+        className='absolute inset-0 z-[3] pointer-events-none'
+        style={{
+          background:
+            "linear-gradient(to bottom," +
+            "rgba(0,0,0,0.72) 0%," +
+            "rgba(0,0,0,0.18) 28%," +
+            "rgba(0,0,0,0.08) 55%," +
+            "rgba(0,0,0,0.45) 78%," +
+            "rgba(0,0,0,0.92) 100%)",
+        }}
+      />
+
+      {/* Layer 3 — blue atmospheric depth (brand accent from below) */}
+      <div
+        className='absolute inset-0 z-[4] pointer-events-none'
+        style={{
+          background:
+            "radial-gradient(ellipse 120% 60% at 50% 100%," +
+            "rgba(56,189,248,0.07) 0%," +
+            "transparent 60%)",
+        }}
+      />
+
+      {/* Layer 4 — vignette edges */}
+      <div
+        className='absolute inset-0 z-[4] pointer-events-none'
+        style={{
+          background:
+            "radial-gradient(ellipse 120% 100% at 50% 50%," +
+            "transparent 55%," +
+            "rgba(0,0,0,0.5) 100%)",
+        }}
+      />
+
+      {/* ── Full-height content column ── */}
+      <div
+        className='relative z-10 flex flex-col'
+        style={{ minHeight: "100svh" }}
+      >
+        {/* Navbar pinned to the top of the hero */}
+        <div className='px-12 pt-10 max-[720px]:px-4 max-[720px]:pt-5'>
+          <Navbar />
+        </div>
+
+        {/* Content — vertically centered in the remaining space */}
+        <div className='flex flex-1 flex-col items-center justify-center px-6 text-center'>
+          {/* Eyebrow pill */}
+          <div className='hero-animate hero-animate-d1 mb-8'>
+            <div
+              className='inline-flex items-center gap-3 px-4 py-[9px]'
+              style={{
+                background: "rgba(6,8,12,0.65)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                borderRadius: 999,
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)",
+              }}
+            >
+              <span className='blue-pulse' />
+              <span
+                style={{
+                  fontFamily: "var(--font-geist-mono), monospace",
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.55)",
+                }}
+              >
+                AI Studio&nbsp;·&nbsp;For everyone&nbsp;·&nbsp;iOS &amp; Android
+              </span>
+            </div>
+          </div>
+
+          {/* Main headline */}
+          <div className='hero-animate hero-animate-d2'>
+            <h1
+              className='font-fraunces mx-auto'
+              style={{
+                fontSize: "clamp(52px, 8.5vw, 120px)",
+                fontWeight: 300,
+                letterSpacing: "-0.055em",
+                lineHeight: 0.88,
+                maxWidth: 1100,
+                color: "var(--ink)",
+              }}
+            >
+              <span className='block'>Your product.</span>
+              <span className='block mt-[0.06em]'>
+                <em className='silver'>shot</em>
+                &nbsp;
+                <span
+                  className='text-blue-grad'
+                  style={{ fontStyle: "italic" }}
+                >
+                  beautifully.
+                </span>
+              </span>
+              <span className='block mt-[0.06em]'>In seconds.</span>
+            </h1>
+          </div>
+
+          {/* Sub-headline */}
+          <div className='hero-animate hero-animate-d3 mt-8'>
+            <p
+              className='mx-auto'
+              style={{
+                fontSize: "clamp(16px, 2vw, 19px)",
+                color: "rgba(255,255,255,0.58)",
+                lineHeight: 1.6,
+                maxWidth: 620,
+                fontFamily: "var(--font-geist-sans), sans-serif",
+              }}
+            >
+              Upload a photo. Pick a service. Download a hero image.{" "}
+              <strong
+                style={{ color: "rgba(255,255,255,0.85)", fontWeight: 500 }}
+              >
+                No designer needed.
+              </strong>
+            </p>
+          </div>
+
+          {/* CTA row */}
+          <div className='hero-animate hero-animate-d4 flex items-center justify-center gap-3 mt-10 flex-wrap'>
+            {/* Primary blue CTA */}
+            <button
+              style={{
+                padding: "14px 28px",
+                borderRadius: 999,
+                background: "var(--blue-grad)",
+                color: "white",
+                fontWeight: 600,
+                fontSize: 14,
+                border: "none",
+                cursor: "pointer",
+                boxShadow:
+                  "inset 0 0 0 1px rgba(255,255,255,0.22)," +
+                  "0 0 28px rgba(56,189,248,0.45)," +
+                  "0 4px 16px rgba(0,0,0,0.4)",
+                fontFamily: "var(--font-geist-sans), sans-serif",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Start free — 25 credits
+              <svg width='14' height='14' viewBox='0 0 14 14' fill='none'>
+                <path
+                  d='M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5'
+                  stroke='white'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </button>
+
+            {/* Secondary glass CTA */}
+            <button
+              style={{
+                padding: "13px 28px",
+                borderRadius: 999,
+                background: "rgba(255,255,255,0.06)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                cursor: "pointer",
+                border: "1px solid rgba(255,255,255,0.14)",
+                fontFamily: "var(--font-geist-sans), sans-serif",
+                fontWeight: 500,
+                fontSize: 14,
+                color: "rgba(255,255,255,0.8)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              See all 17 services
+            </button>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className='flex justify-center pb-10 relative z-10'>
+          <div className='flex flex-col items-center gap-[10px]'>
+            <span
+              style={{
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: 9,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.3)",
+              }}
+            >
+              Scroll
+            </span>
+            <div className='scroll-indicator-icon'>
+              <svg
+                width='18'
+                height='18'
+                viewBox='0 0 18 18'
+                fill='none'
+                aria-hidden='true'
+              >
+                <path
+                  d='M9 3.5V14.5M9 14.5L4.5 10M9 14.5L13.5 10'
+                  stroke='rgba(255,255,255,0.35)'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
