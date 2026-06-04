@@ -119,13 +119,20 @@ const PERSONAL: Tool[] = [
     name: "Hajj & Umrah",
     desc: "Restore family pilgrimage archives. Old photo repair, face recovery, warm-tone grading, and print export.",
     image:
-      "https://images.unsplash.com/photo-1474314170901-c8e060a0cb04?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?q=80&w=800&auto=format&fit=crop",
     icon: (
       <svg {...S}>
         <rect x='1' y='3' width='11' height='9' rx='1' />
-        <path d='M1 8.5L3.5 6.5L6.5 8.5L9.5 6' strokeLinecap='round' strokeLinejoin='round' />
-        <path d='M13.5 1L14 3L15.5 3.5L14 4L13.5 6L13 4L11.5 3.5L13 3L13.5 1Z'
-          fill='currentColor' strokeWidth='0.5' />
+        <path
+          d='M1 8.5L3.5 6.5L6.5 8.5L9.5 6'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+        <path
+          d='M13.5 1L14 3L15.5 3.5L14 4L13.5 6L13 4L11.5 3.5L13 3L13.5 1Z'
+          fill='currentColor'
+          strokeWidth='0.5'
+        />
       </svg>
     ),
   },

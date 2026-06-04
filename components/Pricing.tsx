@@ -18,9 +18,26 @@ const PLANS = [
     featured: false,
   },
   {
+    id: "starter",
+    name: "Starter",
+    price: "$20",
+    period: "/mo",
+    tagline: "For solo sellers.",
+    features: [
+      "200 credits / month",
+      "All 17 services",
+      "Batch up to 20 photos",
+      "3 industry presets",
+      "Email support",
+    ],
+    cta: "Start Starter — $20/mo",
+    ctaStyle: "silver",
+    featured: false,
+  },
+  {
     id: "pro",
     name: "Pro",
-    price: "$19",
+    price: "$50",
     period: "/mo",
     tagline: "For serious sellers.",
     badge: "MOST POPULAR",
@@ -32,14 +49,14 @@ const PLANS = [
       "Shopify + Amazon sync",
       "Priority queue",
     ],
-    cta: "Start Pro — $19/mo",
+    cta: "Start Pro — $50/mo",
     ctaStyle: "blue",
     featured: true,
   },
   {
     id: "studio",
     name: "Studio",
-    price: "$49",
+    price: "$100",
     period: "/mo",
     tagline: "For teams & agencies.",
     features: [
@@ -50,7 +67,7 @@ const PLANS = [
       "Custom presets + brand kit",
       "Dedicated Slack support",
     ],
-    cta: "Start Studio — $49/mo",
+    cta: "Start Studio — $100/mo",
     ctaStyle: "silver",
     featured: false,
   },
@@ -100,7 +117,10 @@ export default function Pricing() {
         </ScrollReveal>
 
         {/* Pricing cards */}
-        <ScrollReveal stagger className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+        <ScrollReveal
+          stagger
+          className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'
+        >
           {PLANS.map((plan) => (
             <div
               key={plan.id}
@@ -114,7 +134,7 @@ export default function Pricing() {
                   : "1px solid var(--line)",
                 borderRadius: "var(--r-xl)",
                 boxShadow: plan.featured ? "var(--shadow-blue)" : "none",
-                padding: "32px 28px",
+                padding: "28px 22px",
               }}
             >
               {/* Most popular badge */}
@@ -157,7 +177,7 @@ export default function Pricing() {
                 <span
                   className='font-fraunces'
                   style={{
-                    fontSize: 52,
+                    fontSize: 46,
                     fontWeight: 300,
                     lineHeight: 1,
                     color: "var(--ink)",
@@ -241,15 +261,16 @@ export default function Pricing() {
 
               {/* CTA */}
               <button
+                className='btn-lift'
                 style={{
                   width: "100%",
-                  padding: "13px 20px",
+                  padding: "12px 16px",
                   borderRadius: 999,
                   border: "none",
                   cursor: "pointer",
                   fontFamily: "var(--font-geist-sans), sans-serif",
                   fontWeight: 600,
-                  fontSize: 14,
+                  fontSize: 13,
                   ...(plan.ctaStyle === "blue"
                     ? {
                         background: "var(--blue-grad)",
