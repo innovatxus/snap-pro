@@ -23,3 +23,19 @@ relevant skill before editing.
 Skill files are the authoritative source for design tokens, animation utilities,
 component conventions, asset specs, accessibility rules, and implementation
 discipline. They override defaults from training data.
+
+## Approval-gated commits
+
+Agents **never commit on their own**. After completing a task, wait for the user
+to reply with the literal word `approved` (case-insensitive). On that trigger:
+
+1. `git add -A`
+2. Write a **short Conventional Commit** that summarises what just shipped
+   (`feat(scope): …`, `fix(nav): …`, etc. — imperative, ≤ 72 chars).
+3. `git push origin <current-branch>`.
+4. Reply with the commit SHA + one-sentence recap.
+
+Phrases like "looks good", "ship it", or "go ahead" are **not** triggers — only
+`approved` counts. Never push a red lint/build. No emoji or "Co-Authored-By"
+footers. Full rules: §10 of
+[.claude/skills/snap-pro-ui/SKILL.md](.claude/skills/snap-pro-ui/SKILL.md).
