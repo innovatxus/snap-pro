@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces, Syne, DM_Sans } from "next/font/google";
+import ScrollFloater from "@/components/ScrollFloater";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,7 +60,10 @@ export default function RootLayout({
       lang='en'
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${syne.variable} ${dmSans.variable}`}
     >
-      <body className='min-h-screen antialiased'>{children}</body>
+      <body className='min-h-screen antialiased'>
+        {children}
+        <ScrollFloater />
+      </body>
     </html>
   );
 }
