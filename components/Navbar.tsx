@@ -588,7 +588,7 @@ const NAV_LINKS = [
   { label: "Templates", key: null, href: "/templates" },
   { label: "Educationals", key: null, href: "/learn" },
   { label: "Pricing", key: null, href: "/#pricing" },
-  { label: "About", key: null, href: "/#about" },
+  { label: "About", key: null, href: "/about" },
 ];
 
 export default function Navbar() {
