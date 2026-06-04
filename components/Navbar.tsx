@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 
 /* ─────────────────────────────────────────────────────────
@@ -581,13 +582,13 @@ function ToolsDropdown({ pos, onEnter, onLeave }: DropdownProps) {
 ───────────────────────────────────────────────────────── */
 
 const NAV_LINKS = [
-  { label: "Services", key: null, href: null },
-  { label: "Niches", key: null, href: null },
-  { label: "Tools", key: "tools", href: null },
+  { label: "Services", key: null, href: "/#services" },
+  { label: "Niches", key: null, href: "/#niches" },
+  { label: "Tools", key: "tools", href: "/#ai-features" },
   { label: "Templates", key: null, href: "/templates" },
   { label: "Educationals", key: null, href: "/learn" },
-  { label: "Pricing", key: null, href: null },
-  { label: "About", key: null, href: null },
+  { label: "Pricing", key: null, href: "/#pricing" },
+  { label: "About", key: null, href: "/#about" },
 ];
 
 export default function Navbar() {
@@ -626,7 +627,13 @@ export default function Navbar() {
         <div className='flex w-full items-center justify-between px-5.5 py-3.5'>
           {/* ── Left: Logo ── */}
           <div className='flex items-center'>
-            <Logo />
+            <Link
+              href='/'
+              aria-label='Snap Pro — home'
+              style={{ display: "inline-flex", textDecoration: "none" }}
+            >
+              <Logo />
+            </Link>
           </div>
 
           {/* ── Center: Nav links ── */}
@@ -638,8 +645,8 @@ export default function Navbar() {
                 onMouseEnter={key ? (e) => handleNavEnter(key, e) : undefined}
                 onMouseLeave={key ? scheduleClose : undefined}
               >
-                <a
-                  href={href ?? `#${label.toLowerCase()}`}
+                <Link
+                  href={href ?? `/#${label.toLowerCase()}`}
                   className='transition-colors duration-200'
                   style={{
                     fontFamily: "var(--font-geist-mono), monospace",
@@ -694,7 +701,7 @@ export default function Navbar() {
                       />
                     </svg>
                   )}
-                </a>
+                </Link>
               </div>
             ))}
           </div>

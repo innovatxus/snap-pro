@@ -59,7 +59,7 @@ export default function BentoSection() {
   };
 
   return (
-    <section className='relative z-10 mt-24'>
+    <section id='about' className='relative z-10 mt-24'>
       <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
         {/* Section header */}
         <div
