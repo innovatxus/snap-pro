@@ -274,7 +274,7 @@ function DashboardScreen() {
   );
 }
 
-function EditorScreen() {
+export function EditorScreen() {
   return (
     <div
       className='h-full flex flex-col'
@@ -489,7 +489,7 @@ function EditorScreen() {
   );
 }
 
-function BatchScreen() {
+export function BatchScreen() {
   const items = Array.from({ length: 9 }, (_, i) => ({
     id: i,
     selected: [0, 2, 3, 5, 6, 8, 9, 11].includes(i),

@@ -581,13 +581,13 @@ function ToolsDropdown({ pos, onEnter, onLeave }: DropdownProps) {
 ───────────────────────────────────────────────────────── */
 
 const NAV_LINKS = [
-  { label: "Services", key: null },
-  { label: "Niches", key: null },
-  { label: "Tools", key: "tools" },
-  { label: "Templates", key: null },
-  { label: "Educationals", key: null },
-  { label: "Pricing", key: null },
-  { label: "About", key: null },
+  { label: "Services", key: null, href: null },
+  { label: "Niches", key: null, href: null },
+  { label: "Tools", key: "tools", href: null },
+  { label: "Templates", key: null, href: "/templates" },
+  { label: "Educationals", key: null, href: null },
+  { label: "Pricing", key: null, href: null },
+  { label: "About", key: null, href: null },
 ];
 
 export default function Navbar() {
@@ -631,7 +631,7 @@ export default function Navbar() {
 
           {/* ── Center: Nav links ── */}
           <div className='hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2'>
-            {NAV_LINKS.map(({ label, key }, i) => (
+            {NAV_LINKS.map(({ label, key, href }, i) => (
               <div
                 key={label}
                 style={{ position: "relative" }}
@@ -639,7 +639,7 @@ export default function Navbar() {
                 onMouseLeave={key ? scheduleClose : undefined}
               >
                 <a
-                  href={`#${label.toLowerCase()}`}
+                  href={href ?? `#${label.toLowerCase()}`}
                   className='transition-colors duration-200'
                   style={{
                     fontFamily: "var(--font-geist-mono), monospace",

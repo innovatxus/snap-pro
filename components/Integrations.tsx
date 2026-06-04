@@ -174,15 +174,18 @@ export default function Integrations() {
     <section id='integrations' className='relative z-10 mt-40'>
       <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
         {/* Section header */}
-        <div
+        <ScrollReveal
+          variant='blur'
           className='flex flex-col md:flex-row md:items-end md:justify-between gap-6'
-          style={{
-            borderBottom: "1px solid var(--line)",
-            paddingBottom: 28,
-            marginBottom: 56,
-          }}
         >
-          <div>
+          <div
+            style={{
+              borderBottom: "1px solid var(--line)",
+              paddingBottom: 28,
+              marginBottom: 56,
+              width: "100%",
+            }}
+          >
             {/* Coming Soon Silver Chrome Label */}
             <div
               style={{
@@ -227,86 +230,109 @@ export default function Integrations() {
               batch and push straight to your listings.
             </p>
           </div>
+        </ScrollReveal>
+
+        {/* Marquee logo conveyor */}
+        <div className='marquee mb-10' aria-hidden='true'>
+          <div className='marquee-track items-center py-2'>
+            {[...all, ...all].map((integ, idx) => (
+              <div
+                key={`mq-${integ.id}-${idx}`}
+                className='flex items-center gap-3 opacity-70 hover:opacity-100 transition-opacity'
+                style={{
+                  padding: "8px 14px",
+                  borderRadius: 999,
+                  border: "1px solid var(--line)",
+                  background: "var(--surface)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {integ.icon}
+                <span
+                  className='font-fraunces'
+                  style={{ fontSize: 14, color: "var(--ink)" }}
+                >
+                  {integ.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 2×4 grid */}
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-          {all.map((integ, i) => (
-            <ScrollReveal
+        <ScrollReveal stagger className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+          {all.map((integ) => (
+            <div
               key={integ.id}
-              delay={Math.min(i % 4, 4) as 0 | 1 | 2 | 3 | 4}
+              className='stagger-item card-hover sheen flex flex-col gap-4 p-5'
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                borderRadius: "var(--r-lg)",
+              }}
             >
-              <div
-                className='card-hover flex flex-col gap-4 p-5'
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--r-lg)",
-                }}
-              >
-                {/* Logo */}
-                <div className='flex items-center justify-between'>
-                  {integ.icon}
-                  {/* Status badge */}
-                  <span
-                    style={{
-                      fontFamily: "var(--font-geist-mono), monospace",
-                      fontSize: 9,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      padding: "3px 8px",
-                      borderRadius: 999,
-                      ...(integ.status === "live"
-                        ? {
-                            background: "rgba(56,189,248,0.1)",
-                            border: "1px solid rgba(56,189,248,0.3)",
-                            color: "var(--blue)",
-                          }
-                        : {
-                            background: "var(--surface-3)",
-                            border: "1px solid var(--line-2)",
-                            color: "var(--mute)",
-                          }),
-                    }}
-                  >
-                    {integ.status === "live" ? "Live" : "Soon"}
-                  </span>
-                </div>
-
-                {/* Info */}
-                <div>
-                  <p
-                    className='font-fraunces'
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 400,
-                      color: "var(--ink)",
-                      marginBottom: 2,
-                    }}
-                  >
-                    {integ.name}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-geist-mono), monospace",
-                      fontSize: 9,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "var(--mute)",
-                    }}
-                  >
-                    {integ.type}
-                    {integ.badge && (
-                      <span style={{ color: "var(--blue)", marginLeft: 6 }}>
-                        · {integ.badge}
-                      </span>
-                    )}
-                  </p>
-                </div>
+              {/* Logo */}
+              <div className='flex items-center justify-between'>
+                {integ.icon}
+                {/* Status badge */}
+                <span
+                  style={{
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontSize: 9,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    padding: "3px 8px",
+                    borderRadius: 999,
+                    ...(integ.status === "live"
+                      ? {
+                          background: "rgba(56,189,248,0.1)",
+                          border: "1px solid rgba(56,189,248,0.3)",
+                          color: "var(--blue)",
+                        }
+                      : {
+                          background: "var(--surface-3)",
+                          border: "1px solid var(--line-2)",
+                          color: "var(--mute)",
+                        }),
+                  }}
+                >
+                  {integ.status === "live" ? "Live" : "Soon"}
+                </span>
               </div>
-            </ScrollReveal>
+
+              {/* Info */}
+              <div>
+                <p
+                  className='font-fraunces'
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 400,
+                    color: "var(--ink)",
+                    marginBottom: 2,
+                  }}
+                >
+                  {integ.name}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontSize: 9,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "var(--mute)",
+                  }}
+                >
+                  {integ.type}
+                  {integ.badge && (
+                    <span style={{ color: "var(--blue)", marginLeft: 6 }}>
+                      · {integ.badge}
+                    </span>
+                  )}
+                </p>
+              </div>
+            </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

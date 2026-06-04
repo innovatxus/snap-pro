@@ -2,6 +2,8 @@ import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const NICHES = [
+  // ── Existing niches (updated service lists) ───────────────────────────────
+
   {
     id: "fashion",
     name: "Fashion",
@@ -9,16 +11,16 @@ const NICHES = [
     italicWord: "styled",
     tagline: "GHOST MANNEQUIN · WRINKLE SMOOTH · COLOR MATCH",
     label: "Fashion",
-    toolCount: 7,
     video: "/assets/video/cards/nitches/fashion and apparel.mp4",
     services: [
       { name: "Ghost Mannequin", featured: true },
       { name: "Background Remove" },
-      { name: "Auto Backdrop" },
-      { name: "Cast Shadow" },
-      { name: "Upscale 4K" },
       { name: "Color Match" },
+      { name: "Cast Shadow" },
       { name: "Wrinkle Smooth" },
+      { name: "Auto Backdrop" },
+      { name: "Upscale 4K" },
+      { name: "Color Variants" },
     ],
   },
   {
@@ -26,30 +28,36 @@ const NICHES = [
     name: "Textile",
     suffix: "& Fabrics",
     italicWord: "refined",
-    tagline: "BACKGROUND REMOVE · AUTO BACKDROP · UPSCALE 4K",
+    tagline: "PATTERN REPEAT · COLOR VARIANTS · MACRO SHARPEN",
     label: "Textile",
-    toolCount: 3,
     image:
       "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Background Remove", featured: true },
+      { name: "Pattern Repeat", featured: true },
+      { name: "Color Variants" },
+      { name: "Macro Sharpen" },
+      { name: "Tile Preview" },
+      { name: "Texture Enhance" },
       { name: "Auto Backdrop" },
-      { name: "Upscale 4K" },
     ],
   },
   {
     id: "realtors",
-    name: "Realtors",
-    suffix: "& Listings",
+    name: "Real",
+    suffix: "Estate",
     italicWord: "staged",
-    tagline: "VIRTUAL STAGING · FURNITURE AI · DECLUTTERING",
+    tagline: "ROOM STAGE · SKY REPLACE · TWILIGHT CONVERT",
     label: "Real Estate",
-    toolCount: 3,
     video: "/assets/video/cards/nitches/real estate.mp4",
     services: [
-      { name: "Virtual Staging", featured: true },
-      { name: "Room Decluttering" },
-      { name: "Furniture Placement AI" },
+      { name: "Room Stage", featured: true },
+      { name: "Sky Replace" },
+      { name: "HDR Balance" },
+      { name: "Perspective Fix" },
+      { name: "Room Declutter" },
+      { name: "Twilight Convert" },
+      { name: "Upscale 4K" },
+      { name: "Lawn Enhance" },
     ],
   },
   {
@@ -57,15 +65,18 @@ const NICHES = [
     name: "Electronics",
     suffix: "& Tech",
     italicWord: "precision",
-    tagline: "BACKGROUND REMOVE · AUTO BACKDROP · UPSCALE 4K",
+    tagline: "REFLECTION CLEAN · STUDIO WHITE · EDGE SHARPEN",
     label: "Tech",
-    toolCount: 3,
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Background Remove", featured: true },
-      { name: "Auto Backdrop" },
+      { name: "Reflection Clean", featured: true },
+      { name: "Studio White" },
+      { name: "Macro Sharpen" },
+      { name: "360° Spin" },
+      { name: "Perspective Fix" },
       { name: "Upscale 4K" },
+      { name: "Edge Sharpen" },
     ],
   },
   {
@@ -73,14 +84,19 @@ const NICHES = [
     name: "Beauty",
     suffix: "& Skincare",
     italicWord: "glowing",
-    tagline: "BACKGROUND REMOVE · AUTO BACKDROP · UPSCALE 4K",
+    tagline: "GLASS REFLECTION · MACRO SHARPEN · SKIN SMOOTH",
     label: "Beauty",
-    toolCount: 3,
     video: "/assets/video/cards/nitches/beauty card.mp4",
     services: [
-      { name: "Background Remove", featured: true },
-      { name: "Auto Backdrop" },
+      { name: "Glass Reflection", featured: true },
+      { name: "Background Remove" },
+      { name: "Color Match" },
+      { name: "Macro Sharpen" },
+      { name: "Cast Shadow" },
+      { name: "Skin Smooth" },
       { name: "Upscale 4K" },
+      { name: "Light & Mood" },
+      { name: "Color Variants" },
     ],
   },
   {
@@ -88,15 +104,17 @@ const NICHES = [
     name: "Antiques",
     suffix: "& Vintage",
     italicWord: "timeless",
-    tagline: "BACKGROUND REMOVE · AUTO BACKDROP · UPSCALE 4K",
+    tagline: "OLD PHOTO RESTORE · MACRO SHARPEN · COLOR MATCH",
     label: "Antiques",
-    toolCount: 3,
     image:
       "https://images.unsplash.com/photo-1461360228754-6e81c478b882?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Background Remove", featured: true },
+      { name: "Old Photo Restore", featured: true },
+      { name: "Macro Sharpen" },
+      { name: "Color Match" },
       { name: "Auto Backdrop" },
-      { name: "Upscale 4K" },
+      { name: "Background Remove" },
+      { name: "Patina Boost" },
     ],
   },
   {
@@ -104,45 +122,58 @@ const NICHES = [
     name: "Furniture",
     suffix: "& Decor",
     italicWord: "ambient",
-    tagline: "BACKGROUND REMOVE · AUTO BACKDROP · UPSCALE 4K",
+    tagline: "ROOM STAGE · PERSPECTIVE FIX · CAST SHADOW",
     label: "Furniture",
-    toolCount: 3,
     image:
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Background Remove", featured: true },
+      { name: "Room Stage", featured: true },
+      { name: "Cast Shadow" },
       { name: "Auto Backdrop" },
       { name: "Upscale 4K" },
+      { name: "Perspective Fix" },
+      { name: "HDR Balance" },
+      { name: "Color Match" },
     ],
   },
   {
     id: "auto",
-    name: "Auto",
-    suffix: "& Dealers",
+    name: "Cars",
+    suffix: "& Vehicles",
     italicWord: "showroom-ready",
-    tagline: "AUTO BACKDROP · SHOWROOM GENERATION",
+    tagline: "SHOWROOM GEN · SKY REPLACE · 360° SPIN",
     label: "Automotive",
-    toolCount: 2,
     image:
       "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Auto Backdrop", featured: true },
-      { name: "Showroom Generation" },
+      { name: "Showroom Gen", featured: true },
+      { name: "Sky Replace" },
+      { name: "Reflection Clean" },
+      { name: "360° Spin" },
+      { name: "Cast Shadow" },
+      { name: "Plate Blur" },
+      { name: "Paint Enhance" },
+      { name: "Perspective Fix" },
     ],
   },
   {
     id: "jewelry",
     name: "Jewelry",
-    suffix: "",
+    suffix: "& Gold",
     italicWord: "brilliant",
-    tagline: "AUTO BACKDROP · UPSCALE 4K",
+    tagline: "MACRO SHARPEN · SPARKLE BOOST · REFLECTION CLEAN",
     label: "Jewellery",
-    toolCount: 2,
     image:
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Auto Backdrop", featured: true },
+      { name: "Macro Sharpen", featured: true },
+      { name: "Glass Reflection" },
+      { name: "Reflection Clean" },
       { name: "Upscale 4K" },
+      { name: "Sparkle Boost" },
+      { name: "Stone Color True" },
+      { name: "21K vs 18K Tone" },
+      { name: "Auto Backdrop" },
     ],
   },
   {
@@ -152,7 +183,6 @@ const NICHES = [
     italicWord: "perfect",
     tagline: "BACKGROUND REMOVE · CAST SHADOW · UPSCALE 4K",
     label: "Products",
-    toolCount: 4,
     image:
       "https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800&auto=format&fit=crop",
     services: [
@@ -169,7 +199,6 @@ const NICHES = [
     italicWord: "memorable",
     tagline: "AUTO BACKDROP · UPSCALE 4K",
     label: "Events",
-    toolCount: 2,
     image:
       "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800&auto=format&fit=crop",
     services: [
@@ -177,32 +206,195 @@ const NICHES = [
       { name: "Upscale 4K" },
     ],
   },
-  // Kept from original — not in updated list, not repetitive
   {
     id: "food",
     name: "Food",
     suffix: "& Drink",
-    italicWord: "fresh",
-    tagline: "COLOR CORRECT · LIGHT & MOOD",
-    label: "Food",
-    toolCount: 3,
+    italicWord: "appetizing",
+    tagline: "COLOR MATCH · STEAM FX · LIGHT & MOOD",
+    label: "Food & F&B",
     image:
-      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop",
     services: [
-      { name: "Color Correct", featured: true },
+      { name: "Color Match", featured: true },
       { name: "Light & Mood" },
-      { name: "Social Square" },
+      { name: "Background Remove" },
+      { name: "Steam & Sizzle FX" },
+      { name: "Plate Cleanup" },
+      { name: "Marketplace Resize" },
+      { name: "Menu Photo Resizer" },
+      { name: "Arabic Caption Overlay" },
+    ],
+  },
+
+  // ── New niches ────────────────────────────────────────────────────────────
+
+  {
+    id: "ecommerce",
+    name: "E-commerce",
+    suffix: "Sellers",
+    italicWord: "converting",
+    tagline: "BACKGROUND REMOVE · MARKETPLACE RESIZE · BULK CATALOG",
+    label: "E-commerce",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Background Remove", featured: true },
+      { name: "Marketplace Resize" },
+      { name: "Cast Shadow" },
+      { name: "Glass Reflection" },
+      { name: "Bulk Catalog Editor" },
+      { name: "Brand Kit Lock" },
+    ],
+  },
+  {
+    id: "hotels",
+    name: "Hotels",
+    suffix: "& Hospitality",
+    italicWord: "luminous",
+    tagline: "HDR BALANCE · SKY REPLACE · PERSPECTIVE FIX",
+    label: "Hospitality",
+    image:
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "HDR Balance", featured: true },
+      { name: "Sky Replace" },
+      { name: "Perspective Fix" },
+      { name: "Light & Mood" },
+      { name: "Window Light Lift" },
+      { name: "Pool & Sky Refresh" },
+      { name: "Wide-angle Correction" },
+      { name: "Mood Presets" },
+    ],
+  },
+  {
+    id: "weddings",
+    name: "Wedding",
+    suffix: "& Events",
+    italicWord: "timeless",
+    tagline: "SKIN SMOOTH · VENUE LIGHT MATCH · ALBUM LAYOUT",
+    label: "Wedding",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Skin Smooth", featured: true },
+      { name: "Light & Mood" },
+      { name: "Crowd Blur" },
+      { name: "Henna Color True" },
+      { name: "Group Sharpen" },
+      { name: "Venue Light Match" },
+      { name: "Album Layout AI" },
+    ],
+  },
+  {
+    id: "construction",
+    name: "Construction",
+    suffix: "& Architecture",
+    italicWord: "striking",
+    tagline: "SKY REPLACE · DRONE STITCH · HDR BALANCE",
+    label: "Architecture",
+    image:
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Sky Replace", featured: true },
+      { name: "HDR Balance" },
+      { name: "Perspective Fix" },
+      { name: "Upscale 4K" },
+      { name: "Site Cleanup" },
+      { name: "Drone Stitch" },
+      { name: "Render Polish" },
+      { name: "Watermark Stamp" },
+    ],
+  },
+  {
+    id: "creators",
+    name: "Influencers",
+    suffix: "& Creators",
+    italicWord: "viral",
+    tagline: "SKIN SMOOTH · FORMAT PACK · BACKGROUND REMOVE",
+    label: "Creators",
+    image:
+      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Skin Smooth", featured: true },
+      { name: "Marketplace Resize" },
+      { name: "Background Remove" },
+      { name: "Color Match" },
+      { name: "One-Tap Brand Look" },
+      { name: "Cover Maker" },
+      { name: "Background Pop" },
+      { name: "Outfit Color Sync" },
+    ],
+  },
+  {
+    id: "cafes",
+    name: "Cafés",
+    suffix: "& Specialty",
+    italicWord: "steaming",
+    tagline: "COLOR MATCH · STEAM HALO · LIGHT & MOOD",
+    label: "Cafés",
+    image:
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Color Match", featured: true },
+      { name: "Light & Mood" },
+      { name: "Background Remove" },
+      { name: "Coffee Color Match" },
+      { name: "Steam Halo" },
+      { name: "Counter Cleanup" },
+      { name: "Window-Light Mood" },
+      { name: "Story Sticker Pack" },
+    ],
+  },
+  {
+    id: "travel",
+    name: "Travel",
+    suffix: "& Tourism",
+    italicWord: "breathtaking",
+    tagline: "SKY REPLACE · CROWD BLUR · GOLDEN HOUR",
+    label: "Travel",
+    image:
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Sky Replace", featured: true },
+      { name: "Crowd Blur" },
+      { name: "HDR Balance" },
+      { name: "Upscale 4K" },
+      { name: "Golden Hour Lift" },
+      { name: "Sky & Sand True-Tone" },
+      { name: "Panorama Stitch" },
+      { name: "Brochure Layout" },
+    ],
+  },
+  {
+    id: "editorial",
+    name: "News",
+    suffix: "& Editorial",
+    italicWord: "print-perfect",
+    tagline: "SKIN SMOOTH · UPSCALE 4K · WEB/PRINT EXPORT",
+    label: "Editorial",
+    image:
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop",
+    services: [
+      { name: "Skin Smooth", featured: true },
+      { name: "Upscale 4K" },
+      { name: "Marketplace Resize" },
+      { name: "Wire Photo Enhance" },
+      { name: "Crop & Caption Studio" },
+      { name: "Source-Safe Watermark" },
+      { name: "Color-Accurate Skin Tones" },
+      { name: "Web/Print Export" },
     ],
   },
 ];
 
 export default function NichesSection() {
   return (
-    <section id='niches' className='relative z-10 mt-40'>
-      <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
+    <section id="niches" className="relative z-10 mt-40">
+      <div className="max-w-370 mx-auto px-12 max-[720px]:px-4">
         {/* Section header */}
         <div
-          className='flex flex-col md:flex-row md:items-end md:justify-between gap-6'
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
           style={{
             borderBottom: "1px solid var(--line)",
             paddingBottom: 28,
@@ -211,7 +403,7 @@ export default function NichesSection() {
         >
           <div>
             <h2
-              className='font-fraunces'
+              className="font-fraunces"
               style={{
                 fontSize: "clamp(40px, 5vw, 76px)",
                 fontWeight: 300,
@@ -219,7 +411,7 @@ export default function NichesSection() {
                 color: "var(--ink)",
               }}
             >
-              Built for every <em className='silver'>seller.</em>
+              Built for every <em className="silver">seller.</em>
             </h2>
             <p
               style={{
@@ -231,18 +423,34 @@ export default function NichesSection() {
                 fontFamily: "var(--font-geist-sans)",
               }}
             >
-              From fashion to automotive, every industry gets a dedicated
-              toolkit tuned to its unique visual demands.
+              {NICHES.length} industries, each with a dedicated preset toolkit
+              tuned to its unique visual demands.
             </p>
+          </div>
+          <div
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontSize: 11,
+              color: "var(--mute)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {NICHES.length} industries · {NICHES.reduce((acc, n) => acc + n.services.length, 0)} tools
           </div>
         </div>
 
         {/* 3-col niche grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {NICHES.map((niche, i) => (
-            <ScrollReveal key={niche.id} delay={(i % 3) as 0 | 1 | 2 | 3 | 4}>
+            <ScrollReveal
+              key={niche.id}
+              variant="up"
+              delay={(i % 3) as 0 | 1 | 2 | 3 | 4}
+            >
               <div
-                className='card-hover rounded-[22px] overflow-hidden flex flex-col relative'
+                className="card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--line)",
@@ -250,7 +458,7 @@ export default function NichesSection() {
                   height: 540,
                 }}
               >
-                {/* Full-card video background */}
+                {/* Video background */}
                 {niche.video && (
                   <video
                     src={niche.video}
@@ -258,27 +466,27 @@ export default function NichesSection() {
                     loop
                     muted
                     playsInline
-                    preload='metadata'
-                    className='absolute inset-0 w-full h-full object-cover z-0'
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover z-0"
                   />
                 )}
 
-                {/* Full-card image background (when no video) */}
+                {/* Image background */}
                 {niche.image && !niche.video && (
                   <Image
                     src={niche.image}
-                    alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} product photography`}
+                    alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} photography`}
                     fill
-                    className='object-cover'
+                    className="object-cover"
                     style={{ zIndex: 0 }}
-                    sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 )}
 
                 {/* Gradient overlay */}
                 {(niche.video || niche.image) && (
                   <div
-                    className='absolute inset-0'
+                    className="absolute inset-0"
                     style={{
                       zIndex: 1,
                       background:
@@ -289,17 +497,13 @@ export default function NichesSection() {
 
                 {/* Image area */}
                 <div
-                  className='relative overflow-hidden'
-                  style={{
-                    height: 310,
-                    background: "transparent",
-                    zIndex: 2,
-                  }}
+                  className="relative overflow-hidden"
+                  style={{ height: 310, background: "transparent", zIndex: 2 }}
                 >
-                  {/* Top-left: category pill */}
-                  <div className='absolute top-3 left-3'>
+                  {/* Category pill */}
+                  <div className="absolute top-3 left-3">
                     <div
-                      className='chip'
+                      className="chip"
                       style={{
                         background: "rgba(10,10,10,0.7)",
                         backdropFilter: "blur(12px)",
@@ -313,8 +517,8 @@ export default function NichesSection() {
                     </div>
                   </div>
 
-                  {/* Bottom overlay: niche name */}
-                  <div className='absolute bottom-0 left-0 right-0 p-4'>
+                  {/* Niche heading */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3
                       style={{
                         fontFamily: "var(--font-syne)",
@@ -328,42 +532,23 @@ export default function NichesSection() {
                     >
                       {niche.name}
                       {niche.suffix ? ` ${niche.suffix} ` : " "}
-                      <em className='silver'>{niche.italicWord}.</em>
+                      <em className="silver">{niche.italicWord}.</em>
                     </h3>
                   </div>
                 </div>
 
-                {/* Services chips area */}
+                {/* Services chips */}
                 <div
-                  className='p-4 flex flex-col gap-3 relative'
+                  className="p-4 flex flex-col gap-3 relative"
                   style={{ zIndex: 2, height: 230 }}
                 >
-                  <div className='flex items-center justify-between'>
-                    <span />
-                    <span
-                      style={{
-                        fontFamily: "var(--font-geist-mono)",
-                        fontSize: 11,
-                        color: "var(--blue)",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {niche.services.length}
-                    </span>
-                  </div>
-
-                  <div
-                    className='flex flex-wrap gap-2'
-                    style={{ minHeight: 52 }}
-                  >
+                  <div className="flex flex-wrap gap-2" style={{ minHeight: 52 }}>
                     {niche.services.slice(0, 3).map((svc) => (
                       <span
                         key={svc.name}
                         className={`chip ${svc.featured ? "chip-blue" : ""}`}
                         style={
-                          svc.featured
-                            ? { fontSize: 9, gap: 4 }
-                            : { fontSize: 9 }
+                          svc.featured ? { fontSize: 9, gap: 4 } : { fontSize: 9 }
                         }
                       >
                         {svc.featured && (
@@ -384,9 +569,23 @@ export default function NichesSection() {
                     ))}
                   </div>
 
+                  <div className="flex items-center justify-between">
+                    <span />
+                    <span
+                      style={{
+                        fontFamily: "var(--font-geist-mono)",
+                        fontSize: 11,
+                        color: "var(--blue)",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {niche.services.length}
+                    </span>
+                  </div>
+
                   {/* CTA row */}
                   <div
-                    className='flex items-center justify-between mt-auto pt-2'
+                    className="flex items-center justify-between mt-auto pt-2"
                     style={{ borderTop: "1px solid var(--line)" }}
                   >
                     <span
@@ -412,18 +611,13 @@ export default function NichesSection() {
                         boxShadow: "var(--shadow-silver)",
                       }}
                     >
-                      <svg
-                        width='12'
-                        height='12'
-                        viewBox='0 0 12 12'
-                        fill='none'
-                      >
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path
-                          d='M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9'
-                          stroke='#000'
-                          strokeWidth='1.5'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
+                          d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                          stroke="#000"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </button>

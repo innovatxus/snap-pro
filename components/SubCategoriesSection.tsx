@@ -114,6 +114,21 @@ const PERSONAL: Tool[] = [
       </svg>
     ),
   },
+  {
+    id: "hajj-umrah",
+    name: "Hajj & Umrah",
+    desc: "Restore family pilgrimage archives. Old photo repair, face recovery, warm-tone grading, and print export.",
+    image:
+      "https://images.unsplash.com/photo-1474314170901-c8e060a0cb04?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <rect x='1' y='3' width='11' height='9' rx='1' />
+        <path d='M1 8.5L3.5 6.5L6.5 8.5L9.5 6' strokeLinecap='round' strokeLinejoin='round' />
+        <path d='M13.5 1L14 3L15.5 3.5L14 4L13.5 6L13 4L11.5 3.5L13 3L13.5 1Z'
+          fill='currentColor' strokeWidth='0.5' />
+      </svg>
+    ),
+  },
 ];
 
 const BUSINESS: Tool[] = [
@@ -201,6 +216,49 @@ const BUSINESS: Tool[] = [
         <rect x='9' y='1' width='6' height='6' rx='1' />
         <rect x='1' y='9' width='6' height='6' rx='1' />
         <rect x='9' y='9' width='6' height='6' rx='1' />
+      </svg>
+    ),
+  },
+  {
+    id: "product-redesign",
+    name: "Product Redesign",
+    desc: "Generate color variants, material swaps, and concept iterations. A/B compare directly in the canvas.",
+    image:
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <path d='M13 4.5A5.5 5.5 0 1 0 13.5 8' strokeLinecap='round' />
+        <path d='M13 1.5V4.5H10' strokeLinecap='round' strokeLinejoin='round' />
+      </svg>
+    ),
+  },
+  {
+    id: "product-catalogues",
+    name: "Product Catalogues",
+    desc: "Auto-layout PDF lookbooks and linesheets with SKU sync, price injection, and brand theming.",
+    image:
+      "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <rect x='1.5' y='2' width='13' height='12' rx='1.5' />
+        <path d='M1.5 6.5H14.5' />
+        <path d='M1.5 11H14.5' />
+        <path d='M6 6.5V14' />
+      </svg>
+    ),
+  },
+  {
+    id: "business-cards",
+    name: "Business Cards",
+    desc: "Print-ready card design with logo placement, bleed setup, QR code generation, and mockup render.",
+    image:
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <rect x='1.5' y='4.5' width='13' height='8' rx='1.5' />
+        <path d='M4 8H8.5' />
+        <path d='M4 10.5H12' />
+        <circle cx='11.5' cy='7.5' r='1.5' />
       </svg>
     ),
   },

@@ -65,6 +65,38 @@ export default function Hero() {
         }}
       />
 
+      {/* Layer 5 — drifting aurora orbs (decorative) */}
+      <div
+        className='absolute inset-0 z-[5] pointer-events-none overflow-hidden'
+        aria-hidden='true'
+      >
+        <span
+          className='aurora-orb'
+          style={{
+            width: 520,
+            height: 520,
+            top: "-10%",
+            left: "-8%",
+            background:
+              "radial-gradient(circle, rgba(56,189,248,0.55), transparent 60%)",
+            animationDelay: "0s",
+          }}
+        />
+        <span
+          className='aurora-orb'
+          style={{
+            width: 620,
+            height: 620,
+            bottom: "-15%",
+            right: "-10%",
+            background:
+              "radial-gradient(circle, rgba(216,220,227,0.28), transparent 60%)",
+            animationDelay: "-6s",
+            opacity: 0.4,
+          }}
+        />
+      </div>
+
       {/* ── Full-height content column ── */}
       <div
         className='relative z-10 flex flex-col'
@@ -158,6 +190,7 @@ export default function Hero() {
           <div className='hero-animate hero-animate-d4 flex items-center justify-center gap-3 mt-10 flex-wrap'>
             {/* Primary blue CTA */}
             <button
+              className='btn-lift'
               style={{
                 padding: "14px 28px",
                 borderRadius: 999,
@@ -192,6 +225,7 @@ export default function Hero() {
 
             {/* Secondary glass CTA */}
             <button
+              className='btn-lift'
               style={{
                 padding: "13px 28px",
                 borderRadius: 999,

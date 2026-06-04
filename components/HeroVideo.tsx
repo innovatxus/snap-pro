@@ -17,13 +17,14 @@ interface HeroVideoProps {
 export default function HeroVideo({ src }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false,
+  );
 
   useEffect(() => {
-    // Detect reduced-motion on mount (SSR-safe)
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-
     const video = videoRef.current;
     if (!video) return;
 
@@ -75,12 +76,9 @@ export default function HeroVideo({ src }: HeroVideoProps) {
   }, []);
 
   return (
-    <div
-      className="absolute inset-0 overflow-hidden"
-      aria-hidden="true"
-    >
+    <div className='absolute inset-0 overflow-hidden' aria-hidden='true'>
       {/* Permanent dark fallback — visible immediately, fades behind the video */}
-      <div className="absolute inset-0 hero-fallback-bg z-0" />
+      <div className='absolute inset-0 hero-fallback-bg z-0' />
 
       {/* Video — hidden for reduced-motion users */}
       {!reducedMotion && (
@@ -90,16 +88,16 @@ export default function HeroVideo({ src }: HeroVideoProps) {
           loop
           muted
           playsInline
-          preload="metadata"
-          className="hero-video absolute inset-0 w-full h-full object-cover object-center z-[1]"
+          preload='metadata'
+          className='hero-video absolute inset-0 w-full h-full object-cover object-center z-[1]'
           style={{
             opacity: isVisible ? 1 : 0,
             transition: "opacity 1.6s ease",
           }}
           /* Poster is the fallback visual before the video decodes */
-          poster="/assets/video/5-poster.jpg"
+          poster='/assets/video/5-poster.jpg'
         >
-          <source src={src} type="video/mp4" />
+          <source src={src} type='video/mp4' />
         </video>
       )}
     </div>

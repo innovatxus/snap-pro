@@ -8,6 +8,7 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import SocialSizes from "@/components/SocialSizes";
 import Pricing from "@/components/Pricing";
 import Integrations from "@/components/Integrations";
+import AIFeaturesSection from "@/components/AIFeaturesSection";
 import BentoSection from "@/components/BentoSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -32,6 +33,7 @@ export default function Home() {
       <SocialSizes />
       <Pricing />
       <Integrations />
+      <AIFeaturesSection />
 
       <div className='pb-60 max-[720px]:pb-40'>
         <FinalCTA />

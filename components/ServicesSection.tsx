@@ -4,16 +4,18 @@ import { useState } from "react";
 import type { ReactElement } from "react";
 import ScrollReveal from "./ScrollReveal";
 
+// ─── Services ─────────────────────────────────────────────────────────────────
+
 const SERVICES = [
-  // CUT
+  // ── CUT (3) ──────────────────────────────────────────────────────────────
   {
     id: 1,
     name: "Background",
-    italic: "Removal",
+    italic: "Remove",
     cat: "cut",
     catLabel: "CUT",
     credit: "1 cr",
-    desc: "Instant AI cutout on any background.",
+    desc: "Pixel-perfect cutout, hair and fur included. Auto-detects subject in 0.4s.",
   },
   {
     id: 2,
@@ -21,150 +23,280 @@ const SERVICES = [
     italic: "Mannequin",
     cat: "cut",
     catLabel: "CUT",
-    credit: "3 cr",
-    desc: "Hollow mannequin effect for fashion.",
+    credit: "2 cr",
+    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
   },
   {
     id: 3,
-    name: "Hair",
-    italic: "Masking",
-    cat: "cut",
-    catLabel: "CUT",
-    credit: "2 cr",
-    desc: "Precision cutout for fine hair strands.",
-  },
-  {
-    id: 4,
-    name: "Clipping",
-    italic: "Path",
+    name: "Object",
+    italic: "Erase",
     cat: "cut",
     catLabel: "CUT",
     credit: "1 cr",
-    desc: "Clean vector paths for every product.",
+    desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
   },
-  // STAGE
+  // ── STAGE (11) ───────────────────────────────────────────────────────────
+  {
+    id: 4,
+    name: "Auto",
+    italic: "Backdrop",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Eight studio scenes. Light intensity and shadow depth in two sliders.",
+  },
   {
     id: 5,
+    name: "Room",
+    italic: "Stage",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "3 cr",
+    desc: "Place furniture in a styled room — kitchen, living, bedroom, patio.",
+  },
+  {
+    id: 6,
+    name: "Cast",
+    italic: "Shadow",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Realistic ground or wall shadows. Direction, blur, and opacity controls.",
+  },
+  {
+    id: 7,
+    name: "Glass",
+    italic: "Reflection",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Adds a tabletop mirror reflection — perfect for bottles, jars, watches.",
+  },
+  {
+    id: 8,
+    name: "Sky",
+    italic: "Replace",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Swap gray skies for golden hour, blue noon, or stormy drama. Auto-matches subject lighting.",
+  },
+  {
+    id: 9,
+    name: "Room",
+    italic: "Declutter",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Remove furniture and clutter from room photos. Clean canvas for real-estate virtual staging.",
+  },
+  {
+    id: 10,
+    name: "Showroom",
+    italic: "Gen",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "3 cr",
+    desc: "Photorealistic automotive showroom scenes. Floor reflections and directional lighting included.",
+  },
+  {
+    id: 21,
+    name: "Perspective",
+    italic: "Fix",
+    cat: "stage",
+    catLabel: "STAGE",
+    credit: "2 cr",
+    desc: "Correct wide-angle distortion and converging verticals. Furniture, real estate, architecture.",
+  },
+  {
+    id: 22,
     name: "Studio",
     italic: "White",
     cat: "stage",
     catLabel: "STAGE",
-    credit: "2 cr",
-    desc: "Clean white studio backdrop, instantly.",
-  },
-  {
-    id: 6,
-    name: "Lifestyle",
-    italic: "Scene",
-    cat: "stage",
-    catLabel: "STAGE",
-    credit: "4 cr",
-    desc: "Place products in aspirational settings.",
-  },
-  {
-    id: 7,
-    name: "Shadow",
-    italic: "Add",
-    cat: "stage",
-    catLabel: "STAGE",
     credit: "1 cr",
-    desc: "Realistic drop & contact shadows.",
+    desc: "Pure white studio isolation with zero shadow bleed. Required for Amazon, eBay, and packaging.",
   },
   {
-    id: 8,
-    name: "Model",
-    italic: "Swap",
+    id: 23,
+    name: "Twilight",
+    italic: "Convert",
     cat: "stage",
     catLabel: "STAGE",
-    credit: "5 cr",
-    desc: "Replace mannequin with a real model.",
-  },
-  // ENHANCE
-  {
-    id: 9,
-    name: "Color",
-    italic: "Correct",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "1 cr",
-    desc: "Match true-to-life product color.",
+    credit: "3 cr",
+    desc: "Day-to-dusk sky swap with auto-matched interior warm lighting. Real estate hero shots.",
   },
   {
-    id: 10,
-    name: "Skin",
-    italic: "Retouch",
-    cat: "enhance",
-    catLabel: "ENHANCE",
+    id: 24,
+    name: "Box",
+    italic: "Mockup",
+    cat: "stage",
+    catLabel: "STAGE",
     credit: "2 cr",
-    desc: "Natural skin smoothing & blemish fix.",
+    desc: "Generate 3D packaging mockups from flat artwork. Lid-open, angled, and flat views.",
   },
+  // ── ENHANCE (12) ─────────────────────────────────────────────────────────
   {
     id: 11,
-    name: "Product",
-    italic: "Polish",
+    name: "Upscale",
+    italic: "4K",
     cat: "enhance",
     catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Remove dust, scratches, distractions.",
+    credit: "3 cr",
+    desc: "2× to 4× resolution. Detail recovery for printable catalogs and Amazon zoom.",
   },
   {
     id: 12,
-    name: "Light",
-    italic: "& Mood",
+    name: "Color",
+    italic: "Match",
     cat: "enhance",
     catLabel: "ENHANCE",
-    credit: "3 cr",
-    desc: "Cinematic lighting & atmosphere edit.",
+    credit: "2 cr",
+    desc: "Match a Pantone, hex, or reference photo. Keep your catalog consistent.",
   },
-  // FORMAT
   {
     id: 13,
-    name: "Amazon",
-    italic: "Pack",
-    cat: "format",
-    catLabel: "FORMAT",
-    credit: "2 cr",
-    desc: "All required Amazon image sizes.",
+    name: "Wrinkle",
+    italic: "Smooth",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "1 cr",
+    desc: "Removes garment creases without losing fabric texture.",
   },
   {
     id: 14,
-    name: "Shopify",
-    italic: "Set",
-    cat: "format",
-    catLabel: "FORMAT",
+    name: "Reflection",
+    italic: "Clean",
+    cat: "enhance",
+    catLabel: "ENHANCE",
     credit: "2 cr",
-    desc: "Storefront-ready product image set.",
+    desc: "Removes lens glare, fingerprints, and ambient light from glossy surfaces.",
   },
   {
     id: 15,
-    name: "Social",
-    italic: "Square",
-    cat: "format",
-    catLabel: "FORMAT",
-    credit: "1 cr",
-    desc: "1:1 optimised for Instagram & TikTok.",
+    name: "Studio",
+    italic: "Pack",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "4 cr",
+    desc: "All-in-one: cut, stage, light, shadow, format. Hands-free batch mode.",
   },
   {
     id: 16,
-    name: "Banner",
-    italic: "Crop",
-    cat: "format",
-    catLabel: "FORMAT",
-    credit: "1 cr",
-    desc: "Wide-format banners for any platform.",
+    name: "Crowd",
+    italic: "Blur",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Selectively blur or remove background people. Faces preserved on subjects you mark.",
   },
   {
     id: 17,
-    name: "Print",
-    italic: "Ready",
+    name: "Light &",
+    italic: "Mood",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "3 cr",
+    desc: "Cinematic lighting and atmosphere edit. Directional light, golden hour, or dramatic studio.",
+  },
+  {
+    id: 25,
+    name: "Color",
+    italic: "Variants",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Generate multiple colorway versions from a single source image. Textiles, apparel, and product lines.",
+  },
+  {
+    id: 26,
+    name: "HDR",
+    italic: "Balance",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Tone-map bracketed interior shots for even exposure. Eliminates blown windows and blocked shadows.",
+  },
+  {
+    id: 27,
+    name: "Old Photo",
+    italic: "Restore",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "3 cr",
+    desc: "Repair damaged, faded, or torn archival photos. Face recovery and color grading included.",
+  },
+  {
+    id: 28,
+    name: "Macro",
+    italic: "Sharpen",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Micro-detail enhancement for jewelry, fabric weaves, and small-scale product textures.",
+  },
+  {
+    id: 29,
+    name: "Skin",
+    italic: "Smooth",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "1 cr",
+    desc: "Natural portrait skin retouching. Preserves texture and identity — no plastic effect.",
+  },
+  // ── FORMAT (4) ───────────────────────────────────────────────────────────
+  {
+    id: 18,
+    name: "Marketplace",
+    italic: "Resize",
+    cat: "format",
+    catLabel: "FORMAT",
+    credit: "1 cr",
+    desc: "One source, twelve sizes. Shopify 2048², Amazon 1500², Meta 1080².",
+  },
+  {
+    id: 19,
+    name: "Pattern",
+    italic: "Repeat",
+    cat: "format",
+    catLabel: "FORMAT",
+    credit: "2 cr",
+    desc: "Tileable patterns from a single fabric swatch. Seam-blended automatically.",
+  },
+  {
+    id: 20,
+    name: "360°",
+    italic: "Spin",
     cat: "format",
     catLabel: "FORMAT",
     credit: "3 cr",
-    desc: "CMYK-converted high-res print files.",
+    desc: "Generate a 24-frame product spin from 6 source angles.",
+  },
+  {
+    id: 30,
+    name: "PDF",
+    italic: "Export",
+    cat: "format",
+    catLabel: "FORMAT",
+    credit: "2 cr",
+    desc: "Auto-layout product grid with SKU and price injection. One-click catalog or linesheet PDF.",
   },
 ];
 
-const TABS = ["All", "Cut", "Stage", "Enhance", "Format"];
+// ─── Tab config ───────────────────────────────────────────────────────────────
+// Cut 3 · Stage 11 · Enhance 12 · Format 4 = 30 total
+
+const TABS = ["All", "Cut", "Stage", "Enhance", "Format"] as const;
+
+const TAB_COUNTS: Record<string, number> = {
+  All: SERVICES.length,
+  Cut: SERVICES.filter((s) => s.cat === "cut").length,
+  Stage: SERVICES.filter((s) => s.cat === "stage").length,
+  Enhance: SERVICES.filter((s) => s.cat === "enhance").length,
+  Format: SERVICES.filter((s) => s.cat === "format").length,
+};
+
+// ─── Category visuals ─────────────────────────────────────────────────────────
 
 const catBg: Record<string, string> = {
   cut: "linear-gradient(135deg, #001830 0%, #002a50 50%, #000d20 100%)",
@@ -182,66 +314,60 @@ const catTagClass: Record<string, string> = {
 
 const catSvg: Record<string, ReactElement> = {
   cut: (
-    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
+    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
       <rect
-        x='30'
-        y='15'
-        width='100'
-        height='90'
-        rx='8'
-        fill='rgba(56,189,248,0.15)'
-        stroke='rgba(56,189,248,0.3)'
-        strokeWidth='1'
+        x="30"
+        y="15"
+        width="100"
+        height="90"
+        rx="8"
+        fill="rgba(56,189,248,0.15)"
+        stroke="rgba(56,189,248,0.3)"
+        strokeWidth="1"
       />
       <path
-        d='M30 60 L130 60'
-        stroke='rgba(56,189,248,0.5)'
-        strokeWidth='1.5'
-        strokeDasharray='4 3'
+        d="M30 60 L130 60"
+        stroke="rgba(56,189,248,0.5)"
+        strokeWidth="1.5"
+        strokeDasharray="4 3"
       />
       <circle
-        cx='80'
-        cy='60'
-        r='12'
-        fill='rgba(56,189,248,0.2)'
-        stroke='rgba(56,189,248,0.5)'
-        strokeWidth='1'
+        cx="80"
+        cy="60"
+        r="12"
+        fill="rgba(56,189,248,0.2)"
+        stroke="rgba(56,189,248,0.5)"
+        strokeWidth="1"
       />
     </svg>
   ),
   stage: (
-    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
+    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
+      <rect x="0" y="0" width="160" height="120" fill="rgba(255,255,255,0.03)" />
+      <ellipse cx="80" cy="110" rx="60" ry="10" fill="rgba(255,255,255,0.08)" />
       <rect
-        x='0'
-        y='0'
-        width='160'
-        height='120'
-        fill='rgba(255,255,255,0.03)'
-      />
-      <ellipse cx='80' cy='110' rx='60' ry='10' fill='rgba(255,255,255,0.08)' />
-      <rect
-        x='55'
-        y='20'
-        width='50'
-        height='70'
-        rx='4'
-        fill='rgba(255,255,255,0.12)'
-        stroke='rgba(255,255,255,0.2)'
-        strokeWidth='0.5'
+        x="55"
+        y="20"
+        width="50"
+        height="70"
+        rx="4"
+        fill="rgba(255,255,255,0.12)"
+        stroke="rgba(255,255,255,0.2)"
+        strokeWidth="0.5"
       />
     </svg>
   ),
   enhance: (
-    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
+    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
       <circle
-        cx='80'
-        cy='60'
-        r='40'
-        fill='rgba(255,200,87,0.1)'
-        stroke='rgba(255,200,87,0.25)'
-        strokeWidth='1'
+        cx="80"
+        cy="60"
+        r="40"
+        fill="rgba(255,200,87,0.1)"
+        stroke="rgba(255,200,87,0.25)"
+        strokeWidth="1"
       />
-      <circle cx='80' cy='60' r='25' fill='rgba(255,200,87,0.12)' />
+      <circle cx="80" cy="60" r="25" fill="rgba(255,200,87,0.12)" />
       {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
         <line
           key={i}
@@ -249,57 +375,59 @@ const catSvg: Record<string, ReactElement> = {
           y1={60 + 42 * Math.sin((a * Math.PI) / 180)}
           x2={80 + 52 * Math.cos((a * Math.PI) / 180)}
           y2={60 + 52 * Math.sin((a * Math.PI) / 180)}
-          stroke='rgba(255,200,87,0.3)'
-          strokeWidth='1.5'
+          stroke="rgba(255,200,87,0.3)"
+          strokeWidth="1.5"
         />
       ))}
     </svg>
   ),
   format: (
-    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
+    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
       <rect
-        x='20'
-        y='15'
-        width='55'
-        height='55'
-        rx='4'
-        fill='rgba(200,182,255,0.1)'
-        stroke='rgba(200,182,255,0.25)'
-        strokeWidth='1'
+        x="20"
+        y="15"
+        width="55"
+        height="55"
+        rx="4"
+        fill="rgba(200,182,255,0.1)"
+        stroke="rgba(200,182,255,0.25)"
+        strokeWidth="1"
       />
       <rect
-        x='85'
-        y='15'
-        width='55'
-        height='35'
-        rx='4'
-        fill='rgba(200,182,255,0.08)'
-        stroke='rgba(200,182,255,0.2)'
-        strokeWidth='1'
+        x="85"
+        y="15"
+        width="55"
+        height="35"
+        rx="4"
+        fill="rgba(200,182,255,0.08)"
+        stroke="rgba(200,182,255,0.2)"
+        strokeWidth="1"
       />
       <rect
-        x='85'
-        y='60'
-        width='55'
-        height='55'
-        rx='4'
-        fill='rgba(200,182,255,0.1)'
-        stroke='rgba(200,182,255,0.25)'
-        strokeWidth='1'
+        x="85"
+        y="60"
+        width="55"
+        height="55"
+        rx="4"
+        fill="rgba(200,182,255,0.1)"
+        stroke="rgba(200,182,255,0.25)"
+        strokeWidth="1"
       />
       <rect
-        x='20'
-        y='80'
-        width='55'
-        height='35'
-        rx='4'
-        fill='rgba(200,182,255,0.08)'
-        stroke='rgba(200,182,255,0.2)'
-        strokeWidth='1'
+        x="20"
+        y="80"
+        width="55"
+        height="35"
+        rx="4"
+        fill="rgba(200,182,255,0.08)"
+        stroke="rgba(200,182,255,0.2)"
+        strokeWidth="1"
       />
     </svg>
   ),
 };
+
+// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState("All");
@@ -310,20 +438,23 @@ export default function ServicesSection() {
       : SERVICES.filter((s) => s.cat === activeTab.toLowerCase());
 
   return (
-    <section id='services' className='relative z-10 mt-40'>
-      <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
+    <section id="services" className="relative z-10 mt-40">
+      <div className="max-w-370 mx-auto px-12 max-[720px]:px-4">
         {/* Section header */}
-        <div
-          className='flex flex-col md:flex-row md:items-end md:justify-between gap-6'
-          style={{
-            borderBottom: "1px solid var(--line)",
-            paddingBottom: 28,
-            marginBottom: 56,
-          }}
+        <ScrollReveal
+          variant="blur"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
-          <div>
+          <div
+            style={{
+              borderBottom: "1px solid var(--line)",
+              paddingBottom: 28,
+              marginBottom: 56,
+              width: "100%",
+            }}
+          >
             <h2
-              className='font-fraunces'
+              className="font-fraunces"
               style={{
                 fontSize: "clamp(40px, 5vw, 76px)",
                 fontWeight: 300,
@@ -331,7 +462,7 @@ export default function ServicesSection() {
                 color: "var(--ink)",
               }}
             >
-              Every edit. <em className='silver'>One</em> studio.
+              Every edit. <em className="silver">One</em> studio.
             </h2>
             <p
               style={{
@@ -342,15 +473,15 @@ export default function ServicesSection() {
                 lineHeight: 1.55,
               }}
             >
-              17 specialist services across cutting, staging, enhancing, and
-              formatting. All AI-powered, all under one roof.
+              {SERVICES.length} specialist services across cutting, staging,
+              enhancing, and formatting. All AI-powered, all under one roof.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Filter tabs */}
         <div
-          className='flex items-center gap-1 mb-10 overflow-x-auto'
+          className="flex items-center gap-1 mb-10 overflow-x-auto"
           style={{
             background: "var(--surface-2)",
             border: "1px solid var(--line)",
@@ -366,91 +497,101 @@ export default function ServicesSection() {
               onClick={() => setActiveTab(tab)}
             >
               {tab}
+              <span
+                style={{
+                  marginLeft: 5,
+                  fontFamily: "var(--font-geist-mono), monospace",
+                  fontSize: 9,
+                  opacity: activeTab === tab ? 0.6 : 0.4,
+                  letterSpacing: "0.04em",
+                }}
+              >
+                · {TAB_COUNTS[tab]}
+              </span>
             </button>
           ))}
         </div>
 
-        {/* Service cards grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-          {filtered.map((svc, i) => (
-            <ScrollReveal
+        {/* Service cards */}
+        <ScrollReveal
+          stagger
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
+          {filtered.map((svc) => (
+            <div
               key={svc.id}
-              delay={Math.min(i % 4, 4) as 0 | 1 | 2 | 3 | 4}
+              className="stagger-item card-hover sheen service-card flex flex-col overflow-hidden"
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                borderRadius: "var(--r-lg)",
+              }}
             >
+              {/* Thumbnail */}
               <div
-                className='card-hover service-card flex flex-col overflow-hidden'
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--r-lg)",
-                }}
+                className="relative overflow-hidden"
+                style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
               >
-                {/* Image area (4:3) */}
-                <div
-                  className='relative overflow-hidden'
-                  style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
-                >
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    {catSvg[svc.cat]}
-                  </div>
-
-                  {/* Category tag top-left */}
-                  <div className='absolute top-3 left-3'>
-                    <span
-                      className={`chip ${catTagClass[svc.cat]}`}
-                      style={{ fontSize: 9, padding: "3px 8px" }}
-                    >
-                      {svc.catLabel}
-                    </span>
-                  </div>
-
-                  {/* Credit cost bottom-right */}
-                  <div
-                    className='absolute bottom-3 right-3'
-                    style={{
-                      background: "rgba(8,10,14,0.92)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      borderRadius: "var(--r-sm)",
-                      padding: "4px 10px",
-                      fontFamily: "var(--font-geist-mono), monospace",
-                      fontSize: 10,
-                      letterSpacing: "0.1em",
-                      color: "var(--silver-2)",
-                    }}
-                  >
-                    {svc.credit}
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {catSvg[svc.cat]}
                 </div>
 
-                {/* Info */}
-                <div className='p-4 flex flex-col gap-1'>
-                  <h3
-                    className='font-fraunces'
-                    style={{
-                      fontSize: 20,
-                      fontWeight: 400,
-                      lineHeight: 1.1,
-                      color: "var(--ink)",
-                    }}
+                {/* Category tag */}
+                <div className="absolute top-3 left-3">
+                  <span
+                    className={`chip ${catTagClass[svc.cat]}`}
+                    style={{ fontSize: 9, padding: "3px 8px" }}
                   >
-                    {svc.name} <em className='silver'>{svc.italic}</em>
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 12,
-                      color: "var(--mute)",
-                      lineHeight: 1.5,
-                      fontFamily: "var(--font-geist-sans)",
-                    }}
-                  >
-                    {svc.desc}
-                  </p>
+                    {svc.catLabel}
+                  </span>
+                </div>
+
+                {/* Credit cost */}
+                <div
+                  className="absolute bottom-3 right-3"
+                  style={{
+                    background: "rgba(8,10,14,0.92)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: "var(--r-sm)",
+                    padding: "4px 10px",
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontSize: 10,
+                    letterSpacing: "0.1em",
+                    color: "var(--silver-2)",
+                  }}
+                >
+                  {svc.credit}
                 </div>
               </div>
-            </ScrollReveal>
+
+              {/* Info */}
+              <div className="p-4 flex flex-col gap-1">
+                <h3
+                  className="font-fraunces"
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 400,
+                    lineHeight: 1.1,
+                    color: "var(--ink)",
+                  }}
+                >
+                  {svc.name} <em className="silver">{svc.italic}</em>
+                </h3>
+                <p
+                  style={{
+                    fontSize: 12,
+                    color: "var(--mute)",
+                    lineHeight: 1.5,
+                    fontFamily: "var(--font-geist-sans)",
+                  }}
+                >
+                  {svc.desc}
+                </p>
+              </div>
+            </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
