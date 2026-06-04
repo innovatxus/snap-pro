@@ -585,7 +585,7 @@ const NAV_LINKS = [
   { label: "Niches", key: null, href: null },
   { label: "Tools", key: "tools", href: null },
   { label: "Templates", key: null, href: "/templates" },
-  { label: "Educationals", key: null, href: null },
+  { label: "Educationals", key: null, href: "/learn" },
   { label: "Pricing", key: null, href: null },
   { label: "About", key: null, href: null },
 ];

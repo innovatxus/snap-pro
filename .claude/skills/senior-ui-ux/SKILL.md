@@ -155,7 +155,224 @@ Be specific. "The spacing is off" is not a critique. "Header bottom rule has 56
 px below but cards top with 0 — collapse to 40 px and add 16 px margin to first
 card" is.
 
-## 8. Output discipline
+## 8. Reusable component design
+
+Design components so the next change is cheap. A "good" component is one a
+junior engineer can drop in without reading the implementation, and a senior
+engineer can extend without rewriting.
+
+### 8.1 Component contract
+
+Every component must declare an explicit contract:
+
+- **Props are an interface, not a kitchen sink.** Name them after intent
+  (`variant`, `tone`, `density`, `align`), never after implementation
+  (`fontSize16`, `bgGradient`).
+- **Required props ≤ 3.** If you need more, the component is doing too much.
+  Split it or accept a config object.
+- **Sensible defaults.** Every optional prop has a default that produces the
+  most common variant with no extra wiring.
+- **Discriminated unions over boolean explosions.** Replace `isPrimary`,
+  `isGhost`, `isDanger` with `variant: "primary" | "ghost" | "danger"`.
+- **Forward `className`, `style`, and `children`.** Composition over config.
+- **Forward refs** with `forwardRef` whenever the component renders a real DOM
+  element a parent might want to focus, scroll, or measure.
+- **Polymorphic when it matters.** Accept an `as` prop (typed `ElementType`) for
+  primitives that legitimately render different tags (`Heading`,
+  `Button`-as-`<a>`, `ScrollReveal`).
+
+### 8.2 Variants & tokens, not magic numbers
+
+- Every visual decision (color, spacing, radius, shadow, duration) resolves to a
+  **design token** (`var(--blue)`, `var(--r-xl)`, `var(--shadow-blue)`).
+- One-off magic numbers are a code smell. If the value is intentional, promote
+  it to a token. If it's accidental, snap it to the system.
+- Prefer **CVA-style variant maps** (or a plain object literal in this repo's
+  pattern) over chained ternaries:
+
+  ```ts
+  const TONE = {
+    primary: { bg: "var(--blue-grad)", fg: "white" },
+    silver: { bg: "var(--silver-grad)", fg: "#000" },
+    ghost: { bg: "transparent", fg: "var(--ink)" },
+  } as const;
+  ```
+
+### 8.3 Composition rules
+
+- **Slot pattern over prop drilling.** A `Card` accepts `header`, `body`,
+  `footer` slots; it does not accept `title`, `subtitle`, `ctaLabel`, `ctaHref`,
+  `ctaIcon`, etc.
+- **Headless logic, styled shell.** Hooks like `useDisclosure`, `useReveal`,
+  `useMediaQuery` carry behavior; presentational components carry style. Don't
+  mix.
+- **Single source of truth per concern.** A reveal component owns intersection
+  logic; sections never re-implement `IntersectionObserver`.
+- **Children > config arrays** when the consumer needs custom markup. Use config
+  arrays only when shape is enforced (pricing tiers, nav items).
+- **No prop renaming.** If a child takes `disabled`, the parent passes
+  `disabled` through, not `inactive`.
+
+### 8.4 State & data ownership
+
+- **Lift state only as far as needed.** Local first, context second, store last.
+  No global state for UI flags that one component owns.
+- **Server components by default** in this Next.js app. Mark `"use client"` only
+  when the component needs hooks, refs, listeners, or browser-only APIs.
+- **Memoize on evidence, not instinct.** `useMemo` / `useCallback` /
+  `React.memo` are profile-driven, not decorative.
+- **Stable keys.** Never use array index as a key for items that can reorder.
+- **Controlled vs uncontrolled is a deliberate choice.** Document it in props.
+
+### 8.5 Reusability tests (run mentally)
+
+Before declaring a component "reusable," answer all five with yes:
+
+1. Can I drop it into a different section with no edits to its file?
+2. Can I theme it with tokens alone, no style overrides?
+3. Does it survive empty / very long / RTL / dark / reduced-motion content?
+4. Is the prop API documented by the type signature alone?
+5. Will a teammate understand its purpose from the name + first 10 lines?
+
+### 8.6 What lives where (this repo)
+
+- [components/ScrollReveal.tsx](../../../components/ScrollReveal.tsx) —
+  intersection-driven reveal primitive (`variant`, `stagger`, `as`, `delay`).
+  Reuse; never re-implement.
+- [components/](../../../components/) — section components. Each section is a
+  cohesive unit; do not split prematurely.
+- [app/globals.css](../../../app/globals.css) — utility classes (`card-hover`,
+  `sheen`, `tilt`, `btn-lift`, `glow-border`, `marquee`, `aurora-orb`,
+  `stagger`/`stagger-item`). Compose; never inline-replicate.
+- New shared primitives go in `components/ui/` (create the folder when the
+  second consumer appears — never on the first).
+
+### 8.7 The "rule of three"
+
+Don't extract a component on the first occurrence. On the **third** occurrence
+of the same pattern, extract. Premature abstraction is more expensive than
+duplication.
+
+## 9. Production-grade engineering discipline
+
+Write code as if it ships to production tonight and is read by a stranger
+tomorrow.
+
+### 9.1 Clean code non-negotiables
+
+- **Naming carries intent.** `tier`, not `t`. `isFeaturedTier`, not `flag`.
+  Function names are verbs (`renderPricingTier`, `formatCredit`); component and
+  type names are nouns (`PricingTier`, `TierProps`).
+- **Functions do one thing.** If you can describe a function with "and," split
+  it. Target ≤ 30 lines, ≤ 3 levels of nesting.
+- **Early returns over nested conditionals.** Guard clauses first; happy path
+  flat at the bottom.
+- **No dead code.** Delete commented-out blocks, unused imports, unreachable
+  branches immediately.
+- **No magic strings/numbers** (status codes, role names, breakpoints,
+  durations). Promote to a typed constant or token.
+- **Comments explain _why_, never _what_.** If the code needs a comment to
+  explain what it does, rename a variable or extract a function instead.
+- **Public APIs are documented by types**, not by JSDoc. Strict TypeScript, no
+  `any`, no `as` casts unless asserting a runtime guarantee that's commented.
+
+### 9.2 TypeScript discipline
+
+- `strict: true` everywhere. Treat type errors as build failures.
+- **Domain types live next to domain code**, not in a global `types.ts` dump.
+- Prefer `interface` for object contracts (extends well), `type` for unions,
+  intersections, and mapped types.
+- **Avoid `enum`**; prefer `as const` objects + derived union types.
+- **Discriminated unions** for state machines and variant props.
+- **Narrow at boundaries**: API responses, URL params, form input. Inside the
+  app, types should already be precise.
+- **`unknown` over `any`** for untrusted data. Always narrow before use.
+- **Exhaustive switches** with `assertNever` on the default branch.
+
+### 9.3 React discipline
+
+- Hooks at the top level, never conditional. Custom hooks named `useX`.
+- **Effects are an escape hatch**, not a default. If you can derive it, derive
+  it. If you can compute it during render, compute it.
+- **No setState in `useEffect` synchronously** (lint rule
+  `react-hooks/set-state-in-effect`). Use lazy initial state or derive from
+  props.
+- **Cleanup every subscription** (`return () => observer.disconnect()`).
+- Server components by default in Next.js 16; client components are opt-in.
+- Suspense + streaming for async data; never block the route shell.
+
+### 9.4 Performance budget
+
+- **First Load JS** ≤ 200 KB per route (gzip). Audit with `next build` output.
+- **LCP** ≤ 2.5 s, **CLS** ≤ 0.1, **INP** ≤ 200 ms on a 4× CPU-throttled Moto
+  G4.
+- **No layout thrash.** Animate only `transform` and `opacity`. Reads before
+  writes.
+- **Images** via `next/image` with explicit `sizes`; videos lazy-mounted with
+  posters; fonts via `next/font` with `display: swap`.
+- **Tree-shake**: prefer named imports, avoid `import * as`.
+- **No client-side data fetching for above-the-fold content.** Use RSC + cache.
+
+### 9.5 Accessibility (engineering side)
+
+- Semantic HTML first (`<button>`, `<a>`, `<nav>`, `<main>`, `<h1>`–`<h6>`),
+  ARIA only as a last resort.
+- Every interactive element has a focus state, a label, and a keyboard path.
+- `aria-hidden` only on truly decorative content; never on focusable elements.
+- Skip-link to `<main id="content">` on every page.
+- Tested with keyboard-only and a screen reader before shipping.
+
+### 9.6 Error handling, edge states, observability
+
+- **Render every state**: empty, loading, partial, error, offline,
+  unauthenticated, rate-limited. None are afterthoughts.
+- **Error boundaries** at route + section level. Never let the whole tree die.
+- **Fail loud in dev, soft in prod.** Surface errors in dev console with
+  context; show user-safe fallback in prod.
+- **Log decisions, not noise.** Log every server error with a correlation ID and
+  the inputs that produced it.
+- **No silent catches.** `catch` either handles, rethrows, or logs — never
+  swallows.
+
+### 9.7 Security baseline (OWASP-aware)
+
+- Treat every input as hostile. Validate at the boundary; trust nothing inside.
+- **Never** dangerously set HTML on user content. If you must, sanitize with a
+  vetted library.
+- Secrets never in client bundles. Use server actions, route handlers, or env
+  vars on the server.
+- Strict CSP. No inline scripts, no `unsafe-eval`. Hash or nonce images and
+  styles where required.
+- Auth on every mutation; verify origin and session.
+- Avoid `target="_blank"` without `rel="noopener noreferrer"`.
+
+### 9.8 Testing strategy
+
+- **Unit** for pure logic and utility functions.
+- **Component tests** (Testing Library) for behavior and accessibility, not
+  implementation details.
+- **E2E** (Playwright) for the critical user journeys: hero → pricing → CTA.
+- **Visual regression** for key sections at 360, 768, 1440.
+- **Lint and types in CI** — green on every PR. No skipped tests, no `.only`.
+
+### 9.9 Git & change hygiene
+
+- Commits are imperative, ≤ 72 chars subject, optional body explaining _why_.
+- One concern per commit. Refactors do not ride along with features.
+- PRs ≤ 400 lines of diff when possible. Include before/after screenshots for UI
+  work.
+- Never `--force` push shared branches. `--force-with-lease` if you must.
+- `npm run lint && npm run build` green before push, every time.
+
+### 9.10 Reading list (mental model anchors)
+
+- Tailwind v4 + CSS variables for tokens (this repo).
+- shadcn/ui + Radix primitives — the canonical reusable-component pattern.
+- Linear, Vercel, Stripe engineering blogs — the bar for craft.
+- Kent C. Dodds on testing trophies; Dan Abramov on `useEffect`; Sebastian
+  Markbåge on RSC mental model.
+
+## 10. Output discipline
 
 - Implement changes; don't only describe them.
 - Match existing code style exactly (quote style, JSX attribute formatting,
@@ -165,7 +382,7 @@ card" is.
 - Run `npm run lint && npm run build` after every UI change. Both green.
 - When in doubt, mirror the closest existing component.
 
-## 9. Authoritative references for this product
+## 11. Authoritative references for this product
 
 - `snap-pro-ui` skill — tokens, utilities, asset specs, ScrollReveal API.
 - [components/](../../../components/) — canonical patterns. Read the closest
