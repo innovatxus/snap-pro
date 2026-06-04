@@ -1,7 +1,7 @@
 export default function FinalCTA() {
   return (
-    <section className='relative z-10 mt-50 text-center'>
-      <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
+    <section className='relative z-10 mt-60 text-center'>
+      <div className='max-w-370 mx-auto px-12 max-[720px]:px-6'>
         {/* Glow blob */}
         <div
           aria-hidden
@@ -10,24 +10,24 @@ export default function FinalCTA() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%,-50%)",
-            width: 600,
-            height: 300,
+            width: 1000,
+            height: 500,
             background:
-              "radial-gradient(ellipse, rgba(56,189,248,0.08) 0%, transparent 70%)",
-            filter: "blur(40px)",
+              "radial-gradient(ellipse, rgba(56,189,248,0.11) 0%, transparent 68%)",
+            filter: "blur(60px)",
             pointerEvents: "none",
           }}
         />
 
         <div className='relative flex flex-col items-center'>
           {/* Eyebrow */}
-          <div className='flex items-center gap-3 mb-8'>
+          <div className='flex items-center gap-3 mb-10'>
             <span className='blue-pulse' />
             <span
               style={{
                 fontFamily: "var(--font-geist-mono), monospace",
-                fontSize: 11,
-                letterSpacing: "0.14em",
+                fontSize: 12,
+                letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: "var(--mute)",
               }}
@@ -40,13 +40,13 @@ export default function FinalCTA() {
           <h2
             className='font-fraunces mx-auto'
             style={{
-              fontSize: "clamp(48px, 6vw, 96px)",
+              fontSize: "clamp(64px, 9vw, 140px)",
               fontWeight: 300,
-              lineHeight: 0.92,
+              lineHeight: 0.9,
               letterSpacing: "-0.04em",
               color: "var(--ink)",
-              maxWidth: 800,
-              marginBottom: 28,
+              maxWidth: 1100,
+              marginBottom: 36,
             }}
           >
             Your studio.
@@ -57,11 +57,11 @@ export default function FinalCTA() {
           {/* Body */}
           <p
             style={{
-              fontSize: 17,
+              fontSize: 20,
               color: "var(--mute)",
               lineHeight: 1.55,
-              maxWidth: 520,
-              marginBottom: 48,
+              maxWidth: 560,
+              marginBottom: 60,
               fontFamily: "var(--font-geist-sans), sans-serif",
             }}
           >
@@ -69,23 +69,23 @@ export default function FinalCTA() {
           </p>
 
           {/* Store buttons */}
-          <div className='flex flex-col sm:flex-row items-center gap-4 mb-8'>
+          <div className='flex flex-col sm:flex-row items-center gap-5 mb-10'>
             {/* App Store */}
             <button
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 12,
-                padding: "14px 24px",
-                borderRadius: 16,
+                gap: 16,
+                padding: "18px 32px",
+                borderRadius: 20,
                 background: "#000",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.18)",
                 cursor: "pointer",
                 transition: "all 0.2s ease",
-                minWidth: 180,
+                minWidth: 220,
               }}
             >
-              <svg width='22' height='26' viewBox='0 0 22 26' fill='none'>
+              <svg width='28' height='34' viewBox='0 0 22 26' fill='none'>
                 <path
                   d='M18.2 13.8C18.2 10.8 20.6 9.5 20.7 9.4C19.3 7.3 17 7 16.3 6.9C14.3 6.7 12.4 8 11.4 8C10.4 8 8.8 7 7.1 7C4.9 7.1 2.9 8.2 1.7 10C-0.6 13.6 1.1 19 3.4 21.9C4.5 23.3 5.8 24.9 7.5 24.9C9.2 24.9 9.8 23.9 11.8 23.9C13.8 23.9 14.4 24.9 16.2 24.9C17.9 24.9 19.1 23.4 20.2 22C21.5 20.4 22 18.8 22 18.7C22 18.7 18.2 17.2 18.2 13.8Z'
                   fill='white'
@@ -98,18 +98,19 @@ export default function FinalCTA() {
               <div className='text-left'>
                 <p
                   style={{
-                    fontSize: 9,
+                    fontSize: 10,
                     color: "rgba(255,255,255,0.5)",
                     fontFamily: "var(--font-geist-mono)",
-                    letterSpacing: "0.06em",
+                    letterSpacing: "0.07em",
                     textTransform: "uppercase",
+                    marginBottom: 2,
                   }}
                 >
                   Download on the
                 </p>
                 <p
                   style={{
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: 600,
                     color: "white",
                     fontFamily: "var(--font-geist-sans)",
@@ -125,17 +126,17 @@ export default function FinalCTA() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 12,
-                padding: "14px 24px",
-                borderRadius: 16,
+                gap: 16,
+                padding: "18px 32px",
+                borderRadius: 20,
                 background: "#000",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.18)",
                 cursor: "pointer",
                 transition: "all 0.2s ease",
-                minWidth: 180,
+                minWidth: 220,
               }}
             >
-              <svg width='22' height='24' viewBox='0 0 22 24' fill='none'>
+              <svg width='28' height='31' viewBox='0 0 22 24' fill='none'>
                 <path
                   d='M1.5 0.5L13.5 12L1.5 23.5C0.9 23.2 0.5 22.6 0.5 22V2C0.5 1.4 0.9 0.8 1.5 0.5Z'
                   fill='#00D2FF'
@@ -150,18 +151,19 @@ export default function FinalCTA() {
               <div className='text-left'>
                 <p
                   style={{
-                    fontSize: 9,
+                    fontSize: 10,
                     color: "rgba(255,255,255,0.5)",
                     fontFamily: "var(--font-geist-mono)",
-                    letterSpacing: "0.06em",
+                    letterSpacing: "0.07em",
                     textTransform: "uppercase",
+                    marginBottom: 2,
                   }}
                 >
                   Get it on
                 </p>
                 <p
                   style={{
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: 600,
                     color: "white",
                     fontFamily: "var(--font-geist-sans)",
