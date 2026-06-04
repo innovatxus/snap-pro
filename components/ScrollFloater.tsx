@@ -20,8 +20,7 @@ export default function ScrollFloater() {
     const update = () => {
       raf = 0;
       const y = window.scrollY;
-      const max =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
       const fold = window.innerHeight * 0.6;
 
       setShowUp(y > fold);
@@ -43,8 +42,7 @@ export default function ScrollFloater() {
     };
   }, []);
 
-  const goTop = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const goTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const goBottom = () =>
     window.scrollTo({
@@ -67,16 +65,16 @@ export default function ScrollFloater() {
       }}
     >
       <FloatBtn
-        kind="up"
+        kind='up'
         visible={showUp}
         onClick={goTop}
-        label="Scroll to top"
+        label='Scroll to top'
       />
       <FloatBtn
-        kind="down"
+        kind='down'
         visible={showDown}
         onClick={goBottom}
-        label="Scroll to bottom"
+        label='Scroll to bottom'
       />
     </div>
   );
@@ -92,7 +90,7 @@ interface FloatBtnProps {
 function FloatBtn({ kind, visible, label, onClick }: FloatBtnProps) {
   return (
     <button
-      type="button"
+      type='button'
       aria-label={label}
       title={label}
       onClick={onClick}
@@ -102,8 +100,7 @@ function FloatBtn({ kind, visible, label, onClick }: FloatBtnProps) {
         height: 44,
         borderRadius: 999,
         border: "1px solid var(--line)",
-        background:
-          "color-mix(in oklab, var(--surface) 78%, transparent)",
+        background: "color-mix(in oklab, var(--surface) 78%, transparent)",
         backdropFilter: "blur(14px) saturate(140%)",
         WebkitBackdropFilter: "blur(14px) saturate(140%)",
         color: "var(--ink)",
@@ -134,21 +131,21 @@ function FloatBtn({ kind, visible, label, onClick }: FloatBtnProps) {
       }}
     >
       <svg
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
-        fill="none"
-        aria-hidden="true"
+        width='14'
+        height='14'
+        viewBox='0 0 14 14'
+        fill='none'
+        aria-hidden='true'
         style={{
           transform: kind === "up" ? "rotate(0deg)" : "rotate(180deg)",
         }}
       >
         <path
-          d="M3.5 8.5L7 5l3.5 3.5"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          d='M3.5 8.5L7 5l3.5 3.5'
+          stroke='currentColor'
+          strokeWidth='1.6'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </svg>
     </button>
