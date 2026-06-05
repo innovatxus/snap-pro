@@ -1,68 +1,182 @@
+"use client";
+
 import type { ReactNode, CSSProperties } from "react";
+import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
+import { useLocale } from "./legal/LocaleProvider";
+import LocaleSwitcher from "./legal/LocaleSwitcher";
+import RegionalStrip from "./legal/RegionalStrip";
+import { UI } from "@/lib/legal/i18n";
+import type { BiText } from "@/lib/legal/types";
 
 const YEAR = new Date().getFullYear();
 
 /* ─────────────────────────────────────────────────────────
-   NAV COLUMNS
-   Inspired by Higgsfield's multi-column footer structure,
-   adapted to Snap Pro's e-commerce AI studio mission.
+   NAV COLUMNS — bilingual, real routes.
+   Six columns per the audit:
+   Product · Solutions · Resources · Support · Company · Trust & Legal.
 ───────────────────────────────────────────────────────── */
-const COLUMNS: {
-  heading: string;
-  links: { label: string; badge?: string }[];
-}[] = [
+type FooterLink = {
+  label: BiText;
+  href: string;
+  badge?: "new" | "soon" | "hiring";
+};
+type FooterColumn = { heading: BiText; links: FooterLink[] };
+
+const COLUMNS: FooterColumn[] = [
   {
-    heading: "Services",
+    heading: UI.footer.headings.product,
     links: [
-      { label: "All 17 Services" },
-      { label: "Background Removal" },
-      { label: "AI Scene Staging" },
-      { label: "Ghost Mannequin" },
-      { label: "Color Grading" },
-      { label: "Social Resize" },
+      { label: { en: "Features", ar: "الميزات" }, href: "/#services" },
+      { label: { en: "Pricing", ar: "الأسعار" }, href: "/pricing" },
+      { label: { en: "Integrations", ar: "التكاملات" }, href: "/integrations" },
+      { label: { en: "Templates", ar: "القوالب" }, href: "/templates" },
+      {
+        label: { en: "Changelog", ar: "سجلّ التحديثات" },
+        href: "/changelog",
+        badge: "new",
+      },
+      { label: { en: "Roadmap", ar: "خارطة الطريق" }, href: "/roadmap" },
     ],
   },
   {
-    heading: "Product",
+    heading: UI.footer.headings.solutions,
     links: [
-      { label: "Pricing" },
-      { label: "Enterprise" },
-      { label: "Team Plans" },
-      { label: "Integrations" },
-      { label: "API", badge: "Soon" },
-      { label: "Changelog", badge: "New" },
+      {
+        label: { en: "All 17 Services", ar: "كل الخدمات الـ17" },
+        href: "/#services",
+      },
+      {
+        label: { en: "For E-commerce", ar: "للتجارة الإلكترونية" },
+        href: "/#services",
+      },
+      { label: { en: "For Agencies", ar: "للوكالات" }, href: "/partners" },
+      { label: { en: "For Retail", ar: "للتجزئة" }, href: "/enterprise" },
+      { label: { en: "Enterprise", ar: "المؤسّسات" }, href: "/enterprise" },
+      {
+        label: { en: "Customer Stories", ar: "قصص العملاء" },
+        href: "/customers",
+      },
     ],
   },
   {
-    heading: "Resources",
+    heading: UI.footer.headings.resources,
     links: [
-      { label: "Documentation" },
-      { label: "Video Tutorials" },
-      { label: "Blog" },
-      { label: "Templates" },
-      { label: "Community" },
-      { label: "Prompt Guide" },
+      { label: { en: "Documentation", ar: "التوثيق" }, href: "/help" },
+      { label: { en: "Blog", ar: "المدوّنة" }, href: "/blog" },
+      { label: { en: "Tutorials", ar: "الدروس" }, href: "/tutorials" },
+      { label: { en: "Templates", ar: "القوالب" }, href: "/templates" },
+      { label: { en: "Learn", ar: "تعلّم" }, href: "/learn" },
+      { label: { en: "Community", ar: "المجتمع" }, href: "/community" },
     ],
   },
   {
-    heading: "Company",
+    heading: UI.footer.headings.support,
     links: [
-      { label: "About Us" },
-      { label: "Careers", badge: "Hiring" },
-      { label: "Press Kit" },
-      { label: "Trust & Security" },
-      { label: "Contact" },
-      { label: "Legal" },
+      { label: { en: "Help Center", ar: "مركز المساعدة" }, href: "/help" },
+      { label: { en: "FAQ", ar: "الأسئلة الشائعة" }, href: "/faq" },
+      {
+        label: { en: "Contact Support", ar: "تواصل مع الدعم" },
+        href: "/contact",
+      },
+      { label: { en: "System Status", ar: "حالة النظام" }, href: "/status" },
+      { label: { en: "Community", ar: "المجتمع" }, href: "/community" },
+      {
+        label: { en: "Report Abuse", ar: "بلِّغ عن إساءة" },
+        href: "/policies/ai-abuse",
+      },
+    ],
+  },
+  {
+    heading: UI.footer.headings.company,
+    links: [
+      { label: { en: "About", ar: "من نحن" }, href: "/about" },
+      {
+        label: { en: "Careers", ar: "الوظائف" },
+        href: "/careers",
+        badge: "hiring",
+      },
+      { label: { en: "Press", ar: "الصحافة" }, href: "/press" },
+      { label: { en: "Partners", ar: "الشركاء" }, href: "/partners" },
+      { label: { en: "Affiliates", ar: "المسوّقون" }, href: "/affiliates" },
+      { label: { en: "Contact", ar: "تواصل" }, href: "/contact" },
+    ],
+  },
+  {
+    heading: UI.footer.headings.trustLegal,
+    links: [
+      { label: { en: "Trust Center", ar: "مركز الثقة" }, href: "/trust" },
+      { label: { en: "Security", ar: "الأمن" }, href: "/trust/security" },
+      {
+        label: { en: "Compliance", ar: "الامتثال" },
+        href: "/trust/compliance",
+      },
+      {
+        label: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
+        href: "/legal/privacy",
+      },
+      {
+        label: { en: "Terms of Service", ar: "شروط الخدمة" },
+        href: "/legal/terms",
+      },
+      {
+        label: { en: "Cookie Policy", ar: "سياسة الكوكيز" },
+        href: "/legal/cookies",
+      },
+      {
+        label: { en: "Acceptable Use", ar: "الاستخدام المقبول" },
+        href: "/legal/acceptable-use",
+      },
+      {
+        label: { en: "Refund Policy", ar: "سياسة الاسترداد" },
+        href: "/legal/refunds",
+      },
+      {
+        label: { en: "Subscription Terms", ar: "شروط الاشتراك" },
+        href: "/legal/subscription",
+      },
+      {
+        label: { en: "DPA", ar: "اتفاقية معالجة البيانات" },
+        href: "/legal/dpa",
+      },
+      {
+        label: { en: "Sub-processors", ar: "المعالجون الفرعيون" },
+        href: "/legal/sub-processors",
+      },
+      {
+        label: { en: "AI Usage", ar: "استخدام الذكاء الاصطناعي" },
+        href: "/policies/ai-usage",
+      },
+      {
+        label: { en: "Responsible AI", ar: "الذكاء الاصطناعي المسؤول" },
+        href: "/policies/responsible-ai",
+      },
+      {
+        label: {
+          en: "AI Content Ownership",
+          ar: "ملكية محتوى الذكاء الاصطناعي",
+        },
+        href: "/policies/ai-content-ownership",
+      },
+      {
+        label: { en: "Accessibility", ar: "إمكانية الوصول" },
+        href: "/accessibility",
+      },
+      { label: { en: "DMCA", ar: "إشعارات DMCA" }, href: "/legal/dmca" },
     ],
   },
 ];
 
+const BOTTOM_LEGAL: FooterLink[] = [
+  { label: { en: "Privacy", ar: "الخصوصية" }, href: "/legal/privacy" },
+  { label: { en: "Terms", ar: "الشروط" }, href: "/legal/terms" },
+  { label: { en: "Cookies", ar: "الكوكيز" }, href: "/legal/cookies" },
+  { label: { en: "Sitemap", ar: "خريطة الموقع" }, href: "/sitemap" },
+];
+
 /* ─────────────────────────────────────────────────────────
-   SOCIAL ICONS
-   Brand colors on dark surface — platforms chosen for
-   e-commerce sellers (visual-first communities only).
-   Excluded: Snapchat, Reddit, GitHub (off-brand).
+   SOCIAL ICONS — Brand colors on dark surface.
 ───────────────────────────────────────────────────────── */
 function SocialIcons() {
   const socials: {
@@ -213,7 +327,7 @@ function SocialIcons() {
           key={s.label}
           href={s.href}
           aria-label={s.label}
-          className="social-icon-btn"
+          className='social-icon-btn'
           style={
             {
               display: "flex",
@@ -227,7 +341,7 @@ function SocialIcons() {
               textDecoration: "none",
               transition: "border-color 0.2s ease, background 0.2s ease",
               flexShrink: 0,
-              "--brand-hover": `${s.color}40`,
+              ["--brand-hover" as string]: `${s.color}40`,
             } as CSSProperties
           }
         >
@@ -241,25 +355,42 @@ function SocialIcons() {
 /* ─────────────────────────────────────────────────────────
    APP STORE BADGES
 ───────────────────────────────────────────────────────── */
+const badgeStyle: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 8,
+  padding: "8px 14px",
+  borderRadius: 10,
+  background: "var(--surface-2)",
+  border: "1px solid var(--line-2)",
+  textDecoration: "none",
+  transition: "border-color 0.2s ease",
+};
+
+const badgeTopline: CSSProperties = {
+  fontFamily: "var(--font-geist-mono), monospace",
+  fontSize: 7,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  color: "var(--mute)",
+};
+
+const badgeName: CSSProperties = {
+  fontFamily: "var(--font-geist-sans), sans-serif",
+  fontSize: 12,
+  fontWeight: 600,
+  color: "var(--ink)",
+  letterSpacing: "-0.01em",
+};
+
 function StoreBadges() {
+  const { locale } = useLocale();
+  const downloadOn = locale === "ar" ? "حمّل من" : "Download on the";
+  const getOn = locale === "ar" ? "احصل عليه من" : "Get it on";
+
   return (
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-      {/* App Store */}
-      <a
-        href='#'
-        className="store-badge"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          padding: "8px 14px",
-          borderRadius: 10,
-          background: "var(--surface-2)",
-          border: "1px solid var(--line-2)",
-          textDecoration: "none",
-          transition: "border-color 0.2s ease",
-        }}
-      >
+      <a href='#' className='store-badge' style={badgeStyle}>
         <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
           <path
             d='M11.4 8.6C11.4 6.8 12.9 5.9 13 5.8c-.8-1.2-2.1-1.4-2.6-1.4-1.1-.1-2.2.6-2.7.6-.5 0-1.4-.6-2.3-.6C4.1 4.4 2.9 5.1 2.2 6.2.9 8.3 1.9 11.4 3.2 13.2c.7.9 1.4 2 2.4 1.9 1-.1 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-.9 2.4-1.9c.7-.9 1-1.8 1-1.9 0 0-2.2-.9-2.6-3.7z'
@@ -271,47 +402,12 @@ function StoreBadges() {
           />
         </svg>
         <div>
-          <div
-            style={{
-              fontFamily: "var(--font-geist-mono), monospace",
-              fontSize: 7,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "var(--mute)",
-            }}
-          >
-            Download on the
-          </div>
-          <div
-            style={{
-              fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: 12,
-              fontWeight: 600,
-              color: "var(--ink)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            App Store
-          </div>
+          <div style={badgeTopline}>{downloadOn}</div>
+          <div style={badgeName}>App Store</div>
         </div>
       </a>
 
-      {/* Google Play */}
-      <a
-        href='#'
-        className="store-badge"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          padding: "8px 14px",
-          borderRadius: 10,
-          background: "var(--surface-2)",
-          border: "1px solid var(--line-2)",
-          textDecoration: "none",
-          transition: "border-color 0.2s ease",
-        }}
-      >
+      <a href='#' className='store-badge' style={badgeStyle}>
         <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
           <path d='M2 1.5L9.5 8 2 14.5V1.5z' fill='#38BDF8' opacity='0.7' />
           <path d='M2 1.5l8.5 3.5-3 3L2 1.5z' fill='#A8AEB8' opacity='0.8' />
@@ -323,28 +419,8 @@ function StoreBadges() {
           <path d='M2 14.5l7.5-6.5-3-3L2 14.5z' fill='#C8B6FF' opacity='0.7' />
         </svg>
         <div>
-          <div
-            style={{
-              fontFamily: "var(--font-geist-mono), monospace",
-              fontSize: 7,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "var(--mute)",
-            }}
-          >
-            Get it on
-          </div>
-          <div
-            style={{
-              fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: 12,
-              fontWeight: 600,
-              color: "var(--ink)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Google Play
-          </div>
+          <div style={badgeTopline}>{getOn}</div>
+          <div style={badgeName}>Google Play</div>
         </div>
       </a>
     </div>
@@ -354,16 +430,11 @@ function StoreBadges() {
 /* ─────────────────────────────────────────────────────────
    LINK COLUMN
 ───────────────────────────────────────────────────────── */
-function LinkColumn({
-  heading,
-  links,
-}: {
-  heading: string;
-  links: { label: string; badge?: string }[];
-}) {
+function LinkColumn({ column }: { column: FooterColumn }) {
+  const { locale } = useLocale();
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {/* Heading */}
       <div
         style={{
           display: "flex",
@@ -392,68 +463,183 @@ function LinkColumn({
             whiteSpace: "nowrap",
           }}
         >
-          {heading}
+          {column.heading[locale]}
         </span>
       </div>
 
-      {/* Links */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        {links.map(({ label, badge }) => (
-          <a
-            key={label}
-            href='#'
-            className="footer-link"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              textDecoration: "none",
-              fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: 13,
-              color: "var(--mute)",
-              letterSpacing: "-0.01em",
-              transition: "color 0.15s ease",
-            }}
-          >
-            {label}
-            {badge && (
-              <span
-                style={{
-                  fontSize: 8,
-                  fontFamily: "var(--font-geist-mono), monospace",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color:
-                    badge === "New"
-                      ? "#38BDF8"
-                      : badge === "Hiring"
-                        ? "#FFC857"
-                        : "var(--mute)",
-                  background:
-                    badge === "New"
-                      ? "rgba(56,189,248,0.1)"
-                      : badge === "Hiring"
-                        ? "rgba(255,200,87,0.1)"
-                        : "var(--surface-2)",
-                  border: `1px solid ${
-                    badge === "New"
-                      ? "rgba(56,189,248,0.25)"
-                      : badge === "Hiring"
-                        ? "rgba(255,200,87,0.25)"
-                        : "var(--line)"
-                  }`,
-                  borderRadius: 4,
-                  padding: "2px 5px",
-                  lineHeight: 1.4,
-                }}
-              >
-                {badge}
-              </span>
-            )}
-          </a>
-        ))}
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {column.links.map((link) => {
+          const badgeText =
+            link.badge === "new"
+              ? locale === "ar"
+                ? "جديد"
+                : "New"
+              : link.badge === "soon"
+                ? locale === "ar"
+                  ? "قريباً"
+                  : "Soon"
+                : link.badge === "hiring"
+                  ? locale === "ar"
+                    ? "نوظّف"
+                    : "Hiring"
+                  : null;
+
+          return (
+            <Link
+              key={link.href + link.label.en}
+              href={link.href}
+              className='footer-link'
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                textDecoration: "none",
+                fontFamily: "var(--font-geist-sans), sans-serif",
+                fontSize: 13,
+                color: "var(--mute)",
+                letterSpacing: "-0.01em",
+                transition: "color 0.15s ease",
+                lineHeight: 1.45,
+              }}
+            >
+              {link.label[locale]}
+              {badgeText && (
+                <span
+                  style={{
+                    fontSize: 8,
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color:
+                      link.badge === "new"
+                        ? "#38BDF8"
+                        : link.badge === "hiring"
+                          ? "#FFC857"
+                          : "var(--mute)",
+                    background:
+                      link.badge === "new"
+                        ? "rgba(56,189,248,0.1)"
+                        : link.badge === "hiring"
+                          ? "rgba(255,200,87,0.1)"
+                          : "var(--surface-2)",
+                    border: `1px solid ${
+                      link.badge === "new"
+                        ? "rgba(56,189,248,0.25)"
+                        : link.badge === "hiring"
+                          ? "rgba(255,200,87,0.25)"
+                          : "var(--line)"
+                    }`,
+                    borderRadius: 4,
+                    padding: "2px 5px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {badgeText}
+                </span>
+              )}
+            </Link>
+          );
+        })}
       </div>
     </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
+   NEWSLETTER
+───────────────────────────────────────────────────────── */
+function Newsletter() {
+  const { locale } = useLocale();
+  const [submitted, setSubmitted] = useState(false);
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    // Newsletter wiring lands with the marketing pipeline; confirm submission
+    // locally so the form gives feedback in both locales.
+    setSubmitted(true);
+  }
+
+  return (
+    <form
+      onSubmit={onSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 10,
+        maxWidth: 360,
+        flex: "1 1 320px",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--font-geist-mono), monospace",
+          fontSize: 9,
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "#38BDF8",
+        }}
+      >
+        {UI.footer.newsletter.eyebrow[locale]}
+      </div>
+      <div style={{ display: "flex", gap: 8 }}>
+        <input
+          type='email'
+          required
+          aria-label={UI.footer.newsletter.eyebrow[locale]}
+          placeholder={UI.footer.newsletter.placeholder[locale]}
+          style={{
+            flex: 1,
+            background: "var(--surface-2)",
+            border: "1px solid var(--line-2)",
+            borderRadius: 10,
+            padding: "10px 14px",
+            color: "var(--ink)",
+            fontSize: 13,
+            fontFamily: "inherit",
+            outline: "none",
+          }}
+        />
+        <button
+          type='submit'
+          style={{
+            padding: "10px 18px",
+            borderRadius: 10,
+            background: "var(--silver-grad)",
+            color: "#000",
+            fontWeight: 600,
+            fontSize: 13,
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          {UI.footer.newsletter.cta[locale]}
+        </button>
+      </div>
+      <p
+        style={{
+          margin: 0,
+          fontSize: 11,
+          color: "var(--mute-2)",
+          lineHeight: 1.5,
+        }}
+      >
+        {UI.footer.newsletter.consent[locale]}
+      </p>
+      {submitted && (
+        <p
+          role='status'
+          style={{
+            margin: 0,
+            fontSize: 12,
+            color: "#38BDF8",
+          }}
+        >
+          {locale === "ar"
+            ? "تم — شكراً لاشتراكك."
+            : "Done — thanks for subscribing."}
+        </p>
+      )}
+    </form>
   );
 }
 
@@ -461,9 +647,15 @@ function LinkColumn({
    FOOTER ROOT
 ───────────────────────────────────────────────────────── */
 export default function Footer() {
+  const { locale } = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <footer className='relative z-10 mt-50 overflow-hidden'>
-      {/* Top ambient blue glow */}
+    <footer
+      className='relative z-10 mt-50 overflow-hidden'
+      lang={locale}
+      dir={dir}
+    >
       <div
         aria-hidden
         style={{
@@ -485,16 +677,16 @@ export default function Footer() {
       {/* ── Main grid ── */}
       <div
         className='max-w-370 mx-auto max-[720px]:px-4'
-        style={{ padding: "72px 48px 64px" }}
+        style={{ padding: "72px 48px 48px" }}
       >
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1.2fr 1fr 1fr 1fr 1fr",
-            gap: "48px",
+            gridTemplateColumns: "1.2fr repeat(6, 1fr)",
+            gap: "40px",
             alignItems: "start",
           }}
-          className='max-[1024px]:grid-cols-2 max-[1024px]:gap-10 max-[720px]:grid-cols-1'
+          className='max-[1280px]:grid-cols-4 max-[1024px]:grid-cols-3 max-[720px]:grid-cols-1 max-[720px]:gap-10'
         >
           {/* ── Brand column ── */}
           <div
@@ -517,8 +709,9 @@ export default function Footer() {
                 maxWidth: 280,
               }}
             >
-              Professional AI photo editing for e-commerce sellers. 17 services,
-              25 free credits monthly. No designer needed.
+              {locale === "ar"
+                ? "تحرير صور احترافي بالذكاء الاصطناعي لبائعي التجارة الإلكترونية. 17 خدمة و25 رصيداً مجانياً شهرياً."
+                : "Professional AI photo editing for e-commerce sellers. 17 services, 25 free credits monthly."}
             </p>
 
             <SocialIcons />
@@ -527,14 +720,31 @@ export default function Footer() {
 
           {/* ── Link columns ── */}
           {COLUMNS.map((col) => (
-            <LinkColumn
-              key={col.heading}
-              heading={col.heading}
-              links={col.links}
-            />
+            <LinkColumn key={col.heading.en} column={col} />
           ))}
         </div>
       </div>
+
+      {/* ── Utility row: newsletter + locale switcher ── */}
+      <div style={{ borderTop: "1px solid var(--line)" }}>
+        <div
+          className='max-w-370 mx-auto max-[720px]:px-4'
+          style={{
+            padding: "28px 48px",
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            gap: 32,
+            flexWrap: "wrap",
+          }}
+        >
+          <Newsletter />
+          <LocaleSwitcher variant='footer' />
+        </div>
+      </div>
+
+      {/* ── Regional disclosure strip ── */}
+      <RegionalStrip />
 
       {/* ── Bottom bar ── */}
       <div style={{ borderTop: "1px solid var(--line)" }}>
@@ -549,7 +759,6 @@ export default function Footer() {
             flexWrap: "wrap",
           }}
         >
-          {/* Copyright */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span className='blue-pulse' />
             <span
@@ -561,36 +770,37 @@ export default function Footer() {
                 color: "var(--mute)",
               }}
             >
-              © {YEAR} Snap Pro, Inc. — All rights reserved
+              © {YEAR} Snap Pro, Inc. — {UI.footer.rights[locale]}
             </span>
           </div>
 
-          {/* Status */}
-          <div />
-
-          {/* Legal */}
-          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            {["Privacy Policy", "Terms of Service", "Cookie Settings"].map(
-              (label) => (
-                <a
-                  key={label}
-                  href='#'
-                  className="footer-legal-link"
-                  style={{
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    fontSize: 10,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "var(--mute-2)",
-                    textDecoration: "none",
-                    transition: "color 0.15s ease",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {label}
-                </a>
-              ),
-            )}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 20,
+              flexWrap: "wrap",
+            }}
+          >
+            {BOTTOM_LEGAL.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className='footer-legal-link'
+                style={{
+                  fontFamily: "var(--font-geist-mono), monospace",
+                  fontSize: 10,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--mute-2)",
+                  textDecoration: "none",
+                  transition: "color 0.15s ease",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {link.label[locale]}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

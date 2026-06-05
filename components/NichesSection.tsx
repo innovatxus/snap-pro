@@ -60,6 +60,7 @@ export default function NichesSection() {
         {/* 3-col niche grid */}
         <ScrollReveal
           stagger
+          threshold={0}
           className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'
         >
           {NICHES.map((niche) => (

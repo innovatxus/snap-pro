@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces, Syne } from "next/font/google";
 import ScrollFloater from "@/components/ScrollFloater";
+import { LocaleProvider } from "@/components/legal/LocaleProvider";
 import "./globals.css";
+
+// Inline script: read the persisted locale before hydration so RTL pages render
+// in the correct direction on first paint and avoid a layout flash.
+const LOCALE_BOOTSTRAP = `(function(){try{var l=localStorage.getItem('snap-locale');if(l==='ar'){document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar');}}catch(e){}})();`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,18 +55,22 @@ export default function RootLayout({
     <html
       lang='en'
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${syne.variable}`}
+      suppressHydrationWarning
     >
       <head>
         {/* Preconnect to external image CDNs used by gallery and bento sections */}
         <link rel='preconnect' href='https://images.unsplash.com' />
         <link rel='dns-prefetch' href='https://images.unsplash.com' />
+        <script dangerouslySetInnerHTML={{ __html: LOCALE_BOOTSTRAP }} />
       </head>
       <body className='min-h-screen antialiased' suppressHydrationWarning>
         <a href='#content' className='skip-link'>
           Skip to content
         </a>
-        {children}
-        <ScrollFloater />
+        <LocaleProvider>
+          {children}
+          <ScrollFloater />
+        </LocaleProvider>
       </body>
     </html>
   );
