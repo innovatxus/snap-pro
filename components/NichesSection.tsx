@@ -58,211 +58,212 @@ export default function NichesSection() {
         </div>
 
         {/* 3-col niche grid */}
-        <ScrollReveal stagger className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+        <ScrollReveal
+          stagger
+          className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'
+        >
           {NICHES.map((niche) => (
             <div
               key={niche.id}
               className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative'
-                style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--line)",
-                  borderRadius: "var(--r-xl)",
-                  height: 540,
-                }}
-              >
-                {/* Whole-card click target. Sits above the media/overlay
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--line)",
+                borderRadius: "var(--r-xl)",
+                height: 540,
+              }}
+            >
+              {/* Whole-card click target. Sits above the media/overlay
                     but below the interactive chips below (z-index 20+),
                     so chip deep-links still win their own clicks. */}
-                <Link
-                  href={`/edit/${niche.id}`}
-                  aria-label={`Open ${niche.name}${niche.suffix ? " " + niche.suffix : ""} editor`}
-                  className='absolute inset-0'
-                  style={{ zIndex: 5 }}
+              <Link
+                href={`/edit/${niche.id}`}
+                aria-label={`Open ${niche.name}${niche.suffix ? " " + niche.suffix : ""} editor`}
+                className='absolute inset-0'
+                style={{ zIndex: 5 }}
+              />
+              {/* Video background */}
+              {niche.video && (
+                <video
+                  src={niche.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload='metadata'
+                  className='absolute inset-0 w-full h-full object-cover z-0'
                 />
-                {/* Video background */}
-                {niche.video && (
-                  <video
-                    src={niche.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload='metadata'
-                    className='absolute inset-0 w-full h-full object-cover z-0'
-                  />
-                )}
+              )}
 
-                {/* Image background */}
-                {niche.image && !niche.video && (
-                  <Image
-                    src={niche.image}
-                    alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} photography`}
-                    fill
-                    className='object-cover'
-                    style={{ zIndex: 0 }}
-                    sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
-                  />
-                )}
+              {/* Image background */}
+              {niche.image && !niche.video && (
+                <Image
+                  src={niche.image}
+                  alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} photography`}
+                  fill
+                  className='object-cover'
+                  style={{ zIndex: 0 }}
+                  sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+                />
+              )}
 
-                {/* Gradient overlay */}
-                {(niche.video || niche.image) && (
-                  <div
-                    className='absolute inset-0'
-                    style={{
-                      zIndex: 1,
-                      background:
-                        "linear-gradient(to bottom, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%)",
-                    }}
-                  />
-                )}
-
-                {/* Image area */}
+              {/* Gradient overlay */}
+              {(niche.video || niche.image) && (
                 <div
-                  className='relative overflow-hidden'
-                  style={{ height: 310, background: "transparent", zIndex: 2 }}
-                >
-                  {/* Category pill */}
-                  <div className='absolute top-3 left-3'>
-                    <div
-                      className='chip'
-                      style={{
-                        background: "rgba(10,10,10,0.7)",
-                        backdropFilter: "blur(12px)",
-                        fontSize: 9,
-                        padding: "4px 10px",
-                        color: "var(--mute)",
-                        letterSpacing: "0.16em",
-                      }}
-                    >
-                      {niche.label}
-                    </div>
-                  </div>
+                  className='absolute inset-0'
+                  style={{
+                    zIndex: 1,
+                    background:
+                      "linear-gradient(to bottom, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%)",
+                  }}
+                />
+              )}
 
-                  {/* Niche heading */}
-                  <div className='absolute bottom-0 left-0 right-0 p-4'>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-syne)",
-                        fontSize: 24,
-                        fontWeight: 700,
-                        lineHeight: 1.05,
-                        letterSpacing: "0.01em",
-                        color: "var(--ink)",
-                        minHeight: 50,
-                      }}
-                    >
-                      {niche.name}
-                      {niche.suffix ? ` ${niche.suffix} ` : " "}
-                      <em className='silver'>{niche.italicWord}.</em>
-                    </h3>
+              {/* Image area */}
+              <div
+                className='relative overflow-hidden'
+                style={{ height: 310, background: "transparent", zIndex: 2 }}
+              >
+                {/* Category pill */}
+                <div className='absolute top-3 left-3'>
+                  <div
+                    className='chip'
+                    style={{
+                      background: "rgba(10,10,10,0.7)",
+                      backdropFilter: "blur(12px)",
+                      fontSize: 9,
+                      padding: "4px 10px",
+                      color: "var(--mute)",
+                      letterSpacing: "0.16em",
+                    }}
+                  >
+                    {niche.label}
                   </div>
                 </div>
 
-                {/* Services chips */}
-                <div
-                  className='p-4 flex flex-col gap-3 relative'
-                  style={{ zIndex: 10, height: 230 }}
-                >
-                  <div
-                    className='flex flex-wrap gap-2'
+                {/* Niche heading */}
+                <div className='absolute bottom-0 left-0 right-0 p-4'>
+                  <h3
                     style={{
-                      minHeight: 52,
-                      transform: "translateY(90px)",
-                      alignItems: "flex-start",
-                      alignContent: "flex-start",
+                      fontFamily: "var(--font-syne)",
+                      fontSize: 24,
+                      fontWeight: 700,
+                      lineHeight: 1.05,
+                      letterSpacing: "0.01em",
+                      color: "var(--ink)",
+                      minHeight: 50,
                     }}
                   >
-                    {niche.services.slice(0, 3).map((svc) => (
-                      <Link
-                        key={svc.name}
-                        href={`/edit/${niche.id}/${toolSlug(svc.name)}`}
-                        className={`chip ${svc.featured ? "chip-blue" : ""}`}
-                        style={{
-                          fontSize: 9,
-                          gap: 6,
-                          position: "relative",
-                          zIndex: 20,
-                        }}
-                      >
-                        {svc.featured && (
-                          <span
-                            style={{
-                              width: 4,
-                              height: 4,
-                              borderRadius: "50%",
-                              background: "#38BDF8",
-                              boxShadow: "0 0 6px rgba(56,189,248,0.8)",
-                              flexShrink: 0,
-                              display: "inline-block",
-                            }}
-                          />
-                        )}
-                        {svc.name}
-                      </Link>
-                    ))}
-                  </div>
+                    {niche.name}
+                    {niche.suffix ? ` ${niche.suffix} ` : " "}
+                    <em className='silver'>{niche.italicWord}.</em>
+                  </h3>
+                </div>
+              </div>
 
-                  <div className='flex items-center justify-between'>
-                    <span />
-                    <span
+              {/* Services chips. The wrapper is pointer-events:none so
+                    every empty pixel falls through to the whole-card Link
+                    above. Each chip Link below re-enables pointer-events. */}
+              <div
+                className='p-4 flex flex-col gap-3 relative'
+                style={{ zIndex: 10, height: 230, pointerEvents: "none" }}
+              >
+                <div
+                  className='flex flex-wrap gap-2'
+                  style={{
+                    minHeight: 52,
+                    transform: "translateY(90px)",
+                    alignItems: "flex-start",
+                    alignContent: "flex-start",
+                  }}
+                >
+                  {niche.services.slice(0, 3).map((svc) => (
+                    <Link
+                      key={svc.name}
+                      href={`/edit/${niche.id}/${toolSlug(svc.name)}`}
+                      className={`chip ${svc.featured ? "chip-blue" : ""}`}
                       style={{
-                        fontFamily: "var(--font-geist-mono)",
-                        fontSize: 11,
-                        color: "var(--blue)",
-                        fontWeight: 600,
+                        fontSize: 9,
+                        gap: 6,
+                        position: "relative",
+                        zIndex: 20,
+                        pointerEvents: "auto",
                       }}
                     >
-                      {niche.services.length}
-                    </span>
-                  </div>
+                      {svc.featured && (
+                        <span
+                          style={{
+                            width: 4,
+                            height: 4,
+                            borderRadius: "50%",
+                            background: "#38BDF8",
+                            boxShadow: "0 0 6px rgba(56,189,248,0.8)",
+                            flexShrink: 0,
+                            display: "inline-block",
+                          }}
+                        />
+                      )}
+                      {svc.name}
+                    </Link>
+                  ))}
+                </div>
 
-                  {/* CTA row — visual only; the whole-card Link above
+                <div className='flex items-center justify-between'>
+                  <span />
+                  <span
+                    style={{
+                      fontFamily: "var(--font-geist-mono)",
+                      fontSize: 11,
+                      color: "var(--blue)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {niche.services.length}
+                  </span>
+                </div>
+
+                {/* CTA row — visual only; the whole-card Link above
                       handles navigation. Kept as a div so we don't nest
                       <a> tags. */}
-                  <div
-                    className='flex items-center justify-between mt-auto pt-2'
-                    style={{ borderTop: "1px solid var(--line)" }}
+                <div
+                  className='flex items-center justify-between mt-auto pt-2'
+                  style={{ borderTop: "1px solid var(--line)" }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-geist-sans)",
+                      fontSize: 13,
+                      color: "var(--mute)",
+                    }}
                   >
-                    <span
-                      style={{
-                        fontFamily: "var(--font-geist-sans)",
-                        fontSize: 13,
-                        color: "var(--mute)",
-                      }}
-                    >
-                      Explore {niche.name}
-                    </span>
-                    <span
-                      aria-hidden='true'
-                      style={{
-                        width: 32,
-                        height: 32,
-                        borderRadius: 999,
-                        background: "var(--silver-grad)",
-                        border: "none",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow: "var(--shadow-silver)",
-                      }}
-                    >
-                      <svg
-                        width='12'
-                        height='12'
-                        viewBox='0 0 12 12'
-                        fill='none'
-                      >
-                        <path
-                          d='M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9'
-                          stroke='#000'
-                          strokeWidth='1.5'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </svg>
-                    </span>
-                  </div>
+                    Explore {niche.name}
+                  </span>
+                  <span
+                    aria-hidden='true'
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 999,
+                      background: "var(--silver-grad)",
+                      border: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "var(--shadow-silver)",
+                    }}
+                  >
+                    <svg width='12' height='12' viewBox='0 0 12 12' fill='none'>
+                      <path
+                        d='M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9'
+                        stroke='#000'
+                        strokeWidth='1.5'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                    </svg>
+                  </span>
                 </div>
+              </div>
             </div>
           ))}
         </ScrollReveal>
