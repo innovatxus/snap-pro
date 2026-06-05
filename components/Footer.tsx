@@ -1,5 +1,4 @@
-"use client";
-
+import type { ReactNode, CSSProperties } from "react";
 import Logo from "./Logo";
 
 const YEAR = new Date().getFullYear();
@@ -70,7 +69,7 @@ function SocialIcons() {
     label: string;
     href: string;
     color: string;
-    icon: React.ReactNode;
+    icon: ReactNode;
   }[] = [
     {
       label: "Instagram",
@@ -214,29 +213,23 @@ function SocialIcons() {
           key={s.label}
           href={s.href}
           aria-label={s.label}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 36,
-            height: 36,
-            borderRadius: 10,
-            background: "var(--surface-2)",
-            border: "1px solid var(--line-2)",
-            textDecoration: "none",
-            transition: "border-color 0.2s ease, background 0.2s ease",
-            flexShrink: 0,
-          }}
-          onMouseEnter={(e) => {
-            const el = e.currentTarget as HTMLAnchorElement;
-            el.style.borderColor = `${s.color}40`;
-            el.style.background = "var(--surface-3)";
-          }}
-          onMouseLeave={(e) => {
-            const el = e.currentTarget as HTMLAnchorElement;
-            el.style.borderColor = "var(--line-2)";
-            el.style.background = "var(--surface-2)";
-          }}
+          className="social-icon-btn"
+          style={
+            {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 36,
+              height: 36,
+              borderRadius: 10,
+              background: "var(--surface-2)",
+              border: "1px solid var(--line-2)",
+              textDecoration: "none",
+              transition: "border-color 0.2s ease, background 0.2s ease",
+              flexShrink: 0,
+              "--brand-hover": `${s.color}40`,
+            } as CSSProperties
+          }
         >
           {s.icon}
         </a>
@@ -254,6 +247,7 @@ function StoreBadges() {
       {/* App Store */}
       <a
         href='#'
+        className="store-badge"
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -265,13 +259,6 @@ function StoreBadges() {
           textDecoration: "none",
           transition: "border-color 0.2s ease",
         }}
-        onMouseEnter={(e) =>
-          ((e.currentTarget as HTMLElement).style.borderColor =
-            "rgba(56,189,248,0.3)")
-        }
-        onMouseLeave={(e) =>
-          ((e.currentTarget as HTMLElement).style.borderColor = "var(--line-2)")
-        }
       >
         <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
           <path
@@ -312,6 +299,7 @@ function StoreBadges() {
       {/* Google Play */}
       <a
         href='#'
+        className="store-badge"
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -323,13 +311,6 @@ function StoreBadges() {
           textDecoration: "none",
           transition: "border-color 0.2s ease",
         }}
-        onMouseEnter={(e) =>
-          ((e.currentTarget as HTMLElement).style.borderColor =
-            "rgba(56,189,248,0.3)")
-        }
-        onMouseLeave={(e) =>
-          ((e.currentTarget as HTMLElement).style.borderColor = "var(--line-2)")
-        }
       >
         <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
           <path d='M2 1.5L9.5 8 2 14.5V1.5z' fill='#38BDF8' opacity='0.7' />
@@ -421,6 +402,7 @@ function LinkColumn({
           <a
             key={label}
             href='#'
+            className="footer-link"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -432,12 +414,6 @@ function LinkColumn({
               letterSpacing: "-0.01em",
               transition: "color 0.15s ease",
             }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--ink)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--mute)")
-            }
           >
             {label}
             {badge && (
@@ -599,6 +575,7 @@ export default function Footer() {
                 <a
                   key={label}
                   href='#'
+                  className="footer-legal-link"
                   style={{
                     fontFamily: "var(--font-geist-mono), monospace",
                     fontSize: 10,
@@ -609,14 +586,6 @@ export default function Footer() {
                     transition: "color 0.15s ease",
                     whiteSpace: "nowrap",
                   }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color =
-                      "var(--mute)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color =
-                      "var(--mute-2)")
-                  }
                 >
                   {label}
                 </a>

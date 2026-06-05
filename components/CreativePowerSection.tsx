@@ -28,6 +28,14 @@ export default function CreativePowerSection() {
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.transition = "none";
+      return;
+    }
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -667,6 +675,7 @@ export default function CreativePowerSection() {
               }}
             >
               <span
+                className="pulse-anim"
                 style={{
                   display: "inline-block",
                   width: 8,
@@ -675,7 +684,6 @@ export default function CreativePowerSection() {
                   background: "var(--silver-3)",
                   boxShadow: "0 0 10px rgba(168,174,184,0.4)",
                   flexShrink: 0,
-                  animation: "pulse-glow 2.4s ease-in-out infinite",
                 }}
               />
               <span
@@ -854,6 +862,7 @@ function CommandBar() {
 
       {/* Blinking blue cursor */}
       <span
+        className="cursor-blink"
         style={{
           display: "inline-block",
           width: 2,
@@ -861,7 +870,6 @@ function CommandBar() {
           background: "#38BDF8",
           borderRadius: 1,
           marginRight: 18,
-          animation: "pulse-glow 1.1s ease-in-out infinite",
           opacity: 0.9,
           flexShrink: 0,
         }}

@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className='relative min-h-screen overflow-x-hidden'>
+    <main id='content' className='relative min-h-screen overflow-x-hidden'>
       {/*
        * Hero is full-width and full-height.
        * It owns the Navbar + video background layout internally.

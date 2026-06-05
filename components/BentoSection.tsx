@@ -55,7 +55,8 @@ export default function BentoSection() {
     const el = sliderRef.current;
     if (!el) return;
     const amount = direction === "left" ? -360 : 360;
-    el.scrollBy({ left: amount, behavior: "smooth" });
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollBy({ left: amount, behavior: reducedMotion ? "auto" : "smooth" });
   };
 
   return (

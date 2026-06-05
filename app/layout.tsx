@@ -51,7 +51,15 @@ export default function RootLayout({
       lang='en'
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${syne.variable}`}
     >
+      <head>
+        {/* Preconnect to external image CDNs used by gallery and bento sections */}
+        <link rel='preconnect' href='https://images.unsplash.com' />
+        <link rel='dns-prefetch' href='https://images.unsplash.com' />
+      </head>
       <body className='min-h-screen antialiased' suppressHydrationWarning>
+        <a href='#content' className='skip-link'>
+          Skip to content
+        </a>
         {children}
         <ScrollFloater />
       </body>

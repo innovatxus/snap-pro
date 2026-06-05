@@ -13,6 +13,11 @@ import { useEffect, useState } from "react";
 export default function ScrollFloater() {
   const [showUp, setShowUp] = useState(false);
   const [showDown, setShowDown] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false,
+  );
 
   useEffect(() => {
     let raf = 0;
@@ -32,6 +37,10 @@ export default function ScrollFloater() {
       raf = requestAnimationFrame(update);
     };
 
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handleMQ = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handleMQ);
+
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
@@ -39,15 +48,16 @@ export default function ScrollFloater() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
+      mq.removeEventListener("change", handleMQ);
     };
   }, []);
 
-  const goTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
+  const scrollBehavior = reducedMotion ? "auto" : "smooth";
+  const goTop = () => window.scrollTo({ top: 0, behavior: scrollBehavior });
   const goBottom = () =>
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      behavior: "smooth",
+      behavior: scrollBehavior,
     });
 
   return (
@@ -69,12 +79,14 @@ export default function ScrollFloater() {
         visible={showUp}
         onClick={goTop}
         label='Scroll to top'
+        reducedMotion={reducedMotion}
       />
       <FloatBtn
         kind='down'
         visible={showDown}
         onClick={goBottom}
         label='Scroll to bottom'
+        reducedMotion={reducedMotion}
       />
     </div>
   );
@@ -85,9 +97,10 @@ interface FloatBtnProps {
   visible: boolean;
   label: string;
   onClick: () => void;
+  reducedMotion: boolean;
 }
 
-function FloatBtn({ kind, visible, label, onClick }: FloatBtnProps) {
+function FloatBtn({ kind, visible, label, onClick, reducedMotion }: FloatBtnProps) {
   return (
     <button
       type='button'
@@ -114,8 +127,9 @@ function FloatBtn({ kind, visible, label, onClick }: FloatBtnProps) {
         transform: visible
           ? "translateY(0) scale(1)"
           : `translateY(${kind === "up" ? 8 : -8}px) scale(0.92)`,
-        transition:
-          "opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease, color 200ms ease, background 200ms ease",
+        transition: reducedMotion
+          ? "none"
+          : "opacity 260ms cubic-bezier(0.22,1,0.36,1), transform 260ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease, color 200ms ease, background 200ms ease",
         pointerEvents: visible ? "auto" : "none",
       }}
       onMouseEnter={(e) => {
