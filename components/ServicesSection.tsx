@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import type { ReactElement } from "react";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import { toolSlug } from "@/features/editor/data/niches";
+import { studioServiceName } from "@/features/editor/data/studio";
 
 // ─── Services ─────────────────────────────────────────────────────────────────
 
@@ -314,60 +317,66 @@ const catTagClass: Record<string, string> = {
 
 const catSvg: Record<string, ReactElement> = {
   cut: (
-    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
+    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
       <rect
-        x="30"
-        y="15"
-        width="100"
-        height="90"
-        rx="8"
-        fill="rgba(56,189,248,0.15)"
-        stroke="rgba(56,189,248,0.3)"
-        strokeWidth="1"
+        x='30'
+        y='15'
+        width='100'
+        height='90'
+        rx='8'
+        fill='rgba(56,189,248,0.15)'
+        stroke='rgba(56,189,248,0.3)'
+        strokeWidth='1'
       />
       <path
-        d="M30 60 L130 60"
-        stroke="rgba(56,189,248,0.5)"
-        strokeWidth="1.5"
-        strokeDasharray="4 3"
+        d='M30 60 L130 60'
+        stroke='rgba(56,189,248,0.5)'
+        strokeWidth='1.5'
+        strokeDasharray='4 3'
       />
       <circle
-        cx="80"
-        cy="60"
-        r="12"
-        fill="rgba(56,189,248,0.2)"
-        stroke="rgba(56,189,248,0.5)"
-        strokeWidth="1"
+        cx='80'
+        cy='60'
+        r='12'
+        fill='rgba(56,189,248,0.2)'
+        stroke='rgba(56,189,248,0.5)'
+        strokeWidth='1'
       />
     </svg>
   ),
   stage: (
-    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
-      <rect x="0" y="0" width="160" height="120" fill="rgba(255,255,255,0.03)" />
-      <ellipse cx="80" cy="110" rx="60" ry="10" fill="rgba(255,255,255,0.08)" />
+    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
       <rect
-        x="55"
-        y="20"
-        width="50"
-        height="70"
-        rx="4"
-        fill="rgba(255,255,255,0.12)"
-        stroke="rgba(255,255,255,0.2)"
-        strokeWidth="0.5"
+        x='0'
+        y='0'
+        width='160'
+        height='120'
+        fill='rgba(255,255,255,0.03)'
+      />
+      <ellipse cx='80' cy='110' rx='60' ry='10' fill='rgba(255,255,255,0.08)' />
+      <rect
+        x='55'
+        y='20'
+        width='50'
+        height='70'
+        rx='4'
+        fill='rgba(255,255,255,0.12)'
+        stroke='rgba(255,255,255,0.2)'
+        strokeWidth='0.5'
       />
     </svg>
   ),
   enhance: (
-    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
+    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
       <circle
-        cx="80"
-        cy="60"
-        r="40"
-        fill="rgba(255,200,87,0.1)"
-        stroke="rgba(255,200,87,0.25)"
-        strokeWidth="1"
+        cx='80'
+        cy='60'
+        r='40'
+        fill='rgba(255,200,87,0.1)'
+        stroke='rgba(255,200,87,0.25)'
+        strokeWidth='1'
       />
-      <circle cx="80" cy="60" r="25" fill="rgba(255,200,87,0.12)" />
+      <circle cx='80' cy='60' r='25' fill='rgba(255,200,87,0.12)' />
       {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
         <line
           key={i}
@@ -375,53 +384,53 @@ const catSvg: Record<string, ReactElement> = {
           y1={60 + 42 * Math.sin((a * Math.PI) / 180)}
           x2={80 + 52 * Math.cos((a * Math.PI) / 180)}
           y2={60 + 52 * Math.sin((a * Math.PI) / 180)}
-          stroke="rgba(255,200,87,0.3)"
-          strokeWidth="1.5"
+          stroke='rgba(255,200,87,0.3)'
+          strokeWidth='1.5'
         />
       ))}
     </svg>
   ),
   format: (
-    <svg viewBox="0 0 160 120" className="w-full h-full opacity-20">
+    <svg viewBox='0 0 160 120' className='w-full h-full opacity-20'>
       <rect
-        x="20"
-        y="15"
-        width="55"
-        height="55"
-        rx="4"
-        fill="rgba(200,182,255,0.1)"
-        stroke="rgba(200,182,255,0.25)"
-        strokeWidth="1"
+        x='20'
+        y='15'
+        width='55'
+        height='55'
+        rx='4'
+        fill='rgba(200,182,255,0.1)'
+        stroke='rgba(200,182,255,0.25)'
+        strokeWidth='1'
       />
       <rect
-        x="85"
-        y="15"
-        width="55"
-        height="35"
-        rx="4"
-        fill="rgba(200,182,255,0.08)"
-        stroke="rgba(200,182,255,0.2)"
-        strokeWidth="1"
+        x='85'
+        y='15'
+        width='55'
+        height='35'
+        rx='4'
+        fill='rgba(200,182,255,0.08)'
+        stroke='rgba(200,182,255,0.2)'
+        strokeWidth='1'
       />
       <rect
-        x="85"
-        y="60"
-        width="55"
-        height="55"
-        rx="4"
-        fill="rgba(200,182,255,0.1)"
-        stroke="rgba(200,182,255,0.25)"
-        strokeWidth="1"
+        x='85'
+        y='60'
+        width='55'
+        height='55'
+        rx='4'
+        fill='rgba(200,182,255,0.1)'
+        stroke='rgba(200,182,255,0.25)'
+        strokeWidth='1'
       />
       <rect
-        x="20"
-        y="80"
-        width="55"
-        height="35"
-        rx="4"
-        fill="rgba(200,182,255,0.08)"
-        stroke="rgba(200,182,255,0.2)"
-        strokeWidth="1"
+        x='20'
+        y='80'
+        width='55'
+        height='35'
+        rx='4'
+        fill='rgba(200,182,255,0.08)'
+        stroke='rgba(200,182,255,0.2)'
+        strokeWidth='1'
       />
     </svg>
   ),
@@ -438,12 +447,12 @@ export default function ServicesSection() {
       : SERVICES.filter((s) => s.cat === activeTab.toLowerCase());
 
   return (
-    <section id="services" className="relative z-10 mt-40">
-      <div className="max-w-370 mx-auto px-12 max-[720px]:px-4">
+    <section id='services' className='relative z-10 mt-40'>
+      <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
         {/* Section header */}
         <ScrollReveal
-          variant="blur"
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          variant='blur'
+          className='flex flex-col md:flex-row md:items-end md:justify-between gap-6'
         >
           <div
             style={{
@@ -454,7 +463,7 @@ export default function ServicesSection() {
             }}
           >
             <h2
-              className="font-fraunces"
+              className='font-fraunces'
               style={{
                 fontSize: "clamp(40px, 5vw, 76px)",
                 fontWeight: 300,
@@ -462,7 +471,7 @@ export default function ServicesSection() {
                 color: "var(--ink)",
               }}
             >
-              Every edit. <em className="silver">One</em> studio.
+              Every edit. <em className='silver'>One</em> studio.
             </h2>
             <p
               style={{
@@ -481,7 +490,7 @@ export default function ServicesSection() {
 
         {/* Filter tabs */}
         <div
-          className="flex items-center gap-1 mb-10 overflow-x-auto"
+          className='flex items-center gap-1 mb-10 overflow-x-auto'
           style={{
             background: "var(--surface-2)",
             border: "1px solid var(--line)",
@@ -515,29 +524,34 @@ export default function ServicesSection() {
         {/* Service cards */}
         <ScrollReveal
           stagger
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'
         >
           {filtered.map((svc) => (
-            <div
+            <Link
               key={svc.id}
-              className="stagger-item card-hover sheen service-card flex flex-col overflow-hidden"
+              href={`/edit/studio/${toolSlug(studioServiceName(svc))}`}
+              prefetch={false}
+              aria-label={`Open ${svc.name} ${svc.italic} editor`}
+              className='stagger-item card-hover sheen service-card flex flex-col overflow-hidden'
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--line)",
                 borderRadius: "var(--r-lg)",
+                textDecoration: "none",
+                color: "inherit",
               }}
             >
               {/* Thumbnail */}
               <div
-                className="relative overflow-hidden"
+                className='relative overflow-hidden'
                 style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className='absolute inset-0 flex items-center justify-center'>
                   {catSvg[svc.cat]}
                 </div>
 
                 {/* Category tag */}
-                <div className="absolute top-3 left-3">
+                <div className='absolute top-3 left-3'>
                   <span
                     className={`chip ${catTagClass[svc.cat]}`}
                     style={{ fontSize: 9, padding: "3px 8px" }}
@@ -548,7 +562,7 @@ export default function ServicesSection() {
 
                 {/* Credit cost */}
                 <div
-                  className="absolute bottom-3 right-3"
+                  className='absolute bottom-3 right-3'
                   style={{
                     background: "rgba(8,10,14,0.92)",
                     backdropFilter: "blur(8px)",
@@ -566,9 +580,9 @@ export default function ServicesSection() {
               </div>
 
               {/* Info */}
-              <div className="p-4 flex flex-col gap-1">
+              <div className='p-4 flex flex-col gap-1'>
                 <h3
-                  className="font-fraunces"
+                  className='font-fraunces'
                   style={{
                     fontSize: 20,
                     fontWeight: 400,
@@ -576,7 +590,7 @@ export default function ServicesSection() {
                     color: "var(--ink)",
                   }}
                 >
-                  {svc.name} <em className="silver">{svc.italic}</em>
+                  {svc.name} <em className='silver'>{svc.italic}</em>
                 </h3>
                 <p
                   style={{
@@ -589,7 +603,7 @@ export default function ServicesSection() {
                   {svc.desc}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </ScrollReveal>
       </div>

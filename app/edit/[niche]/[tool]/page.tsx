@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import EditorCanvas from "@/features/editor/components/EditorCanvas";
 import {
   NICHES,
+  SOCIAL_NICHES,
+  STUDIO_NICHE,
   SUB_TOOLS,
   getToolByNicheAndSlug,
   toolSlug,
@@ -15,8 +17,8 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return [...NICHES, ...SUB_TOOLS].flatMap((n) =>
-    n.services.map((s) => ({ niche: n.id, tool: toolSlug(s.name) })),
+  return [...NICHES, ...SUB_TOOLS, ...SOCIAL_NICHES, STUDIO_NICHE].flatMap(
+    (n) => n.services.map((s) => ({ niche: n.id, tool: toolSlug(s.name) })),
   );
 }
 

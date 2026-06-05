@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import EditorCanvas from "@/features/editor/components/EditorCanvas";
 import {
   NICHES,
+  SOCIAL_NICHES,
+  STUDIO_NICHE,
   SUB_TOOLS,
   getNicheBySlug,
 } from "@/features/editor/data/niches";
@@ -14,7 +16,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return [...NICHES, ...SUB_TOOLS].map((n) => ({ niche: n.id }));
+  return [...NICHES, ...SUB_TOOLS, ...SOCIAL_NICHES, STUDIO_NICHE].map((n) => ({
+    niche: n.id,
+  }));
 }
 
 export async function generateMetadata({

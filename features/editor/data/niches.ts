@@ -10,6 +10,9 @@
  * `services` list — both UI surfaces pick it up automatically.
  */
 
+import { buildSocialNiches } from "./social";
+import { buildStudioNiche } from "./studio";
+
 export type NicheService = {
   name: string;
   /** Marks the hero/preset tool for the niche. */
@@ -659,9 +662,18 @@ export const SUB_TOOLS: Niche[] = [
   },
 ];
 
+/** Social platform editors — derived from `./social.ts`. */
+export const SOCIAL_NICHES: Niche[] = buildSocialNiches();
+
+/** Unified Studio tool catalogue — derived from `./studio.ts`. */
+export const STUDIO_NICHE: Niche = buildStudioNiche();
+
 export function getNicheBySlug(slug: string): Niche | undefined {
+  if (slug === STUDIO_NICHE.id) return STUDIO_NICHE;
   return (
-    NICHES.find((n) => n.id === slug) ?? SUB_TOOLS.find((n) => n.id === slug)
+    NICHES.find((n) => n.id === slug) ??
+    SUB_TOOLS.find((n) => n.id === slug) ??
+    SOCIAL_NICHES.find((n) => n.id === slug)
   );
 }
 
