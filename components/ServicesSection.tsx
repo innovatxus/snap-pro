@@ -274,6 +274,7 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "3 cr",
     desc: "Generate a 24-frame product spin from 6 source angles.",
+    comingSoon: true,
   },
   {
     id: 30,
@@ -283,6 +284,7 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "2 cr",
     desc: "Auto-layout product grid with SKU and price injection. One-click catalog or linesheet PDF.",
+    comingSoon: true,
   },
 ];
 
@@ -527,85 +529,138 @@ export default function ServicesSection() {
           threshold={0}
           className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'
         >
-          {filtered.map((svc) => (
-            <Link
-              key={svc.id}
-              href={`/edit/studio/${toolSlug(studioServiceName(svc))}`}
-              prefetch={false}
-              aria-label={`Open ${svc.name} ${svc.italic} editor`}
-              className='stagger-item card-hover sheen service-card flex flex-col overflow-hidden'
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--line)",
-                borderRadius: "var(--r-lg)",
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              {/* Thumbnail */}
-              <div
-                className='relative overflow-hidden'
-                style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
-              >
-                <div className='absolute inset-0 flex items-center justify-center'>
-                  {catSvg[svc.cat]}
-                </div>
-
-                {/* Category tag */}
-                <div className='absolute top-3 left-3'>
-                  <span
-                    className={`chip ${catTagClass[svc.cat]}`}
-                    style={{ fontSize: 9, padding: "3px 8px" }}
-                  >
-                    {svc.catLabel}
-                  </span>
-                </div>
-
-                {/* Credit cost */}
+          {filtered.map((svc) => {
+            const comingSoon = "comingSoon" in svc && svc.comingSoon === true;
+            const cardInner = (
+              <>
+                {/* Thumbnail */}
                 <div
-                  className='absolute bottom-3 right-3'
-                  style={{
-                    background: "rgba(8,10,14,0.92)",
-                    backdropFilter: "blur(8px)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: "var(--r-sm)",
-                    padding: "4px 10px",
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    fontSize: 10,
-                    letterSpacing: "0.1em",
-                    color: "var(--silver-2)",
-                  }}
+                  className='relative overflow-hidden'
+                  style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
                 >
-                  {svc.credit}
-                </div>
-              </div>
+                  <div className='absolute inset-0 flex items-center justify-center'>
+                    {catSvg[svc.cat]}
+                  </div>
 
-              {/* Info */}
-              <div className='p-4 flex flex-col gap-1'>
-                <h3
-                  className='font-fraunces'
+                  {/* Category tag */}
+                  <div className='absolute top-3 left-3'>
+                    <span
+                      className={`chip ${catTagClass[svc.cat]}`}
+                      style={{ fontSize: 9, padding: "3px 8px" }}
+                    >
+                      {svc.catLabel}
+                    </span>
+                  </div>
+
+                  {/* Coming-soon badge — top right */}
+                  {comingSoon && (
+                    <div className='absolute top-3 right-3'>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-geist-mono), monospace",
+                          fontSize: 9,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "#0b0d12",
+                          background:
+                            "linear-gradient(135deg, #ffffff 0%, #d8dce3 30%, #b5bac2 65%, #ffffff 100%)",
+                          padding: "4px 10px",
+                          borderRadius: 999,
+                          fontWeight: 700,
+                          boxShadow:
+                            "inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 14px rgba(0,0,0,0.35)",
+                        }}
+                      >
+                        Coming Soon
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Credit cost */}
+                  <div
+                    className='absolute bottom-3 right-3'
+                    style={{
+                      background: "rgba(8,10,14,0.92)",
+                      backdropFilter: "blur(8px)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: "var(--r-sm)",
+                      padding: "4px 10px",
+                      fontFamily: "var(--font-geist-mono), monospace",
+                      fontSize: 10,
+                      letterSpacing: "0.1em",
+                      color: "var(--silver-2)",
+                    }}
+                  >
+                    {svc.credit}
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className='p-4 flex flex-col gap-1'>
+                  <h3
+                    className='font-fraunces'
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 400,
+                      lineHeight: 1.1,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {svc.name} <em className='silver'>{svc.italic}</em>
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      color: "var(--mute)",
+                      lineHeight: 1.5,
+                      fontFamily: "var(--font-geist-sans)",
+                    }}
+                  >
+                    {svc.desc}
+                  </p>
+                </div>
+              </>
+            );
+
+            const baseStyle = {
+              background: "var(--surface)",
+              border: "1px solid var(--line)",
+              borderRadius: "var(--r-lg)",
+              textDecoration: "none",
+              color: "inherit",
+            } as const;
+
+            if (comingSoon) {
+              return (
+                <div
+                  key={svc.id}
+                  aria-disabled='true'
+                  aria-label={`${svc.name} ${svc.italic} — coming soon`}
+                  className='stagger-item service-card flex flex-col overflow-hidden'
                   style={{
-                    fontSize: 20,
-                    fontWeight: 400,
-                    lineHeight: 1.1,
-                    color: "var(--ink)",
+                    ...baseStyle,
+                    cursor: "not-allowed",
+                    opacity: 0.78,
                   }}
                 >
-                  {svc.name} <em className='silver'>{svc.italic}</em>
-                </h3>
-                <p
-                  style={{
-                    fontSize: 12,
-                    color: "var(--mute)",
-                    lineHeight: 1.5,
-                    fontFamily: "var(--font-geist-sans)",
-                  }}
-                >
-                  {svc.desc}
-                </p>
-              </div>
-            </Link>
-          ))}
+                  {cardInner}
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={svc.id}
+                href={`/edit/studio/${toolSlug(studioServiceName(svc))}`}
+                prefetch={false}
+                aria-label={`Open ${svc.name} ${svc.italic} editor`}
+                className='stagger-item card-hover sheen service-card flex flex-col overflow-hidden'
+                style={baseStyle}
+              >
+                {cardInner}
+              </Link>
+            );
+          })}
         </ScrollReveal>
       </div>
     </section>
