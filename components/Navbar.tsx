@@ -647,15 +647,21 @@ export default function Navbar() {
   return (
     <>
       <nav className='mb-15 flex items-center justify-between relative z-10'>
-        <div className='flex w-full items-center justify-between px-5.5 py-3.5'>
+        <div className='flex w-full items-center justify-between px-3 py-3 sm:px-5.5 sm:py-3.5'>
           {/* ── Left: Logo ── */}
-          <div className='flex items-center'>
+          <div className='flex items-center min-w-0'>
             <Link
               href='/'
               aria-label='Snap Pro — home'
               style={{ display: "inline-flex", textDecoration: "none" }}
             >
-              <Logo />
+              {/* Compact logo on phones so the right-side CTA has room */}
+              <span className='sm:hidden'>
+                <Logo size={36} fontSize={18} borderRadius={10} />
+              </span>
+              <span className='hidden sm:inline-flex'>
+                <Logo />
+              </span>
             </Link>
           </div>
 
@@ -730,18 +736,16 @@ export default function Navbar() {
           </div>
 
           {/* ── Right: Token chip + CTA ── */}
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-2 sm:gap-3'>
             {/* Mobile hamburger */}
             <button
               type='button'
-              className='lg:hidden inline-flex items-center justify-center'
+              className='lg:hidden inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10'
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               aria-controls='mobile-nav-panel'
               onClick={() => setMobileOpen((v) => !v)}
               style={{
-                width: 40,
-                height: 40,
                 borderRadius: 10,
                 background: "var(--surface-2)",
                 border: "1px solid var(--line-2)",
@@ -862,12 +866,11 @@ export default function Navbar() {
 
             {/* CTA */}
             <button
+              className='px-3 py-2 text-[11px] sm:px-4 sm:py-2.25 sm:text-[12px]'
               style={{
-                padding: "9px 16px",
                 borderRadius: 999,
                 background: "var(--blue-grad)",
                 color: "white",
-                fontSize: 12,
                 fontWeight: 600,
                 border: "none",
                 cursor: "pointer",
@@ -875,6 +878,7 @@ export default function Navbar() {
                   "inset 0 0 0 1px rgba(255,255,255,0.2), 0 0 24px var(--blue-glow)",
                 fontFamily: "var(--font-geist-sans), sans-serif",
                 whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
             >
               Get the app
