@@ -46,36 +46,51 @@ function Row({
       style={{
         display: "flex",
         alignItems: "center",
-        gap: 10,
+        gap: 14,
         flexWrap: "wrap",
       }}
     >
-      <span
-        aria-hidden
-        style={{
-          fontSize: 14,
-          opacity: 0.85,
-        }}
-      >
-        {flagEmoji}
-      </span>
+      {/* Flag + country name kept together as one inline unit so the flag
+          never wraps to its own line above the text. */}
       <span
         style={{
-          fontFamily: "var(--font-geist-mono), monospace",
-          fontSize: 9,
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          color: "var(--mute)",
-          minWidth: 56,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 8,
+          flexShrink: 0,
+          lineHeight: 1,
         }}
       >
-        {label}
+        <span
+          aria-hidden
+          style={{
+            fontSize: 14,
+            lineHeight: 1,
+            opacity: 0.9,
+            display: "inline-flex",
+          }}
+        >
+          {flagEmoji}
+        </span>
+        <span
+          style={{
+            fontFamily: "var(--font-geist-mono), monospace",
+            fontSize: 9,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "var(--mute)",
+            lineHeight: 1,
+          }}
+        >
+          {label}
+        </span>
       </span>
       <span
         style={{
           display: "flex",
           gap: 14,
           flexWrap: "wrap",
+          alignItems: "center",
         }}
       >
         {items.map((it) => (
@@ -88,6 +103,7 @@ function Row({
               textDecoration: "none",
               borderBottom: "1px dotted var(--line-2)",
               paddingBottom: 1,
+              lineHeight: 1.2,
             }}
           >
             {LABELS[it.labelKey][locale]}
