@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 // ── Data ────────────────────────────────────────────────────────────────────
@@ -275,8 +276,10 @@ const BUSINESS: Tool[] = [
 
 function CompactToolCard({ tool }: { tool: Tool }) {
   return (
-    <div
+    <Link
       role='listitem'
+      href={`/edit/${tool.id}`}
+      aria-label={`Open ${tool.name} editor`}
       className='card-hover relative overflow-hidden flex flex-col justify-end'
       style={{
         aspectRatio: "4/3",
@@ -327,7 +330,7 @@ function CompactToolCard({ tool }: { tool: Tool }) {
           {tool.desc}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

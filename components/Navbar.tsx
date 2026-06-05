@@ -594,6 +594,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [dropPos, setDropPos] = useState({ top: 0, left: 0 });
+  const [tokenHover, setTokenHover] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* cleanup on unmount */
@@ -709,63 +710,88 @@ export default function Navbar() {
           {/* ── Right: Token chip + CTA ── */}
           <div className='flex items-center gap-3'>
             {/* Token chip */}
-            <div className='hidden sm:flex items-center gap-2 px-3 py-1.75'>
-              <svg width='12' height='12' viewBox='0 0 12 12' fill='none'>
-                <path
-                  d='M6 1L11 6L6 11L1 6L6 1Z'
-                  fill='url(#silver-diamond)'
-                  stroke='rgba(255,255,255,0.2)'
-                  strokeWidth='0.5'
-                />
-                <defs>
-                  <linearGradient
-                    id='silver-diamond'
-                    x1='1'
-                    y1='1'
-                    x2='11'
-                    y2='11'
-                  >
-                    <stop stopColor='#FFFFFF' />
-                    <stop offset='0.5' stopColor='#A8AEB8' />
-                    <stop offset='1' stopColor='#5A6069' />
-                  </linearGradient>
-                </defs>
-              </svg>
+            <button
+              className='hidden sm:inline-flex items-center'
+              onMouseEnter={() => setTokenHover(true)}
+              onMouseLeave={() => setTokenHover(false)}
+              style={{
+                gap: 8,
+                background:
+                  "linear-gradient(135deg, rgba(20,22,28,0.9), rgba(10,12,16,0.9))",
+                border: `1px solid ${tokenHover ? "rgba(56,189,248,0.45)" : "var(--line-2, rgba(255,255,255,0.08))"}`,
+                padding: "7px 12px 7px 9px",
+                borderRadius: 999,
+                boxShadow: tokenHover
+                  ? "inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 14px rgba(0,0,0,0.3), 0 0 18px rgba(56,189,248,0.18)"
+                  : "inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 14px rgba(0,0,0,0.3)",
+                transform: tokenHover ? "translateY(-1px)" : "translateY(0)",
+                transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
+                cursor: "pointer",
+              }}
+            >
+              {/* Silver coin icon */}
               <span
-                className='text-silver-grad font-bold'
-                style={{ fontSize: 13 }}
+                className='flex items-center justify-center flex-shrink-0'
+                style={{
+                  width: 18,
+                  height: 18,
+                  borderRadius: 999,
+                  background:
+                    "linear-gradient(135deg, #ffffff 0%, #d8dce3 14%, #4e535c 32%, #b5bac2 48%, #2e323a 60%, #c8cdd4 76%, #ffffff 100%)",
+                  boxShadow:
+                    "inset 0 1px 0 rgba(255,255,255,0.6), 0 0 10px rgba(232,234,237,0.25)",
+                  fontSize: 9,
+                  fontWeight: 800,
+                  color: "#000",
+                  lineHeight: 1,
+                }}
+              >
+                ★
+              </span>
+              {/* Number */}
+              <span
+                style={{
+                  color: "var(--blue)",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  fontFamily: "var(--font-geist-sans), sans-serif",
+                  lineHeight: 1,
+                }}
               >
                 25
               </span>
+              {/* Label */}
               <span
                 style={{
                   fontFamily: "var(--font-geist-mono), monospace",
                   fontSize: 9,
-                  letterSpacing: "0.16em",
+                  fontWeight: 500,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: "var(--mute)",
-                }}
-              >
-                TOKENS
-              </span>
-              <button
-                className='flex items-center justify-center'
-                style={{
-                  width: 18,
-                  height: 18,
-                  background: "var(--blue-grad)",
-                  borderRadius: 999,
-                  border: "none",
-                  cursor: "pointer",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  color: "white",
                   lineHeight: 1,
                 }}
               >
+                tokens
+              </span>
+              {/* Plus circle */}
+              <span
+                className='flex items-center justify-center flex-shrink-0'
+                style={{
+                  width: 16,
+                  height: 16,
+                  borderRadius: 999,
+                  background: "var(--blue, #38bdf8)",
+                  color: "#000",
+                  fontWeight: 800,
+                  fontSize: 11,
+                  lineHeight: 1,
+                  boxShadow: "0 0 10px var(--blue-glow, rgba(56,189,248,0.5))",
+                }}
+              >
                 +
-              </button>
-            </div>
+              </span>
+            </button>
 
             {/* CTA */}
             <button

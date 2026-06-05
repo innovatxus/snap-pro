@@ -7,7 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Icon, type IconName } from "@/features/learning/components/Icon";
 
 export const metadata: Metadata = {
-  title: "About — Snap Pro",
+  title: "About · Snap Pro",
   description:
     "Why Snap Pro exists, the principles we build by, and how a simple AI studio in your pocket levels the playing field for every seller, creator, and small business.",
 };
@@ -116,7 +116,7 @@ const OUTCOMES: Outcome[] = [
   {
     metric: "17",
     label: "Professional services",
-    body: "From ghost mannequin and reflection clean to virtual staging and color match — engineered, not generic.",
+    body: "From ghost mannequin and reflection clean to virtual staging and color match. Engineered, not generic.",
   },
   {
     metric: "20",
@@ -147,7 +147,7 @@ const AUDIENCES: Audience[] = [
   },
   {
     title: "Artisans & craftspeople",
-    body: "Show texture, weave, and finish — without a studio, lighting kit, or post-production team.",
+    body: "Show texture, weave, and finish, without a studio, lighting kit, or post-production team.",
   },
   {
     title: "Real-estate agents",
@@ -254,14 +254,14 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='01 — Mission'
+              eyebrow='01 / Mission'
               title={
                 <>
                   Make great photography <em className='silver'>effortless</em>,
                   for everyone.
                 </>
               }
-              body='Pro photography has always been gated by money, time, and skill. We think the gate should be a door — and that AI, used with restraint, is the doorknob.'
+              body='Pro photography has always been gated by money, time, and skill. We think the gate should be a door, and that AI, used with restraint, is the doorknob.'
             />
 
             <ScrollReveal variant='up'>
@@ -288,7 +288,7 @@ export default function AboutPage() {
                   }}
                 >
                   We believe a small business in Baghdad, Cairo, Amman, or
-                  Casablanca — a boutique in Dubai or Riyadh — deserves the same
+                  Casablanca, a boutique in Dubai or Riyadh, deserves the same
                   photographic firepower as a brand on Madison Avenue, and that
                   the difference between a sale and a scroll is often a single,
                   well-finished image.
@@ -307,7 +307,7 @@ export default function AboutPage() {
                     },
                     {
                       title: "Raise the ceiling",
-                      body: "Pros use Snap Pro to compress hours of retouch into minutes — and ship more, better.",
+                      body: "Pros use Snap Pro to compress hours of retouch into minutes, and ship more, better.",
                     },
                     {
                       title: "Stay out of the way",
@@ -348,13 +348,13 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='02 — Origin'
+              eyebrow='02 / Origin'
               title={
                 <>
                   Built from a <em className='silver'>simple frustration</em>.
                 </>
               }
-              body='Across thousands of small shops, brilliant products were being held back by tired photos. The tools to fix that existed — they were just expensive, slow, or too technical to learn between deliveries.'
+              body='Across thousands of small shops, brilliant products were being held back by tired photos. The tools to fix that existed, they were just expensive, slow, or too technical to learn between deliveries.'
             />
 
             <ScrollReveal stagger className='grid md:grid-cols-3 gap-5'>
@@ -362,7 +362,7 @@ export default function AboutPage() {
                 {
                   step: "Then",
                   title: "Hire a photographer",
-                  body: "A half-day shoot, a week of edits, a five-figure bill. Reserved for catalog season — once or twice a year.",
+                  body: "A half-day shoot, a week of edits, a five-figure bill. Reserved for catalog season, once or twice a year.",
                 },
                 {
                   step: "Almost",
@@ -372,7 +372,7 @@ export default function AboutPage() {
                 {
                   step: "Now",
                   title: "Snap Pro",
-                  body: "Industry-tuned services that respect what your product actually is — refined, not reinvented.",
+                  body: "Industry-tuned services that respect what your product actually is. Refined, not reinvented.",
                 },
               ].map((s, i) => (
                 <article
@@ -397,7 +397,7 @@ export default function AboutPage() {
                       color: i === 2 ? "var(--blue)" : "var(--mute)",
                     }}
                   >
-                    0{i + 1} — {s.step}
+                    0{i + 1} / {s.step}
                   </span>
                   <h3
                     className='font-fraunces'
@@ -430,13 +430,13 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='03 — Principles'
+              eyebrow='03 / Principles'
               title={
                 <>
                   How we <em className='silver'>build</em>.
                 </>
               }
-              body={`Six commitments that decide what we ship and — more often — what we don't.`}
+              body={`Six commitments that decide what we ship and, more often, what we don't.`}
             />
 
             <ScrollReveal
@@ -503,7 +503,7 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='04 — In numbers'
+              eyebrow='04 / In numbers'
               title={
                 <>
                   What you can <em className='silver'>actually</em> ship.
@@ -572,14 +572,14 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='05 — Who we build for'
+              eyebrow='05 / Who we build for'
               title={
                 <>
                   Made for <em className='silver'>every seller</em>, not just
                   the loudest.
                 </>
               }
-              body='Snap Pro fits the workflows of the people big software usually overlooks — and gives professionals a sharper edge on top.'
+              body='Snap Pro fits the workflows of the people big software usually overlooks, and gives professionals a sharper edge on top.'
             />
 
             <ScrollReveal
@@ -629,7 +629,7 @@ export default function AboutPage() {
         <section className='relative z-10 mt-40'>
           <div className='max-w-370 mx-auto px-12 max-[720px]:px-4'>
             <SectionHeader
-              eyebrow='06 — Our promise'
+              eyebrow='06 / Our promise'
               title={
                 <>
                   Three things you can <em className='silver'>count on</em>.
@@ -726,7 +726,7 @@ export default function AboutPage() {
                   marginInline: "auto",
                 }}
               >
-                Build a <em className='silver'>better-looking</em> shop today —
+                Build a <em className='silver'>better-looking</em> shop today,
                 in the time it takes to make tea.
               </h2>
             </ScrollReveal>
