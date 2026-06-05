@@ -58,15 +58,11 @@ export default function NichesSection() {
         </div>
 
         {/* 3-col niche grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
-          {NICHES.map((niche, i) => (
-            <ScrollReveal
+        <ScrollReveal stagger className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+          {NICHES.map((niche) => (
+            <div
               key={niche.id}
-              variant='up'
-              delay={(i % 3) as 0 | 1 | 2 | 3 | 4}
-            >
-              <div
-                className='card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative'
+              className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative'
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--line)",
@@ -267,10 +263,9 @@ export default function NichesSection() {
                     </span>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
+            </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

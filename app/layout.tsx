@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces, Syne, DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces, Syne } from "next/font/google";
 import ScrollFloater from "@/components/ScrollFloater";
 import "./globals.css";
 
@@ -28,13 +28,6 @@ const syne = Syne({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["300", "400"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "Snap Pro — AI Studio for Everyone",
   description:
@@ -56,9 +49,9 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${syne.variable} ${dmSans.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${syne.variable}`}
     >
-      <body className='min-h-screen antialiased'>
+      <body className='min-h-screen antialiased' suppressHydrationWarning>
         {children}
         <ScrollFloater />
       </body>
