@@ -109,17 +109,7 @@ export default function RegionalStrip() {
         background: "var(--surface)",
       }}
     >
-      <div
-        className='max-w-370 mx-auto max-[720px]:px-4'
-        style={{
-          padding: "20px 48px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "12px 36px",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className='max-w-370 mx-auto px-4 sm:px-8 lg:px-12 py-5 flex flex-wrap items-center justify-between gap-x-9 gap-y-3'>
         <Row
           flagEmoji='🇪🇬'
           label={locale === "ar" ? "مصر" : "Egypt"}

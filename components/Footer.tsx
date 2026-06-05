@@ -674,20 +674,71 @@ export default function Footer() {
 
       <div style={{ borderTop: "1px solid var(--line)" }} />
 
-      {/* ── Main grid ── */}
+      {/* ── Pre-footer newsletter strip ── */}
       <div
-        className='max-w-370 mx-auto max-[720px]:px-4'
-        style={{ padding: "72px 48px 48px" }}
+        style={{
+          borderBottom: "1px solid var(--line)",
+          background:
+            "linear-gradient(180deg, rgba(56,189,248,0.04) 0%, transparent 100%)",
+        }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.2fr repeat(6, 1fr)",
-            gap: "40px",
-            alignItems: "start",
-          }}
-          className='max-[1280px]:grid-cols-4 max-[1024px]:grid-cols-3 max-[720px]:grid-cols-1 max-[720px]:gap-10'
-        >
+        <div className='max-w-370 mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12'>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+              maxWidth: 520,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "#38BDF8",
+              }}
+            >
+              {UI.footer.newsletter.eyebrow[locale]}
+            </span>
+            <h2
+              className='font-fraunces'
+              style={{
+                fontSize: "clamp(26px, 3.6vw, 38px)",
+                fontWeight: 300,
+                lineHeight: 1.15,
+                letterSpacing: "-0.01em",
+                color: "var(--ink)",
+                margin: 0,
+              }}
+            >
+              {locale === "ar"
+                ? "ابقَ على اطّلاع بكل ما هو جديد."
+                : "Stay in the loop on every new feature."}
+            </h2>
+            <p
+              style={{
+                margin: 0,
+                color: "var(--mute)",
+                fontSize: 13,
+                lineHeight: 1.6,
+              }}
+            >
+              {locale === "ar"
+                ? "نشرة موجزة — إصدارات المنتج، أدوات جديدة، ودراسات حالة من البائعين. لا بريد مزعج."
+                : "A short, useful digest — product releases, new tools, and seller case studies. No spam."}
+            </p>
+          </div>
+          <div className='w-full md:w-auto md:min-w-90'>
+            <Newsletter />
+          </div>
+        </div>
+      </div>
+
+      {/* ── Main grid ── */}
+      <div className='max-w-370 mx-auto px-4 sm:px-8 lg:px-12 pt-16 sm:pt-18 pb-10 sm:pb-12'>
+        <div className='grid items-start gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-[1.2fr_repeat(6,minmax(0,1fr))]'>
           {/* ── Brand column ── */}
           <div
             style={{
@@ -725,20 +776,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Utility row: newsletter + locale switcher ── */}
+      {/* ── Utility row: locale switcher ── */}
       <div style={{ borderTop: "1px solid var(--line)" }}>
-        <div
-          className='max-w-370 mx-auto max-[720px]:px-4'
-          style={{
-            padding: "28px 48px",
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            gap: 32,
-            flexWrap: "wrap",
-          }}
-        >
-          <Newsletter />
+        <div className='max-w-370 mx-auto px-4 sm:px-8 lg:px-12 py-5 flex items-center justify-end'>
           <LocaleSwitcher variant='footer' />
         </div>
       </div>
@@ -748,17 +788,7 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div style={{ borderTop: "1px solid var(--line)" }}>
-        <div
-          className='max-w-370 mx-auto max-[720px]:px-4 max-[720px]:flex-col max-[720px]:gap-4'
-          style={{
-            padding: "20px 48px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className='max-w-370 mx-auto px-4 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between flex-wrap gap-4 sm:gap-4'>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span className='blue-pulse' />
             <span
