@@ -3,14 +3,12 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MarketingStub from "@/components/legal/MarketingStub";
-import { getMarketingPage } from "@/lib/legal/marketing";
+import { getMarketingMetadata, getMarketingPage } from "@/lib/legal/marketing";
 
 const SLUG = "contact";
 const page = getMarketingPage(SLUG);
 
-export const metadata: Metadata = page
-  ? { title: `${page.title.en} — Snap Pro`, description: page.lede.en }
-  : {};
+export const metadata: Metadata = getMarketingMetadata(SLUG);
 
 export default function ContactPage() {
   if (!page) notFound();

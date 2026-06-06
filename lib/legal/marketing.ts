@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { BiText } from "./types";
 
 export interface MarketingPageContent {
@@ -309,4 +310,19 @@ export function getMarketingPage(
   slug: string,
 ): MarketingPageContent | undefined {
   return MARKETING_PAGES.find((p) => p.slug === slug);
+}
+
+/**
+ * Build Next.js Metadata for a marketing stub page. Pages flagged `draft: true`
+ * are kept out of search indexes until they ship real content, so we don't
+ * leak placeholders into Google. Real pages get standard title + description.
+ */
+export function getMarketingMetadata(slug: string): Metadata {
+  const page = getMarketingPage(slug);
+  if (!page) return {};
+  return {
+    title: `${page.title.en} — Snap Pro`,
+    description: page.lede.en,
+    ...(page.draft ? { robots: { index: false, follow: false } } : {}),
+  };
 }
