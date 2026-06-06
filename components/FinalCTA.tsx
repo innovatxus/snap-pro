@@ -1,6 +1,9 @@
 export default function FinalCTA() {
   return (
-    <section className='relative z-10 mt-60 text-center'>
+    <section
+      id='get-the-app'
+      className='relative z-10 mt-60 text-center scroll-mt-24'
+    >
       <div className='max-w-370 mx-auto px-12 max-[720px]:px-6'>
         {/* Glow blob */}
         <div

@@ -865,8 +865,9 @@ export default function Navbar() {
             </button>
 
             {/* CTA */}
-            <button
-              className='px-3 py-2 text-[11px] sm:px-4 sm:py-2.25 sm:text-[12px]'
+            <Link
+              href='/#get-the-app'
+              className='px-3 py-2 text-[11px] sm:px-4 sm:py-2.25 sm:text-[12px] inline-flex items-center justify-center'
               style={{
                 borderRadius: 999,
                 background: "var(--blue-grad)",
@@ -879,10 +880,11 @@ export default function Navbar() {
                 fontFamily: "var(--font-geist-sans), sans-serif",
                 whiteSpace: "nowrap",
                 flexShrink: 0,
+                textDecoration: "none",
               }}
             >
               Get the app
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -1285,8 +1287,8 @@ export default function Navbar() {
                   tokens
                 </span>
               </span>
-              <button
-                type='button'
+              <Link
+                href='/#get-the-app'
                 onClick={closeMobile}
                 style={{
                   padding: "9px 16px",
@@ -1301,10 +1303,13 @@ export default function Navbar() {
                     "inset 0 0 0 1px rgba(255,255,255,0.2), 0 0 24px var(--blue-glow)",
                   fontFamily: "var(--font-geist-sans), sans-serif",
                   whiteSpace: "nowrap",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
                 Get the app
-              </button>
+              </Link>
             </div>
           </div>
         </>
