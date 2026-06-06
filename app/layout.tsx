@@ -55,6 +55,14 @@ export const metadata: Metadata = {
     title: "Snap Pro — AI Studio for Everyone",
     description:
       "17 professional AI editing services for e-commerce sellers. 25 free credits monthly.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Snap Pro logo card — AI Studio for Everyone",
+      },
+    ],
     locale: "en_US",
   },
   twitter: {
@@ -62,6 +70,12 @@ export const metadata: Metadata = {
     title: "Snap Pro — AI Studio for Everyone",
     description:
       "17 professional AI editing services for e-commerce sellers. 25 free credits monthly.",
+    images: [
+      {
+        url: "/twitter-image",
+        alt: "Snap Pro logo card — AI Studio for Everyone",
+      },
+    ],
   },
 };
 

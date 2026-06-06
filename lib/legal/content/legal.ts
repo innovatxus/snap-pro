@@ -1276,27 +1276,114 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Controller status", ar: "صفة المراقب" },
         paragraphs: {
           en: [
-            "Snap Pro is the data controller for Egyptian users in respect of account data and a processor for content uploaded by enterprise customers.",
+            "Snap Pro is the data controller for Egyptian users in respect of account data, billing, and product analytics, and acts as a processor for content uploaded by enterprise customers under a written Data Processing Agreement.",
+            "Our legal entity, commercial registration, and tax-card details are listed on the Business & Registration Information page (Article 49 of the Executive Regulations of Consumer Protection Law 181/2018).",
           ],
           ar: [
-            "سناب برو هي المراقب على بيانات المستخدمين في مصر لما يتعلق ببيانات الحساب، ومعالج لمحتوى عملاء الشركات.",
+            "سناب برو هي المراقب على بيانات المستخدمين في مصر لما يتعلق ببيانات الحساب والفوترة وتحليلات المنتج، وتعمل كمعالج لمحتوى عملاء الشركات بموجب اتفاقية معالجة بيانات مكتوبة.",
+            "تفاصيل الكيان القانوني والسجل التجاري والبطاقة الضريبية مذكورة في صفحة معلومات الشركة والتسجيل (المادة 49 من اللائحة التنفيذية لقانون حماية المستهلك رقم 181/2018).",
+          ],
+        },
+      },
+      {
+        id: "lawful-basis",
+        heading: {
+          en: "Lawful basis (PDPL Art. 5)",
+          ar: "السند القانوني (المادة 5 من القانون)",
+        },
+        paragraphs: {
+          en: [
+            "We process personal data only on one of the bases recognised by Article 5 of PDPL Law 151/2020:",
+          ],
+          ar: [
+            "نُعالج البيانات الشخصية بناءً على أحد السندات المعترف بها في المادة 5 من القانون رقم 151/2020:",
+          ],
+        },
+        bullets: {
+          en: [
+            "Performance of the contract with you (account creation, billing, AI generation requested).",
+            "Your explicit consent (marketing emails, optional analytics, optional model-improvement uploads).",
+            "Compliance with a legal obligation (tax invoices, fraud prevention, takedown orders).",
+            "Our legitimate interests (service security, abuse prevention) where these do not override your rights.",
+          ],
+          ar: [
+            "تنفيذ العقد المُبرم معك (إنشاء الحساب، الفوترة، تنفيذ طلبات الذكاء الاصطناعي).",
+            "موافقتك الصريحة (الرسائل التسويقية، التحليلات الاختيارية، رفع البيانات لتحسين النماذج).",
+            "الامتثال لالتزام قانوني (الفواتير الضريبية، منع الاحتيال، أوامر الإزالة).",
+            "مصلحتنا المشروعة (أمن الخدمة، منع إساءة الاستخدام) شرط ألا تطغى على حقوقك.",
           ],
         },
       },
       {
         id: "rights",
         heading: {
-          en: "Your rights under PDPL",
-          ar: "حقوقك بموجب قانون حماية البيانات",
+          en: "Your rights (PDPL Arts. 17–25)",
+          ar: "حقوقك (المواد 17 إلى 25 من القانون)",
         },
         bullets: {
           en: [
-            "Access, rectification, erasure, restriction, objection, data portability, withdraw consent.",
-            "Lodge a complaint with the Personal Data Protection Center.",
+            "Right to be informed of processing (Art. 12).",
+            "Right of access to your data (Art. 17).",
+            "Right of rectification (Art. 18).",
+            "Right of erasure / withdrawal of consent (Arts. 19, 21).",
+            "Right of restriction & objection (Art. 22).",
+            "Right of data portability (Art. 23).",
+            "Right not to be subject to a solely automated decision producing legal or similarly significant effects (Art. 19).",
+            "Right to lodge a complaint with the Personal Data Protection Center (PDPC).",
           ],
           ar: [
-            "الوصول، التصحيح، المحو، التقييد، الاعتراض، نقل البيانات، سحب الموافقة.",
-            "تقديم شكوى إلى مركز حماية البيانات الشخصية.",
+            "الحق في الإحاطة بالمعالجة (المادة 12).",
+            "الحق في الوصول إلى بياناتك (المادة 17).",
+            "الحق في التصحيح (المادة 18).",
+            "الحق في المحو وسحب الموافقة (المادتان 19 و21).",
+            "الحق في التقييد والاعتراض (المادة 22).",
+            "الحق في نقل البيانات (المادة 23).",
+            "الحق في عدم الخضوع لقرار آلي بحت يُحدث أثراً قانونياً أو مماثلاً (المادة 19).",
+            "الحق في تقديم شكوى لمركز حماية البيانات الشخصية.",
+          ],
+        },
+      },
+      {
+        id: "retention",
+        heading: {
+          en: "Retention periods",
+          ar: "مدد الاحتفاظ",
+        },
+        paragraphs: {
+          en: [
+            "We keep account data while your account is active and for up to 12 months after closure for legal-defence and accounting purposes; tax invoices for 5 years (Egyptian Tax Procedures Law 206/2020 Art. 26); generated content for 90 days after your last sign-in unless you delete it sooner; security logs for 6 months. Specific retention durations per processing activity are listed in the master Privacy Policy.",
+          ],
+          ar: [
+            "نحتفظ ببيانات الحساب طوال نشاطه ولمدة تصل إلى 12 شهراً بعد إغلاقه لأغراض الدفاع القانوني والمحاسبة؛ والفواتير الضريبية لمدة 5 سنوات (المادة 26 من قانون الإجراءات الضريبية رقم 206/2020)؛ والمحتوى المُولَّد لمدة 90 يوماً من آخر تسجيل دخول ما لم تحذفه قبل ذلك؛ وسجلات الأمن لمدة 6 أشهر. مدد الاحتفاظ التفصيلية لكل نشاط معالجة موضّحة في سياسة الخصوصية الرئيسية.",
+          ],
+        },
+      },
+      {
+        id: "cross-border",
+        heading: {
+          en: "Cross-border transfers (PDPL Art. 14)",
+          ar: "النقل عبر الحدود (المادة 14 من القانون)",
+        },
+        paragraphs: {
+          en: [
+            "Article 14 of PDPL Law 151/2020 requires a licence from the Personal Data Protection Center (PDPC) before transferring personal data outside Egypt, save for limited statutory exceptions. The Center's licensing regime is supplied by the PDPL Executive Regulations, which had not yet issued at the time of writing.",
+            "Snap Pro relies on third-party AI inference and infrastructure providers located outside Egypt (United States and European Union). Pending issuance of the Executive Regulations and our PDPC licence application, we transfer personal data on the basis of:",
+          ],
+          ar: [
+            "تُلزم المادة 14 من القانون رقم 151/2020 بالحصول على ترخيص من مركز حماية البيانات الشخصية قبل نقل البيانات خارج مصر، باستثناء حالات محدودة. تفاصيل الترخيص واردة في اللائحة التنفيذية للقانون التي لم تصدر بعد عند كتابة هذا الإشعار.",
+            "تعتمد سناب برو على مزوّدي بنية تحتية واستدلال ذكاء اصطناعي خارج مصر (الولايات المتحدة والاتحاد الأوروبي). وإلى حين صدور اللائحة التنفيذية والحصول على الترخيص، يستند النقل إلى:",
+          ],
+        },
+        bullets: {
+          en: [
+            "Your explicit, informed consent at the moment of upload (Art. 14 carve-out).",
+            "Necessity for the performance of the contract you have entered into with us (Art. 14 carve-out).",
+            "Contractual safeguards equivalent to the EU Standard Contractual Clauses with each overseas processor.",
+          ],
+          ar: [
+            "موافقتك الصريحة المستنيرة عند رفع المحتوى (استثناء المادة 14).",
+            "ضرورة تنفيذ العقد المُبرم معنا (استثناء المادة 14).",
+            "ضمانات تعاقدية معادلة للبنود التعاقدية القياسية الأوروبية مع كل معالج خارجي.",
           ],
         },
       },
@@ -1308,25 +1395,59 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Submit a request via privacy@snappro.app with proof of identity. We respond within 30 days.",
+            "Submit a request via privacy@snappro.app with reasonable proof of identity. We respond within 30 days; for complex or voluminous requests we may extend by a further 30 days and notify you of the reason.",
           ],
           ar: [
-            "قدّم طلبك عبر privacy@snappro.app مع إثبات هوية. نردّ خلال 30 يوماً.",
+            "قدّم طلبك عبر privacy@snappro.app مع إثبات معقول للهوية. نردّ خلال 30 يوماً؛ وفي الطلبات المعقّدة أو الكبيرة الحجم قد نمدّ المهلة 30 يوماً إضافية مع إخطارك بسبب التمديد.",
+          ],
+        },
+      },
+      {
+        id: "breach",
+        heading: {
+          en: "Breach notification (PDPL Art. 35)",
+          ar: "الإخطار بالاختراق (المادة 35 من القانون)",
+        },
+        paragraphs: {
+          en: [
+            "Where a personal-data breach is likely to result in risk to data subjects, Snap Pro will notify the PDPC within 72 hours of becoming aware of the breach and will notify affected users without undue delay where the breach is likely to result in high risk to their rights or freedoms.",
+          ],
+          ar: [
+            "في حال وقوع اختراق بيانات شخصية يُحتمل أن يُلحق ضرراً بأصحابها، تُخطر سناب برو مركز حماية البيانات الشخصية خلال 72 ساعة من العلم بالاختراق، وتُخطر المستخدمين المتأثرين دون تأخير غير مبرّر متى كان الاختراق مرجّح التسبّب في خطر مرتفع على حقوقهم أو حرياتهم.",
           ],
         },
       },
       {
         id: "dpo",
         heading: {
-          en: "DPO & supervisory authority",
-          ar: "مسؤول حماية البيانات والجهة الإشرافية",
+          en: "DPO & supervisory authority (PDPL Art. 8)",
+          ar: "مسؤول حماية البيانات والجهة الإشرافية (المادة 8)",
         },
         paragraphs: {
           en: [
-            "DPO contact: privacy@snappro.app. Supervisory authority: Personal Data Protection Center, Ministry of Communications and Information Technology.",
+            "Article 8 of PDPL Law 151/2020 requires controllers and processors that handle sensitive personal data, conduct large-scale or systematic monitoring, or meet the thresholds set in the Executive Regulations to appoint a Data Protection Officer (DPO).",
+            "Snap Pro's Office of the DPO can be contacted at privacy@snappro.app. The named DPO will be published once Executive Regulations issue and our appointment is filed with the PDPC.",
+            "Supervisory authority: Personal Data Protection Center (مركز حماية البيانات الشخصية), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt.",
           ],
           ar: [
-            "جهة الاتصال: privacy@snappro.app. الجهة المختصة: مركز حماية البيانات الشخصية، وزارة الاتصالات وتكنولوجيا المعلومات.",
+            "تُلزم المادة 8 من القانون رقم 151/2020 المراقبَ والمعالج اللذَين يتعاملان مع البيانات الحسّاسة أو يُجريان مراقبة منهجية واسعة النطاق أو يستوفيان حدود اللائحة التنفيذية بتعيين مسؤول حماية بيانات.",
+            "يمكن التواصل مع مكتب مسؤول حماية البيانات في سناب برو عبر privacy@snappro.app. سيُنشَر اسم المسؤول المعيَّن فور صدور اللائحة التنفيذية وإيداع تعيينه لدى المركز.",
+            "الجهة الإشرافية: مركز حماية البيانات الشخصية، وزارة الاتصالات وتكنولوجيا المعلومات، القرية الذكية، الجيزة، جمهورية مصر العربية.",
+          ],
+        },
+      },
+      {
+        id: "complaints",
+        heading: {
+          en: "How to lodge a complaint",
+          ar: "كيفية تقديم شكوى",
+        },
+        paragraphs: {
+          en: [
+            "If you believe we have processed your data unlawfully you may complain directly to the Personal Data Protection Center using the channels published on the PDPC's official portal under the Ministry of Communications and Information Technology (MCIT). We encourage you to contact us first at privacy@snappro.app so we have an opportunity to address the issue.",
+          ],
+          ar: [
+            "إذا رأيت أننا عالجنا بياناتك بصورة مخالفة للقانون يمكنك تقديم شكوى مباشرة إلى مركز حماية البيانات الشخصية عبر القنوات المنشورة على البوّابة الرسمية للمركز التابع لوزارة الاتصالات وتكنولوجيا المعلومات. ونشجّعك على التواصل معنا أولاً عبر privacy@snappro.app لمنحنا فرصة للمعالجة.",
           ],
         },
       },
@@ -1339,6 +1460,13 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         href: "/legal/business-info",
         label: { en: "Business Information", ar: "معلومات الشركة" },
+      },
+      {
+        href: "/legal/international-transfers",
+        label: {
+          en: "International Transfers",
+          ar: "نقل البيانات الدولي",
+        },
       },
     ],
   },
@@ -1437,20 +1565,90 @@ export const LEGAL_PAGES: LegalPage[] = [
           head: { en: ["Field", "Value"], ar: ["الحقل", "القيمة"] },
           rows: [
             {
-              en: ["Legal name", "Snap Pro, Inc."],
-              ar: ["الاسم القانوني", "سناب برو، إنك."],
+              en: ["Legal name (Latin)", "Snap Pro, Inc."],
+              ar: ["الاسم القانوني (لاتيني)", "سناب برو، إنك."],
             },
             {
-              en: ["Commercial Registration", "[CR number — pending counsel]"],
-              ar: ["السجل التجاري", "[رقم السجل — قيد إعداد المستشار]"],
+              en: [
+                "Legal name (Arabic)",
+                "[Arabic legal name — pending company filing]",
+              ],
+              ar: [
+                "الاسم القانوني (عربي)",
+                "[الاسم العربي — قيد إعداد الشركة]",
+              ],
             },
             {
-              en: ["Tax card", "[tax card number — pending]"],
-              ar: ["البطاقة الضريبية", "[رقم البطاقة — قيد الإعداد]"],
+              en: [
+                "Commercial Registration (Law 34/1976)",
+                "[CR number & issuing chamber — pending counsel]",
+              ],
+              ar: [
+                "السجل التجاري (قانون 34/1976)",
+                "[رقم السجل والغرفة المُصدِرة — قيد المستشار]",
+              ],
             },
             {
-              en: ["Registered address", "[address — pending]"],
+              en: ["Tax Card (ETA)", "[tax card number — pending]"],
+              ar: [
+                "البطاقة الضريبية (مصلحة الضرائب)",
+                "[رقم البطاقة — قيد الإعداد]",
+              ],
+            },
+            {
+              en: [
+                "ETA Simplified Vendor # (Law 3/2022, Decree 24/2023)",
+                "[non-resident VAT registration — pending]",
+              ],
+              ar: [
+                "رقم المورد المبسّط بمصلحة الضرائب (قانون 3/2022، قرار 24/2023)",
+                "[تسجيل القيمة المضافة لغير المقيمين — قيد الإعداد]",
+              ],
+            },
+            {
+              en: ["Registered headquarters", "[address — pending]"],
               ar: ["العنوان المسجل", "[العنوان — قيد الإعداد]"],
+            },
+            {
+              en: [
+                "Authorised signatory & capacity",
+                "[name & role — pending company filing]",
+              ],
+              ar: [
+                "المفوّض بالتوقيع وصفته",
+                "[الاسم والصفة — قيد إعداد الشركة]",
+              ],
+            },
+            {
+              en: [
+                "Activity (per CR codes)",
+                "Software-as-a-Service · AI image and video editing for e-commerce sellers",
+              ],
+              ar: [
+                "النشاط (بحسب رموز السجل)",
+                "خدمات برمجية تشغيلية · تحرير صور وفيديو بالذكاء الاصطناعي لبائعي التجارة الإلكترونية",
+              ],
+            },
+            {
+              en: ["Customer service email", "support@snappro.app"],
+              ar: ["البريد الإلكتروني لخدمة العملاء", "support@snappro.app"],
+            },
+            {
+              en: [
+                "Customer service phone (Egypt)",
+                "[phone — pending company filing]",
+              ],
+              ar: ["هاتف خدمة العملاء (مصر)", "[الهاتف — قيد إعداد الشركة]"],
+            },
+            {
+              en: [
+                "Complaints (Egypt)",
+                "Egyptian Consumer Protection Agency · hotline 19588 · cpa.gov.eg",
+              ],
+              ar: [
+                "الشكاوى (مصر)",
+                "جهاز حماية المستهلك المصري · الخط الساخن 19588 · cpa.gov.eg",
+              ],
             },
             {
               en: ["E-invoicing status", "Active (Egyptian Tax Authority)"],
@@ -1458,6 +1656,33 @@ export const LEGAL_PAGES: LegalPage[] = [
             },
           ],
         },
+      },
+      {
+        id: "egypt-disclosures",
+        heading: {
+          en: "Egyptian e-commerce disclosures",
+          ar: "إفصاحات التجارة الإلكترونية في مصر",
+        },
+        paragraphs: {
+          en: [
+            "The fields above are published in compliance with Article 49 of the Executive Regulations (Decree 822/2019) of Consumer Protection Law 181/2018, which obliges online traders serving customers in Egypt to disclose their identity, registration details, contact channels, total price (including VAT), and the route to file a complaint with the Egyptian Consumer Protection Agency (CPA, hotline 19588).",
+            'Snap Pro\'s prices on this site are inclusive of value-added tax at the rate prescribed by VAT Law 67/2016 (as amended by Law 3/2022) where applicable. Any item not yet finalised is marked "pending" and will be filled in before commercial launch in Egypt.',
+          ],
+          ar: [
+            "تُنشر الحقول أعلاه التزاماً بالمادة 49 من اللائحة التنفيذية (قرار 822/2019) لقانون حماية المستهلك رقم 181/2018، التي تُلزم التجار الإلكترونيين الذين يخدمون عملاء في مصر بالإفصاح عن هويتهم وبيانات تسجيلهم وقنوات التواصل والسعر الإجمالي (شاملاً ضريبة القيمة المضافة) وآلية تقديم الشكوى لجهاز حماية المستهلك (الخط الساخن 19588).",
+            'أسعار سناب برو على هذا الموقع شاملة لضريبة القيمة المضافة بالنسبة المقرّرة بقانون 67/2016 (المعدّل بالقانون 3/2022) حيثما تنطبق. وأي حقل لم يُحدَّد نهائياً مذكور بعلامة "قيد الإعداد" وسيتمّ استكماله قبل الإطلاق التجاري في مصر.',
+          ],
+        },
+      },
+    ],
+    related: [
+      {
+        href: "/legal/egypt-pdpl",
+        label: { en: "Egypt PDPL Notice", ar: "إشعار قانون حماية البيانات" },
+      },
+      {
+        href: "/legal/refunds",
+        label: { en: "Refund Policy", ar: "سياسة الاسترداد" },
       },
     ],
   },

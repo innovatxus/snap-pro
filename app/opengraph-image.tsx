@@ -5,7 +5,7 @@ import { join } from "path";
 // Use the Node runtime so we can read the logo file from disk at build time.
 export const runtime = "nodejs";
 
-export const alt = "Snap Pro — AI Studio for Everyone";
+export const alt = "Snap Pro logo card — AI Studio for Everyone";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,6 +53,73 @@ export default async function OpengraphImage() {
           display: "flex",
         }}
       />
+
+      {/* Persistent brand lockup kept inside the safe area for cropped previews. */}
+      <div
+        style={{
+          position: "absolute",
+          top: 44,
+          left: 52,
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          padding: "12px 18px 12px 12px",
+          border: "1px solid rgba(255,255,255,0.12)",
+          borderRadius: 28,
+          background: "rgba(7,9,13,0.62)",
+          boxShadow: "0 18px 50px rgba(0,0,0,0.35)",
+          zIndex: 2,
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logo}
+          alt='Snap Pro logo'
+          width={56}
+          height={56}
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: 14,
+            display: "flex",
+            flexShrink: 0,
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            fontSize: 30,
+            fontWeight: 800,
+            letterSpacing: "0.02em",
+            lineHeight: 1,
+          }}
+        >
+          <span
+            style={{
+              background:
+                "linear-gradient(135deg, #7DD3FC 0%, #38BDF8 35%, #0EA5E9 70%, #0369A1 100%)",
+              backgroundClip: "text",
+              color: "transparent",
+              display: "flex",
+            }}
+          >
+            SNAP
+          </span>
+          <span
+            style={{
+              marginLeft: 4,
+              background:
+                "linear-gradient(135deg, #FFFFFF 0%, #D8DCE3 18%, #8a8f97 45%, #C8CDD4 75%, #FFFFFF 100%)",
+              backgroundClip: "text",
+              color: "transparent",
+              display: "flex",
+            }}
+          >
+            PRO
+          </span>
+        </div>
+      </div>
 
       {/* Card content */}
       <div
