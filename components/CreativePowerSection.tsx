@@ -44,7 +44,7 @@ export default function CreativePowerSection() {
           obs.disconnect();
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.08 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -52,9 +52,9 @@ export default function CreativePowerSection() {
 
   return (
     <section
-      aria-label="Snap Pro Intelligence"
+      aria-label='Snap Pro Intelligence'
       style={{ padding: "200px 40px" }}
-      className="max-[720px]:px-4 max-[720px]:py-32"
+      className='max-[720px]:px-4 max-[720px]:py-32'
     >
       {/* ─── Contained card ─── */}
       <div
@@ -77,7 +77,7 @@ export default function CreativePowerSection() {
         {/* ── Ambient blue glow (center) ── */}
         <div
           aria-hidden
-          className="glow-breathe"
+          className='glow-breathe'
           style={{
             position: "absolute",
             top: "50%",
@@ -134,7 +134,7 @@ export default function CreativePowerSection() {
         >
           {/* ══ LEFT CARD ══ */}
           <div
-            className="max-[1100px]:hidden"
+            className='max-[1100px]:hidden'
             style={{
               position: "absolute",
               left: 40,
@@ -202,7 +202,7 @@ export default function CreativePowerSection() {
                 }}
               >
                 <div
-                  className="shimmer-bg"
+                  className='shimmer-bg'
                   style={{
                     position: "absolute",
                     inset: 0,
@@ -210,8 +210,8 @@ export default function CreativePowerSection() {
                   }}
                 />
                 <svg
-                  viewBox="0 0 236 174"
-                  fill="none"
+                  viewBox='0 0 236 174'
+                  fill='none'
                   style={{
                     position: "absolute",
                     inset: 0,
@@ -229,72 +229,72 @@ export default function CreativePowerSection() {
                           y={r * 25}
                           width={28}
                           height={25}
-                          fill="rgba(255,255,255,0.022)"
+                          fill='rgba(255,255,255,0.022)'
                         />
-                      ) : null
-                    )
+                      ) : null,
+                    ),
                   )}
                   {/* Product silhouette */}
                   <ellipse
-                    cx="118"
-                    cy="87"
-                    rx="52"
-                    ry="64"
-                    fill="rgba(56,189,248,0.09)"
+                    cx='118'
+                    cy='87'
+                    rx='52'
+                    ry='64'
+                    fill='rgba(56,189,248,0.09)'
                   />
                   <ellipse
-                    cx="118"
-                    cy="87"
-                    rx="34"
-                    ry="44"
-                    fill="rgba(56,189,248,0.14)"
+                    cx='118'
+                    cy='87'
+                    rx='34'
+                    ry='44'
+                    fill='rgba(56,189,248,0.14)'
                   />
                   {/* Corner crop marks — silver */}
                   <path
-                    d="M10 22 L10 10 L22 10"
-                    stroke="rgba(168,174,184,0.6)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    fill="none"
+                    d='M10 22 L10 10 L22 10'
+                    stroke='rgba(168,174,184,0.6)'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    fill='none'
                   />
                   <path
-                    d="M226 22 L226 10 L214 10"
-                    stroke="rgba(168,174,184,0.6)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    fill="none"
+                    d='M226 22 L226 10 L214 10'
+                    stroke='rgba(168,174,184,0.6)'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    fill='none'
                   />
                   <path
-                    d="M10 152 L10 164 L22 164"
-                    stroke="rgba(168,174,184,0.6)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    fill="none"
+                    d='M10 152 L10 164 L22 164'
+                    stroke='rgba(168,174,184,0.6)'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    fill='none'
                   />
                   <path
-                    d="M226 152 L226 164 L214 164"
-                    stroke="rgba(168,174,184,0.6)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    fill="none"
+                    d='M226 152 L226 164 L214 164'
+                    stroke='rgba(168,174,184,0.6)'
+                    strokeWidth='1.5'
+                    strokeLinecap='round'
+                    fill='none'
                   />
                   {/* Crosshair — blue */}
-                  <circle
-                    cx="118"
-                    cy="87"
-                    r="3"
-                    fill="#38BDF8"
-                    opacity="0.9"
+                  <circle cx='118' cy='87' r='3' fill='#38BDF8' opacity='0.9' />
+                  <line
+                    x1='118'
+                    y1='75'
+                    x2='118'
+                    y2='99'
+                    stroke='rgba(56,189,248,0.35)'
+                    strokeWidth='1'
                   />
                   <line
-                    x1="118" y1="75" x2="118" y2="99"
-                    stroke="rgba(56,189,248,0.35)"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="106" y1="87" x2="130" y2="87"
-                    stroke="rgba(56,189,248,0.35)"
-                    strokeWidth="1"
+                    x1='106'
+                    y1='87'
+                    x2='130'
+                    y2='87'
+                    stroke='rgba(56,189,248,0.35)'
+                    strokeWidth='1'
                   />
                 </svg>
               </div>
@@ -370,8 +370,7 @@ export default function CreativePowerSection() {
                   display: "block",
                   width: 28,
                   height: 1,
-                  background:
-                    "linear-gradient(90deg, transparent, #38BDF8)",
+                  background: "linear-gradient(90deg, transparent, #38BDF8)",
                   flexShrink: 0,
                 }}
               />
@@ -393,17 +392,14 @@ export default function CreativePowerSection() {
                   display: "block",
                   width: 28,
                   height: 1,
-                  background:
-                    "linear-gradient(90deg, #38BDF8, transparent)",
+                  background: "linear-gradient(90deg, #38BDF8, transparent)",
                   flexShrink: 0,
                 }}
               />
             </div>
 
             {/* Avatar row — 5 rounded-square icons */}
-            <div
-              style={{ display: "flex", gap: 8, marginBottom: 32 }}
-            >
+            <div style={{ display: "flex", gap: 8, marginBottom: 32 }}>
               {(
                 [
                   {
@@ -451,7 +447,9 @@ export default function CreativePowerSection() {
                     fontFamily: "var(--font-geist-sans), sans-serif",
                     fontSize: 13,
                     fontWeight: 700,
-                    color: a.dark ? "rgba(0,0,0,0.65)" : "rgba(255,255,255,0.9)",
+                    color: a.dark
+                      ? "rgba(0,0,0,0.65)"
+                      : "rgba(255,255,255,0.9)",
                     letterSpacing: "-0.01em",
                     boxShadow: "0 4px 18px rgba(0,0,0,0.5)",
                     flexShrink: 0,
@@ -464,7 +462,7 @@ export default function CreativePowerSection() {
 
             {/* Headline — Fraunces, silver-chrome accent */}
             <h2
-              className="font-fraunces"
+              className='font-fraunces'
               style={{
                 fontSize: "clamp(46px, 5.8vw, 80px)",
                 fontWeight: 300,
@@ -476,7 +474,7 @@ export default function CreativePowerSection() {
             >
               Your creative
               <br />
-              <em className="silver">superpower</em>.
+              <em className='silver'>superpower</em>.
             </h2>
 
             {/* Sub-headline — Geist Sans, site muted colour */}
@@ -490,8 +488,8 @@ export default function CreativePowerSection() {
                 marginBottom: 44,
               }}
             >
-              Upload a product photo. Run AI services in sequence. Download
-              hero images that convert.
+              Upload a product photo. Run AI services in sequence. Download hero
+              images that convert.
             </p>
 
             {/* Command bar */}
@@ -501,17 +499,13 @@ export default function CreativePowerSection() {
 
           {/* ══ RIGHT PANEL ══ */}
           <div
-            className="max-[1100px]:hidden"
+            className='max-[1100px]:hidden flex flex-col items-end gap-2.5'
             style={{
               position: "absolute",
               right: 40,
               top: "50%",
               transform: "translateY(-50%)",
               zIndex: 20,
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-              alignItems: "flex-end",
               width: 268,
             }}
           >
@@ -647,7 +641,7 @@ export default function CreativePowerSection() {
                 boxShadow: "0 0 18px rgba(56,189,248,0.08)",
               }}
             >
-              <span className="blue-pulse" />
+              <span className='blue-pulse' />
               <span
                 style={{
                   fontFamily: "var(--font-geist-sans), sans-serif",
@@ -675,7 +669,7 @@ export default function CreativePowerSection() {
               }}
             >
               <span
-                className="pulse-anim"
+                className='pulse-anim'
                 style={{
                   display: "inline-block",
                   width: 8,
@@ -791,7 +785,7 @@ export default function CreativePowerSection() {
                     }}
                   >
                     <div
-                      className="shimmer-bg"
+                      className='shimmer-bg'
                       style={{
                         position: "absolute",
                         inset: 0,
@@ -862,7 +856,7 @@ function CommandBar() {
 
       {/* Blinking blue cursor */}
       <span
-        className="cursor-blink"
+        className='cursor-blink'
         style={{
           display: "inline-block",
           width: 2,
@@ -907,10 +901,10 @@ function CommandBar() {
           b.style.transform = "scale(1)";
         }}
       >
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+        <svg width='13' height='13' viewBox='0 0 13 13' fill='none'>
           <path
-            d="M6.5 0L7.9 4.6H12.5L8.8 7.4L10.2 12L6.5 9.2L2.8 12L4.2 7.4L0.5 4.6H5.1L6.5 0Z"
-            fill="white"
+            d='M6.5 0L7.9 4.6H12.5L8.8 7.4L10.2 12L6.5 9.2L2.8 12L4.2 7.4L0.5 4.6H5.1L6.5 0Z'
+            fill='white'
           />
         </svg>
         Run it
