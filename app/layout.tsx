@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces, Syne } from "next/font/google";
 import ScrollFloater from "@/components/ScrollFloater";
 import { LocaleProvider } from "@/components/legal/LocaleProvider";
+import ConsentBanner from "@/components/legal/ConsentBanner";
 import "./globals.css";
 
 // Inline script: read the persisted locale before hydration so RTL pages render
@@ -88,6 +89,7 @@ export default function RootLayout({
         <LocaleProvider>
           {children}
           <ScrollFloater />
+          <ConsentBanner />
         </LocaleProvider>
       </body>
     </html>

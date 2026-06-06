@@ -61,17 +61,16 @@ export default function NichesSection() {
         <ScrollReveal
           stagger
           threshold={0}
-          className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'
+          className='grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5'
         >
           {NICHES.map((niche) => (
             <div
               key={niche.id}
-              className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative'
+              className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative h-82 sm:h-135'
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--line)",
                 borderRadius: "var(--r-xl)",
-                height: 540,
               }}
             >
               {/* Whole-card click target. Sits above the media/overlay
@@ -122,20 +121,21 @@ export default function NichesSection() {
 
               {/* Image area */}
               <div
-                className='relative overflow-hidden'
-                style={{ height: 310, background: "transparent", zIndex: 2 }}
+                className='relative overflow-hidden h-45 sm:h-78'
+                style={{ background: "transparent", zIndex: 2 }}
               >
                 {/* Category pill */}
-                <div className='absolute top-3 left-3'>
+                <div className='absolute top-2 left-2'>
                   <div
                     className='chip'
                     style={{
                       background: "rgba(10,10,10,0.7)",
                       backdropFilter: "blur(12px)",
-                      fontSize: 9,
-                      padding: "4px 10px",
+                      fontSize: 8,
+                      padding: "2px 7px",
                       color: "var(--mute)",
-                      letterSpacing: "0.16em",
+                      letterSpacing: "0.14em",
+                      lineHeight: 1.4,
                     }}
                   >
                     {niche.label}
@@ -166,14 +166,13 @@ export default function NichesSection() {
                     every empty pixel falls through to the whole-card Link
                     above. Each chip Link below re-enables pointer-events. */}
               <div
-                className='p-4 flex flex-col gap-3 relative'
-                style={{ zIndex: 10, height: 230, pointerEvents: "none" }}
+                className='p-4 flex flex-col gap-3 relative h-37 sm:h-58'
+                style={{ zIndex: 10, pointerEvents: "none" }}
               >
                 <div
-                  className='flex flex-wrap gap-2'
+                  className='flex flex-wrap gap-2 translate-y-6 sm:translate-y-22'
                   style={{
                     minHeight: 52,
-                    transform: "translateY(90px)",
                     alignItems: "flex-start",
                     alignContent: "flex-start",
                   }}
@@ -184,8 +183,8 @@ export default function NichesSection() {
                       href={`/edit/${niche.id}/${toolSlug(svc.name)}`}
                       className={`chip ${svc.featured ? "chip-blue" : ""}`}
                       style={{
-                        fontSize: 9,
-                        gap: 6,
+                        fontSize: 6.2,
+                        gap: 4.4,
                         position: "relative",
                         zIndex: 20,
                         pointerEvents: "auto",
@@ -194,8 +193,8 @@ export default function NichesSection() {
                       {svc.featured && (
                         <span
                           style={{
-                            width: 4,
-                            height: 4,
+                            width: 2.75,
+                            height: 2.75,
                             borderRadius: "50%",
                             background: "#38BDF8",
                             boxShadow: "0 0 6px rgba(56,189,248,0.8)",

@@ -78,4 +78,47 @@ export const UI = {
     },
     statusOk: { en: "All systems normal", ar: "جميع الأنظمة طبيعية" },
   },
+  consent: {
+    eyebrow: { en: "Cookies & data", ar: "ملفات تعريف الارتباط والبيانات" },
+    title: {
+      en: "Your privacy, your call.",
+      ar: "خصوصيتك بيدك.",
+    },
+    body: {
+      en: "We use essential cookies to make Snap Pro work. With your consent we may also use analytics to understand usage and marketing to improve outreach. You can change this anytime from the footer.",
+      ar: "نستخدم ملفات تعريف ارتباط أساسية لتشغيل سناب برو. وبموافقتك قد نستخدم أيضاً تحليلات لفهم الاستخدام وتسويقاً لتحسين التواصل. يمكنك تغيير ذلك في أي وقت من تذييل الصفحة.",
+    },
+    accept: { en: "Accept all", ar: "قبول الكل" },
+    reject: { en: "Reject non-essential", ar: "رفض غير الأساسي" },
+    manage: { en: "Manage", ar: "إدارة" },
+    save: { en: "Save preferences", ar: "حفظ التفضيلات" },
+    learnMore: { en: "Read our Cookie Policy", ar: "اقرأ سياسة الكوكيز" },
+    categories: {
+      essential: {
+        title: { en: "Essential", ar: "أساسي" },
+        body: {
+          en: "Required for the site to function. Cannot be disabled.",
+          ar: "ضرورية لعمل الموقع. لا يمكن تعطيلها.",
+        },
+      },
+      analytics: {
+        title: { en: "Analytics", ar: "التحليلات" },
+        body: {
+          en: "Helps us understand which pages and tools are useful so we can improve them.",
+          ar: "تساعدنا على فهم أي الصفحات والأدوات مفيدة لتحسينها.",
+        },
+      },
+      marketing: {
+        title: { en: "Marketing", ar: "التسويق" },
+        body: {
+          en: "Lets us show you relevant updates and measure the success of our campaigns.",
+          ar: "تتيح لنا عرض تحديثات ذات صلة وقياس نجاح حملاتنا.",
+        },
+      },
+    },
+    footerLink: {
+      en: "Cookie preferences",
+      ar: "تفضيلات الكوكيز",
+    },
+  },
 } as const;

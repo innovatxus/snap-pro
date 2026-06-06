@@ -9,6 +9,7 @@ import LocaleSwitcher from "./legal/LocaleSwitcher";
 import RegionalStrip from "./legal/RegionalStrip";
 import { UI } from "@/lib/legal/i18n";
 import type { BiText } from "@/lib/legal/types";
+import { openConsentBanner } from "@/lib/consent";
 
 const YEAR = new Date().getFullYear();
 
@@ -831,6 +832,26 @@ export default function Footer() {
                 {link.label[locale]}
               </Link>
             ))}
+            <button
+              type='button'
+              onClick={openConsentBanner}
+              className='footer-legal-link'
+              style={{
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: 10,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--mute-2)",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+                whiteSpace: "nowrap",
+                transition: "color 0.15s ease",
+              }}
+            >
+              {UI.consent.footerLink[locale]}
+            </button>
           </div>
         </div>
       </div>
