@@ -7,7 +7,7 @@ import ScrollReveal from "./ScrollReveal";
 const UGC_CARDS = [
   {
     id: "fashion",
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=600&auto=format&fit=crop",
+    src: "/assets/images/apperal-snap-pro.png",
     alt: "Fashion apparel flat lay product photography",
     label: "Fashion",
     heading: "Studio quality.",
@@ -16,7 +16,7 @@ const UGC_CARDS = [
   },
   {
     id: "beauty",
-    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
+    src: "/assets/images/makeup-snap-pro.png",
     alt: "Beauty and cosmetics product photography on marble",
     label: "Beauty",
     heading: "Glow-worthy.",
@@ -24,7 +24,7 @@ const UGC_CARDS = [
   },
   {
     id: "watch",
-    src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop",
+    src: "/assets/images/Electronics-snap-pro.PNG",
     alt: "Luxury watch product photography on white background",
     label: "Electronics",
     heading: "Precision.",
@@ -55,7 +55,9 @@ export default function BentoSection() {
     const el = sliderRef.current;
     if (!el) return;
     const amount = direction === "left" ? -360 : 360;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     el.scrollBy({ left: amount, behavior: reducedMotion ? "auto" : "smooth" });
   };
 

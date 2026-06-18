@@ -1,0 +1,28 @@
+Section,File,Line,Card / Item,Current Image Source,Notes
+Niche marketing cards,features/editor/data/niches.ts,225,Special Events,images.unsplash.com,No matching local asset was provided
+Niche marketing cards,features/editor/data/niches.ts,239,Food & Drink,images.unsplash.com,No matching local asset was provided
+Niche marketing cards,features/editor/data/niches.ts,295,Wedding & Events,images.unsplash.com,No matching local asset was provided
+Niche marketing cards,features/editor/data/niches.ts,352,Cafes & Specialty,images.unsplash.com,No matching local asset was provided
+Niche marketing cards,features/editor/data/niches.ts,372,Travel & Tourism,images.unsplash.com,No matching local asset was provided
+Sub-category tool cards (Personal),components/SubCategoriesSection.tsx,47,Anniversaries,images.unsplash.com,No matching local asset was provided
+Sub-category tool cards (Business),components/SubCategoriesSection.tsx,170,Digital Menu,images.unsplash.com,No matching local asset was provided
+Sub-category tool cards (Business),components/SubCategoriesSection.tsx,210,Brand Kit,images.unsplash.com,No matching local asset was provided
+UGC showcase cards (Bento),components/BentoSection.tsx,35,Food & Drink,images.unsplash.com,No matching local asset was provided
+UGC showcase cards (Bento),components/BentoSection.tsx,43,Tech / Headphones,images.unsplash.com,No matching local asset was provided
+Learning Center tutorials,features/learning/data/learning-data.ts,175,Platform Overview,images.unsplash.com,16 tutorial thumbnails total all use Unsplash via the u() helper
+Learning Center tutorials,features/learning/data/learning-data.ts,218,Your First Project,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,245,"Background Removal, Essentials",images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,273,Ghost Mannequin Masterclass,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,302,Virtual Staging for Real Estate,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,329,AI Upscaling 4x Without Halos,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,362,Product Photography Masterclass,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,396,Background Replacement,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,420,Transparent PNG Export,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,443,Room Declutter,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,467,Catalog Optimization,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,491,Social Media Assets,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,512,Ad Creative Production,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,537,Credits Deep Dive,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,561,Photo Restoration,images.unsplash.com,
+Learning Center tutorials,features/learning/data/learning-data.ts,585,Team Collaboration Setup,images.unsplash.com,
+Templates page (bulk placeholders),app/templates/page.tsx,47,"All 12 industries x ~21 images each (hero collage + mid grid + strip + 4 template thumbnails)",picsum.photos,"~250+ randomly seeded placeholder images across the whole page, not individually named; biggest chunk of remaining stock imagery"

@@ -59,8 +59,7 @@ export const NICHES: Niche[] = [
     italicWord: "refined",
     tagline: "PATTERN REPEAT · COLOR VARIANTS · MACRO SHARPEN",
     label: "Textile",
-    image:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/Textile snap pro app.png.png",
     services: [
       { name: "Pattern Repeat", featured: true },
       { name: "Color Variants" },
@@ -96,8 +95,7 @@ export const NICHES: Niche[] = [
     italicWord: "precision",
     tagline: "REFLECTION CLEAN · STUDIO WHITE · EDGE SHARPEN",
     label: "Tech",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/Electronics-snap-pro.PNG",
     services: [
       { name: "Reflection Clean", featured: true },
       { name: "Studio White" },
@@ -135,8 +133,7 @@ export const NICHES: Niche[] = [
     italicWord: "timeless",
     tagline: "OLD PHOTO RESTORE · MACRO SHARPEN · COLOR MATCH",
     label: "Antiques",
-    image:
-      "https://images.unsplash.com/photo-1461360228754-6e81c478b882?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/antiques-snap-pro-app.png",
     services: [
       { name: "Old Photo Restore", featured: true },
       { name: "Macro Sharpen" },
@@ -153,8 +150,7 @@ export const NICHES: Niche[] = [
     italicWord: "ambient",
     tagline: "ROOM STAGE · PERSPECTIVE FIX · CAST SHADOW",
     label: "Furniture",
-    image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/internal Design snap-pro .png",
     services: [
       { name: "Room Stage", featured: true },
       { name: "Cast Shadow" },
@@ -172,8 +168,7 @@ export const NICHES: Niche[] = [
     italicWord: "showroom-ready",
     tagline: "SHOWROOM GEN · SKY REPLACE · 360° SPIN",
     label: "Automotive",
-    image:
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/Cars-Snap-Pro.png",
     services: [
       { name: "Showroom Gen", featured: true },
       { name: "Sky Replace" },
@@ -192,8 +187,7 @@ export const NICHES: Niche[] = [
     italicWord: "brilliant",
     tagline: "MACRO SHARPEN · SPARKLE BOOST · REFLECTION CLEAN",
     label: "Jewellery",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/jewelry snap pro.png",
     services: [
       { name: "Macro Sharpen", featured: true },
       { name: "Glass Reflection" },
@@ -212,8 +206,7 @@ export const NICHES: Niche[] = [
     italicWord: "perfect",
     tagline: "BACKGROUND REMOVE · CAST SHADOW · UPSCALE 4K",
     label: "Products",
-    image:
-      "https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/productStaging-snap-pro.png",
     services: [
       { name: "Background Remove", featured: true },
       { name: "Auto Backdrop" },
@@ -262,8 +255,7 @@ export const NICHES: Niche[] = [
     italicWord: "converting",
     tagline: "BACKGROUND REMOVE · MARKETPLACE RESIZE · BULK CATALOG",
     label: "E-commerce",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/AIbackground.png",
     services: [
       { name: "Background Remove", featured: true },
       { name: "Marketplace Resize" },
@@ -280,8 +272,7 @@ export const NICHES: Niche[] = [
     italicWord: "luminous",
     tagline: "HDR BALANCE · SKY REPLACE · PERSPECTIVE FIX",
     label: "Hospitality",
-    image:
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/HDR balance.png",
     services: [
       { name: "HDR Balance", featured: true },
       { name: "Sky Replace" },
@@ -319,8 +310,7 @@ export const NICHES: Niche[] = [
     italicWord: "striking",
     tagline: "SKY REPLACE · DRONE STITCH · HDR BALANCE",
     label: "Architecture",
-    image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/real-estate-snap-pro.png",
     services: [
       { name: "Sky Replace", featured: true },
       { name: "HDR Balance" },
@@ -339,8 +329,7 @@ export const NICHES: Niche[] = [
     italicWord: "viral",
     tagline: "SKIN SMOOTH · FORMAT PACK · BACKGROUND REMOVE",
     label: "Creators",
-    image:
-      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/Trends-snap-pro.png",
     services: [
       { name: "Skin Smooth", featured: true },
       { name: "Marketplace Resize" },
@@ -399,8 +388,7 @@ export const NICHES: Niche[] = [
     italicWord: "print-perfect",
     tagline: "SKIN SMOOTH · UPSCALE 4K · WEB/PRINT EXPORT",
     label: "Editorial",
-    image:
-      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/images/Photography-snap-pro.png",
     services: [
       { name: "Skin Smooth", featured: true },
       { name: "Upscale 4K" },
