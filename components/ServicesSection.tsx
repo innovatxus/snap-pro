@@ -28,6 +28,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "2 cr",
     desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
+    video: "/assets/video/tools videos/ghost manquin.mp4",
   },
   {
     id: 3,
@@ -37,6 +38,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "1 cr",
     desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
+    video: "/assets/video/tools videos/object erase.mp4",
   },
   // ── STAGE (11) ───────────────────────────────────────────────────────────
   {
@@ -47,6 +49,10 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Eight studio scenes. Light intensity and shadow depth in two sliders.",
+    video: "/assets/video/tools videos/auto backdrop.mp4",
+    // Source clip has ~280px of pillarboxing baked into each side of a
+    // 1280px-wide frame (content is only the center 719px). Zoom past it.
+    videoZoom: 1.4,
   },
   {
     id: 5,
@@ -56,6 +62,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Place furniture in a styled room — kitchen, living, bedroom, patio.",
+    video: "/assets/video/tools videos/room staging.mp4",
   },
   {
     id: 6,
@@ -65,6 +72,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Realistic ground or wall shadows. Direction, blur, and opacity controls.",
+    video: "/assets/video/tools videos/cast shadow.mp4",
   },
   {
     id: 7,
@@ -74,6 +82,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Adds a tabletop mirror reflection — perfect for bottles, jars, watches.",
+    video: "/assets/video/tools videos/mirror reflection.mp4",
   },
   {
     id: 8,
@@ -92,6 +101,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Remove furniture and clutter from room photos. Clean canvas for real-estate virtual staging.",
+    video: "/assets/video/tools videos/room declutering.mp4",
   },
   {
     id: 10,
@@ -101,6 +111,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Photorealistic automotive showroom scenes. Floor reflections and directional lighting included.",
+    video: "/assets/video/tools videos/Show room Gen.mp4",
   },
   {
     id: 21,
@@ -137,6 +148,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Generate 3D packaging mockups from flat artwork. Lid-open, angled, and flat views.",
+    video: "/assets/video/tools videos/packaging.mp4",
   },
   // ── ENHANCE (12) ─────────────────────────────────────────────────────────
   {
@@ -165,6 +177,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "1 cr",
     desc: "Removes garment creases without losing fabric texture.",
+    video: "/assets/video/tools videos/wrinkle remove.mp4",
   },
   {
     id: 14,
@@ -174,6 +187,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Removes lens glare, fingerprints, and ambient light from glossy surfaces.",
+    video: "/assets/video/tools videos/reflect .mp4",
   },
   {
     id: 15,
@@ -210,6 +224,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Generate multiple colorway versions from a single source image. Textiles, apparel, and product lines.",
+    video: "/assets/video/tools videos/color variants.mp4",
   },
   {
     id: 26,
@@ -228,6 +243,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "3 cr",
     desc: "Repair damaged, faded, or torn archival photos. Face recovery and color grading included.",
+    video: "/assets/video/tools videos/old imagre restoration.mp4",
   },
   {
     id: 28,
@@ -538,9 +554,25 @@ export default function ServicesSection() {
                   className='relative overflow-hidden'
                   style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
                 >
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    {catSvg[svc.cat]}
-                  </div>
+                  {"video" in svc && svc.video ? (
+                    <video
+                      src={svc.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className='absolute inset-0 w-full h-full object-cover'
+                      style={
+                        "videoZoom" in svc && svc.videoZoom
+                          ? { transform: `scale(${svc.videoZoom})` }
+                          : undefined
+                      }
+                    />
+                  ) : (
+                    <div className='absolute inset-0 flex items-center justify-center'>
+                      {catSvg[svc.cat]}
+                    </div>
+                  )}
 
                   {/* Category tag */}
                   <div className='absolute top-3 left-3'>
