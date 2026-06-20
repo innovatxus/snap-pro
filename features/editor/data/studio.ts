@@ -23,10 +23,11 @@ export interface StudioService {
 }
 
 export const STUDIO_SERVICES: StudioService[] = [
-  // ── CUT (3) ─────────────────────────────────────────────────────────────
+  // ── CUT (4) ─────────────────────────────────────────────────────────────
   { name: "Background", italic: "Remove", cat: "cut", credit: "1 cr" },
-  { name: "Ghost", italic: "Mannequin", cat: "cut", credit: "2 cr" },
+  { name: "Virtual", italic: "Modeling", cat: "cut", credit: "2 cr" },
   { name: "Object", italic: "Erase", cat: "cut", credit: "1 cr" },
+  { name: "Ghost", italic: "Mannequin", cat: "cut", credit: "2 cr" },
   // ── STAGE (11) ──────────────────────────────────────────────────────────
   { name: "Auto", italic: "Backdrop", cat: "stage", credit: "2 cr" },
   { name: "Room", italic: "Stage", cat: "stage", credit: "3 cr" },

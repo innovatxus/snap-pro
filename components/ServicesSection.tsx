@@ -19,11 +19,12 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "1 cr",
     desc: "Pixel-perfect cutout, hair and fur included. Auto-detects subject in 0.4s.",
+    video: "/assets/video/tools videos/background remove.mp4",
   },
   {
     id: 2,
-    name: "Ghost",
-    italic: "Mannequin",
+    name: "Virtual",
+    italic: "Modeling",
     cat: "cut",
     catLabel: "CUT",
     credit: "2 cr",
@@ -39,6 +40,15 @@ const SERVICES = [
     credit: "1 cr",
     desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
     video: "/assets/video/tools videos/object erase.mp4",
+  },
+  {
+    id: 31,
+    name: "Ghost",
+    italic: "Mannequin",
+    cat: "cut",
+    catLabel: "CUT",
+    credit: "2 cr",
+    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
   },
   // ── STAGE (11) ───────────────────────────────────────────────────────────
   {
@@ -92,6 +102,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Swap gray skies for golden hour, blue noon, or stormy drama. Auto-matches subject lighting.",
+    video: "/assets/video/tools videos/sky replace.mp4",
   },
   {
     id: 9,
@@ -121,6 +132,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Correct wide-angle distortion and converging verticals. Furniture, real estate, architecture.",
+    video: "/assets/video/tools videos/distortion correction fixes.mp4",
   },
   {
     id: 22,
@@ -130,6 +142,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "1 cr",
     desc: "Pure white studio isolation with zero shadow bleed. Required for Amazon, eBay, and packaging.",
+    video: "/assets/video/tools videos/studio white.mp4",
   },
   {
     id: 23,
@@ -139,6 +152,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Day-to-dusk sky swap with auto-matched interior warm lighting. Real estate hero shots.",
+    video: "/assets/video/tools videos/twillit sky change.mp4",
   },
   {
     id: 24,
@@ -206,6 +220,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Selectively blur or remove background people. Faces preserved on subjects you mark.",
+    video: "/assets/video/tools videos/crowd blur.mp4",
   },
   {
     id: 17,
@@ -291,6 +306,10 @@ const SERVICES = [
     credit: "3 cr",
     desc: "Generate a 24-frame product spin from 6 source angles.",
     comingSoon: true,
+    video: "/assets/video/tools videos/360 spin.mp4",
+    // Source clip has pillarboxing baked in (content is ~73% of frame width).
+    // Plain cover crop falls just short of clearing it — nudge further.
+    videoZoom: 1.15,
   },
   {
     id: 30,
@@ -301,11 +320,12 @@ const SERVICES = [
     credit: "2 cr",
     desc: "Auto-layout product grid with SKU and price injection. One-click catalog or linesheet PDF.",
     comingSoon: true,
+    video: "/assets/video/tools videos/pdf export.mp4",
   },
 ];
 
 // ─── Tab config ───────────────────────────────────────────────────────────────
-// Cut 3 · Stage 11 · Enhance 12 · Format 4 = 30 total
+// Cut 4 · Stage 11 · Enhance 12 · Format 4 = 31 total
 
 const TABS = ["All", "Cut", "Stage", "Enhance", "Format"] as const;
 
