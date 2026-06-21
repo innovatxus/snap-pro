@@ -160,17 +160,6 @@ const GALLERY_ITEMS = [
       "brightness(0.55) contrast(0.95) saturate(0.45) sepia(0.3) hue-rotate(15deg)",
   },
   {
-    id: 15,
-    product: "Platform Fit",
-    service: "Marketplace Resize",
-    cat: "FORMAT",
-    catClass: "tag-format",
-    src: "/assets/images/marketplace resize.png",
-    alt: "Marketplace resize formatting demonstration",
-    beforeFilter:
-      "brightness(0.5) contrast(1.15) saturate(0.4) sepia(0.25) hue-rotate(-5deg)",
-  },
-  {
     id: 16,
     product: "Tileable Swatch",
     service: "Pattern Repeat",

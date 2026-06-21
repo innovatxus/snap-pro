@@ -53,8 +53,7 @@ export const STUDIO_SERVICES: StudioService[] = [
   { name: "Old Photo", italic: "Restore", cat: "enhance", credit: "3 cr" },
   { name: "Macro", italic: "Sharpen", cat: "enhance", credit: "2 cr" },
   { name: "Skin", italic: "Smooth", cat: "enhance", credit: "1 cr" },
-  // ── FORMAT (4) ──────────────────────────────────────────────────────────
-  { name: "Marketplace", italic: "Resize", cat: "format", credit: "1 cr" },
+  // ── FORMAT (3) ──────────────────────────────────────────────────────────
   { name: "Pattern", italic: "Repeat", cat: "format", credit: "2 cr" },
   { name: "360°", italic: "Spin", cat: "format", credit: "3 cr" },
   { name: "PDF", italic: "Export", cat: "format", credit: "2 cr" },

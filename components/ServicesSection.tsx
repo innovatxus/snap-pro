@@ -41,15 +41,6 @@ const SERVICES = [
     desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
     video: "/assets/video/tools videos/object erase.mp4",
   },
-  {
-    id: 31,
-    name: "Ghost",
-    italic: "Mannequin",
-    cat: "cut",
-    catLabel: "CUT",
-    credit: "2 cr",
-    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
-  },
   // ── STAGE (11) ───────────────────────────────────────────────────────────
   {
     id: 4,
@@ -166,24 +157,6 @@ const SERVICES = [
   },
   // ── ENHANCE (12) ─────────────────────────────────────────────────────────
   {
-    id: 11,
-    name: "Upscale",
-    italic: "4K",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "3 cr",
-    desc: "2× to 4× resolution. Detail recovery for printable catalogs and Amazon zoom.",
-  },
-  {
-    id: 12,
-    name: "Color",
-    italic: "Match",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Match a Pantone, hex, or reference photo. Keep your catalog consistent.",
-  },
-  {
     id: 13,
     name: "Wrinkle",
     italic: "Smooth",
@@ -204,15 +177,6 @@ const SERVICES = [
     video: "/assets/video/tools videos/reflect .mp4",
   },
   {
-    id: 15,
-    name: "Studio",
-    italic: "Pack",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "4 cr",
-    desc: "All-in-one: cut, stage, light, shadow, format. Hands-free batch mode.",
-  },
-  {
     id: 16,
     name: "Crowd",
     italic: "Blur",
@@ -230,6 +194,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "3 cr",
     desc: "Cinematic lighting and atmosphere edit. Directional light, golden hour, or dramatic studio.",
+    video: "/assets/video/tools videos/ligth and mood.mp4",
   },
   {
     id: 25,
@@ -242,15 +207,6 @@ const SERVICES = [
     video: "/assets/video/tools videos/color variants.mp4",
   },
   {
-    id: 26,
-    name: "HDR",
-    italic: "Balance",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Tone-map bracketed interior shots for even exposure. Eliminates blown windows and blocked shadows.",
-  },
-  {
     id: 27,
     name: "Old Photo",
     italic: "Restore",
@@ -260,43 +216,7 @@ const SERVICES = [
     desc: "Repair damaged, faded, or torn archival photos. Face recovery and color grading included.",
     video: "/assets/video/tools videos/old imagre restoration.mp4",
   },
-  {
-    id: 28,
-    name: "Macro",
-    italic: "Sharpen",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Micro-detail enhancement for jewelry, fabric weaves, and small-scale product textures.",
-  },
-  {
-    id: 29,
-    name: "Skin",
-    italic: "Smooth",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "1 cr",
-    desc: "Natural portrait skin retouching. Preserves texture and identity — no plastic effect.",
-  },
-  // ── FORMAT (4) ───────────────────────────────────────────────────────────
-  {
-    id: 18,
-    name: "Marketplace",
-    italic: "Resize",
-    cat: "format",
-    catLabel: "FORMAT",
-    credit: "1 cr",
-    desc: "One source, twelve sizes. Shopify 2048², Amazon 1500², Meta 1080².",
-  },
-  {
-    id: 19,
-    name: "Pattern",
-    italic: "Repeat",
-    cat: "format",
-    catLabel: "FORMAT",
-    credit: "2 cr",
-    desc: "Tileable patterns from a single fabric swatch. Seam-blended automatically.",
-  },
+  // ── FORMAT (3) ───────────────────────────────────────────────────────────
   {
     id: 20,
     name: "360°",
@@ -305,7 +225,6 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "3 cr",
     desc: "Generate a 24-frame product spin from 6 source angles.",
-    comingSoon: true,
     video: "/assets/video/tools videos/360 spin.mp4",
     // Source clip has pillarboxing baked in (content is ~73% of frame width).
     // Plain cover crop falls just short of clearing it — nudge further.
@@ -319,13 +238,93 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "2 cr",
     desc: "Auto-layout product grid with SKU and price injection. One-click catalog or linesheet PDF.",
-    comingSoon: true,
     video: "/assets/video/tools videos/pdf export.mp4",
+  },
+  // ── COMING SOON — no demo video yet ───────────────────────────────────────
+  {
+    id: 31,
+    name: "Ghost",
+    italic: "Mannequin",
+    cat: "cut",
+    catLabel: "CUT",
+    credit: "2 cr",
+    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
+    comingSoon: true,
+  },
+  {
+    id: 11,
+    name: "Upscale",
+    italic: "4K",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "3 cr",
+    desc: "2× to 4× resolution. Detail recovery for printable catalogs and Amazon zoom.",
+    comingSoon: true,
+  },
+  {
+    id: 12,
+    name: "Color",
+    italic: "Match",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Match a Pantone, hex, or reference photo. Keep your catalog consistent.",
+    comingSoon: true,
+  },
+  {
+    id: 15,
+    name: "Studio",
+    italic: "Pack",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "4 cr",
+    desc: "All-in-one: cut, stage, light, shadow, format. Hands-free batch mode.",
+    comingSoon: true,
+  },
+  {
+    id: 26,
+    name: "HDR",
+    italic: "Balance",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Tone-map bracketed interior shots for even exposure. Eliminates blown windows and blocked shadows.",
+    comingSoon: true,
+  },
+  {
+    id: 28,
+    name: "Macro",
+    italic: "Sharpen",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "2 cr",
+    desc: "Micro-detail enhancement for jewelry, fabric weaves, and small-scale product textures.",
+    comingSoon: true,
+  },
+  {
+    id: 29,
+    name: "Skin",
+    italic: "Smooth",
+    cat: "enhance",
+    catLabel: "ENHANCE",
+    credit: "1 cr",
+    desc: "Natural portrait skin retouching. Preserves texture and identity — no plastic effect.",
+    comingSoon: true,
+  },
+  {
+    id: 19,
+    name: "Pattern",
+    italic: "Repeat",
+    cat: "format",
+    catLabel: "FORMAT",
+    credit: "2 cr",
+    desc: "Tileable patterns from a single fabric swatch. Seam-blended automatically.",
+    comingSoon: true,
   },
 ];
 
 // ─── Tab config ───────────────────────────────────────────────────────────────
-// Cut 4 · Stage 11 · Enhance 12 · Format 4 = 31 total
+// Cut 4 · Stage 11 · Enhance 12 · Format 3 = 30 total
 
 const TABS = ["All", "Cut", "Stage", "Enhance", "Format"] as const;
 
