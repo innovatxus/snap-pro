@@ -55,7 +55,8 @@ export default function HeroVideo({ sources }: HeroVideoProps) {
   // Track prefers-reduced-motion changes at runtime.
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const handleChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    const handleChange = (e: MediaQueryListEvent) =>
+      setReducedMotion(e.matches);
     mq.addEventListener("change", handleChange);
     return () => mq.removeEventListener("change", handleChange);
   }, []);
@@ -121,6 +122,20 @@ export default function HeroVideo({ sources }: HeroVideoProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSlot, reducedMotion, sources.length, tryPlay]);
 
+  // Nested <source> children (used below for WebM-first fallback) don't
+  // auto-reload on attribute change the way a direct `src` does — the slot
+  // that just became standby needs an explicit reload to pick up its newly
+  // queued clip. The active slot's index never changes while it's playing,
+  // so this never interrupts current playback.
+  useEffect(() => {
+    slotRefs[0].current?.load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slotSrcIdx[0]]);
+  useEffect(() => {
+    slotRefs[1].current?.load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slotSrcIdx[1]]);
+
   return (
     <div className='absolute inset-0 overflow-hidden' aria-hidden='true'>
       {/* Permanent dark fallback — visible immediately, fades behind the video */}
@@ -128,23 +143,34 @@ export default function HeroVideo({ sources }: HeroVideoProps) {
 
       {/* Two stacked slots, hidden entirely for reduced-motion users (zero clips fetched) */}
       {!reducedMotion &&
-        ([0, 1] as const).map((slot) => (
-          <video
-            key={slot}
-            ref={slotRefs[slot]}
-            src={sources[slotSrcIdx[slot]]}
-            muted
-            playsInline
-            preload='auto'
-            className='hero-video absolute inset-0 w-full h-full object-cover object-center z-[1]'
-            style={{
-              opacity: activeSlot === slot && isVisible ? 1 : 0,
-              transition: `opacity ${CROSSFADE_MS}ms ease`,
-            }}
-            /* Poster is the fallback visual before the first clip decodes */
-            poster={slot === 0 ? "/assets/video/5-poster.jpg" : undefined}
-          />
-        ))}
+        ([0, 1] as const).map((slot) => {
+          const slotSrc = sources[slotSrcIdx[slot]];
+          return (
+            <video
+              key={slot}
+              ref={slotRefs[slot]}
+              muted
+              playsInline
+              preload='auto'
+              disablePictureInPicture
+              disableRemotePlayback
+              className='hero-video absolute inset-0 w-full h-full object-cover object-center z-[1]'
+              style={{
+                opacity: activeSlot === slot && isVisible ? 1 : 0,
+                transition: `opacity ${CROSSFADE_MS}ms ease`,
+              }}
+              /* Poster is the fallback visual before the first clip decodes — use niche asset image */
+              poster={
+                slot === 0 ? "/assets/images/apperal-snap-pro.png" : undefined
+              }
+            >
+              {/* WebM/VP9 first: gives playback an independent decode path
+                  on devices where the H.264 hardware decoder misbehaves. */}
+              <source src={slotSrc.replace(/\.mp4$/i, ".webm")} type='video/webm' />
+              <source src={slotSrc} type='video/mp4' />
+            </video>
+          );
+        })}
     </div>
   );
 }

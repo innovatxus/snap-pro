@@ -3,10 +3,10 @@ import HeroVideo from "./HeroVideo";
 import Navbar from "./Navbar";
 
 const HERO_VIDEO_SOURCES = [
-  "/assets/video/5.mp4",
-  "/assets/video/niches videos/Textile & Fabrics refined.mp4",
-  "/assets/video/niches videos/antiques & Vintage timeless.mp4",
-  "/assets/video/niches videos/Products Perfect.mp4",
+  "/assets/video/main_hero_web.mp4",
+  "/assets/video/niches-videos/Textile_Fabrics_refined_web.mp4",
+  "/assets/video/niches-videos/antiques_Vintage_timeless_web.mp4",
+  "/assets/video/niches-videos/Products_Perfect_web.mp4",
 ];
 
 /**

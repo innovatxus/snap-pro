@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import LazyVideo from "./LazyVideo";
 import { NICHES, toolSlug } from "@/features/editor/data/niches";
 
 export default function NichesSection() {
@@ -82,16 +83,18 @@ export default function NichesSection() {
                 className='absolute inset-0'
                 style={{ zIndex: 5 }}
               />
-              {/* Video background */}
+              {/* Video background with lazy loading */}
               {niche.video && (
-                <video
+                <LazyVideo
                   src={niche.video}
+                  poster={niche.poster}
+                  alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} photography`}
+                  className='absolute inset-0 z-0'
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload='metadata'
-                  className='absolute inset-0 w-full h-full object-cover z-0'
                 />
               )}
 

@@ -40,16 +40,14 @@ export const STUDIO_SERVICES: StudioService[] = [
   { name: "Studio", italic: "White", cat: "stage", credit: "1 cr" },
   { name: "Twilight", italic: "Convert", cat: "stage", credit: "3 cr" },
   { name: "Box", italic: "Mockup", cat: "stage", credit: "2 cr" },
-  // ── ENHANCE (12) ────────────────────────────────────────────────────────
+  // ── ENHANCE (10) ────────────────────────────────────────────────────────
   { name: "Upscale", italic: "4K", cat: "enhance", credit: "3 cr" },
-  { name: "Color", italic: "Match", cat: "enhance", credit: "2 cr" },
   { name: "Wrinkle", italic: "Smooth", cat: "enhance", credit: "1 cr" },
   { name: "Reflection", italic: "Clean", cat: "enhance", credit: "2 cr" },
   { name: "Studio", italic: "Pack", cat: "enhance", credit: "4 cr" },
   { name: "Crowd", italic: "Blur", cat: "enhance", credit: "2 cr" },
   { name: "Light &", italic: "Mood", cat: "enhance", credit: "3 cr" },
   { name: "Color", italic: "Variants", cat: "enhance", credit: "2 cr" },
-  { name: "HDR", italic: "Balance", cat: "enhance", credit: "2 cr" },
   { name: "Old Photo", italic: "Restore", cat: "enhance", credit: "3 cr" },
   { name: "Macro", italic: "Sharpen", cat: "enhance", credit: "2 cr" },
   { name: "Skin", italic: "Smooth", cat: "enhance", credit: "1 cr" },

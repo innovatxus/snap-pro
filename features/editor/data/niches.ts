@@ -29,6 +29,8 @@ export type Niche = {
   /** One of `video` | `image` is required for the marketing card. */
   video?: string;
   image?: string;
+  /** Poster image for video fallback (lazy loading) */
+  poster?: string;
   services: NicheService[];
 };
 
@@ -40,7 +42,8 @@ export const NICHES: Niche[] = [
     italicWord: "styled",
     tagline: "GHOST MANNEQUIN · WRINKLE SMOOTH · COLOR MATCH",
     label: "Fashion",
-    video: "/assets/video/niches videos/fashion and apparel.mp4",
+    video: "/assets/video/niches-videos/fashion_and_apparel_web.mp4",
+    poster: "/assets/images/apperal-snap-pro.png",
     services: [
       { name: "Ghost Mannequin", featured: true },
       { name: "Background Remove" },
@@ -59,7 +62,8 @@ export const NICHES: Niche[] = [
     italicWord: "refined",
     tagline: "PATTERN REPEAT · COLOR VARIANTS · MACRO SHARPEN",
     label: "Textile",
-    video: "/assets/video/niches videos/Textile & Fabrics refined.mp4",
+    video: "/assets/video/niches-videos/Textile_Fabrics_refined_web.mp4",
+    poster: "/assets/images/Textile snap pro app.png.png",
     services: [
       { name: "Pattern Repeat", featured: true },
       { name: "Color Variants" },
@@ -76,6 +80,8 @@ export const NICHES: Niche[] = [
     italicWord: "staged",
     tagline: "ROOM STAGE · SKY REPLACE · TWILIGHT CONVERT",
     label: "Real Estate",
+    video: "/assets/video/niches-videos/Real_Estate_staged_web.mp4",
+    poster: "/assets/images/real-estate-staged-snap-pro.png",
     services: [
       { name: "Room Stage", featured: true },
       { name: "Sky Replace" },
@@ -94,7 +100,8 @@ export const NICHES: Niche[] = [
     italicWord: "precision",
     tagline: "REFLECTION CLEAN · STUDIO WHITE · EDGE SHARPEN",
     label: "Tech",
-    video: "/assets/video/niches videos/Electronics & Tech precsion.mp4",
+    video: "/assets/video/niches-videos/Electronics_Tech_precision_web.mp4",
+    poster: "/assets/images/Electronics-snap-pro.PNG",
     services: [
       { name: "Reflection Clean", featured: true },
       { name: "Studio White" },
@@ -112,7 +119,8 @@ export const NICHES: Niche[] = [
     italicWord: "glowing",
     tagline: "GLASS REFLECTION · MACRO SHARPEN · SKIN SMOOTH",
     label: "Beauty",
-    video: "/assets/video/niches videos/beauty card.mp4",
+    video: "/assets/video/niches-videos/beauty_card_web.mp4",
+    poster: "/assets/images/makeup-snap-pro.png",
     services: [
       { name: "Glass Reflection", featured: true },
       { name: "Background Remove" },
@@ -132,7 +140,8 @@ export const NICHES: Niche[] = [
     italicWord: "timeless",
     tagline: "OLD PHOTO RESTORE · MACRO SHARPEN · COLOR MATCH",
     label: "Antiques",
-    video: "/assets/video/niches videos/antiques & Vintage timeless.mp4",
+    video: "/assets/video/niches-videos/antiques_Vintage_timeless_web.mp4",
+    poster: "/assets/images/antiques-vintage-snap-pro.png",
     services: [
       { name: "Old Photo Restore", featured: true },
       { name: "Macro Sharpen" },
@@ -149,7 +158,8 @@ export const NICHES: Niche[] = [
     italicWord: "ambient",
     tagline: "ROOM STAGE · PERSPECTIVE FIX · CAST SHADOW",
     label: "Furniture",
-    video: "/assets/video/niches videos/Furniture & Decor ambient.mp4",
+    video: "/assets/video/niches-videos/Furniture_Decor_ambient_web.mp4",
+    poster: "/assets/images/interior-design-snap-pro.png",
     services: [
       { name: "Room Stage", featured: true },
       { name: "Cast Shadow" },
@@ -186,7 +196,8 @@ export const NICHES: Niche[] = [
     italicWord: "brilliant",
     tagline: "MACRO SHARPEN · SPARKLE BOOST · REFLECTION CLEAN",
     label: "Jewellery",
-    image: "/assets/images/jewelry snap pro.png",
+    video: "/assets/video/niches-videos/Jewelry_Gold_Brilliant_web.mp4",
+    poster: "/assets/images/jewelry-gold-brilliant-snap-pro.png",
     services: [
       { name: "Macro Sharpen", featured: true },
       { name: "Glass Reflection" },
@@ -205,7 +216,8 @@ export const NICHES: Niche[] = [
     italicWord: "perfect",
     tagline: "BACKGROUND REMOVE · CAST SHADOW · UPSCALE 4K",
     label: "Products",
-    video: "/assets/video/niches videos/Products Perfect.mp4",
+    video: "/assets/video/niches-videos/Products_Perfect_web.mp4",
+    poster: "/assets/images/productStaging-snap-pro.png",
     services: [
       { name: "Background Remove", featured: true },
       { name: "Auto Backdrop" },
@@ -234,7 +246,8 @@ export const NICHES: Niche[] = [
     italicWord: "appetizing",
     tagline: "COLOR MATCH · STEAM FX · LIGHT & MOOD",
     label: "Food & F&B",
-    video: "/assets/video/niches videos/Food & Drink appitizing .mp4",
+    video: "/assets/video/niches-videos/Food_Drink_appitizing_web.mp4",
+    poster: "/assets/images/light and mood.png",
     services: [
       { name: "Color Match", featured: true },
       { name: "Light & Mood" },
@@ -244,23 +257,6 @@ export const NICHES: Niche[] = [
       { name: "Marketplace Resize" },
       { name: "Menu Photo Resizer" },
       { name: "Arabic Caption Overlay" },
-    ],
-  },
-  {
-    id: "ecommerce",
-    name: "E-commerce",
-    suffix: "Sellers",
-    italicWord: "converting",
-    tagline: "BACKGROUND REMOVE · MARKETPLACE RESIZE · BULK CATALOG",
-    label: "E-commerce",
-    image: "/assets/images/AIbackground.png",
-    services: [
-      { name: "Background Remove", featured: true },
-      { name: "Marketplace Resize" },
-      { name: "Cast Shadow" },
-      { name: "Glass Reflection" },
-      { name: "Bulk Catalog Editor" },
-      { name: "Brand Kit Lock" },
     ],
   },
   {

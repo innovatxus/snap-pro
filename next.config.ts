@@ -54,6 +54,10 @@ const nextConfig: NextConfig = {
     removeConsole: { exclude: ["error"] },
   },
   images: {
+    // Serve AVIF where the browser supports it, falling back to WebP, then
+    // the original format — negotiated automatically per-request via the
+    // Accept header. No separate asset files needed for any of this.
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",

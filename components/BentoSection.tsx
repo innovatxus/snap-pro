@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
+import LazyVideo from "./LazyVideo";
 
 const UGC_CARDS = [
   {
@@ -17,7 +18,7 @@ const UGC_CARDS = [
   {
     id: "beauty",
     src: "/assets/images/makeup-snap-pro.png",
-    video: "/assets/video/ugc videos/Glow Worthy Every Drop.mp4",
+    video: "/assets/video/ugc-videos/Glow_Worthy_Every_Drop_web.mp4",
     alt: "Beauty and cosmetics product photography on marble",
     label: "Beauty",
     heading: "Glow-worthy.",
@@ -183,13 +184,16 @@ export default function BentoSection() {
                 }}
               >
                 {"video" in card && card.video ? (
-                  <video
+                  <LazyVideo
                     src={card.video}
+                    poster={card.src}
+                    alt={card.alt}
+                    className='absolute inset-0'
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className='absolute inset-0 w-full h-full object-cover'
+                    preload='metadata'
                   />
                 ) : (
                   <Image

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { ReactElement } from "react";
 import Link from "next/link";
+import LazyVideo from "./LazyVideo";
 import ScrollReveal from "./ScrollReveal";
 import { toolSlug } from "@/features/editor/data/niches";
 import { studioServiceName } from "@/features/editor/data/studio";
@@ -19,7 +20,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "1 cr",
     desc: "Pixel-perfect cutout, hair and fur included. Auto-detects subject in 0.4s.",
-    video: "/assets/video/tools videos/background remove.mp4",
+    video: "/assets/video/tools-videos/background remove.mp4",
   },
   {
     id: 2,
@@ -29,7 +30,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "2 cr",
     desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
-    video: "/assets/video/tools videos/ghost manquin.mp4",
+    video: "/assets/video/tools-videos/ghost manquin.mp4",
   },
   {
     id: 3,
@@ -39,7 +40,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "1 cr",
     desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
-    video: "/assets/video/tools videos/object erase.mp4",
+    video: "/assets/video/tools-videos/object erase.mp4",
   },
   {
     id: 31,
@@ -49,7 +50,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "2 cr",
     desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
-    video: "/assets/video/tools videos/Ghost Mannequin.mp4",
+    video: "/assets/video/tools-videos/Ghost Mannequin.mp4",
   },
   // ── STAGE (11) ───────────────────────────────────────────────────────────
   {
@@ -60,7 +61,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Eight studio scenes. Light intensity and shadow depth in two sliders.",
-    video: "/assets/video/tools videos/auto backdrop.mp4",
+    video: "/assets/video/tools-videos/auto backdrop.mp4",
     // Source clip has ~280px of pillarboxing baked into each side of a
     // 1280px-wide frame (content is only the center 719px). Zoom past it.
     videoZoom: 1.4,
@@ -73,7 +74,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Place furniture in a styled room — kitchen, living, bedroom, patio.",
-    video: "/assets/video/tools videos/room staging.mp4",
+    video: "/assets/video/tools-videos/room staging.mp4",
   },
   {
     id: 6,
@@ -83,7 +84,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Realistic ground or wall shadows. Direction, blur, and opacity controls.",
-    video: "/assets/video/tools videos/cast shadow.mp4",
+    video: "/assets/video/tools-videos/cast shadow.mp4",
   },
   {
     id: 7,
@@ -93,7 +94,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Adds a tabletop mirror reflection — perfect for bottles, jars, watches.",
-    video: "/assets/video/tools videos/mirror reflection.mp4",
+    video: "/assets/video/tools-videos/mirror reflection.mp4",
   },
   {
     id: 8,
@@ -103,7 +104,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Swap gray skies for golden hour, blue noon, or stormy drama. Auto-matches subject lighting.",
-    video: "/assets/video/tools videos/sky replace.mp4",
+    video: "/assets/video/tools-videos/sky replace.mp4",
   },
   {
     id: 9,
@@ -113,7 +114,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Remove furniture and clutter from room photos. Clean canvas for real-estate virtual staging.",
-    video: "/assets/video/tools videos/room declutering.mp4",
+    video: "/assets/video/tools-videos/room declutering.mp4",
   },
   {
     id: 10,
@@ -123,7 +124,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Photorealistic automotive showroom scenes. Floor reflections and directional lighting included.",
-    video: "/assets/video/tools videos/Show room Gen.mp4",
+    video: "/assets/video/tools-videos/Show room Gen.mp4",
   },
   {
     id: 21,
@@ -133,7 +134,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Correct wide-angle distortion and converging verticals. Furniture, real estate, architecture.",
-    video: "/assets/video/tools videos/distortion correction fixes.mp4",
+    video: "/assets/video/tools-videos/distortion correction fixes.mp4",
   },
   {
     id: 22,
@@ -143,7 +144,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "1 cr",
     desc: "Pure white studio isolation with zero shadow bleed. Required for Amazon, eBay, and packaging.",
-    video: "/assets/video/tools videos/studio white.mp4",
+    video: "/assets/video/tools-videos/studio white.mp4",
   },
   {
     id: 23,
@@ -153,7 +154,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "3 cr",
     desc: "Day-to-dusk sky swap with auto-matched interior warm lighting. Real estate hero shots.",
-    video: "/assets/video/tools videos/twillit sky change.mp4",
+    video: "/assets/video/tools-videos/twillit sky change.mp4",
   },
   {
     id: 24,
@@ -163,7 +164,7 @@ const SERVICES = [
     catLabel: "STAGE",
     credit: "2 cr",
     desc: "Generate 3D packaging mockups from flat artwork. Lid-open, angled, and flat views.",
-    video: "/assets/video/tools videos/packaging.mp4",
+    video: "/assets/video/tools-videos/packaging.mp4",
   },
   // ── ENHANCE (12) ─────────────────────────────────────────────────────────
   {
@@ -174,7 +175,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "1 cr",
     desc: "Removes garment creases without losing fabric texture.",
-    video: "/assets/video/tools videos/wrinkle remove.mp4",
+    video: "/assets/video/tools-videos/wrinkle remove.mp4",
   },
   {
     id: 14,
@@ -184,7 +185,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Removes lens glare, fingerprints, and ambient light from glossy surfaces.",
-    video: "/assets/video/tools videos/reflect .mp4",
+    video: "/assets/video/tools-videos/reflect .mp4",
   },
   {
     id: 16,
@@ -194,7 +195,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Selectively blur or remove background people. Faces preserved on subjects you mark.",
-    video: "/assets/video/tools videos/crowd blur.mp4",
+    video: "/assets/video/tools-videos/crowd blur.mp4",
   },
   {
     id: 17,
@@ -204,7 +205,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "3 cr",
     desc: "Cinematic lighting and atmosphere edit. Directional light, golden hour, or dramatic studio.",
-    video: "/assets/video/tools videos/ligth and mood.mp4",
+    video: "/assets/video/tools-videos/ligth and mood.mp4",
   },
   {
     id: 25,
@@ -214,7 +215,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "2 cr",
     desc: "Generate multiple colorway versions from a single source image. Textiles, apparel, and product lines.",
-    video: "/assets/video/tools videos/color variants.mp4",
+    video: "/assets/video/tools-videos/color variants.mp4",
   },
   {
     id: 27,
@@ -224,7 +225,7 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "3 cr",
     desc: "Repair damaged, faded, or torn archival photos. Face recovery and color grading included.",
-    video: "/assets/video/tools videos/old imagre restoration.mp4",
+    video: "/assets/video/tools-videos/old imagre restoration.mp4",
   },
   // ── FORMAT (3) ───────────────────────────────────────────────────────────
   {
@@ -235,7 +236,7 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "3 cr",
     desc: "Generate a 24-frame product spin from 6 source angles.",
-    video: "/assets/video/tools videos/360 spin.mp4",
+    video: "/assets/video/tools-videos/360 spin.mp4",
     // Source clip has pillarboxing baked in (content is ~73% of frame width).
     // Plain cover crop falls just short of clearing it — nudge further.
     videoZoom: 1.15,
@@ -248,7 +249,7 @@ const SERVICES = [
     catLabel: "FORMAT",
     credit: "2 cr",
     desc: "Auto-layout product grid with SKU and price injection. One-click catalog or linesheet PDF.",
-    video: "/assets/video/tools videos/pdf export.mp4",
+    video: "/assets/video/tools-videos/pdf export.mp4",
   },
   // ── COMING SOON — no demo video yet ───────────────────────────────────────
   {
@@ -262,16 +263,6 @@ const SERVICES = [
     comingSoon: true,
   },
   {
-    id: 12,
-    name: "Color",
-    italic: "Match",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Match a Pantone, hex, or reference photo. Keep your catalog consistent.",
-    comingSoon: true,
-  },
-  {
     id: 15,
     name: "Studio",
     italic: "Pack",
@@ -279,16 +270,6 @@ const SERVICES = [
     catLabel: "ENHANCE",
     credit: "4 cr",
     desc: "All-in-one: cut, stage, light, shadow, format. Hands-free batch mode.",
-    comingSoon: true,
-  },
-  {
-    id: 26,
-    name: "HDR",
-    italic: "Balance",
-    cat: "enhance",
-    catLabel: "ENHANCE",
-    credit: "2 cr",
-    desc: "Tone-map bracketed interior shots for even exposure. Eliminates blown windows and blocked shadows.",
     comingSoon: true,
   },
   {
@@ -324,7 +305,7 @@ const SERVICES = [
 ];
 
 // ─── Tab config ───────────────────────────────────────────────────────────────
-// Cut 4 · Stage 11 · Enhance 12 · Format 3 = 30 total
+// Cut 4 · Stage 11 · Enhance 10 · Format 3 = 28 total
 
 const TABS = ["All", "Cut", "Stage", "Enhance", "Format"] as const;
 
@@ -574,14 +555,16 @@ export default function ServicesSection() {
                   style={{ aspectRatio: "4/3", background: catBg[svc.cat] }}
                 >
                   {"video" in svc && svc.video ? (
-                    <video
+                    <LazyVideo
                       src={svc.video}
+                      alt={`${svc.name} ${svc.italic} demo`}
+                      className='absolute inset-0'
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className='absolute inset-0 w-full h-full object-cover'
-                      style={
+                      preload='metadata'
+                      videoStyle={
                         "videoZoom" in svc && svc.videoZoom
                           ? { transform: `scale(${svc.videoZoom})` }
                           : undefined
