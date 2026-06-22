@@ -1264,3 +1264,279 @@ html {
     transform: rotate(360deg);
   }
 }
+
+/* ─── Floating widget orbs — "gas globe" + "liquid chrome" ───
+   Pure CSS/GPU: every animated property is transform/opacity, every blur is
+   a static filter (never animated). No SVG filters, no canvas — matches the
+   existing aurora-orb/glow-breathe/shimmer-bg techniques already proven at
+   60fps in this codebase. `.tab-hidden` pauses motion while the tab is
+   backgrounded; the reduced-motion block below freezes each orb into a
+   deliberately composed still frame rather than whatever the blanket reset
+   happens to land on. */
+
+.fab-orb {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+  transition: transform 160ms var(--ease-spring);
+}
+.fab-orb:active {
+  transform: scale(0.92);
+}
+
+/* Gas globe ------------------------------------------------------------- */
+.fab-orb-gas {
+  background: var(--blue-grad); /* fallback if conic/radial stacking is unsupported */
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%),
+    radial-gradient(circle at 50% 55%, #04202e 0%, #021620 45%, #000a10 75%, #000305 100%);
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.3),
+    0 0 14px 2px var(--blue-glow-soft),
+    0 0 28px 6px rgba(56, 189, 248, 0.16),
+    inset 0 -6px 10px rgba(0, 0, 0, 0.55),
+    inset 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 280ms var(--ease-out-expo), transform 160ms var(--ease-spring);
+}
+.fab-orb-gas:hover,
+.fab-orb-gas:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.45),
+    0 0 20px 4px var(--blue-glow),
+    0 0 42px 10px rgba(56, 189, 248, 0.3),
+    inset 0 -6px 10px rgba(0, 0, 0, 0.55),
+    inset 0 4px 8px rgba(255, 255, 255, 0.14);
+}
+
+.fab-orb-blobs {
+  position: absolute;
+  inset: 0;
+  transform: translate(var(--gx, 0px), var(--gy, 0px));
+  transition: transform 220ms var(--ease-out-expo);
+  will-change: transform;
+}
+.fab-orb-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  will-change: transform;
+}
+.fab-orb-blob-a {
+  width: 60%;
+  height: 60%;
+  top: 18%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.85) 0%, rgba(56, 189, 248, 0.35) 50%, transparent 80%);
+  animation: orb-blob-drift-a 13s ease-in-out infinite;
+}
+.fab-orb-blob-b {
+  width: 50%;
+  height: 50%;
+  top: 35%;
+  left: 42%;
+  background: radial-gradient(circle, rgba(223, 227, 234, 0.55) 0%, rgba(223, 227, 234, 0.18) 55%, transparent 80%);
+  animation: orb-blob-drift-b 16s ease-in-out infinite;
+  animation-delay: -4s;
+}
+@keyframes orb-blob-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(3px, -4px, 0) scale(1.12); }
+  66% { transform: translate3d(-4px, 3px, 0) scale(0.92); }
+}
+@keyframes orb-blob-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  40% { transform: translate3d(-3px, 3px, 0) scale(0.9); }
+  70% { transform: translate3d(4px, -2px, 0) scale(1.1); }
+}
+
+.fab-orb-core {
+  position: absolute;
+  width: 34%;
+  height: 34%;
+  top: 30%;
+  left: 30%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(125, 211, 252, 0.55) 45%, transparent 80%);
+  animation: orb-core-breathe 5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes orb-core-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.15); }
+}
+
+/* Liquid chrome orb ------------------------------------------------------ */
+.fab-orb-chrome {
+  background: var(--silver-grad); /* fallback if conic-gradient is unsupported */
+  background: conic-gradient(
+    from 220deg at 50% 42%,
+    #ffffff 0%,
+    #d8dce3 12%,
+    #4e535c 28%,
+    #b5bac2 42%,
+    #2e323a 56%,
+    #c8cdd4 70%,
+    #ffffff 86%,
+    #d8dce3 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 6px 16px -4px rgba(0, 0, 0, 0.55),
+    inset 0 -7px 12px rgba(0, 0, 0, 0.55),
+    inset 0 5px 9px rgba(255, 255, 255, 0.28);
+  transition: box-shadow 280ms var(--ease-out-expo), transform 160ms var(--ease-spring);
+}
+.fab-orb-chrome:hover,
+.fab-orb-chrome:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 8px 20px -4px rgba(0, 0, 0, 0.6),
+    inset 0 -7px 12px rgba(0, 0, 0, 0.55),
+    inset 0 5px 9px rgba(255, 255, 255, 0.4);
+}
+
+.fab-orb-spec {
+  position: absolute;
+  width: 36%;
+  height: 30%;
+  top: 14%;
+  left: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.25) 55%, transparent 80%);
+  pointer-events: none;
+}
+
+.fab-orb-shine {
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.04) 38%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.04) 62%,
+    transparent 100%
+  );
+  transform: translateX(-130%);
+  animation: orb-chrome-shine 6s linear infinite;
+  will-change: transform;
+}
+.fab-orb-chrome:hover .fab-orb-shine,
+.fab-orb-chrome:focus-visible .fab-orb-shine {
+  animation-duration: 2.2s;
+}
+@keyframes orb-chrome-shine {
+  from { transform: translateX(-130%); }
+  to { transform: translateX(130%); }
+}
+
+.fab-orb-ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0.8;
+  animation: orb-ripple 550ms var(--ease-out-expo) forwards;
+  pointer-events: none;
+}
+@keyframes orb-ripple {
+  to { transform: scale(1.7); opacity: 0; }
+}
+
+/* Shared icon + tooltip --------------------------------------------------- */
+.fab-orb-icon {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.92);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+.fab-orb-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: -4px;
+  white-space: nowrap;
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  padding: 6px 10px;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+.fab-orb-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pause all orb motion while the tab is backgrounded — no point animating
+   gas/chrome for nobody to see. */
+.tab-hidden .fab-orb-blob-a,
+.tab-hidden .fab-orb-blob-b,
+.tab-hidden .fab-orb-core,
+.tab-hidden .fab-orb-shine {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab-orb-blob-a,
+  .fab-orb-blob-b,
+  .fab-orb-core,
+  .fab-orb-shine,
+  .fab-orb-ripple {
+    animation: none !important;
+  }
+  .fab-orb-blobs {
+    transform: none !important;
+  }
+  .fab-orb-blob-a {
+    opacity: 0.7;
+  }
+  .fab-orb-blob-b {
+    opacity: 0.45;
+  }
+  .fab-orb-core {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  .fab-orb-shine {
+    opacity: 0.5;
+    transform: translateX(0%);
+  }
+}
+
+/* Mobile: slightly slower, cheaper drift/shimmer — same techniques, less
+   frequent repaint requests while battery/thermals matter more. */
+@media (max-width: 720px) {
+  .fab-orb-blob-a {
+    animation-duration: 18s;
+  }
+  .fab-orb-blob-b {
+    animation-duration: 22s;
+  }
+  .fab-orb-core {
+    animation-duration: 7s;
+  }
+  .fab-orb-shine {
+    animation-duration: 8s;
+  }
+}

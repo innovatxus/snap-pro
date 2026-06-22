@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import WidgetShell from "./WidgetShell";
 import HowToUsePanelContent from "./HowToUsePanelContent";
 import FeedbackPanelContent from "./FeedbackPanelContent";
@@ -42,68 +42,99 @@ function FeedbackIcon() {
   );
 }
 
-interface FabProps {
+interface OrbFabProps {
+  variant: "gas" | "chrome";
   label: string;
   icon: React.ReactNode;
-  isMobile: boolean;
-  expandedWidth: number;
   isActive: boolean;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
   onClick: () => void;
 }
 
-function Fab({ label, icon, isMobile, expandedWidth, isActive, buttonRef, onClick }: FabProps) {
-  const [hovered, setHovered] = useState(false);
-  const expanded = !isMobile && (hovered || isActive);
+/**
+ * The "gas globe" / "liquid chrome" floating trigger. Stays a perfect circle
+ * in every state — the label surfaces as a small fade-in tooltip rather than
+ * stretching the orb into a pill. Gas globe nudges its inner blobs toward the
+ * cursor on hover (desktop/fine-pointer only, skipped under reduced-motion);
+ * chrome orb fires a one-shot liquid ripple on press. Every animated layer
+ * lives in CSS (transform/opacity only) — see the ".fab-orb*" rules in
+ * globals.css for the actual motion.
+ */
+function OrbFab({ variant, label, icon, isActive, buttonRef, onClick }: OrbFabProps) {
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [rippleKey, setRippleKey] = useState(0);
+  const blobsRef = useRef<HTMLSpanElement>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const canHover =
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const onPointerMove = useCallback(
+    (e: React.PointerEvent<HTMLButtonElement>) => {
+      if (variant !== "gas" || !canHover || reducedMotion || !blobsRef.current) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const relX = (e.clientX - rect.left) / rect.width - 0.5;
+      const relY = (e.clientY - rect.top) / rect.height - 0.5;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        blobsRef.current?.style.setProperty("--gx", `${relX * 6}px`);
+        blobsRef.current?.style.setProperty("--gy", `${relY * 6}px`);
+      });
+    },
+    [variant, canHover, reducedMotion],
+  );
+
+  const onPointerLeave = useCallback(() => {
+    setTooltipVisible(false);
+    if (variant !== "gas") return;
+    blobsRef.current?.style.setProperty("--gx", "0px");
+    blobsRef.current?.style.setProperty("--gy", "0px");
+  }, [variant]);
+
+  const handleClick = () => {
+    if (variant === "chrome") setRippleKey((k) => k + 1);
+    onClick();
+  };
 
   return (
-    <button
-      ref={buttonRef}
-      type='button'
-      aria-label={label}
-      aria-expanded={isActive}
-      title={label}
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocus={() => setHovered(true)}
-      onBlur={() => setHovered(false)}
-      style={{
-        height: 44,
-        width: expanded ? expandedWidth : 44,
-        borderRadius: 999,
-        border: `1px solid ${expanded ? "rgba(56,189,248,0.35)" : "var(--line)"}`,
-        background: "color-mix(in oklab, var(--surface) 78%, transparent)",
-        backdropFilter: "blur(14px) saturate(140%)",
-        WebkitBackdropFilter: "blur(14px) saturate(140%)",
-        color: expanded ? "var(--blue)" : "var(--ink)",
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 10,
-        paddingLeft: 13,
-        cursor: "pointer",
-        overflow: "hidden",
-        boxShadow: expanded
-          ? "0 0 0 1px rgba(56,189,248,0.2), 0 10px 30px -6px rgba(56,189,248,0.35), 0 10px 30px rgba(0,0,0,0.35)"
-          : "0 10px 30px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.04)",
-        transition:
-          "width 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease, color 200ms ease, box-shadow 250ms ease",
-      }}
-    >
-      <span style={{ flexShrink: 0, display: "flex" }}>{icon}</span>
-      <span
-        style={{
-          fontFamily: "var(--font-geist-sans), sans-serif",
-          fontSize: 12.5,
-          fontWeight: 600,
-          whiteSpace: "nowrap",
-          opacity: expanded ? 1 : 0,
-          transition: "opacity 180ms ease",
-        }}
+    <div style={{ position: "relative" }}>
+      <button
+        ref={buttonRef}
+        type='button'
+        aria-label={label}
+        aria-expanded={isActive}
+        title={label}
+        className={`fab-orb fab-orb-${variant}`}
+        onClick={handleClick}
+        onMouseEnter={() => setTooltipVisible(true)}
+        onMouseLeave={onPointerLeave}
+        onFocus={() => setTooltipVisible(true)}
+        onBlur={() => setTooltipVisible(false)}
+        onPointerMove={onPointerMove}
       >
-        {label}
-      </span>
-    </button>
+        {variant === "gas" ? (
+          <>
+            <span ref={blobsRef} aria-hidden='true' className='fab-orb-blobs'>
+              <span className='fab-orb-blob fab-orb-blob-a' />
+              <span className='fab-orb-blob fab-orb-blob-b' />
+            </span>
+            <span aria-hidden='true' className='fab-orb-core' />
+          </>
+        ) : (
+          <>
+            <span aria-hidden='true' className='fab-orb-spec' />
+            <span aria-hidden='true' className='fab-orb-shine' />
+            {rippleKey > 0 && <span key={rippleKey} aria-hidden='true' className='fab-orb-ripple' />}
+          </>
+        )}
+        <span className='fab-orb-icon'>{icon}</span>
+      </button>
+      <span className={`fab-orb-tooltip${tooltipVisible ? " is-visible" : ""}`}>{label}</span>
+    </div>
   );
 }
 
@@ -114,27 +145,27 @@ function Fab({ label, icon, isMobile, expandedWidth, isActive, buttonRef, onClic
  * utility column. See WidgetShell for the open/close morph + a11y machinery.
  */
 export default function FloatingWidgets() {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia("(max-width: 720px)").matches
-      : false,
-  );
   const [openPanel, setOpenPanel] = useState<PanelKey>(null);
+  const [tabHidden, setTabHidden] = useState(() =>
+    typeof document !== "undefined" ? document.hidden : false,
+  );
   const howToRef = useRef<HTMLButtonElement>(null);
   const feedbackRef = useRef<HTMLButtonElement>(null);
   const howToTitleId = useId();
   const feedbackTitleId = useId();
 
+  // Pause the orbs' idle motion while the tab is backgrounded — no point
+  // animating gas/chrome for nobody to see, and it saves battery.
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 720px)");
-    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    const onVisibilityChange = () => setTabHidden(document.hidden);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange);
   }, []);
 
   return (
     <>
       <div
+        className={tabHidden ? "tab-hidden" : undefined}
         style={{
           position: "fixed",
           right: "clamp(14px, 2.4vw, 28px)",
@@ -146,20 +177,18 @@ export default function FloatingWidgets() {
           gap: 14,
         }}
       >
-        <Fab
+        <OrbFab
+          variant='gas'
           label='How to Use'
           icon={<BookIcon />}
-          isMobile={isMobile}
-          expandedWidth={146}
           isActive={openPanel === "howto"}
           buttonRef={howToRef}
           onClick={() => setOpenPanel((p) => (p === "howto" ? null : "howto"))}
         />
-        <Fab
+        <OrbFab
+          variant='chrome'
           label='Feedback & Suggestions'
           icon={<FeedbackIcon />}
-          isMobile={isMobile}
-          expandedWidth={196}
           isActive={openPanel === "feedback"}
           buttonRef={feedbackRef}
           onClick={() => setOpenPanel((p) => (p === "feedback" ? null : "feedback"))}
