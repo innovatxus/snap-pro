@@ -1,9 +1,17 @@
+import { preload } from "react-dom";
 import HeroVideo from "./HeroVideo";
 import Navbar from "./Navbar";
 
+const HERO_VIDEO_SOURCES = [
+  "/assets/video/5.mp4",
+  "/assets/video/niches videos/Textile & Fabrics refined.mp4",
+  "/assets/video/niches videos/antiques & Vintage timeless.mp4",
+  "/assets/video/niches videos/Products Perfect.mp4",
+];
+
 /**
  * Full-screen cinematic hero section.
- * ─ 5.mp4 fills the viewport as a video background
+ * ─ A looping video playlist fills the viewport as the background
  * ─ Three-layer overlay for depth and readability
  * ─ Navbar floats on top of the video
  * ─ Headline / sub-headline / CTAs animate in via CSS
@@ -12,6 +20,10 @@ import Navbar from "./Navbar";
  * Server component: no runtime JS required beyond HeroVideo & Navbar (both "use client").
  */
 export default function Hero() {
+  // Kick off the fetch for the first (above-the-fold) clip as early as
+  // possible — before HeroVideo even hydrates — via React's resource hint API.
+  preload(HERO_VIDEO_SOURCES[0], { as: "video", fetchPriority: "high" });
+
   return (
     <section
       className='relative w-full overflow-hidden'
@@ -19,7 +31,7 @@ export default function Hero() {
       aria-label='Hero'
     >
       {/* ── Video Background ── */}
-      <HeroVideo src='/assets/video/5.mp4' />
+      <HeroVideo sources={HERO_VIDEO_SOURCES} />
 
       {/* ── Cinematic Overlay Stack ── */}
 

@@ -40,7 +40,7 @@ export const NICHES: Niche[] = [
     italicWord: "styled",
     tagline: "GHOST MANNEQUIN · WRINKLE SMOOTH · COLOR MATCH",
     label: "Fashion",
-    video: "/assets/video/cards/nitches/fashion and apparel.mp4",
+    video: "/assets/video/niches videos/fashion and apparel.mp4",
     services: [
       { name: "Ghost Mannequin", featured: true },
       { name: "Background Remove" },
@@ -59,7 +59,7 @@ export const NICHES: Niche[] = [
     italicWord: "refined",
     tagline: "PATTERN REPEAT · COLOR VARIANTS · MACRO SHARPEN",
     label: "Textile",
-    image: "/assets/images/Textile snap pro app.png.png",
+    video: "/assets/video/niches videos/Textile & Fabrics refined.mp4",
     services: [
       { name: "Pattern Repeat", featured: true },
       { name: "Color Variants" },
@@ -76,7 +76,6 @@ export const NICHES: Niche[] = [
     italicWord: "staged",
     tagline: "ROOM STAGE · SKY REPLACE · TWILIGHT CONVERT",
     label: "Real Estate",
-    video: "/assets/video/cards/nitches/real estate.mp4",
     services: [
       { name: "Room Stage", featured: true },
       { name: "Sky Replace" },
@@ -95,7 +94,7 @@ export const NICHES: Niche[] = [
     italicWord: "precision",
     tagline: "REFLECTION CLEAN · STUDIO WHITE · EDGE SHARPEN",
     label: "Tech",
-    image: "/assets/images/Electronics-snap-pro.PNG",
+    video: "/assets/video/niches videos/Electronics & Tech precsion.mp4",
     services: [
       { name: "Reflection Clean", featured: true },
       { name: "Studio White" },
@@ -113,7 +112,7 @@ export const NICHES: Niche[] = [
     italicWord: "glowing",
     tagline: "GLASS REFLECTION · MACRO SHARPEN · SKIN SMOOTH",
     label: "Beauty",
-    video: "/assets/video/cards/nitches/beauty card.mp4",
+    video: "/assets/video/niches videos/beauty card.mp4",
     services: [
       { name: "Glass Reflection", featured: true },
       { name: "Background Remove" },
@@ -133,7 +132,7 @@ export const NICHES: Niche[] = [
     italicWord: "timeless",
     tagline: "OLD PHOTO RESTORE · MACRO SHARPEN · COLOR MATCH",
     label: "Antiques",
-    image: "/assets/images/antiques-snap-pro-app.png",
+    video: "/assets/video/niches videos/antiques & Vintage timeless.mp4",
     services: [
       { name: "Old Photo Restore", featured: true },
       { name: "Macro Sharpen" },
@@ -150,7 +149,7 @@ export const NICHES: Niche[] = [
     italicWord: "ambient",
     tagline: "ROOM STAGE · PERSPECTIVE FIX · CAST SHADOW",
     label: "Furniture",
-    image: "/assets/images/internal Design snap-pro .png",
+    video: "/assets/video/niches videos/Furniture & Decor ambient.mp4",
     services: [
       { name: "Room Stage", featured: true },
       { name: "Cast Shadow" },
@@ -206,7 +205,7 @@ export const NICHES: Niche[] = [
     italicWord: "perfect",
     tagline: "BACKGROUND REMOVE · CAST SHADOW · UPSCALE 4K",
     label: "Products",
-    image: "/assets/images/productStaging-snap-pro.png",
+    video: "/assets/video/niches videos/Products Perfect.mp4",
     services: [
       { name: "Background Remove", featured: true },
       { name: "Auto Backdrop" },
@@ -235,8 +234,7 @@ export const NICHES: Niche[] = [
     italicWord: "appetizing",
     tagline: "COLOR MATCH · STEAM FX · LIGHT & MOOD",
     label: "Food & F&B",
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop",
+    video: "/assets/video/niches videos/Food & Drink appitizing .mp4",
     services: [
       { name: "Color Match", featured: true },
       { name: "Light & Mood" },

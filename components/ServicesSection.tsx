@@ -10,7 +10,7 @@ import { studioServiceName } from "@/features/editor/data/studio";
 // ─── Services ─────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  // ── CUT (3) ──────────────────────────────────────────────────────────────
+  // ── CUT (4) ──────────────────────────────────────────────────────────────
   {
     id: 1,
     name: "Background",
@@ -40,6 +40,16 @@ const SERVICES = [
     credit: "1 cr",
     desc: "Tap any unwanted element — props, hands, watermarks. Gone in one stroke.",
     video: "/assets/video/tools videos/object erase.mp4",
+  },
+  {
+    id: 31,
+    name: "Ghost",
+    italic: "Mannequin",
+    cat: "cut",
+    catLabel: "CUT",
+    credit: "2 cr",
+    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
+    video: "/assets/video/tools videos/Ghost Mannequin.mp4",
   },
   // ── STAGE (11) ───────────────────────────────────────────────────────────
   {
@@ -241,16 +251,6 @@ const SERVICES = [
     video: "/assets/video/tools videos/pdf export.mp4",
   },
   // ── COMING SOON — no demo video yet ───────────────────────────────────────
-  {
-    id: 31,
-    name: "Ghost",
-    italic: "Mannequin",
-    cat: "cut",
-    catLabel: "CUT",
-    credit: "2 cr",
-    desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
-    comingSoon: true,
-  },
   {
     id: 11,
     name: "Upscale",

@@ -17,6 +17,7 @@ const UGC_CARDS = [
   {
     id: "beauty",
     src: "/assets/images/makeup-snap-pro.png",
+    video: "/assets/video/ugc videos/Glow Worthy Every Drop.mp4",
     alt: "Beauty and cosmetics product photography on marble",
     label: "Beauty",
     heading: "Glow-worthy.",
@@ -181,14 +182,25 @@ export default function BentoSection() {
                   borderRadius: "var(--r-xl)",
                 }}
               >
-                <Image
-                  src={card.src}
-                  alt={card.alt}
-                  fill
-                  className='object-cover'
-                  sizes='(max-width: 1024px) 50vw, 20vw'
-                  loading='lazy'
-                />
+                {"video" in card && card.video ? (
+                  <video
+                    src={card.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className='absolute inset-0 w-full h-full object-cover'
+                  />
+                ) : (
+                  <Image
+                    src={card.src}
+                    alt={card.alt}
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 1024px) 50vw, 20vw'
+                    loading='lazy'
+                  />
+                )}
 
                 {/* Top gradient */}
                 <div
