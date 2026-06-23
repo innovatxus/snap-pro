@@ -1464,6 +1464,14 @@ html {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
 }
 
+/* Chrome orb cycles through both light and dark gradient bands — a black
+   icon with a soft white halo stays legible against either, unlike the
+   white icon used on the gas globe's dark glass interior. */
+.fab-orb-chrome .fab-orb-icon {
+  color: #0a0a0a;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
 .fab-orb-tooltip {
   position: absolute;
   bottom: calc(100% + 10px);

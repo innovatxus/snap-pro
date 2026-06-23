@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// Deny-by-default: nothing is readable or writable unless explicitly allowed
+// below. This is the real security boundary for this app — the Firebase web
+// config in NEXT_PUBLIC_FIREBASE_* is public by design and grants no access
+// on its own.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each user can read/create/update only their own profile document, and
+    // never delete it or write another uid's document.
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.uid == uid
+        && request.resource.data.email == request.auth.token.email;
+
+      allow update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.uid == uid;
+
+      allow delete: if false;
+    }
+
+    // Everything else is denied by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

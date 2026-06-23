@@ -131,6 +131,34 @@ const PERSONAL: Tool[] = [
       </svg>
     ),
   },
+  {
+    id: "weddings",
+    name: "Wedding & Events",
+    desc: "Skin smooth, venue light match, and AI album layouts for wedding photography.",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <circle cx='6' cy='10' r='3.2' />
+        <circle cx='10' cy='10' r='3.2' />
+      </svg>
+    ),
+  },
+  {
+    id: "events",
+    name: "Special Events",
+    desc: "Polish backdrops and upscale special-occasion photography in one pass.",
+    image:
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=600&auto=format&fit=crop",
+    icon: (
+      <svg {...S}>
+        <path d='M3 13L6 6L10 10L3 13Z' />
+        <circle cx='10' cy='3' r='0.6' fill='currentColor' stroke='none' />
+        <circle cx='13' cy='5.5' r='0.6' fill='currentColor' stroke='none' />
+        <circle cx='12' cy='2' r='0.6' fill='currentColor' stroke='none' />
+      </svg>
+    ),
+  },
 ];
 
 const BUSINESS: Tool[] = [

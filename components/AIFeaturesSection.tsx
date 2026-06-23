@@ -173,7 +173,9 @@ export default function AIFeaturesSection() {
                 flexWrap: "wrap",
               }}
             >
-              <div className='section-num'>AI Features</div>
+              <div className='section-num' style={{ marginBottom: 0 }}>
+                AI Features
+              </div>
               <span
                 aria-label='Coming soon'
                 style={{
@@ -205,6 +207,7 @@ export default function AIFeaturesSection() {
             <h2
               className='font-fraunces'
               style={{
+                marginTop: 18,
                 fontSize: "clamp(40px, 5vw, 76px)",
                 fontWeight: 300,
                 lineHeight: 0.95,

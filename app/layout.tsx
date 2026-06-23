@@ -4,6 +4,7 @@ import ScrollFloater from "@/components/ScrollFloater";
 import { LocaleProvider } from "@/components/legal/LocaleProvider";
 import ConsentBanner from "@/components/legal/ConsentBanner";
 import FloatingWidgets from "@/components/widgets/FloatingWidgets";
+import { AuthProvider } from "@/components/auth/AuthProvider";
 import "./globals.css";
 
 // Inline script: read the persisted locale before hydration so RTL pages render
@@ -101,12 +102,14 @@ export default function RootLayout({
         <a href='#content' className='skip-link'>
           Skip to content
         </a>
-        <LocaleProvider>
-          {children}
-          <ScrollFloater />
-          <ConsentBanner />
-          <FloatingWidgets />
-        </LocaleProvider>
+        <AuthProvider>
+          <LocaleProvider>
+            {children}
+            <ScrollFloater />
+            <ConsentBanner />
+            <FloatingWidgets />
+          </LocaleProvider>
+        </AuthProvider>
       </body>
     </html>
   );

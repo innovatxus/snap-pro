@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(ls \"C:/Users/MJ/AppData/Local/npm-cache/_npx/0bc745d1ba805cbe/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js\" 2>&1; ls \"C:/Program Files \\(x86\\)/Google/Chrome/Application/chrome.exe\" 2>&1)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/Application/**)",
+      "Bash(node verify-auth.mjs)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\MJ\\AppData\\Local\\Temp\\lh"
+    ]
+  }
+}

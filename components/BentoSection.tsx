@@ -8,8 +8,9 @@ import LazyVideo from "./LazyVideo";
 const UGC_CARDS = [
   {
     id: "fashion",
-    src: "/assets/images/apperal-snap-pro.png",
-    alt: "Fashion apparel flat lay product photography",
+    src: "/assets/images/ugc-fashion-unboxing-poster.jpg",
+    video: "/assets/video/ugc-videos/UGC2_web.mp4",
+    alt: "Creator unboxing a fashion retailer's branded package on camera",
     label: "Fashion",
     heading: "Studio quality.",
     sub: "No studio needed.",
@@ -17,9 +18,9 @@ const UGC_CARDS = [
   },
   {
     id: "beauty",
-    src: "/assets/images/makeup-snap-pro.png",
-    video: "/assets/video/ugc-videos/Glow_Worthy_Every_Drop_web.mp4",
-    alt: "Beauty and cosmetics product photography on marble",
+    src: "/assets/images/ugc-beauty-glow-poster.jpg",
+    video: "/assets/video/ugc-videos/ugc_web.mp4",
+    alt: "Beauty and cosmetics product photography flat lay",
     label: "Beauty",
     heading: "Glow-worthy.",
     sub: "Every drop.",
@@ -34,8 +35,9 @@ const UGC_CARDS = [
   },
   {
     id: "food",
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=600&auto=format&fit=crop",
-    alt: "Artisan food product photography styled flatlay",
+    src: "/assets/images/ugc-food-pepsi-poster.jpg",
+    video: "/assets/video/ugc-videos/UGC3_web.mp4",
+    alt: "Creator presenting a beverage product on camera",
     label: "Food & Drink",
     heading: "Always fresh.",
     sub: "Always on-brand.",

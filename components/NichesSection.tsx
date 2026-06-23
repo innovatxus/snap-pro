@@ -4,6 +4,12 @@ import ScrollReveal from "./ScrollReveal";
 import LazyVideo from "./LazyVideo";
 import { NICHES, toolSlug } from "@/features/editor/data/niches";
 
+// "Special Events" and "Wedding & Events" moved to the Personal Tools group
+// in SubCategoriesSection; "News & Editorial" is hidden entirely. All three
+// stay in NICHES (so their /edit/* routes keep working) but none render here.
+const HIDDEN_FROM_GRID = new Set(["events", "weddings", "editorial"]);
+const GRID_NICHES = NICHES.filter((n) => !HIDDEN_FROM_GRID.has(n.id));
+
 export default function NichesSection() {
   return (
     <section id='niches' className='relative z-10 mt-40'>
@@ -39,8 +45,8 @@ export default function NichesSection() {
                 fontFamily: "var(--font-geist-sans)",
               }}
             >
-              {NICHES.length} industries, each with a dedicated preset toolkit
-              tuned to its unique visual demands.
+              {GRID_NICHES.length} industries, each with a dedicated preset
+              toolkit tuned to its unique visual demands.
             </p>
           </div>
           <div
@@ -53,8 +59,8 @@ export default function NichesSection() {
               whiteSpace: "nowrap",
             }}
           >
-            {NICHES.length} industries ·{" "}
-            {NICHES.reduce((acc, n) => acc + n.services.length, 0)} tools
+            {GRID_NICHES.length} industries ·{" "}
+            {GRID_NICHES.reduce((acc, n) => acc + n.services.length, 0)} tools
           </div>
         </div>
 
@@ -64,7 +70,7 @@ export default function NichesSection() {
           threshold={0}
           className='grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5'
         >
-          {NICHES.map((niche) => (
+          {GRID_NICHES.map((niche) => (
             <div
               key={niche.id}
               className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative h-82 sm:h-135'

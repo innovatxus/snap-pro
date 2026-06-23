@@ -1,8 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import WidgetShell from "./widgets/WidgetShell";
+import AuthPanelContent from "./auth/AuthPanelContent";
+import AccountPanelContent from "./auth/AccountPanelContent";
+import { useAuth } from "./auth/AuthProvider";
 
 /* ─────────────────────────────────────────────────────────
    DATA
@@ -218,6 +222,21 @@ function IconBox({ type }: { type: Service["cat"] | "logo" }) {
         </svg>
       )}
     </div>
+  );
+}
+
+/** Person-outline icon for the sign-in / account trigger. */
+function AccountIcon() {
+  return (
+    <svg width='15' height='15' viewBox='0 0 15 15' fill='none' aria-hidden='true'>
+      <circle cx='7.5' cy='4.5' r='2.5' stroke='currentColor' strokeWidth='1.3' />
+      <path
+        d='M2.5 13c0-2.76 2.24-4.5 5-4.5s5 1.74 5 4.5'
+        stroke='currentColor'
+        strokeWidth='1.3'
+        strokeLinecap='round'
+      />
+    </svg>
   );
 }
 
@@ -597,7 +616,12 @@ export default function Navbar() {
   const [tokenHover, setTokenHover] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const authTriggerRef = useRef<HTMLButtonElement>(null);
+  const authTitleId = useId();
+  const { status, profile } = useAuth();
+  const isSignedIn = status === "signed-in";
 
   /* cleanup on unmount */
   useEffect(() => {
@@ -779,6 +803,56 @@ export default function Navbar() {
               </svg>
             </button>
 
+            {/* Sign in / account */}
+            <button
+              ref={authTriggerRef}
+              type='button'
+              className='hidden sm:inline-flex items-center justify-center'
+              aria-label={isSignedIn ? "Account" : "Sign in"}
+              aria-expanded={authOpen}
+              onClick={() => setAuthOpen(true)}
+              style={
+                isSignedIn
+                  ? {
+                      width: 34,
+                      height: 34,
+                      borderRadius: "50%",
+                      background: "var(--blue-grad)",
+                      color: "white",
+                      fontWeight: 700,
+                      fontSize: 13,
+                      border: "none",
+                      cursor: "pointer",
+                      flexShrink: 0,
+                    }
+                  : {
+                      gap: 6,
+                      height: 34,
+                      padding: "0 14px",
+                      borderRadius: 999,
+                      background: "var(--surface-2)",
+                      border: "1px solid var(--line-2)",
+                      color: "var(--ink)",
+                      fontFamily: "var(--font-geist-mono), monospace",
+                      fontSize: 11,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      cursor: "pointer",
+                      flexShrink: 0,
+                      lineHeight: 1,
+                    }
+              }
+            >
+              {isSignedIn ? (
+                (profile?.displayName ?? profile?.email ?? "?").charAt(0).toUpperCase()
+              ) : (
+                <>
+                  <AccountIcon />
+                  Sign in
+                </>
+              )}
+            </button>
+
             {/* Token chip */}
             <button
               className='hidden sm:inline-flex items-center'
@@ -897,6 +971,23 @@ export default function Navbar() {
           onLeave={() => setOpenMenu(null)}
         />
       )}
+
+      {/* ── Sign in / account panel ── */}
+      <WidgetShell
+        isOpen={authOpen}
+        onClose={() => setAuthOpen(false)}
+        triggerRef={authTriggerRef}
+        titleId={authTitleId}
+        title={isSignedIn ? "Account" : "Sign in to Snap Pro"}
+        accentIcon={<AccountIcon />}
+        widthPx={380}
+      >
+        {isSignedIn ? (
+          <AccountPanelContent onClose={() => setAuthOpen(false)} />
+        ) : (
+          <AuthPanelContent onClose={() => setAuthOpen(false)} />
+        )}
+      </WidgetShell>
 
       {/* ── Mobile drawer ── */}
       {mobileOpen && (
@@ -1225,6 +1316,61 @@ export default function Navbar() {
                 );
               })}
             </nav>
+
+            <button
+              type='button'
+              onClick={() => {
+                closeMobile();
+                setAuthOpen(true);
+              }}
+              style={{
+                marginTop: 6,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                padding: "12px",
+                borderRadius: 12,
+                background: "transparent",
+                border: "1px solid transparent",
+                color: "var(--ink)",
+                width: "100%",
+                textAlign: "left",
+                cursor: "pointer",
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontSize: 12,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+              }}
+            >
+              {isSignedIn ? (
+                <>
+                  <span
+                    aria-hidden='true'
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: "50%",
+                      background: "var(--blue-grad)",
+                      color: "white",
+                      fontWeight: 700,
+                      fontSize: 11,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {(profile?.displayName ?? profile?.email ?? "?").charAt(0).toUpperCase()}
+                  </span>
+                  Account
+                </>
+              ) : (
+                <>
+                  <AccountIcon />
+                  Sign in
+                </>
+              )}
+            </button>
 
             <div
               style={{

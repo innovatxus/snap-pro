@@ -177,7 +177,8 @@ export const NICHES: Niche[] = [
     italicWord: "showroom-ready",
     tagline: "SHOWROOM GEN · SKY REPLACE · 360° SPIN",
     label: "Automotive",
-    image: "/assets/images/Cars-Snap-Pro.png",
+    video: "/assets/video/niches-videos/Cars_Vehicles_showroom_ready_web.mp4",
+    poster: "/assets/images/Cars-Snap-Pro.png",
     services: [
       { name: "Showroom Gen", featured: true },
       { name: "Sky Replace" },
@@ -304,7 +305,8 @@ export const NICHES: Niche[] = [
     italicWord: "striking",
     tagline: "SKY REPLACE · DRONE STITCH · HDR BALANCE",
     label: "Architecture",
-    image: "/assets/images/real-estate-snap-pro.png",
+    video: "/assets/video/niches-videos/construction and archeticture.mp4",
+    poster: "/assets/images/real-estate-snap-pro.png",
     services: [
       { name: "Sky Replace", featured: true },
       { name: "HDR Balance" },
@@ -323,7 +325,8 @@ export const NICHES: Niche[] = [
     italicWord: "viral",
     tagline: "SKIN SMOOTH · FORMAT PACK · BACKGROUND REMOVE",
     label: "Creators",
-    image: "/assets/images/Trends-snap-pro.png",
+    video: "/assets/video/niches-videos/Influencers_Creators_viral_web.mp4",
+    poster: "/assets/images/Trends-snap-pro.png",
     services: [
       { name: "Skin Smooth", featured: true },
       { name: "Marketplace Resize" },
@@ -362,7 +365,8 @@ export const NICHES: Niche[] = [
     italicWord: "breathtaking",
     tagline: "SKY REPLACE · CROWD BLUR · GOLDEN HOUR",
     label: "Travel",
-    image:
+    video: "/assets/video/niches-videos/Travel_Tourism_web.mp4",
+    poster:
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop",
     services: [
       { name: "Sky Replace", featured: true },

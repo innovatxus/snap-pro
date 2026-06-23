@@ -1,0 +1,7 @@
+export interface UserProfile {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  emailVerified: boolean;
+  createdAt: string;
+}
