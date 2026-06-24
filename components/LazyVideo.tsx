@@ -62,19 +62,42 @@ export default function LazyVideo({
 
   // Stay subscribed for the component's lifetime (not just until first
   // load) so playback can pause again once the card scrolls out of view.
+  // Once it's been out of view for a grace period, unmount the <video>
+  // entirely (not just pause it) — a long page can have dozens of these
+  // cards, and a paused-but-still-mounted <video> keeps its decoder/GPU
+  // buffer allocated. On a real mobile device that adds up across a full
+  // scroll and can crash the renderer (seen as a black screen), even though
+  // desktop/emulated testing has enough memory headroom to never show it.
   useEffect(() => {
     if (reducedMotion || !containerRef.current) return;
+    let unloadTimer: ReturnType<typeof setTimeout> | null = null;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
-        if (entry.isIntersecting) setHasLoaded(true);
+        if (entry.isIntersecting) {
+          if (unloadTimer) {
+            clearTimeout(unloadTimer);
+            unloadTimer = null;
+          }
+          setHasLoaded(true);
+        } else {
+          unloadTimer = setTimeout(() => {
+            setHasLoaded(false);
+            setIsPlaying(false);
+            setNeedsManualPlay(false);
+            setSourcesFailed(false);
+          }, 1000);
+        }
       },
       { rootMargin: "50px" },
     );
 
     observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    return () => {
+      if (unloadTimer) clearTimeout(unloadTimer);
+      observer.disconnect();
+    };
   }, [reducedMotion]);
 
   // Play while in view, pause while scrolled away.

@@ -305,7 +305,7 @@ export const NICHES: Niche[] = [
     italicWord: "striking",
     tagline: "SKY REPLACE · DRONE STITCH · HDR BALANCE",
     label: "Architecture",
-    video: "/assets/video/niches-videos/construction and archeticture.mp4",
+    video: "/assets/video/niches-videos/construction_and_archeticture_compressed.mp4",
     poster: "/assets/images/real-estate-snap-pro.png",
     services: [
       { name: "Sky Replace", featured: true },
