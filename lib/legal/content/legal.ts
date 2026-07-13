@@ -15,244 +15,500 @@ export const LEGAL_PAGES: LegalPage[] = [
     slug: "privacy",
     tree: "legal",
     status: "draft",
-    updated: "2026-06-05",
+    updated: "2026-07-13",
     title: {
       en: "Privacy Policy — Snap Pro",
-      ar: "سياسة الخصوصية — سناب برو",
+      ar: "Privacy Policy — Snap Pro",
     },
     meta: {
-      en: "How Snap Pro collects, processes, stores, and protects your data, AI uploads, and account information. PDPL, GDPR, and Stripe compliant.",
-      ar: "كيف تقوم سناب برو بجمع بياناتك وملفاتك المرفوعة ومعالجتها وحفظها وحمايتها. متوافقة مع قانون حماية البيانات المصري واللائحة الأوروبية ومتطلبات سترايب.",
+      en: "How Snap Pro collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
+      ar: "How Snap Pro collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
     },
-    h1: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
+    h1: { en: "Privacy Policy", ar: "Privacy Policy" },
     summary: {
-      en: "We collect the minimum data needed to run Snap Pro, never sell it, never train production AI models on your customer uploads without explicit consent, and give you full control through the privacy portal.",
-      ar: "نقوم بجمع الحد الأدنى من البيانات اللازمة لتشغيل سناب برو، ولا نبيعها أبداً، ولا ندرّب نماذج الذكاء الاصطناعي الإنتاجية على ملفات عملائك دون موافقة صريحة، ونمنحك تحكماً كاملاً عبر بوابة الخصوصية.",
+      en: "We collect the minimum personal data needed to operate Snap Pro. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@snappro.app.",
+      ar: "We collect the minimum personal data needed to operate Snap Pro. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@snappro.app.",
     },
     sections: [
+      // ── 1. CONTROLLER IDENTITY ──────────────────────────────────────────────
       {
-        id: "who-we-are",
-        heading: { en: "Who we are", ar: "من نحن" },
+        id: "controller",
+        heading: {
+          en: "1. Data Controller Identity and Contact Details",
+          ar: "1. Data Controller Identity and Contact Details",
+        },
         paragraphs: {
           en: [
-            'Snap Pro, Inc. ("Snap Pro", "we", "us") operates the Snap Pro AI photo studio at snappro.app. Our Egyptian operating entity is registered under the commercial registry described on our Business Information page.',
-            "Our Data Protection Officer can be reached at privacy@snappro.app.",
+            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
+            "Data Protection Officer (DPO): privacy@snappro.app. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
+            "This Privacy Policy applies to personal data processed through the Snap Pro platform at snappro.app and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
           ],
           ar: [
-            'تشغّل شركة سناب برو، إنك. ("سناب برو"، "نحن") استوديو سناب برو للذكاء الاصطناعي على الموقع snappro.app. كياننا التشغيلي في مصر مُسجَّل في السجل التجاري الموضح في صفحة معلومات الشركة.',
-            "يمكن التواصل مع مسؤول حماية البيانات لدينا عبر privacy@snappro.app.",
+            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
+            "Data Protection Officer (DPO): privacy@snappro.app. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
+            "This Privacy Policy applies to personal data processed through the Snap Pro platform at snappro.app and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
           ],
         },
       },
+      // ── 2. WHAT WE COLLECT ──────────────────────────────────────────────────
       {
         id: "what-we-collect",
-        heading: { en: "Information we collect", ar: "المعلومات التي نجمعها" },
-        bullets: {
-          en: [
-            "Account: name, email, password hash, business profile, billing address.",
-            "Uploads & generated content: images you upload, prompts, edited outputs.",
-            "Usage: pages viewed, services used, credits consumed, device & browser metadata.",
-            "Cookies & analytics: see our Cookie Policy.",
-            "Payment metadata: last 4 digits, brand, country — not the full card number, which goes directly to Stripe / Paymob.",
-            "Support communications: any messages or attachments you send to support.",
-          ],
-          ar: [
-            "بيانات الحساب: الاسم، البريد الإلكتروني، تجزئة كلمة المرور، الملف التجاري، عنوان الفوترة.",
-            "الملفات المرفوعة والمحتوى المُنشَأ: الصور التي ترفعها، الأوامر النصية، المخرجات المعدّلة.",
-            "الاستخدام: الصفحات التي تتم مشاهدتها، الخدمات المستخدمة، الأرصدة المستهلكة، بيانات الجهاز والمتصفح.",
-            "ملفات تعريف الارتباط والتحليلات: راجع سياسة ملفات تعريف الارتباط.",
-            "بيانات الدفع: آخر أربعة أرقام، الجهة المُصدرة، الدولة — لا نحتفظ برقم البطاقة كاملاً؛ يتم تمريره مباشرة إلى سترايب/بيموب.",
-            "اتصالات الدعم: أي رسائل أو مرفقات ترسلها إلى فريق الدعم.",
-          ],
+        heading: {
+          en: "2. Personal Data We Collect",
+          ar: "2. Personal Data We Collect",
         },
+        lede: {
+          en: "We collect only the personal data that is necessary for the purposes described in this Policy.",
+          ar: "We collect only the personal data that is necessary for the purposes described in this Policy.",
+        },
+        defs: [
+          {
+            term: { en: "Account data", ar: "Account data" },
+            meaning: {
+              en: "Name, email address, password (stored as a salted hash — never in plain text), business name, billing address, VAT/tax ID (where provided), and account preferences.",
+              ar: "Name, email address, password (stored as a salted hash — never in plain text), business name, billing address, VAT/tax ID (where provided), and account preferences.",
+            },
+          },
+          {
+            term: { en: "Uploaded content", ar: "Uploaded content" },
+            meaning: {
+              en: "Photographs and images you upload to the Service for AI processing. These are treated as potentially containing personal data (e.g. images of people) and are handled with heightened care. See Section 5 for how AI processing works.",
+              ar: "Photographs and images you upload to the Service for AI processing. These are treated as potentially containing personal data (e.g. images of people) and are handled with heightened care. See Section 5 for how AI processing works.",
+            },
+          },
+          {
+            term: { en: "Generated outputs", ar: "Generated outputs" },
+            meaning: {
+              en: "AI-edited images and outputs produced by the Service in response to your uploads and prompts. Stored in your library until you delete them.",
+              ar: "AI-edited images and outputs produced by the Service in response to your uploads and prompts. Stored in your library until you delete them.",
+            },
+          },
+          {
+            term: { en: "Usage data", ar: "Usage data" },
+            meaning: {
+              en: "Pages and features visited, AI tools used, Credits consumed, session duration, error logs, and device and browser metadata (browser type, operating system, screen resolution, IP address, referring URL).",
+              ar: "Pages and features visited, AI tools used, Credits consumed, session duration, error logs, and device and browser metadata (browser type, operating system, screen resolution, IP address, referring URL).",
+            },
+          },
+          {
+            term: { en: "Payment metadata", ar: "Payment metadata" },
+            meaning: {
+              en: "Last four digits of your card, card brand, expiry month/year, billing country, and transaction reference numbers. We do not store full card numbers — payment data is tokenised and held by Stripe, Inc. or Paymob under their own PCI DSS certifications.",
+              ar: "Last four digits of your card, card brand, expiry month/year, billing country, and transaction reference numbers. We do not store full card numbers — payment data is tokenised and held by Stripe, Inc. or Paymob under their own PCI DSS certifications.",
+            },
+          },
+          {
+            term: { en: "Support communications", ar: "Support communications" },
+            meaning: {
+              en: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@snappro.app or appeals@snappro.app.",
+              ar: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@snappro.app or appeals@snappro.app.",
+            },
+          },
+          {
+            term: { en: "Cookie and tracking data", ar: "Cookie and tracking data" },
+            meaning: {
+              en: "Data collected via essential, analytics, and marketing cookies — subject to your consent choices. See our Cookie Policy at /legal/cookies for the full list of cookies we use.",
+              ar: "Data collected via essential, analytics, and marketing cookies — subject to your consent choices. See our Cookie Policy at /legal/cookies for the full list of cookies we use.",
+            },
+          },
+        ],
       },
+      // ── 3. LAWFUL BASES ─────────────────────────────────────────────────────
       {
         id: "lawful-bases",
-        heading: { en: "Lawful bases", ar: "الأسس القانونية للمعالجة" },
-        bullets: {
-          en: [
-            "Contract — to deliver the service you signed up for.",
-            "Consent — for marketing emails, AI training opt-in, optional analytics cookies.",
-            "Legitimate interest — security, fraud prevention, product improvement (you can object).",
-            "Legal obligation — tax records, lawful disclosures.",
-          ],
-          ar: [
-            "العقد — لتقديم الخدمة التي اشتركت فيها.",
-            "الموافقة — للرسائل التسويقية، وتدريب نماذج الذكاء الاصطناعي عند اختيارك، وملفات تعريف الارتباط الاختيارية.",
-            "المصلحة المشروعة — الأمن، ومنع الاحتيال، وتحسين المنتج (يحق لك الاعتراض).",
-            "الالتزام القانوني — السجلات الضريبية والإفصاحات القانونية.",
-          ],
+        heading: {
+          en: "3. Lawful Bases for Processing (PDPL Art. 4)",
+          ar: "3. Lawful Bases for Processing (PDPL Art. 4)",
         },
-      },
-      {
-        id: "how-we-use",
-        heading: { en: "How we use information", ar: "كيف نستخدم المعلومات" },
-        bullets: {
-          en: [
-            "Deliver and operate the AI services you request.",
-            "Authenticate you and protect your account.",
-            "Process payments via Stripe and Paymob (and any regional gateway you select).",
-            "Provide customer support and respond to legal requests.",
-            "Improve our models and product — never on customer uploads without explicit opt-in.",
-            "Send service announcements (you cannot opt out of these), and marketing if you opted in.",
-          ],
-          ar: [
-            "تقديم وتشغيل خدمات الذكاء الاصطناعي التي تطلبها.",
-            "التحقق من هويتك وحماية حسابك.",
-            "معالجة المدفوعات عبر سترايب وبيموب (أو أي بوابة إقليمية تختارها).",
-            "تقديم الدعم للعملاء والاستجابة للطلبات القانونية.",
-            "تحسين نماذجنا ومنتجنا — لا نستخدم ملفات العملاء أبداً دون موافقة صريحة.",
-            "إرسال إشعارات الخدمة (لا يمكن إلغاء الاشتراك بها)، والرسائل التسويقية في حال موافقتك.",
-          ],
-        },
-      },
-      {
-        id: "ai-processing",
-        heading: { en: "AI processing", ar: "معالجة الذكاء الاصطناعي" },
         paragraphs: {
           en: [
-            "When you upload an image, we send it to the AI capability you selected (e.g. background removal, ghost mannequin). For details of which models and providers handle each capability, see the AI Provider Disclosure page.",
-            "By default we do not retain your uploads for model training. You can review and revoke any training-related opt-ins on the AI Training Opt-Out page.",
+            "Egyptian Personal Data Protection Law No. 151/2020 requires us to identify a lawful basis for each processing activity. We rely on the following:",
           ],
           ar: [
-            "عندما ترفع صورة، نرسلها إلى قدرة الذكاء الاصطناعي التي اخترتها (مثل إزالة الخلفية أو المانيكان الشبحي). لمعرفة النماذج والمزوّدين المعنيين بكل قدرة، راجع صفحة الإفصاح عن مزوّدي الذكاء الاصطناعي.",
-            "بشكل افتراضي لا نحتفظ بملفاتك لأغراض تدريب النماذج. يمكنك مراجعة موافقاتك وسحبها من صفحة الانسحاب من تدريب الذكاء الاصطناعي.",
+            "Egyptian Personal Data Protection Law No. 151/2020 requires us to identify a lawful basis for each processing activity. We rely on the following:",
+          ],
+        },
+        defs: [
+          {
+            term: { en: "Contract performance", ar: "Contract performance" },
+            meaning: {
+              en: "Processing necessary to deliver the Service you signed up for — account management, AI processing of your uploads, delivery of AI Outputs, billing, and customer support.",
+              ar: "Processing necessary to deliver the Service you signed up for — account management, AI processing of your uploads, delivery of AI Outputs, billing, and customer support.",
+            },
+          },
+          {
+            term: { en: "Consent", ar: "Consent" },
+            meaning: {
+              en: "Where we ask for your specific, informed, freely given consent: marketing communications, optional analytics cookies, marketing cookies, and any opt-in to using your uploads for AI model improvement. You may withdraw consent at any time without affecting prior lawful processing.",
+              ar: "Where we ask for your specific, informed, freely given consent: marketing communications, optional analytics cookies, marketing cookies, and any opt-in to using your uploads for AI model improvement. You may withdraw consent at any time without affecting prior lawful processing.",
+            },
+          },
+          {
+            term: { en: "Legitimate interests", ar: "Legitimate interests" },
+            meaning: {
+              en: "Where our legitimate business interests — or those of a third party — are not overridden by your rights: fraud prevention, security monitoring, abuse detection, service improvement analytics (aggregated and de-identified), and communicating product updates to existing customers. You may object to this processing at any time (see Section 8).",
+              ar: "Where our legitimate business interests — or those of a third party — are not overridden by your rights: fraud prevention, security monitoring, abuse detection, service improvement analytics (aggregated and de-identified), and communicating product updates to existing customers. You may object to this processing at any time (see Section 8).",
+            },
+          },
+          {
+            term: { en: "Legal obligation", ar: "Legal obligation" },
+            meaning: {
+              en: "Where processing is required to comply with a legal obligation: retention of tax and financial records under Egyptian tax law, responding to valid court orders or regulatory requests, and reporting obligations under Anti-Cybercrime Law No. 175/2018.",
+              ar: "Where processing is required to comply with a legal obligation: retention of tax and financial records under Egyptian tax law, responding to valid court orders or regulatory requests, and reporting obligations under Anti-Cybercrime Law No. 175/2018.",
+            },
+          },
+        ],
+      },
+      // ── 4. HOW WE USE DATA ──────────────────────────────────────────────────
+      {
+        id: "how-we-use",
+        heading: {
+          en: "4. How We Use Your Personal Data",
+          ar: "4. How We Use Your Personal Data",
+        },
+        bullets: {
+          en: [
+            "Account management: create, authenticate, and maintain your Account; verify your identity; enforce our Terms of Service.",
+            "AI processing: receive your uploaded images, route them to the appropriate AI tool or provider, return AI Outputs to you, and temporarily cache data as needed for performance.",
+            "Payment processing: transmit billing data to Stripe or Paymob to process subscription fees and Credit Pack purchases; issue e-invoices in compliance with the Egyptian Tax Authority e-invoicing mandate.",
+            "Customer support: respond to support requests, investigate complaints, and process Account appeals.",
+            "Security and fraud prevention: detect, investigate, and prevent abuse, unauthorised access, and fraudulent transactions.",
+            "Service improvement (aggregated): analyse anonymised usage patterns to identify bugs, improve performance, and prioritise features. We do not use your individually identifiable data for this purpose without your consent.",
+            "Communications: send essential service communications (payment receipts, renewal reminders, security alerts, planned maintenance notices) that you cannot opt out of; and marketing communications if you have opted in.",
+            "Legal compliance: retain records as required by Egyptian tax law (10 years for financial records), respond to valid legal process, and report certain offences as required by law.",
+          ],
+          ar: [
+            "Account management: create, authenticate, and maintain your Account; verify your identity; enforce our Terms of Service.",
+            "AI processing: receive your uploaded images, route them to the appropriate AI tool or provider, return AI Outputs to you, and temporarily cache data as needed for performance.",
+            "Payment processing: transmit billing data to Stripe or Paymob to process subscription fees and Credit Pack purchases; issue e-invoices in compliance with the Egyptian Tax Authority e-invoicing mandate.",
+            "Customer support: respond to support requests, investigate complaints, and process Account appeals.",
+            "Security and fraud prevention: detect, investigate, and prevent abuse, unauthorised access, and fraudulent transactions.",
+            "Service improvement (aggregated): analyse anonymised usage patterns to identify bugs, improve performance, and prioritise features. We do not use your individually identifiable data for this purpose without your consent.",
+            "Communications: send essential service communications (payment receipts, renewal reminders, security alerts, planned maintenance notices) that you cannot opt out of; and marketing communications if you have opted in.",
+            "Legal compliance: retain records as required by Egyptian tax law (10 years for financial records), respond to valid legal process, and report certain offences as required by law.",
           ],
         },
       },
+      // ── 5. AI PROCESSING ────────────────────────────────────────────────────
+      {
+        id: "ai-processing",
+        heading: {
+          en: "5. How We Handle Your Uploaded Images and AI Processing",
+          ar: "5. How We Handle Your Uploaded Images and AI Processing",
+        },
+        paragraphs: {
+          en: [
+            "When you upload an image to a Snap Pro AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
+            "Transient processing: by default, uploaded images are processed transiently and are not retained after your AI Output is returned to you. If you choose to save an image to your library, it is stored in your Account until you delete it.",
+            "No training on your uploads by default: we do not use your uploaded images or AI Outputs to train or fine-tune production AI models without your explicit, granular opt-in consent. This opt-in is separate from acceptance of these Terms and is entirely voluntary. You may review and revoke any training consent at any time from Account → Privacy → AI training preferences, or by visiting /policies/ai-training-opt-out.",
+            "Images of people: if your uploads contain images of identifiable individuals, you are responsible for holding the necessary consents from those individuals under applicable privacy law before uploading. We apply heightened data-handling standards to images that appear to contain biometric data (facial features) as required by PDPL Art. 1 (definition of sensitive personal data).",
+          ],
+          ar: [
+            "When you upload an image to a Snap Pro AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
+            "Transient processing: by default, uploaded images are processed transiently and are not retained after your AI Output is returned to you. If you choose to save an image to your library, it is stored in your Account until you delete it.",
+            "No training on your uploads by default: we do not use your uploaded images or AI Outputs to train or fine-tune production AI models without your explicit, granular opt-in consent. This opt-in is separate from acceptance of these Terms and is entirely voluntary. You may review and revoke any training consent at any time from Account → Privacy → AI training preferences, or by visiting /policies/ai-training-opt-out.",
+            "Images of people: if your uploads contain images of identifiable individuals, you are responsible for holding the necessary consents from those individuals under applicable privacy law before uploading. We apply heightened data-handling standards to images that appear to contain biometric data (facial features) as required by PDPL Art. 1 (definition of sensitive personal data).",
+          ],
+        },
+      },
+      // ── 6. SHARING ──────────────────────────────────────────────────────────
       {
         id: "sharing",
         heading: {
-          en: "Sharing & third parties",
-          ar: "المشاركة والأطراف الثالثة",
+          en: "6. Sharing Personal Data with Third Parties",
+          ar: "6. Sharing Personal Data with Third Parties",
         },
         paragraphs: {
           en: [
-            "We share data only with vendors needed to run the service (hosting, payments, AI providers, analytics). The complete current list is published on our Sub-processors page and updated whenever a vendor changes.",
-            "We may disclose data to comply with valid legal process. See our Government Requests page for our disclosure principles and annual transparency report.",
+            "We do not sell your personal data. We do not share it with third parties for their own marketing purposes. We share personal data only in the following circumstances:",
           ],
           ar: [
-            "نشارك البيانات فقط مع مورّدين ضروريين لتشغيل الخدمة (الاستضافة، المدفوعات، مزوّدو الذكاء الاصطناعي، التحليلات). القائمة الحالية الكاملة منشورة في صفحة المُعالجين الفرعيين ويتم تحديثها عند أي تغيير.",
-            "قد نُفصِح عن البيانات للامتثال لإجراء قانوني صحيح. راجع صفحة طلبات الحكومات لمعرفة مبادئنا وتقرير الشفافية السنوي.",
+            "We do not sell your personal data. We do not share it with third parties for their own marketing purposes. We share personal data only in the following circumstances:",
+          ],
+        },
+        bullets: {
+          en: [
+            "Service providers (sub-processors): companies that help us operate the Service under contractual data-processing obligations — including Vercel, Inc. (hosting), Cloudflare, Inc. (CDN and security), Firebase / Google LLC (authentication), Stripe, Inc. (payment processing), Paymob (payment processing — Egypt and GCC), and AI model/inference providers listed at /policies/ai-providers. A complete, up-to-date list of sub-processors is published at /legal/sub-processors.",
+            "Business transfers: in the event of a merger, acquisition, or sale of all or substantially all of our assets, your personal data may be transferred to the acquirer. We will give you 30 days' notice by email before any such transfer takes effect and describe your options at that time.",
+            "Legal disclosures: where we are required by a valid Egyptian court order, regulatory authority request, or mandatory law to disclose personal data. We will notify you of such disclosures where legally permitted. Our principles and annual statistics are published at /legal/government-requests.",
+            "Safety: where disclosure is necessary to protect the vital interests of any person, or to detect or prevent illegal activity posing a risk to public safety.",
+          ],
+          ar: [
+            "Service providers (sub-processors): companies that help us operate the Service under contractual data-processing obligations — including Vercel, Inc. (hosting), Cloudflare, Inc. (CDN and security), Firebase / Google LLC (authentication), Stripe, Inc. (payment processing), Paymob (payment processing — Egypt and GCC), and AI model/inference providers listed at /policies/ai-providers. A complete, up-to-date list of sub-processors is published at /legal/sub-processors.",
+            "Business transfers: in the event of a merger, acquisition, or sale of all or substantially all of our assets, your personal data may be transferred to the acquirer. We will give you 30 days' notice by email before any such transfer takes effect and describe your options at that time.",
+            "Legal disclosures: where we are required by a valid Egyptian court order, regulatory authority request, or mandatory law to disclose personal data. We will notify you of such disclosures where legally permitted. Our principles and annual statistics are published at /legal/government-requests.",
+            "Safety: where disclosure is necessary to protect the vital interests of any person, or to detect or prevent illegal activity posing a risk to public safety.",
           ],
         },
       },
+      // ── 7. CROSS-BORDER TRANSFERS ───────────────────────────────────────────
       {
         id: "international-transfers",
-        heading: { en: "International transfers", ar: "النقل الدولي للبيانات" },
+        heading: {
+          en: "7. Cross-Border Data Transfers (PDPL Art. 14)",
+          ar: "7. Cross-Border Data Transfers (PDPL Art. 14)",
+        },
         paragraphs: {
           en: [
-            "Snap Pro is built on global infrastructure. Data may be processed in the United States, the European Union, and within the MENA region. We rely on Standard Contractual Clauses, adequacy decisions where available, and PDPL-aligned safeguards for cross-border flows.",
+            "Snap Pro is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
+            "The safeguards we rely on for each transfer destination are:",
           ],
           ar: [
-            "تعتمد سناب برو على بنية تحتية عالمية. قد تتم معالجة البيانات في الولايات المتحدة والاتحاد الأوروبي ومنطقة الشرق الأوسط وشمال إفريقيا. نعتمد على البنود التعاقدية القياسية وقرارات الكفاية حيثما توفّرت، وضمانات متوافقة مع قانون حماية البيانات المصري للنقل العابر للحدود.",
+            "Snap Pro is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
+            "The safeguards we rely on for each transfer destination are:",
+          ],
+        },
+        bullets: {
+          en: [
+            "United States (Vercel, Stripe, Firebase/Google, AI inference providers): we rely on (a) your explicit, informed consent given at the point of uploading images to the Service, and (b) the contractual necessity exception in PDPL Art. 14 — the transfer is necessary to perform the Service contract with you. We additionally apply Standard Contractual Clause-equivalent data-processing agreements with each US-based sub-processor.",
+            "European Union (certain AI providers, analytics): we rely on the EU adequacy framework and, where applicable, Standard Contractual Clauses. EU-based processing benefits from GDPR-level protections.",
+            "Egypt (Paymob — primary payment processing for Egyptian customers): data processed within Egypt is subject to PDPL Law No. 151/2020 in full.",
+            "Full details of transfer mechanisms per sub-processor are available on request from privacy@snappro.app and are summarised at /legal/international-transfers.",
+          ],
+          ar: [
+            "United States (Vercel, Stripe, Firebase/Google, AI inference providers): we rely on (a) your explicit, informed consent given at the point of uploading images to the Service, and (b) the contractual necessity exception in PDPL Art. 14 — the transfer is necessary to perform the Service contract with you. We additionally apply Standard Contractual Clause-equivalent data-processing agreements with each US-based sub-processor.",
+            "European Union (certain AI providers, analytics): we rely on the EU adequacy framework and, where applicable, Standard Contractual Clauses. EU-based processing benefits from GDPR-level protections.",
+            "Egypt (Paymob — primary payment processing for Egyptian customers): data processed within Egypt is subject to PDPL Law No. 151/2020 in full.",
+            "Full details of transfer mechanisms per sub-processor are available on request from privacy@snappro.app and are summarised at /legal/international-transfers.",
           ],
         },
       },
+      // ── 8. RETENTION ────────────────────────────────────────────────────────
       {
         id: "retention",
-        heading: { en: "How long we keep data", ar: "مدة الاحتفاظ بالبيانات" },
+        heading: {
+          en: "8. How Long We Keep Your Data",
+          ar: "8. How Long We Keep Your Data",
+        },
+        paragraphs: {
+          en: [
+            "We retain personal data only for as long as necessary to fulfil the purpose for which it was collected, to comply with legal obligations, or to resolve disputes. The table below shows our standard retention periods.",
+          ],
+          ar: [
+            "We retain personal data only for as long as necessary to fulfil the purpose for which it was collected, to comply with legal obligations, or to resolve disputes. The table below shows our standard retention periods.",
+          ],
+        },
         table: {
           head: {
-            en: ["Category", "Retention"],
-            ar: ["الفئة", "مدة الاحتفاظ"],
+            en: ["Data category", "Retention period", "Basis"],
+            ar: ["Data category", "Retention period", "Basis"],
           },
           rows: [
             {
-              en: ["Account profile", "Lifetime of account + 30 days"],
-              ar: ["ملف الحساب", "طوال مدة الحساب + 30 يوماً"],
+              en: ["Account profile and preferences", "Lifetime of Account + 30 days grace period after closure", "Contract / legal obligation"],
+              ar: ["Account profile and preferences", "Lifetime of Account + 30 days grace period after closure", "Contract / legal obligation"],
             },
             {
-              en: ["Uploaded images", "30 days unless saved to your library"],
-              ar: ["الصور المرفوعة", "30 يوماً ما لم تحفظها في مكتبتك"],
+              en: ["Uploaded images (not saved to library)", "Deleted immediately after AI Output is returned (typically < 1 hour)", "Transient processing only"],
+              ar: ["Uploaded images (not saved to library)", "Deleted immediately after AI Output is returned (typically < 1 hour)", "Transient processing only"],
             },
             {
-              en: ["Generated outputs", "Until you delete them"],
-              ar: ["المخرجات المُنشَأة", "حتى تقوم بحذفها"],
+              en: ["Uploaded images (saved to library)", "Until you delete them, or 30 days after Account closure", "Contract"],
+              ar: ["Uploaded images (saved to library)", "Until you delete them, or 30 days after Account closure", "Contract"],
             },
             {
-              en: ["Billing & tax records", "10 years (Egypt e-invoicing)"],
-              ar: [
-                "السجلات المالية والضريبية",
-                "10 سنوات (الفوترة الإلكترونية المصرية)",
-              ],
+              en: ["AI-generated outputs", "Until you delete them, or 30 days after Account closure", "Contract"],
+              ar: ["AI-generated outputs", "Until you delete them, or 30 days after Account closure", "Contract"],
             },
             {
-              en: ["Server access logs", "90 days"],
-              ar: ["سجلات الوصول إلى الخوادم", "90 يوماً"],
+              en: ["Billing and tax records (invoices, payment metadata)", "10 years from transaction date", "Legal obligation (Egyptian tax law, e-invoicing mandate)"],
+              ar: ["Billing and tax records (invoices, payment metadata)", "10 years from transaction date", "Legal obligation (Egyptian tax law, e-invoicing mandate)"],
+            },
+            {
+              en: ["Support ticket records", "3 years from closure of ticket", "Legitimate interests (dispute resolution)"],
+              ar: ["Support ticket records", "3 years from closure of ticket", "Legitimate interests (dispute resolution)"],
+            },
+            {
+              en: ["Server access and security logs", "90 days rolling", "Legitimate interests (security)"],
+              ar: ["Server access and security logs", "90 days rolling", "Legitimate interests (security)"],
+            },
+            {
+              en: ["Marketing consent records", "Until consent is withdrawn + 3 years (proof of consent)", "Legal obligation"],
+              ar: ["Marketing consent records", "Until consent is withdrawn + 3 years (proof of consent)", "Legal obligation"],
             },
           ],
         },
       },
+      // ── 9. YOUR RIGHTS ──────────────────────────────────────────────────────
       {
         id: "your-rights",
-        heading: { en: "Your rights", ar: "حقوقك" },
-        bullets: {
-          en: [
-            "Access — request a copy of the data we hold about you.",
-            "Rectification — correct inaccurate or incomplete information.",
-            "Erasure — delete your account and associated data (subject to legal retention).",
-            "Portability — export your data in a machine-readable format.",
-            "Object & restrict — object to legitimate-interest processing.",
-            "Withdraw consent — at any time, without affecting prior lawful processing.",
-            "Lodge a complaint — with Egypt's PDP Center, your local DPA, or our DPO.",
-          ],
-          ar: [
-            "الوصول — طلب نسخة من البيانات التي نحتفظ بها عنك.",
-            "التصحيح — تصحيح المعلومات غير الدقيقة أو الناقصة.",
-            "المحو — حذف حسابك وبياناتك (مع مراعاة الاحتفاظ القانوني).",
-            "النقل — تصدير بياناتك بصيغة قابلة للقراءة آلياً.",
-            "الاعتراض والتقييد — الاعتراض على المعالجة القائمة على المصلحة المشروعة.",
-            "سحب الموافقة — في أي وقت، دون التأثير على المعالجة السابقة المشروعة.",
-            "تقديم شكوى — إلى مركز حماية البيانات الشخصية في مصر، أو هيئتك المحلية، أو مسؤول حماية البيانات لدينا.",
-          ],
+        heading: {
+          en: "9. Your Rights Under PDPL (Arts. 17–25)",
+          ar: "9. Your Rights Under PDPL (Arts. 17–25)",
         },
+        lede: {
+          en: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@snappro.app with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
+          ar: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@snappro.app with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
+        },
+        defs: [
+          {
+            term: { en: "Right of access (Art. 17)", ar: "Right of access (Art. 17)" },
+            meaning: {
+              en: "Request a copy of the personal data we hold about you, the purposes for which we process it, the recipients we share it with, and our retention periods.",
+              ar: "Request a copy of the personal data we hold about you, the purposes for which we process it, the recipients we share it with, and our retention periods.",
+            },
+          },
+          {
+            term: { en: "Right to rectification (Art. 18)", ar: "Right to rectification (Art. 18)" },
+            meaning: {
+              en: "Request correction of inaccurate or incomplete personal data.",
+              ar: "Request correction of inaccurate or incomplete personal data.",
+            },
+          },
+          {
+            term: { en: "Right to erasure (Art. 19)", ar: "Right to erasure (Art. 19)" },
+            meaning: {
+              en: "Request deletion of your personal data when it is no longer necessary for the purpose collected, when you withdraw consent (where consent was the lawful basis), or when processing is unlawful. Deletion may be limited by legal-retention obligations.",
+              ar: "Request deletion of your personal data when it is no longer necessary for the purpose collected, when you withdraw consent (where consent was the lawful basis), or when processing is unlawful. Deletion may be limited by legal-retention obligations.",
+            },
+          },
+          {
+            term: { en: "Right to data portability (Art. 20)", ar: "Right to data portability (Art. 20)" },
+            meaning: {
+              en: "Receive your personal data in a structured, machine-readable format (JSON or CSV) and transmit it to another controller, where technically feasible.",
+              ar: "Receive your personal data in a structured, machine-readable format (JSON or CSV) and transmit it to another controller, where technically feasible.",
+            },
+          },
+          {
+            term: { en: "Right to object (Art. 21)", ar: "Right to object (Art. 21)" },
+            meaning: {
+              en: "Object at any time to processing based on legitimate interests, including profiling and direct marketing. Where you object to marketing, we will stop processing immediately.",
+              ar: "Object at any time to processing based on legitimate interests, including profiling and direct marketing. Where you object to marketing, we will stop processing immediately.",
+            },
+          },
+          {
+            term: { en: "Right to restrict processing (Art. 22)", ar: "Right to restrict processing (Art. 22)" },
+            meaning: {
+              en: "Request that we restrict processing of your data — for example, while the accuracy of data you have contested is verified.",
+              ar: "Request that we restrict processing of your data — for example, while the accuracy of data you have contested is verified.",
+            },
+          },
+          {
+            term: { en: "Right to withdraw consent (Art. 23)", ar: "Right to withdraw consent (Art. 23)" },
+            meaning: {
+              en: "Withdraw any consent you have given at any time without penalty. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.",
+              ar: "Withdraw any consent you have given at any time without penalty. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.",
+            },
+          },
+          {
+            term: { en: "Right not to be subject to automated decisions (Art. 24)", ar: "Right not to be subject to automated decisions (Art. 24)" },
+            meaning: {
+              en: "We do not make solely automated decisions that produce legal or similarly significant effects on you. AI image processing is a tool you actively direct — it does not determine eligibility, creditworthiness, or access to rights.",
+              ar: "We do not make solely automated decisions that produce legal or similarly significant effects on you. AI image processing is a tool you actively direct — it does not determine eligibility, creditworthiness, or access to rights.",
+            },
+          },
+          {
+            term: { en: "Right to lodge a complaint (Art. 25)", ar: "Right to lodge a complaint (Art. 25)" },
+            meaning: {
+              en: "Lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt (pdpc.gov.eg), or with your local data-protection authority if you are based outside Egypt.",
+              ar: "Lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt (pdpc.gov.eg), or with your local data-protection authority if you are based outside Egypt.",
+            },
+          },
+        ],
       },
+      // ── 10. CHILDREN ────────────────────────────────────────────────────────
       {
         id: "children",
-        heading: { en: "Children", ar: "الأطفال" },
+        heading: {
+          en: "10. Children's Privacy",
+          ar: "10. Children's Privacy",
+        },
         paragraphs: {
           en: [
-            "Snap Pro is not intended for users under 16 years of age. We do not knowingly collect data from children. If you believe a child has created an account, contact privacy@snappro.app and we will delete it.",
+            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@snappro.app immediately. We will verify the report and delete the child's data within 15 business days.",
+            "If a paid Account is found to belong to a person under 18, we will suspend the Account, refund any unused credits or subscription fees pro-rata, and notify the registered email address as required by consumer protection law.",
           ],
           ar: [
-            "سناب برو ليست مخصّصة للمستخدمين دون السادسة عشرة. ولا نقوم عن علم بجمع بيانات من الأطفال. إذا كنت تعتقد أن طفلاً أنشأ حساباً، تواصل مع privacy@snappro.app وسنقوم بحذفه.",
+            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@snappro.app immediately. We will verify the report and delete the child's data within 15 business days.",
+            "If a paid Account is found to belong to a person under 18, we will suspend the Account, refund any unused credits or subscription fees pro-rata, and notify the registered email address as required by consumer protection law.",
           ],
         },
       },
+      // ── 11. SECURITY ────────────────────────────────────────────────────────
       {
         id: "security",
-        heading: { en: "Security", ar: "الأمن" },
-        paragraphs: {
+        heading: {
+          en: "11. Security Measures",
+          ar: "11. Security Measures",
+        },
+        lede: {
+          en: "We apply technical and organisational measures appropriate to the risk of processing. Current measures include:",
+          ar: "We apply technical and organisational measures appropriate to the risk of processing. Current measures include:",
+        },
+        bullets: {
           en: [
-            "Encryption in transit (TLS 1.3) and at rest (AES-256), least-privilege access, MFA for staff, vendor risk reviews, and continuous monitoring. See our Security Overview for full details.",
+            "Encryption in transit: TLS 1.3 for all data transmitted between your browser and our servers, and between our servers and sub-processors.",
+            "Encryption at rest: AES-256 encryption for stored data, including uploaded images and Account data.",
+            "Access controls: least-privilege access for all staff; role-based permissions; MFA required for all internal systems.",
+            "Vendor risk management: all sub-processors are assessed for security posture before onboarding and reviewed annually.",
+            "Network security: Cloudflare WAF and DDoS mitigation; isolated processing environments for AI workloads.",
+            "Incident response: documented incident response plan; breach notification to PDPC within 72 hours where required by PDPL Art. 26; notification to affected users without undue delay by email to their registered address. Full details are at /trust/security.",
           ],
           ar: [
-            "تشفير أثناء النقل (TLS 1.3) وأثناء التخزين (AES-256)، وصول بالحد الأدنى من الصلاحيات، مصادقة ثنائية للموظفين، مراجعة مخاطر الموردين، ومراقبة مستمرة. راجع نظرة عامة على الأمن لمزيد من التفاصيل.",
+            "Encryption in transit: TLS 1.3 for all data transmitted between your browser and our servers, and between our servers and sub-processors.",
+            "Encryption at rest: AES-256 encryption for stored data, including uploaded images and Account data.",
+            "Access controls: least-privilege access for all staff; role-based permissions; MFA required for all internal systems.",
+            "Vendor risk management: all sub-processors are assessed for security posture before onboarding and reviewed annually.",
+            "Network security: Cloudflare WAF and DDoS mitigation; isolated processing environments for AI workloads.",
+            "Incident response: documented incident response plan; breach notification to PDPC within 72 hours where required by PDPL Art. 26; notification to affected users without undue delay by email to their registered address. Full details are at /trust/security.",
           ],
         },
       },
+      // ── 12. COOKIES ─────────────────────────────────────────────────────────
+      {
+        id: "cookies",
+        heading: {
+          en: "12. Cookies and Tracking Technologies",
+          ar: "12. Cookies and Tracking Technologies",
+        },
+        paragraphs: {
+          en: [
+            "We use three categories of cookies: essential (required for the Service to function — no consent needed), analytics (help us understand how the Service is used — require your consent), and marketing (personalised outreach — require your consent). You choose your preferences in the consent banner on your first visit. You can update your preferences at any time via the cookie preferences link in the footer.",
+            "Full details of each cookie, its provider, its purpose, and its duration are in our Cookie Policy at /legal/cookies.",
+          ],
+          ar: [
+            "We use three categories of cookies: essential (required for the Service to function — no consent needed), analytics (help us understand how the Service is used — require your consent), and marketing (personalised outreach — require your consent). You choose your preferences in the consent banner on your first visit. You can update your preferences at any time via the cookie preferences link in the footer.",
+            "Full details of each cookie, its provider, its purpose, and its duration are in our Cookie Policy at /legal/cookies.",
+          ],
+        },
+      },
+      // ── 13. CHANGES ─────────────────────────────────────────────────────────
       {
         id: "changes",
-        heading: { en: "Changes", ar: "التغييرات" },
+        heading: {
+          en: "13. Changes to This Privacy Policy",
+          ar: "13. Changes to This Privacy Policy",
+        },
         paragraphs: {
           en: [
-            "We will post any material changes here and notify you by email at least 30 days before they take effect.",
+            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at snappro.app/legal/privacy with a new \"Last updated\" date.",
+            "For non-material changes (updated contact details, clarifications, typographical corrections), we may update the Policy immediately on posting. Continued use of the Service after the effective date of any change constitutes acceptance of the updated Policy.",
           ],
           ar: [
-            "سننشر أي تغييرات جوهرية هنا ونُعلمك بالبريد الإلكتروني قبل 30 يوماً على الأقل من سريانها.",
+            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at snappro.app/legal/privacy with a new \"Last updated\" date.",
+            "For non-material changes (updated contact details, clarifications, typographical corrections), we may update the Policy immediately on posting. Continued use of the Service after the effective date of any change constitutes acceptance of the updated Policy.",
           ],
         },
       },
+      // ── 14. CONTACT ─────────────────────────────────────────────────────────
       {
         id: "contact",
-        heading: { en: "Contact", ar: "تواصل معنا" },
+        heading: {
+          en: "14. Contact Us",
+          ar: "14. Contact Us",
+        },
         paragraphs: {
           en: [
-            "Privacy office: privacy@snappro.app · Egypt DPO: see our Egypt PDPL Notice · Postal address: see our Business Information page.",
+            "For any privacy-related query, request, or complaint, contact us at: privacy@snappro.app · Subject line: \"Privacy — [your query type]\".",
+            "Postal address: [COMPANY LEGAL NAME], [REGISTERED ADDRESS], Egypt. Attn: Data Protection Officer.",
+            "Egypt PDPL supervisory authority: Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt · pdpc.gov.eg.",
+            "Attorney Review Notice: This Privacy Policy has been drafted with reference to Egyptian Personal Data Protection Law No. 151/2020 as at 13 July 2026 but has not yet been reviewed by a licensed Egyptian attorney. It should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched.",
           ],
           ar: [
-            "مكتب الخصوصية: privacy@snappro.app · مسؤول حماية البيانات في مصر: راجع إشعار قانون حماية البيانات · العنوان البريدي: صفحة معلومات الشركة.",
+            "For any privacy-related query, request, or complaint, contact us at: privacy@snappro.app · Subject line: \"Privacy — [your query type]\".",
+            "Postal address: [COMPANY LEGAL NAME], [REGISTERED ADDRESS], Egypt. Attn: Data Protection Officer.",
+            "Egypt PDPL supervisory authority: Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt · pdpc.gov.eg.",
+            "Attorney Review Notice: This Privacy Policy has been drafted with reference to Egyptian Personal Data Protection Law No. 151/2020 as at 13 July 2026 but has not yet been reviewed by a licensed Egyptian attorney. It should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched.",
           ],
         },
       },
@@ -260,32 +516,31 @@ export const LEGAL_PAGES: LegalPage[] = [
     related: [
       {
         href: "/legal/cookies",
-        label: { en: "Cookie Policy", ar: "سياسة ملفات تعريف الارتباط" },
+        label: { en: "Cookie Policy", ar: "Cookie Policy" },
+      },
+      {
+        href: "/legal/terms",
+        label: { en: "Terms of Service", ar: "Terms of Service" },
       },
       {
         href: "/legal/dpa",
-        label: {
-          en: "Data Processing Agreement",
-          ar: "اتفاقية معالجة البيانات",
-        },
+        label: { en: "Data Processing Agreement", ar: "Data Processing Agreement" },
       },
       {
         href: "/legal/sub-processors",
-        label: { en: "Sub-processors", ar: "المُعالجون الفرعيون" },
+        label: { en: "Sub-processors", ar: "Sub-processors" },
       },
       {
         href: "/policies/ai-training-opt-out",
-        label: {
-          en: "AI Training Opt-Out",
-          ar: "الانسحاب من تدريب الذكاء الاصطناعي",
-        },
+        label: { en: "AI Training Opt-Out", ar: "AI Training Opt-Out" },
       },
       {
         href: "/legal/egypt-pdpl",
-        label: {
-          en: "Egypt PDPL Notice",
-          ar: "إشعار قانون حماية البيانات المصري",
-        },
+        label: { en: "Egypt PDPL Notice", ar: "Egypt PDPL Notice" },
+      },
+      {
+        href: "/legal/international-transfers",
+        label: { en: "International Transfers", ar: "International Transfers" },
       },
     ],
   },
