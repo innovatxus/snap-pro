@@ -295,207 +295,551 @@ export const LEGAL_PAGES: LegalPage[] = [
     slug: "terms",
     tree: "legal",
     status: "draft",
-    updated: "2026-06-05",
-    title: { en: "Terms of Service — Snap Pro", ar: "شروط الخدمة — سناب برو" },
-    meta: {
-      en: "The contract between you and Snap Pro. Account rules, AI content ownership, payments, refunds, and dispute resolution.",
-      ar: "العقد بينك وبين سناب برو: قواعد الحساب، ملكية محتوى الذكاء الاصطناعي، المدفوعات، الاسترداد، وحل النزاعات.",
+    updated: "2026-07-13",
+    title: {
+      en: "Terms of Service — Snap Pro",
+      ar: "Terms of Service — Snap Pro",
     },
-    h1: { en: "Terms of Service", ar: "شروط الخدمة" },
+    meta: {
+      en: "The binding contract between you and Snap Pro. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
+      ar: "The binding contract between you and Snap Pro. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
+    },
+    h1: { en: "Terms of Service", ar: "Terms of Service" },
     summary: {
-      en: "By using Snap Pro you agree to these Terms. They cover what you can and can't do on the platform, who owns the content you create, how billing works, and what happens if there's a dispute.",
-      ar: "باستخدامك سناب برو فإنك توافق على هذه الشروط. تغطّي ما يمكنك وما لا يمكنك القيام به على المنصة، ومن يملك المحتوى الذي تُنشئه، وآلية الفوترة، وما يحدث في حال وجود نزاع.",
+      en: "These Terms form the binding contract between you (the \"User\") and Snap Pro. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
+      ar: "These Terms form the binding contract between you (the \"User\") and Snap Pro. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
     },
     sections: [
+      // ── 1. PARTIES ──────────────────────────────────────────────────────────
+      {
+        id: "parties",
+        heading: {
+          en: "1. Parties, Identity, and Scope",
+          ar: "1. Parties, Identity, and Scope",
+        },
+        paragraphs: {
+          en: [
+            "Snap Pro is operated by [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@snappro.app · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
+            "These Terms of Service (\"Terms\") govern your access to and use of the Snap Pro AI photo-editing platform available at snappro.app and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
+          ],
+          ar: [
+            "Snap Pro is operated by [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@snappro.app · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
+            "These Terms of Service (\"Terms\") govern your access to and use of the Snap Pro AI photo-editing platform available at snappro.app and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
+          ],
+        },
+      },
+      // ── 2. DEFINITIONS ──────────────────────────────────────────────────────
+      {
+        id: "definitions",
+        heading: {
+          en: "2. Definitions",
+          ar: "2. Definitions",
+        },
+        defs: [
+          {
+            term: { en: "Service", ar: "Service" },
+            meaning: {
+              en: "The Snap Pro AI photo-editing platform at snappro.app, including all features, tools, APIs, and content made available through it.",
+              ar: "The Snap Pro AI photo-editing platform at snappro.app, including all features, tools, APIs, and content made available through it.",
+            },
+          },
+          {
+            term: { en: "Account", ar: "Account" },
+            meaning: {
+              en: "The registered user account you create to access paid or free features of the Service.",
+              ar: "The registered user account you create to access paid or free features of the Service.",
+            },
+          },
+          {
+            term: { en: "User / you", ar: "User / you" },
+            meaning: {
+              en: "Any individual or entity that accesses or uses the Service. Where you use the Service on behalf of a company or organisation, \"you\" refers to that entity and you represent you have authority to bind it to these Terms.",
+              ar: "Any individual or entity that accesses or uses the Service. Where you use the Service on behalf of a company or organisation, \"you\" refers to that entity and you represent you have authority to bind it to these Terms.",
+            },
+          },
+          {
+            term: { en: "Content", ar: "Content" },
+            meaning: {
+              en: "Images, photographs, text, prompts, and any other material that you upload to or input into the Service.",
+              ar: "Images, photographs, text, prompts, and any other material that you upload to or input into the Service.",
+            },
+          },
+          {
+            term: { en: "AI Output", ar: "AI Output" },
+            meaning: {
+              en: "Images, edited photographs, or other material generated by the Service's AI tools in response to your Content and prompts.",
+              ar: "Images, edited photographs, or other material generated by the Service's AI tools in response to your Content and prompts.",
+            },
+          },
+          {
+            term: { en: "Credits", ar: "Credits" },
+            meaning: {
+              en: "The digital tokens issued to your Account that are consumed each time you use an AI service. Credit allowances per plan are listed on the Pricing page.",
+              ar: "The digital tokens issued to your Account that are consumed each time you use an AI service. Credit allowances per plan are listed on the Pricing page.",
+            },
+          },
+          {
+            term: { en: "Subscription", ar: "Subscription" },
+            meaning: {
+              en: "A recurring paid plan (Starter, Pro, or Studio) that grants you a monthly Credit allowance and access to the features specified on the Pricing page.",
+              ar: "A recurring paid plan (Starter, Pro, or Studio) that grants you a monthly Credit allowance and access to the features specified on the Pricing page.",
+            },
+          },
+          {
+            term: { en: "Credit Pack", ar: "Credit Pack" },
+            meaning: {
+              en: "A one-time purchase of additional Credits that supplement your Subscription or free allowance. Credit Packs do not expire.",
+              ar: "A one-time purchase of additional Credits that supplement your Subscription or free allowance. Credit Packs do not expire.",
+            },
+          },
+          {
+            term: { en: "Billing Period", ar: "Billing Period" },
+            meaning: {
+              en: "The monthly or annual cycle on which your Subscription fee is charged and your Credit allowance refreshes.",
+              ar: "The monthly or annual cycle on which your Subscription fee is charged and your Credit allowance refreshes.",
+            },
+          },
+        ],
+      },
+      // ── 3. ACCEPTANCE ───────────────────────────────────────────────────────
       {
         id: "acceptance",
-        heading: { en: "1. Acceptance", ar: "1. القبول" },
+        heading: {
+          en: "3. Acceptance and Legal Capacity",
+          ar: "3. Acceptance and Legal Capacity",
+        },
         paragraphs: {
           en: [
-            "These Terms form a binding contract between you and Snap Pro. You must be at least 18 years old, or the age of majority in your jurisdiction, and have legal capacity to enter into this contract.",
+            "By clicking \"Get started\", completing account registration, or otherwise accessing or using the Service, you confirm that you have read these Terms and agree to be bound by them. This act of electronic acceptance constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
+            "You must be at least 18 years old to create an Account or use paid features of the Service. Persons under 18 may use the free tier only with verifiable parental or guardian consent provided to us on request. If we discover that a paid Account is held by a person under 18 without the required consent, we will suspend the Account, refund any unused Credits, and notify the registered email address.",
+            "If you are registering on behalf of a company, organisation, or other legal entity, you represent and warrant that you have the legal authority to bind that entity to these Terms and that the entity satisfies the capacity requirements above. In that case, \"you\" in these Terms refers to the entity.",
           ],
           ar: [
-            "تُشكّل هذه الشروط عقداً ملزماً بينك وبين سناب برو. يجب أن تكون بسن 18 على الأقل أو سن الرشد في نطاقك القضائي، وأن تتمتع بالأهلية القانونية لإبرام هذا العقد.",
+            "By clicking \"Get started\", completing account registration, or otherwise accessing or using the Service, you confirm that you have read these Terms and agree to be bound by them. This act of electronic acceptance constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
+            "You must be at least 18 years old to create an Account or use paid features of the Service. Persons under 18 may use the free tier only with verifiable parental or guardian consent provided to us on request. If we discover that a paid Account is held by a person under 18 without the required consent, we will suspend the Account, refund any unused Credits, and notify the registered email address.",
+            "If you are registering on behalf of a company, organisation, or other legal entity, you represent and warrant that you have the legal authority to bind that entity to these Terms and that the entity satisfies the capacity requirements above. In that case, \"you\" in these Terms refers to the entity.",
           ],
         },
       },
+      // ── 4. SERVICE ──────────────────────────────────────────────────────────
       {
         id: "service",
-        heading: { en: "2. The service", ar: "2. الخدمة" },
+        heading: {
+          en: "4. Description of the Service",
+          ar: "4. Description of the Service",
+        },
         paragraphs: {
           en: [
-            "Snap Pro provides AI-powered photo editing services for e-commerce, retail, social media and creative use. Some features are labeled as Beta and may change or be discontinued.",
+            "Snap Pro is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
+            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at snappro.app/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
+            "Certain features are designated \"Beta\". Beta features are experimental, carry no service-level guarantee, and may be modified or withdrawn at any time with 14 days' notice for free-tier users and 30 days' notice for paid-tier users. We will not charge separately for Beta features unless we give you advance notice and an opportunity to opt out.",
           ],
           ar: [
-            'تقدّم سناب برو خدمات تحرير صور قائمة على الذكاء الاصطناعي للتجارة الإلكترونية والتجزئة ووسائل التواصل والاستخدام الإبداعي. بعض الميزات قد تظهر بعلامة "تجريبية" وقد تتغيّر أو تتوقّف.',
+            "Snap Pro is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
+            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at snappro.app/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
+            "Certain features are designated \"Beta\". Beta features are experimental, carry no service-level guarantee, and may be modified or withdrawn at any time with 14 days' notice for free-tier users and 30 days' notice for paid-tier users. We will not charge separately for Beta features unless we give you advance notice and an opportunity to opt out.",
           ],
         },
       },
+      // ── 5. ACCOUNTS ─────────────────────────────────────────────────────────
       {
         id: "accounts",
-        heading: { en: "3. Accounts & security", ar: "3. الحسابات والأمن" },
+        heading: {
+          en: "5. Account Registration and Security",
+          ar: "5. Account Registration and Security",
+        },
         paragraphs: {
           en: [
-            "You are responsible for the activity on your account and for keeping your credentials confidential. Notify us immediately if you suspect unauthorized access.",
+            "To access most features, you must register for an Account by providing accurate, current, and complete information. You are responsible for keeping that information up to date. We may suspend Accounts that contain materially false or misleading registration information.",
+            "You are solely responsible for maintaining the confidentiality of your Account credentials (username, password, and any authentication tokens). You agree not to share your credentials with any third party except where expressly permitted under a team or Studio plan. You are liable for all activity that occurs under your Account.",
+            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@snappro.app. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
+            "Accounts are personal and non-transferable. We reserve the right to limit the number of Accounts you may hold at any one time to prevent abuse.",
           ],
           ar: [
-            "أنت مسؤول عن النشاط على حسابك وعن الحفاظ على سرية بيانات الدخول. أبلِغنا فوراً إذا اشتبهت في وصول غير مصرّح به.",
+            "To access most features, you must register for an Account by providing accurate, current, and complete information. You are responsible for keeping that information up to date. We may suspend Accounts that contain materially false or misleading registration information.",
+            "You are solely responsible for maintaining the confidentiality of your Account credentials (username, password, and any authentication tokens). You agree not to share your credentials with any third party except where expressly permitted under a team or Studio plan. You are liable for all activity that occurs under your Account.",
+            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@snappro.app. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
+            "Accounts are personal and non-transferable. We reserve the right to limit the number of Accounts you may hold at any one time to prevent abuse.",
           ],
         },
       },
+      // ── 6. USER CONTENT ─────────────────────────────────────────────────────
       {
         id: "user-content",
-        heading: { en: "4. Your content", ar: "4. محتواك" },
+        heading: {
+          en: "6. User Content — Ownership, Licence, and Warranties",
+          ar: "6. User Content — Ownership, Licence, and Warranties",
+        },
         paragraphs: {
           en: [
-            "You retain ownership of all content you upload to Snap Pro. By uploading, you grant Snap Pro a worldwide, non-exclusive, royalty-free license to host, store, transmit and process that content for the sole purpose of operating the service for you.",
+            "You retain full ownership of all Content you upload to the Service. Snap Pro does not claim any ownership over your photographs, images, or other materials.",
+            "By uploading Content, you grant Snap Pro a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
+            "You represent and warrant that: (a) you own or hold all necessary rights, licences, and permissions in everything you upload; (b) your Content does not infringe the intellectual-property rights, privacy rights, or any other rights of any third party; (c) where your Content depicts an identifiable individual, you hold that person's valid and documented consent to upload, process, and use the resulting AI Output in the manner you intend; and (d) your Content and use of any AI Output complies with all applicable laws, including Intellectual Property Law No. 82/2002 and Anti-Cybercrime Law No. 175/2018 (Egypt).",
+            "We reserve the right to remove or disable access to any Content that we reasonably believe violates these Terms, our Acceptable Use Policy (/legal/acceptable-use), or applicable law, without prior notice in urgent cases.",
           ],
           ar: [
-            "تحتفظ بملكية كافة المحتويات التي ترفعها إلى سناب برو. بالرفع، فإنك تمنح سناب برو ترخيصاً عالمياً غير حصري ومجانياً لاستضافة هذا المحتوى وتخزينه ونقله ومعالجته فقط لأغراض تشغيل الخدمة لصالحك.",
+            "You retain full ownership of all Content you upload to the Service. Snap Pro does not claim any ownership over your photographs, images, or other materials.",
+            "By uploading Content, you grant Snap Pro a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
+            "You represent and warrant that: (a) you own or hold all necessary rights, licences, and permissions in everything you upload; (b) your Content does not infringe the intellectual-property rights, privacy rights, or any other rights of any third party; (c) where your Content depicts an identifiable individual, you hold that person's valid and documented consent to upload, process, and use the resulting AI Output in the manner you intend; and (d) your Content and use of any AI Output complies with all applicable laws, including Intellectual Property Law No. 82/2002 and Anti-Cybercrime Law No. 175/2018 (Egypt).",
+            "We reserve the right to remove or disable access to any Content that we reasonably believe violates these Terms, our Acceptable Use Policy (/legal/acceptable-use), or applicable law, without prior notice in urgent cases.",
           ],
         },
       },
+      // ── 7. AI OUTPUT ────────────────────────────────────────────────────────
       {
         id: "ai-output",
         heading: {
-          en: "5. AI-generated output",
-          ar: "5. مخرجات الذكاء الاصطناعي",
+          en: "7. AI-Generated Output — Ownership and Commercial Use",
+          ar: "7. AI-Generated Output — Ownership and Commercial Use",
         },
         paragraphs: {
           en: [
-            "Subject to applicable law, you own the AI-generated output produced from your prompts and uploads. See our AI Content Ownership Policy for details and jurisdictional caveats.",
+            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. Snap Pro retains no rights in your AI Outputs beyond the operational licence in Section 6.",
+            "We grant you a worldwide, perpetual, royalty-free licence to use, reproduce, modify, distribute, and commercially exploit your AI Outputs. This licence is not conditioned on maintaining an active Subscription; AI Outputs you have already downloaded remain yours after cancellation.",
+            "Jurisdictional note: Some legal systems — including Egypt under Law No. 82/2002 and the United States under current Copyright Office guidance — may not automatically recognise copyright in images that are wholly machine-generated without meaningful human creative contribution. Adding substantive human edits typically restores authorship eligibility. We do not provide legal advice; for important commercial uses consult a qualified intellectual-property attorney in your jurisdiction.",
+            "You may not use AI Outputs to infringe third-party intellectual-property rights, to mislead consumers about the nature or origin of products, or for any purpose prohibited by Section 8 of these Terms.",
           ],
           ar: [
-            "بموجب القانون المعمول به، تملك المخرجات المُنشَأة بالذكاء الاصطناعي الناتجة من أوامرك وملفاتك. راجع سياسة ملكية محتوى الذكاء الاصطناعي للتفاصيل والاعتبارات القضائية.",
+            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. Snap Pro retains no rights in your AI Outputs beyond the operational licence in Section 6.",
+            "We grant you a worldwide, perpetual, royalty-free licence to use, reproduce, modify, distribute, and commercially exploit your AI Outputs. This licence is not conditioned on maintaining an active Subscription; AI Outputs you have already downloaded remain yours after cancellation.",
+            "Jurisdictional note: Some legal systems — including Egypt under Law No. 82/2002 and the United States under current Copyright Office guidance — may not automatically recognise copyright in images that are wholly machine-generated without meaningful human creative contribution. Adding substantive human edits typically restores authorship eligibility. We do not provide legal advice; for important commercial uses consult a qualified intellectual-property attorney in your jurisdiction.",
+            "You may not use AI Outputs to infringe third-party intellectual-property rights, to mislead consumers about the nature or origin of products, or for any purpose prohibited by Section 8 of these Terms.",
           ],
         },
       },
+      // ── 8. PROHIBITED ───────────────────────────────────────────────────────
       {
-        id: "aup",
-        heading: { en: "6. Acceptable use", ar: "6. الاستخدام المقبول" },
-        paragraphs: {
+        id: "prohibited",
+        heading: {
+          en: "8. Prohibited Content and Uses",
+          ar: "8. Prohibited Content and Uses",
+        },
+        lede: {
+          en: "The following are strictly prohibited on the Service. Violations may result in immediate suspension, termination, and referral to the relevant authorities.",
+          ar: "The following are strictly prohibited on the Service. Violations may result in immediate suspension, termination, and referral to the relevant authorities.",
+        },
+        bullets: {
           en: [
-            "You agree to comply with our Acceptable Use Policy. Violations may result in suspension or termination without refund.",
+            "Child sexual abuse material (CSAM) or any sexualised depiction of minors — reported immediately to the relevant Egyptian and international authorities.",
+            "Non-consensual intimate imagery (NCII) or deepfake pornography involving real, identifiable individuals.",
+            "Deepfakes or AI-manipulated images of identifiable individuals without their valid, documented consent.",
+            "Content designed to deceive the public in electoral, political, or judicial proceedings.",
+            "Hate speech, threats, incitement to violence, or content that discriminates on the basis of religion, ethnicity, gender, disability, or national origin.",
+            "Content that infringes intellectual-property rights protected under Egyptian Intellectual Property Law No. 82/2002 or equivalent laws in other jurisdictions, including unauthorised use of trademarks, copyrighted works, or protected designs.",
+            "Content that constitutes an offence under Egyptian Anti-Cybercrime Law No. 175/2018, including but not limited to: unauthorised access to systems, publication of indecent or defamatory content, cyberstalking, or fraud by electronic means.",
+            "Malware, phishing kits, exploit code, or content designed to deceive or defraud any person.",
+            "Counterfeit goods, fake commercial endorsements, or fabricated reviews.",
+            "Uploading images of third parties without their knowledge and consent for purposes they have not agreed to.",
+            "Automated scraping, bulk API calls, or excessive load that degrades Service performance for other users.",
+            "Reverse-engineering, decompiling, or attempting to circumvent the Service's technical protection measures or AI safety filters.",
+            "Reselling, sub-licensing, or otherwise commercialising access to the Service beyond what is expressly permitted under your Subscription plan.",
+            "Using the Service to train a competing AI model or service.",
           ],
           ar: [
-            "توافق على الالتزام بسياسة الاستخدام المقبول. أي انتهاك قد يؤدي إلى التعليق أو الإنهاء دون استرداد.",
+            "Child sexual abuse material (CSAM) or any sexualised depiction of minors — reported immediately to the relevant Egyptian and international authorities.",
+            "Non-consensual intimate imagery (NCII) or deepfake pornography involving real, identifiable individuals.",
+            "Deepfakes or AI-manipulated images of identifiable individuals without their valid, documented consent.",
+            "Content designed to deceive the public in electoral, political, or judicial proceedings.",
+            "Hate speech, threats, incitement to violence, or content that discriminates on the basis of religion, ethnicity, gender, disability, or national origin.",
+            "Content that infringes intellectual-property rights protected under Egyptian Intellectual Property Law No. 82/2002 or equivalent laws in other jurisdictions, including unauthorised use of trademarks, copyrighted works, or protected designs.",
+            "Content that constitutes an offence under Egyptian Anti-Cybercrime Law No. 175/2018, including but not limited to: unauthorised access to systems, publication of indecent or defamatory content, cyberstalking, or fraud by electronic means.",
+            "Malware, phishing kits, exploit code, or content designed to deceive or defraud any person.",
+            "Counterfeit goods, fake commercial endorsements, or fabricated reviews.",
+            "Uploading images of third parties without their knowledge and consent for purposes they have not agreed to.",
+            "Automated scraping, bulk API calls, or excessive load that degrades Service performance for other users.",
+            "Reverse-engineering, decompiling, or attempting to circumvent the Service's technical protection measures or AI safety filters.",
+            "Reselling, sub-licensing, or otherwise commercialising access to the Service beyond what is expressly permitted under your Subscription plan.",
+            "Using the Service to train a competing AI model or service.",
           ],
         },
       },
+      // ── 9. DATA PROTECTION ──────────────────────────────────────────────────
       {
-        id: "billing",
-        heading: { en: "7. Billing & taxes", ar: "7. الفوترة والضرائب" },
+        id: "data-protection",
+        heading: {
+          en: "9. Data Protection and Privacy",
+          ar: "9. Data Protection and Privacy",
+        },
         paragraphs: {
           en: [
-            "Subscriptions auto-renew unless you cancel before the renewal date. Prices are shown inclusive of applicable taxes (e.g., 14% VAT in Egypt). See our Subscription Terms for full billing details.",
+            "Snap Pro acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
+            "We collect the minimum data necessary to operate the Service: account profile, billing metadata, uploaded Content (processed transiently unless saved to your library), usage analytics (with your consent), and support communications. We do not sell your personal data. We do not train production AI models on your uploaded Content without your explicit, granular opt-in. Full details of what we collect, why, on what legal basis, and for how long are in our Privacy Policy at /legal/privacy.",
+            "When you upload Content, it is transmitted to AI processing infrastructure located outside Egypt (United States and European Union). This constitutes a cross-border transfer under Article 14 of PDPL Law No. 151/2020. We rely on your explicit, informed consent given at the point of upload and on the contractual necessity basis (Article 14 statutory exceptions), and apply Standard Contractual Clause-equivalent safeguards with each overseas processor. Full details are in our Egypt PDPL Notice at /legal/egypt-pdpl.",
+            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@snappro.app.",
           ],
           ar: [
-            "تتجدّد الاشتراكات تلقائياً ما لم تُلغِها قبل تاريخ التجديد. تُعرض الأسعار شاملة الضرائب المعمول بها (مثل ضريبة القيمة المضافة 14% في مصر). راجع شروط الاشتراك للتفاصيل الكاملة.",
+            "Snap Pro acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
+            "We collect the minimum data necessary to operate the Service: account profile, billing metadata, uploaded Content (processed transiently unless saved to your library), usage analytics (with your consent), and support communications. We do not sell your personal data. We do not train production AI models on your uploaded Content without your explicit, granular opt-in. Full details of what we collect, why, on what legal basis, and for how long are in our Privacy Policy at /legal/privacy.",
+            "When you upload Content, it is transmitted to AI processing infrastructure located outside Egypt (United States and European Union). This constitutes a cross-border transfer under Article 14 of PDPL Law No. 151/2020. We rely on your explicit, informed consent given at the point of upload and on the contractual necessity basis (Article 14 statutory exceptions), and apply Standard Contractual Clause-equivalent safeguards with each overseas processor. Full details are in our Egypt PDPL Notice at /legal/egypt-pdpl.",
+            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@snappro.app.",
           ],
         },
       },
+      // ── 10. PAYMENTS ────────────────────────────────────────────────────────
+      {
+        id: "payments",
+        heading: {
+          en: "10. Payments, Pricing, and Subscriptions",
+          ar: "10. Payments, Pricing, and Subscriptions",
+        },
+        paragraphs: {
+          en: [
+            "Current plan prices are published on the Pricing page at snappro.app/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. Snap Pro is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
+            "Subscriptions are billed in advance at the start of each Billing Period. Your Subscription automatically renews at the end of each Billing Period using your saved payment method unless you cancel before the renewal date. We send a renewal reminder by email at least 7 days before each renewal. You can cancel auto-renewal at any time from Account → Billing.",
+            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. Snap Pro does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
+            "If a payment fails, we will retry for up to 7 days and your Account will remain active during that period. After 7 days without successful payment, your Account will be downgraded to the free tier. We will not permanently delete your data without first giving you 30 additional days' written notice by email.",
+            "We will give you at least 30 days' advance notice by email and in-app notification before any price increase takes effect. If you do not wish to continue at the new price, you may cancel before the new price applies without penalty. Continued use of the Service after the effective date constitutes your acceptance of the change.",
+          ],
+          ar: [
+            "Current plan prices are published on the Pricing page at snappro.app/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. Snap Pro is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
+            "Subscriptions are billed in advance at the start of each Billing Period. Your Subscription automatically renews at the end of each Billing Period using your saved payment method unless you cancel before the renewal date. We send a renewal reminder by email at least 7 days before each renewal. You can cancel auto-renewal at any time from Account → Billing.",
+            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. Snap Pro does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
+            "If a payment fails, we will retry for up to 7 days and your Account will remain active during that period. After 7 days without successful payment, your Account will be downgraded to the free tier. We will not permanently delete your data without first giving you 30 additional days' written notice by email.",
+            "We will give you at least 30 days' advance notice by email and in-app notification before any price increase takes effect. If you do not wish to continue at the new price, you may cancel before the new price applies without penalty. Continued use of the Service after the effective date constitutes your acceptance of the change.",
+          ],
+        },
+      },
+      // ── 11. REFUNDS ─────────────────────────────────────────────────────────
       {
         id: "refunds",
-        heading: { en: "8. Refunds", ar: "8. الاسترداد" },
-        paragraphs: {
-          en: [
-            "Refunds are governed by our Refund Policy. Egyptian customers retain their statutory 14-day cooling-off right under Consumer Protection Law 181/2018, subject to its conditions.",
-          ],
-          ar: [
-            "يخضع الاسترداد لسياسة الاسترداد لدينا. يحتفظ العملاء في مصر بحقّ التراجع القانوني خلال 14 يوماً بموجب قانون حماية المستهلك رقم 181/2018، وفقاً لأحكامه.",
-          ],
-        },
-      },
-      {
-        id: "third-party",
         heading: {
-          en: "9. Third-party services",
-          ar: "9. خدمات الأطراف الثالثة",
+          en: "11. Refunds, Cancellation, and Statutory Withdrawal Right",
+          ar: "11. Refunds, Cancellation, and Statutory Withdrawal Right",
         },
         paragraphs: {
           en: [
-            "Snap Pro integrates with third-party services (e.g. Stripe, Paymob, AI providers, integrations such as Shopify and Salla). Your use of those services is governed by their own terms.",
+            "You may cancel your Subscription at any time from Account → Billing. Cancellation takes effect at the end of the current Billing Period; you retain full access to your plan's features until that date.",
+            "Statutory 14-day withdrawal right — Egypt: Under Articles 9–11 of Consumer Protection Law No. 181/2018 and Article 27 of its Executive Regulations (Decree No. 822/2019), you have the right to withdraw from a distance contract for digital services within 14 calendar days of the date of purchase without giving any reason, unless you expressly consented to performance beginning before the withdrawal period expired and acknowledged that your right to withdraw would thereby be lost. Where Credits have been consumed prior to withdrawal, the value of those Credits will be deducted from any refund on a pro-rata basis.",
+            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@snappro.app with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
+            "Outside the 14-day statutory window, refunds are granted at our discretion for: (a) a verified technical failure that rendered the Service completely inoperable for more than 48 consecutive hours during a paid Billing Period; or (b) a duplicate charge caused by a billing error on our side. Requests must be submitted within 30 days of the charge.",
+            "Credit Packs: used Credits are non-refundable. Unused, untouched Credit Packs purchased as a one-time add-on are refundable in full within 7 days of purchase.",
+            "To request any refund, email support@snappro.app with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
           ],
           ar: [
-            "تتكامل سناب برو مع خدمات أطراف ثالثة (مثل سترايب، بيموب، مزوّدي الذكاء الاصطناعي، تكاملات مثل شوبيفاي وسلة). استخدامك لتلك الخدمات يخضع لشروطها الخاصة.",
+            "You may cancel your Subscription at any time from Account → Billing. Cancellation takes effect at the end of the current Billing Period; you retain full access to your plan's features until that date.",
+            "Statutory 14-day withdrawal right — Egypt: Under Articles 9–11 of Consumer Protection Law No. 181/2018 and Article 27 of its Executive Regulations (Decree No. 822/2019), you have the right to withdraw from a distance contract for digital services within 14 calendar days of the date of purchase without giving any reason, unless you expressly consented to performance beginning before the withdrawal period expired and acknowledged that your right to withdraw would thereby be lost. Where Credits have been consumed prior to withdrawal, the value of those Credits will be deducted from any refund on a pro-rata basis.",
+            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@snappro.app with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
+            "Outside the 14-day statutory window, refunds are granted at our discretion for: (a) a verified technical failure that rendered the Service completely inoperable for more than 48 consecutive hours during a paid Billing Period; or (b) a duplicate charge caused by a billing error on our side. Requests must be submitted within 30 days of the charge.",
+            "Credit Packs: used Credits are non-refundable. Unused, untouched Credit Packs purchased as a one-time add-on are refundable in full within 7 days of purchase.",
+            "To request any refund, email support@snappro.app with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
           ],
         },
       },
+      // ── 12. SNAP PRO IP ─────────────────────────────────────────────────────
       {
         id: "ip",
         heading: {
-          en: "10. Snap Pro intellectual property",
-          ar: "10. الملكية الفكرية لسناب برو",
+          en: "12. Snap Pro Intellectual Property",
+          ar: "12. Snap Pro Intellectual Property",
         },
         paragraphs: {
           en: [
-            "The Snap Pro platform, brand, software, models we own, and documentation are protected by copyright, trademark, and other intellectual-property laws. We grant you a limited, revocable, non-transferable license to use the service.",
+            "The Service — including its software, source code, AI models owned or licensed by Snap Pro, user interface, design, graphics, documentation, and brand elements (collectively, \"Snap Pro IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. Snap Pro IP is owned by or licensed to Snap Pro and you acquire no ownership rights in it by using the Service.",
+            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of Snap Pro IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"Snap Pro\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
+            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant Snap Pro a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
           ],
           ar: [
-            "منصّة سناب برو وعلامتها التجارية وبرمجياتها والنماذج التي نملكها ووثائقها محمية بقوانين حقوق النشر والعلامات التجارية وغيرها. نمنحك ترخيصاً محدوداً وقابلاً للإلغاء وغير قابل للتحويل لاستخدام الخدمة.",
+            "The Service — including its software, source code, AI models owned or licensed by Snap Pro, user interface, design, graphics, documentation, and brand elements (collectively, \"Snap Pro IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. Snap Pro IP is owned by or licensed to Snap Pro and you acquire no ownership rights in it by using the Service.",
+            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of Snap Pro IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"Snap Pro\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
+            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant Snap Pro a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
           ],
         },
       },
+      // ── 13. THIRD PARTIES ───────────────────────────────────────────────────
+      {
+        id: "third-party",
+        heading: {
+          en: "13. Third-Party Services and Integrations",
+          ar: "13. Third-Party Services and Integrations",
+        },
+        paragraphs: {
+          en: [
+            "The Service relies on third-party services including: Stripe, Inc. and Paymob (payment processing); Cloudflare, Inc. (CDN and security); Vercel, Inc. (hosting and edge infrastructure); Firebase (authentication); and various AI model and inference providers. A current list of sub-processors that handle personal data is published at /legal/sub-processors.",
+            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. Snap Pro is not responsible for the availability, accuracy, or security of any third-party service.",
+            "We are not liable for any loss, damage, or disruption caused by the failure or unavailability of a third-party service that is beyond our reasonable control, provided that we take commercially reasonable steps to mitigate the impact on you.",
+          ],
+          ar: [
+            "The Service relies on third-party services including: Stripe, Inc. and Paymob (payment processing); Cloudflare, Inc. (CDN and security); Vercel, Inc. (hosting and edge infrastructure); Firebase (authentication); and various AI model and inference providers. A current list of sub-processors that handle personal data is published at /legal/sub-processors.",
+            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. Snap Pro is not responsible for the availability, accuracy, or security of any third-party service.",
+            "We are not liable for any loss, damage, or disruption caused by the failure or unavailability of a third-party service that is beyond our reasonable control, provided that we take commercially reasonable steps to mitigate the impact on you.",
+          ],
+        },
+      },
+      // ── 14. DISCLAIMERS ─────────────────────────────────────────────────────
       {
         id: "disclaimers",
-        heading: { en: "11. Disclaimers", ar: "11. إخلاء المسؤولية" },
+        heading: {
+          en: "14. Disclaimers",
+          ar: "14. Disclaimers",
+        },
         paragraphs: {
           en: [
-            "The service is provided AS IS and AS AVAILABLE. We disclaim all implied warranties to the maximum extent allowed by law. AI outputs may contain inaccuracies; you are responsible for reviewing them before commercial use.",
+            "Service availability: The Service is provided on a commercially reasonable efforts basis. We do not guarantee uninterrupted, error-free, or perfectly secure operation. We will endeavour to notify you of planned downtime in advance and to resolve unplanned outages promptly.",
+            "AI Output accuracy: AI-generated images are produced automatically and may contain errors, artefacts, unintended elements, or inaccuracies. AI Outputs are not a substitute for professional photography or human review. You are solely responsible for reviewing AI Outputs before using them commercially.",
+            "No professional advice: The Service and any AI Outputs do not constitute legal, medical, financial, regulatory, or any other professional advice. Do not rely on AI Outputs for any purpose requiring professional expertise.",
+            "Beta features: Features labelled \"Beta\" are provided without warranty of any kind, express or implied. Their inclusion in the Service does not represent a commitment to continue providing them.",
+            "Statutory rights preserved: Nothing in these Terms excludes, restricts, or modifies any right or remedy you are entitled to under Egyptian law that cannot be excluded by contract, including your rights under Consumer Protection Law No. 181/2018.",
           ],
           ar: [
-            'تُقدَّم الخدمة "كما هي" و"حسب التوفّر". نُخلي مسؤوليتنا من جميع الضمانات الضمنية إلى أقصى حدّ يسمح به القانون. قد تتضمّن مخرجات الذكاء الاصطناعي عدم دقّة؛ وتقع عليك مسؤولية مراجعتها قبل الاستخدام التجاري.',
+            "Service availability: The Service is provided on a commercially reasonable efforts basis. We do not guarantee uninterrupted, error-free, or perfectly secure operation. We will endeavour to notify you of planned downtime in advance and to resolve unplanned outages promptly.",
+            "AI Output accuracy: AI-generated images are produced automatically and may contain errors, artefacts, unintended elements, or inaccuracies. AI Outputs are not a substitute for professional photography or human review. You are solely responsible for reviewing AI Outputs before using them commercially.",
+            "No professional advice: The Service and any AI Outputs do not constitute legal, medical, financial, regulatory, or any other professional advice. Do not rely on AI Outputs for any purpose requiring professional expertise.",
+            "Beta features: Features labelled \"Beta\" are provided without warranty of any kind, express or implied. Their inclusion in the Service does not represent a commitment to continue providing them.",
+            "Statutory rights preserved: Nothing in these Terms excludes, restricts, or modifies any right or remedy you are entitled to under Egyptian law that cannot be excluded by contract, including your rights under Consumer Protection Law No. 181/2018.",
           ],
         },
       },
+      // ── 15. LIABILITY ────────────────────────────────────────────────────────
       {
         id: "liability",
         heading: {
-          en: "12. Limitation of liability",
-          ar: "12. تحديد المسؤولية",
+          en: "15. Limitation of Liability",
+          ar: "15. Limitation of Liability",
         },
         paragraphs: {
           en: [
-            "To the maximum extent allowed by law, Snap Pro's aggregate liability arising from these Terms is limited to the greater of (a) the fees you paid us in the 12 months before the claim, or (b) USD 100. We are not liable for indirect, incidental, or consequential damages.",
+            "To the maximum extent permitted by applicable law, Snap Pro's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to Snap Pro in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
+            "To the maximum extent permitted by applicable law, Snap Pro is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
+            "Mandatory carve-outs — the limitations above do not apply to, and Snap Pro does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
           ],
           ar: [
-            "إلى أقصى حد يسمح به القانون، تُحدَّد مسؤولية سناب برو الإجمالية الناشئة عن هذه الشروط بأكبر القيمتين: (أ) الرسوم التي دفعتها لنا خلال 12 شهراً قبل المطالبة، أو (ب) 100 دولار أمريكي. لسنا مسؤولين عن أضرار غير مباشرة أو عرضية أو تبعية.",
+            "To the maximum extent permitted by applicable law, Snap Pro's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to Snap Pro in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
+            "To the maximum extent permitted by applicable law, Snap Pro is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
+            "Mandatory carve-outs — the limitations above do not apply to, and Snap Pro does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
           ],
         },
       },
+      // ── 16. SERVICE CHANGES ─────────────────────────────────────────────────
+      {
+        id: "service-changes",
+        heading: {
+          en: "16. Service Changes, Maintenance, and Discontinuation",
+          ar: "16. Service Changes, Maintenance, and Discontinuation",
+        },
+        paragraphs: {
+          en: [
+            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at snappro.app/status.",
+            "If we decide to discontinue the Service entirely, we will give at least 60 days' advance notice by email. During that notice period, you may export your Content and AI Outputs. We will refund any unused Subscription fees and unexpired Credit Pack balances on a pro-rata basis within 14 days of the discontinuation date.",
+          ],
+          ar: [
+            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at snappro.app/status.",
+            "If we decide to discontinue the Service entirely, we will give at least 60 days' advance notice by email. During that notice period, you may export your Content and AI Outputs. We will refund any unused Subscription fees and unexpired Credit Pack balances on a pro-rata basis within 14 days of the discontinuation date.",
+          ],
+        },
+      },
+      // ── 17. TERMINATION ─────────────────────────────────────────────────────
       {
         id: "termination",
-        heading: { en: "13. Termination", ar: "13. الإنهاء" },
+        heading: {
+          en: "17. Suspension and Termination",
+          ar: "17. Suspension and Termination",
+        },
         paragraphs: {
           en: [
-            "You may close your account at any time. We may suspend or terminate accounts that violate these Terms, our Acceptable Use Policy, or applicable law.",
+            "You may close your Account at any time from Account → Settings → Close account. Any remaining Subscription access continues to the end of the current Billing Period unless you request earlier termination.",
+            "We may suspend or restrict your Account if we have reasonable grounds to believe you have violated these Terms, our Acceptable Use Policy, or applicable law. Except where the violation is serious (see below), we will give you a warning and a reasonable opportunity to remedy the breach before suspending your Account.",
+            "We may immediately suspend or terminate your Account without prior warning where the violation involves: (a) CSAM or NCII; (b) fraud, identity theft, or attempted unauthorised access to our systems; (c) any activity posing a material security threat to the Service or other users; or (d) any activity we are legally required to stop.",
+            "You may appeal a suspension by emailing appeals@snappro.app within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
+            "On termination: (a) your licence to use the Service ends immediately; (b) we retain your Content and Account data for 30 days to allow export, after which we delete it subject to legal-retention obligations in the Privacy Policy; (c) you remain liable for any fees accrued before termination; (d) Sections 6, 7, 9, 12, 14, 15, 20, and 21 survive termination.",
           ],
           ar: [
-            "يمكنك إغلاق حسابك في أي وقت. ويحقّ لنا تعليق أو إنهاء الحسابات التي تنتهك هذه الشروط أو سياسة الاستخدام المقبول أو القانون المعمول به.",
+            "You may close your Account at any time from Account → Settings → Close account. Any remaining Subscription access continues to the end of the current Billing Period unless you request earlier termination.",
+            "We may suspend or restrict your Account if we have reasonable grounds to believe you have violated these Terms, our Acceptable Use Policy, or applicable law. Except where the violation is serious (see below), we will give you a warning and a reasonable opportunity to remedy the breach before suspending your Account.",
+            "We may immediately suspend or terminate your Account without prior warning where the violation involves: (a) CSAM or NCII; (b) fraud, identity theft, or attempted unauthorised access to our systems; (c) any activity posing a material security threat to the Service or other users; or (d) any activity we are legally required to stop.",
+            "You may appeal a suspension by emailing appeals@snappro.app within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
+            "On termination: (a) your licence to use the Service ends immediately; (b) we retain your Content and Account data for 30 days to allow export, after which we delete it subject to legal-retention obligations in the Privacy Policy; (c) you remain liable for any fees accrued before termination; (d) Sections 6, 7, 9, 12, 14, 15, 20, and 21 survive termination.",
           ],
         },
       },
+      // ── 18. FORCE MAJEURE ───────────────────────────────────────────────────
       {
-        id: "law",
-        heading: { en: "14. Governing law", ar: "14. القانون الحاكم" },
+        id: "force-majeure",
+        heading: {
+          en: "18. Force Majeure",
+          ar: "18. Force Majeure",
+        },
         paragraphs: {
           en: [
-            "Customers in Egypt: Egyptian law and Cairo courts. Customers in Iraq: Iraqi law. Other customers: laws of the State of Delaware, USA. Enterprise customers may negotiate DIFC-seat arbitration in their order form.",
+            "Neither party is liable for any failure or delay in performance under these Terms to the extent caused by circumstances beyond that party's reasonable control, including but not limited to: natural disasters, acts of God, war, terrorism, civil disturbance, government orders or sanctions, pandemics, power failures, internet backbone outages, or attacks on critical infrastructure (a \"Force Majeure Event\").",
+            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; Snap Pro will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
           ],
           ar: [
-            "العملاء في مصر: القانون المصري ومحاكم القاهرة. العملاء في العراق: القانون العراقي. العملاء الآخرون: قوانين ولاية ديلاوير الأمريكية. يجوز لعملاء الشركات التفاوض على تحكيم مقرّه مركز دبي المالي العالمي ضمن نموذج الطلب.",
+            "Neither party is liable for any failure or delay in performance under these Terms to the extent caused by circumstances beyond that party's reasonable control, including but not limited to: natural disasters, acts of God, war, terrorism, civil disturbance, government orders or sanctions, pandemics, power failures, internet backbone outages, or attacks on critical infrastructure (a \"Force Majeure Event\").",
+            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; Snap Pro will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
           ],
         },
       },
+      // ── 19. AMENDMENTS ──────────────────────────────────────────────────────
       {
-        id: "changes",
-        heading: { en: "15. Changes", ar: "15. التغييرات" },
+        id: "amendments",
+        heading: {
+          en: "19. Amendments and Notification",
+          ar: "19. Amendments and Notification",
+        },
         paragraphs: {
           en: [
-            "We may update these Terms from time to time. We will notify you of material changes at least 30 days in advance and post the updated Terms on this page.",
+            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at snappro.app/legal/terms with a new \"Last updated\" date and version number.",
+            "If you do not accept a material change, you may close your Account before the effective date without penalty; any unused prepaid Subscription fees for the period after the effective date will be refunded pro-rata. Continued use of the Service after the effective date constitutes your acceptance of the updated Terms.",
+            "For non-material changes (clarifications, typographical corrections, updated contact details) we may update the Terms immediately by posting the revised version; such changes take effect upon posting.",
           ],
           ar: [
-            "قد نقوم بتحديث هذه الشروط من حين لآخر. سنُخطرك بالتغييرات الجوهرية قبل 30 يوماً على الأقل، وسنقوم بنشر النسخة المُحدَّثة في هذه الصفحة.",
+            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at snappro.app/legal/terms with a new \"Last updated\" date and version number.",
+            "If you do not accept a material change, you may close your Account before the effective date without penalty; any unused prepaid Subscription fees for the period after the effective date will be refunded pro-rata. Continued use of the Service after the effective date constitutes your acceptance of the updated Terms.",
+            "For non-material changes (clarifications, typographical corrections, updated contact details) we may update the Terms immediately by posting the revised version; such changes take effect upon posting.",
+          ],
+        },
+      },
+      // ── 20. GOVERNING LAW ───────────────────────────────────────────────────
+      {
+        id: "governing-law",
+        heading: {
+          en: "20. Governing Law and Dispute Resolution",
+          ar: "20. Governing Law and Dispute Resolution",
+        },
+        paragraphs: {
+          en: [
+            "Users in Egypt: These Terms and any dispute arising out of or in connection with them — including non-contractual disputes — are governed by the laws of the Arab Republic of Egypt. The courts of Cairo, Egypt, including the Economic Courts established by Law No. 120/2008 where their jurisdiction applies to e-commerce and consumer disputes, shall have exclusive jurisdiction.",
+            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@snappro.app and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
+            "Users in Iraq: These Terms are governed by the laws of the Republic of Iraq. Disputes shall be submitted to the competent Iraqi courts.",
+            "Enterprise customers: Parties to a signed enterprise order form may elect DIFC-seat arbitration under DIFC-LCIA Rules as the exclusive dispute resolution mechanism, provided that election is expressly stated in the order form.",
+            "Users in all other jurisdictions: These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict-of-laws principles. Any dispute shall be submitted to the state or federal courts located in Delaware.",
+          ],
+          ar: [
+            "Users in Egypt: These Terms and any dispute arising out of or in connection with them — including non-contractual disputes — are governed by the laws of the Arab Republic of Egypt. The courts of Cairo, Egypt, including the Economic Courts established by Law No. 120/2008 where their jurisdiction applies to e-commerce and consumer disputes, shall have exclusive jurisdiction.",
+            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@snappro.app and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
+            "Users in Iraq: These Terms are governed by the laws of the Republic of Iraq. Disputes shall be submitted to the competent Iraqi courts.",
+            "Enterprise customers: Parties to a signed enterprise order form may elect DIFC-seat arbitration under DIFC-LCIA Rules as the exclusive dispute resolution mechanism, provided that election is expressly stated in the order form.",
+            "Users in all other jurisdictions: These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict-of-laws principles. Any dispute shall be submitted to the state or federal courts located in Delaware.",
+          ],
+        },
+      },
+      // ── 21. GENERAL ─────────────────────────────────────────────────────────
+      {
+        id: "general",
+        heading: {
+          en: "21. General Provisions",
+          ar: "21. General Provisions",
+        },
+        paragraphs: {
+          en: [
+            "Severability: If any provision of these Terms is found by a court of competent jurisdiction to be invalid, unlawful, or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.",
+            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and Snap Pro in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
+            "No Waiver: Our failure to enforce any provision of these Terms at any time does not constitute a waiver of our right to enforce that provision or any other provision in the future.",
+            "Assignment: Snap Pro may assign or transfer these Terms, in whole or in part, to any entity that acquires Snap Pro's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without Snap Pro's prior written consent.",
+            "Language: These Terms are currently published in English only. An Arabic translation will be made available in due course. When an Arabic version is published, in the event of any inconsistency between the English and Arabic versions the Arabic version shall prevail for users in Egypt and other Arabic-speaking jurisdictions.",
+            "Electronic Signature: Acceptance of these Terms by electronic means — including by clicking an acceptance button or completing account registration — constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
+            "Legal Notices: Notices to Snap Pro under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
+            "Attorney Review Notice: These Terms have been drafted with reference to Egyptian law as at 13 July 2026 but have not yet been reviewed by a licensed Egyptian attorney. They should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched in Egypt and before each material revision.",
+          ],
+          ar: [
+            "Severability: If any provision of these Terms is found by a court of competent jurisdiction to be invalid, unlawful, or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.",
+            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and Snap Pro in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
+            "No Waiver: Our failure to enforce any provision of these Terms at any time does not constitute a waiver of our right to enforce that provision or any other provision in the future.",
+            "Assignment: Snap Pro may assign or transfer these Terms, in whole or in part, to any entity that acquires Snap Pro's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without Snap Pro's prior written consent.",
+            "Language: These Terms are currently published in English only. An Arabic translation will be made available in due course. When an Arabic version is published, in the event of any inconsistency between the English and Arabic versions the Arabic version shall prevail for users in Egypt and other Arabic-speaking jurisdictions.",
+            "Electronic Signature: Acceptance of these Terms by electronic means — including by clicking an acceptance button or completing account registration — constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
+            "Legal Notices: Notices to Snap Pro under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
+            "Attorney Review Notice: These Terms have been drafted with reference to Egyptian law as at 13 July 2026 but have not yet been reviewed by a licensed Egyptian attorney. They should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched in Egypt and before each material revision.",
           ],
         },
       },
@@ -503,25 +847,39 @@ export const LEGAL_PAGES: LegalPage[] = [
     related: [
       {
         href: "/legal/privacy",
-        label: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
+        label: { en: "Privacy Policy", ar: "Privacy Policy" },
       },
       {
         href: "/legal/acceptable-use",
-        label: { en: "Acceptable Use Policy", ar: "سياسة الاستخدام المقبول" },
+        label: { en: "Acceptable Use Policy", ar: "Acceptable Use Policy" },
       },
       {
         href: "/legal/refunds",
-        label: { en: "Refund Policy", ar: "سياسة الاسترداد" },
+        label: {
+          en: "Refund & Cancellation Policy",
+          ar: "Refund & Cancellation Policy",
+        },
       },
       {
         href: "/legal/subscription",
-        label: { en: "Subscription Terms", ar: "شروط الاشتراك" },
+        label: { en: "Subscription Terms", ar: "Subscription Terms" },
       },
       {
         href: "/policies/ai-content-ownership",
         label: {
           en: "AI Content Ownership",
-          ar: "ملكية محتوى الذكاء الاصطناعي",
+          ar: "AI Content Ownership",
+        },
+      },
+      {
+        href: "/legal/egypt-pdpl",
+        label: { en: "Egypt PDPL Notice", ar: "Egypt PDPL Notice" },
+      },
+      {
+        href: "/legal/business-info",
+        label: {
+          en: "Business Information",
+          ar: "Business Information",
         },
       },
     ],
