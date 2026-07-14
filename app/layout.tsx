@@ -93,6 +93,14 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Hero video — highest-priority fetch so it wins the network race
+            against niche and tool card videos that mount shortly after */}
+        <link
+          rel='preload'
+          as='video'
+          href='/assets/video/hero-videos/hero-main-web.webm'
+          type='video/webm'
+        />
         {/* Preconnect to external image CDNs used by gallery and bento sections */}
         <link rel='preconnect' href='https://images.unsplash.com' />
         <link rel='dns-prefetch' href='https://images.unsplash.com' />
