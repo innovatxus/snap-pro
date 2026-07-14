@@ -1,6 +1,10 @@
-import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
-import { getAuth, type Auth } from "firebase/auth";
-import { getFirestore, type Firestore } from "firebase/firestore";
+import type { Auth } from "firebase/auth";
+import type { Firestore } from "firebase/firestore";
+
+// Type-only imports are erased at compile time — zero Firebase SDK in this
+// module's static footprint. The actual SDK is dynamically imported inside
+// getFirebaseClient() so it never appears in the initial JS bundle and only
+// downloads after first paint when auth is actually needed.
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -11,12 +15,7 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-/**
- * True once every required web config value is present. The Firebase web
- * config is not a secret (it's meant to ship to the client) — this flag only
- * exists so the app can build and run before real values are filled in,
- * instead of throwing on a missing apiKey.
- */
+// Sync boolean for cheap initial-state decisions — no SDK import required.
 export const isFirebaseConfigured = Boolean(
   firebaseConfig.apiKey &&
     firebaseConfig.authDomain &&
@@ -24,16 +23,35 @@ export const isFirebaseConfigured = Boolean(
     firebaseConfig.appId,
 );
 
-let app: FirebaseApp | null = null;
-let auth: Auth | null = null;
-let db: Firestore | null = null;
-
-if (isFirebaseConfigured) {
-  // getApps().length guard survives Fast Refresh/HMR re-evaluating this
-  // module without re-registering the same app twice.
-  app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
+export interface FirebaseClient {
+  auth: Auth;
+  db: Firestore;
 }
 
-export { app, auth, db };
+// undefined = not yet resolved; null = not configured
+let _cached: FirebaseClient | null | undefined;
+
+/**
+ * Returns the initialised Firebase client, lazily importing the SDK on the
+ * first call and serving the cached instance on every subsequent call.
+ * Returns null when the required env vars are absent.
+ */
+export async function getFirebaseClient(): Promise<FirebaseClient | null> {
+  if (_cached !== undefined) return _cached;
+
+  if (!isFirebaseConfigured) {
+    _cached = null;
+    return null;
+  }
+
+  const [{ initializeApp, getApps, getApp }, { getAuth }, { getFirestore }] =
+    await Promise.all([
+      import("firebase/app"),
+      import("firebase/auth"),
+      import("firebase/firestore"),
+    ]);
+
+  const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+  _cached = { auth: getAuth(app), db: getFirestore(app) };
+  return _cached;
+}

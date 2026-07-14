@@ -8,8 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { onAuthStateChanged, setPersistence, browserLocalPersistence } from "firebase/auth";
-import { auth, isFirebaseConfigured } from "@/lib/firebase/client";
+import { getFirebaseClient, isFirebaseConfigured } from "@/lib/firebase/client";
 import { getUserProfile } from "@/lib/auth/service";
 import type { UserProfile } from "@/lib/auth/types";
 
@@ -30,7 +29,7 @@ const AuthContext = createContext<AuthContextValue>({
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [status, setStatus] = useState<AuthStatus>(() =>
+  const [status, setStatus] = useState<AuthStatus>(
     isFirebaseConfigured ? "loading" : "signed-out",
   );
   const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -46,30 +45,58 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [uid]);
 
   useEffect(() => {
-    if (!isFirebaseConfigured || !auth) return;
-    setPersistence(auth, browserLocalPersistence).catch(() => {});
+    let unsubscribe: (() => void) | undefined;
+    let mounted = true;
 
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (!user) {
-        setUid(null);
-        setProfile(null);
+    (async () => {
+      const client = await getFirebaseClient();
+      if (!mounted) return;
+
+      if (!client) {
         setStatus("signed-out");
         return;
       }
-      setUid(user.uid);
-      setStatus("signed-in");
-      try {
-        setProfile(await getUserProfile(user.uid));
-      } catch {
-        setProfile(null);
-      }
-    });
 
-    return unsubscribe;
+      // Import only the functions we need — tree-shaken and code-split.
+      const { onAuthStateChanged, setPersistence, browserLocalPersistence } =
+        await import("firebase/auth");
+
+      if (!mounted) return;
+
+      setPersistence(client.auth, browserLocalPersistence).catch(() => {});
+
+      unsubscribe = onAuthStateChanged(client.auth, async (user) => {
+        if (!user) {
+          setUid(null);
+          setProfile(null);
+          setStatus("signed-out");
+          return;
+        }
+        setUid(user.uid);
+        setStatus("signed-in");
+        try {
+          setProfile(await getUserProfile(user.uid));
+        } catch {
+          setProfile(null);
+        }
+      });
+    })();
+
+    return () => {
+      mounted = false;
+      unsubscribe?.();
+    };
   }, []);
 
   return (
-    <AuthContext.Provider value={{ status, profile, isConfigured: isFirebaseConfigured, refreshProfile }}>
+    <AuthContext.Provider
+      value={{
+        status,
+        profile,
+        isConfigured: isFirebaseConfigured,
+        refreshProfile,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

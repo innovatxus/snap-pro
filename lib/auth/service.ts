@@ -1,26 +1,16 @@
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-  type Auth,
-  type User,
-} from "firebase/auth";
-import { doc, getDoc, setDoc, type DocumentData, type Firestore } from "firebase/firestore";
-import { auth, db, isFirebaseConfigured } from "@/lib/firebase/client";
+import { getFirebaseClient, type FirebaseClient } from "@/lib/firebase/client";
 import { AUTH_NOT_CONFIGURED_MESSAGE, getAuthErrorMessage } from "@/lib/auth/errors";
+import type { DocumentData } from "firebase/firestore";
+import type { User } from "firebase/auth";
 import type { UserProfile } from "@/lib/auth/types";
 
-// Module-level `auth`/`db` are imported `let` bindings (live ES module
-// references), so TypeScript can't narrow them from a non-null check alone —
-// returning fresh locals here gives every caller a properly non-null type.
-function requireConfigured(): { auth: Auth; db: Firestore } {
-  if (!isFirebaseConfigured || !auth || !db) {
-    throw new Error(AUTH_NOT_CONFIGURED_MESSAGE);
-  }
-  return { auth, db };
+// All firebase/auth and firebase/firestore functions are dynamically imported
+// inside each function body so they never appear in the initial JS bundle.
+
+async function requireConfigured(): Promise<FirebaseClient> {
+  const client = await getFirebaseClient();
+  if (!client) throw new Error(AUTH_NOT_CONFIGURED_MESSAGE);
+  return client;
 }
 
 function toUserProfile(user: User, createdAt: string): UserProfile {
@@ -44,7 +34,8 @@ export function profileFromSnapshot(uid: string, data: DocumentData): UserProfil
 }
 
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
-  const { db } = requireConfigured();
+  const { db } = await requireConfigured();
+  const { doc, getDoc } = await import("firebase/firestore");
   const snap = await getDoc(doc(db, "users", uid));
   if (!snap.exists()) return null;
   return profileFromSnapshot(uid, snap.data());
@@ -58,7 +49,14 @@ export interface SignUpInput {
 
 export async function signUp({ email, password, displayName }: SignUpInput): Promise<void> {
   try {
-    const { auth, db } = requireConfigured();
+    const { auth, db } = await requireConfigured();
+    const {
+      createUserWithEmailAndPassword,
+      sendEmailVerification,
+      updateProfile,
+    } = await import("firebase/auth");
+    const { doc, setDoc } = await import("firebase/firestore");
+
     const credential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(credential.user, { displayName });
     await sendEmailVerification(credential.user);
@@ -72,7 +70,8 @@ export async function signUp({ email, password, displayName }: SignUpInput): Pro
 
 export async function signIn(email: string, password: string): Promise<void> {
   try {
-    const { auth } = requireConfigured();
+    const { auth } = await requireConfigured();
+    const { signInWithEmailAndPassword } = await import("firebase/auth");
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
     throw new Error(getAuthErrorMessage(error));
@@ -81,7 +80,8 @@ export async function signIn(email: string, password: string): Promise<void> {
 
 export async function signOutUser(): Promise<void> {
   try {
-    const { auth } = requireConfigured();
+    const { auth } = await requireConfigured();
+    const { signOut } = await import("firebase/auth");
     await signOut(auth);
   } catch (error) {
     throw new Error(getAuthErrorMessage(error));
@@ -90,7 +90,8 @@ export async function signOutUser(): Promise<void> {
 
 export async function resetPassword(email: string): Promise<void> {
   try {
-    const { auth } = requireConfigured();
+    const { auth } = await requireConfigured();
+    const { sendPasswordResetEmail } = await import("firebase/auth");
     await sendPasswordResetEmail(auth, email);
   } catch (error) {
     throw new Error(getAuthErrorMessage(error));
@@ -99,7 +100,8 @@ export async function resetPassword(email: string): Promise<void> {
 
 export async function resendVerificationEmail(): Promise<void> {
   try {
-    const { auth } = requireConfigured();
+    const { auth } = await requireConfigured();
+    const { sendEmailVerification } = await import("firebase/auth");
     if (!auth.currentUser) throw new Error("No signed-in user to verify.");
     await sendEmailVerification(auth.currentUser);
   } catch (error) {
