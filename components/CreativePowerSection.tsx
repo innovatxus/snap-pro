@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 /**
  * CreativePowerSection — "ShotStudio Intelligence"
@@ -765,18 +766,12 @@ export default function CreativePowerSection() {
                       padding: "5px 7px",
                     }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={`/assets/images/carosel-images/${t.label.toLowerCase()}.png`}
                       alt={t.label}
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderRadius: 9,
-                      }}
+                      fill
+                      sizes='120px'
+                      style={{ objectFit: "cover", borderRadius: 9 }}
                     />
                     <span
                       style={{
