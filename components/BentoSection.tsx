@@ -28,7 +28,7 @@ const UGC_CARDS = [
   {
     id: "watch",
     src: "/assets/images/ugc-watch-blender-poster.jpg",
-    video: "/assets/video/ugc-videos/UGC4_web .mp4",
+    video: "/assets/video/ugc-videos/ugc4-web.mp4",
     alt: "Creator presenting a kitchen appliance on camera",
     label: "Electronics",
     heading: "Precision.",
