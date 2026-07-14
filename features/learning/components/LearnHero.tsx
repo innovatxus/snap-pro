@@ -1,4 +1,4 @@
-import ScrollReveal from "@/components/ScrollReveal";
+﻿import ScrollReveal from "@/components/ScrollReveal";
 import type { LearningStats } from "../types";
 import { LearnSearch } from "./LearnSearch";
 
@@ -89,7 +89,7 @@ export function LearnHero({ stats }: LearnHeroProps) {
             >
               Master every AI tool, workflow, and feature through guided
               tutorials, learning paths, and resources — produced by the team
-              that built Snap Pro.
+              that built ShotStudio.
             </p>
           </div>
         </ScrollReveal>

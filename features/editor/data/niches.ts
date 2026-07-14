@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Single source of truth for niches + their tool catalogues.
  *
  * Consumed by:
@@ -345,8 +345,8 @@ export const NICHES: Niche[] = [
     italicWord: "steaming",
     tagline: "COLOR MATCH · STEAM HALO · LIGHT & MOOD",
     label: "Cafés",
-    image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop",
+    video: "/assets/video/niches-videos/cafe-speciality-web.webm",
+    poster: "/assets/video/niches-videos/cafe-speciality-poster.jpg",
     services: [
       { name: "Color Match", featured: true },
       { name: "Light & Mood" },

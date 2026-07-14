@@ -1,10 +1,10 @@
-export interface HowToUseStep {
+﻿export interface HowToUseStep {
   title: string;
   body: string;
 }
 
 export const HOW_TO_USE_INTRO =
-  "Snap Pro turns a raw phone photo into a hero-ready image — no studio, no designer, no waiting.";
+  "ShotStudio turns a raw phone photo into a hero-ready image — no studio, no designer, no waiting.";
 
 export const HOW_TO_USE_STEPS: HowToUseStep[] = [
   {

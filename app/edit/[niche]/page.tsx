@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,9 +27,9 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { niche: slug } = await params;
   const niche = getNicheBySlug(slug);
-  if (!niche) return { title: "Editor · Snap Pro" };
+  if (!niche) return { title: "Editor · ShotStudio" };
   return {
-    title: `${niche.name}${niche.suffix ? " " + niche.suffix : ""} editor · Snap Pro`,
+    title: `${niche.name}${niche.suffix ? " " + niche.suffix : ""} editor · ShotStudio`,
     description: `${niche.services.length} preset tools tuned for ${niche.label.toLowerCase()}. Upload an image and ship a finished asset in seconds.`,
   };
 }

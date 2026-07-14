@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -24,7 +24,7 @@ import {
 import type { Tutorial } from "@/features/learning/types";
 
 export const metadata: Metadata = {
-  title: "Learning Center — Snap Pro",
+  title: "Learning Center — ShotStudio",
   description:
     "Master every AI tool, workflow, and feature through guided tutorials, learning paths, and resources.",
 };
@@ -199,7 +199,7 @@ export default async function LearnPage() {
                   Browse by <em className='silver'>category</em>.
                 </>
               }
-              body='Eleven categories cover every tool and workflow in Snap Pro. Expand any section to see its tutorials.'
+              body='Eleven categories cover every tool and workflow in ShotStudio. Expand any section to see its tutorials.'
             />
             <CategoryAccordion
               categories={categories}

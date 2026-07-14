@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -28,9 +28,9 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { niche: nicheSlug, tool: toolSlugStr } = await params;
   const found = getToolByNicheAndSlug(nicheSlug, toolSlugStr);
-  if (!found) return { title: "Editor · Snap Pro" };
+  if (!found) return { title: "Editor · ShotStudio" };
   return {
-    title: `${found.tool.name} · ${found.niche.label} · Snap Pro`,
+    title: `${found.tool.name} · ${found.niche.label} · ShotStudio`,
     description: `Apply ${found.tool.name} to your ${found.niche.label.toLowerCase()} photo in seconds.`,
   };
 }

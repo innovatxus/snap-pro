@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Page not found · Snap Pro",
+  title: "Page not found · ShotStudio",
   description: "The page you were looking for doesn't exist or has moved.",
   robots: { index: false, follow: false },
 };

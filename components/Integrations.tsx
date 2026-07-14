@@ -1,4 +1,4 @@
-import ScrollReveal from "./ScrollReveal";
+﻿import ScrollReveal from "./ScrollReveal";
 
 const INTEGRATIONS = [
   // Live
@@ -226,7 +226,7 @@ export default function Integrations() {
                 lineHeight: 1.55,
               }}
             >
-              Snap Pro connects directly to your selling channels. Finish a
+              ShotStudio connects directly to your selling channels. Finish a
               batch and push straight to your listings.
             </p>
           </div>

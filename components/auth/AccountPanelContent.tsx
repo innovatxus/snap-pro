@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -76,7 +76,7 @@ export default function AccountPanelContent({ onClose }: { onClose: () => void }
               whiteSpace: "nowrap",
             }}
           >
-            {profile?.displayName ?? "Snap Pro user"}
+            {profile?.displayName ?? "ShotStudio user"}
           </div>
           <div
             style={{

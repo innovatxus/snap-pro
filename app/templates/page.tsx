@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Industry Templates — Snap Pro",
+  title: "Industry Templates — ShotStudio",
   description: "Browse 48+ AI photo editing templates for your industry.",
 };
 

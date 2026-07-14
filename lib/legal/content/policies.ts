@@ -1,4 +1,4 @@
-import type { LegalPage } from "../types";
+﻿import type { LegalPage } from "../types";
 
 export const POLICY_PAGES: LegalPage[] = [
   {
@@ -7,16 +7,16 @@ export const POLICY_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "AI Usage Policy — Snap Pro",
+      en: "AI Usage Policy — ShotStudio",
       ar: "سياسة استخدام الذكاء الاصطناعي — سناب برو",
     },
     meta: {
-      en: "What you may and may not generate using Snap Pro's AI tools — covering deepfakes, likeness rights, commercial claims, and safety.",
+      en: "What you may and may not generate using ShotStudio's AI tools — covering deepfakes, likeness rights, commercial claims, and safety.",
       ar: "ما يمكنك وما لا يمكنك إنشاؤه باستخدام أدوات الذكاء الاصطناعي في سناب برو — التزييف العميق، حقوق الشبَه، الادّعاءات التجارية، والسلامة.",
     },
     h1: { en: "AI Usage Policy", ar: "سياسة استخدام الذكاء الاصطناعي" },
     summary: {
-      en: "Generative AI is powerful. To keep Snap Pro safe and useful, we restrict generation that could harm individuals, mislead consumers, or violate the law.",
+      en: "Generative AI is powerful. To keep ShotStudio safe and useful, we restrict generation that could harm individuals, mislead consumers, or violate the law.",
       ar: "الذكاء الاصطناعي التوليدي قويّ. لإبقاء سناب برو آمنة ومفيدة، نُقيّد إنشاء أيّ محتوى يُسبّب ضرراً للأفراد أو يُضلّل المستهلكين أو يُخالف القانون.",
     },
     sections: [
@@ -75,10 +75,10 @@ export const POLICY_PAGES: LegalPage[] = [
         heading: { en: "Appeals", ar: "الاستئنافات" },
         paragraphs: {
           en: [
-            "If we restrict your content and you believe it was a mistake, contact appeals@snappro.app. We aim to respond within 5 business days.",
+            "If we restrict your content and you believe it was a mistake, contact appeals@shotstudio.ai. We aim to respond within 5 business days.",
           ],
           ar: [
-            "إذا قمنا بتقييد محتواك وكنت تعتقد أن ذلك خطأ، تواصل مع appeals@snappro.app. نهدف للردّ خلال 5 أيام عمل.",
+            "إذا قمنا بتقييد محتواك وكنت تعتقد أن ذلك خطأ، تواصل مع appeals@shotstudio.ai. نهدف للردّ خلال 5 أيام عمل.",
           ],
         },
       },
@@ -106,15 +106,15 @@ export const POLICY_PAGES: LegalPage[] = [
     tree: "policies",
     status: "draft",
     title: {
-      en: "Responsible AI — Snap Pro",
+      en: "Responsible AI — ShotStudio",
       ar: "الذكاء الاصطناعي المسؤول — سناب برو",
     },
     meta: {
-      en: "Snap Pro's principles for safe, fair, transparent, and accountable AI — including bias mitigation for MENA users.",
+      en: "ShotStudio's principles for safe, fair, transparent, and accountable AI — including bias mitigation for MENA users.",
       ar: "مبادئ سناب برو للذكاء الاصطناعي الآمن والعادل والشفّاف والمسؤول، بما في ذلك تخفيف التحيّز لمستخدمي منطقة الشرق الأوسط وشمال إفريقيا.",
     },
     h1: {
-      en: "Responsible AI at Snap Pro",
+      en: "Responsible AI at ShotStudio",
       ar: "الذكاء الاصطناعي المسؤول في سناب برو",
     },
     summary: {
@@ -167,7 +167,7 @@ export const POLICY_PAGES: LegalPage[] = [
       ar: "إفصاحات شفافية الذكاء الاصطناعي",
     },
     meta: {
-      en: "Which Snap Pro features use AI, who provides the underlying models, and the limits and watermarking choices we apply.",
+      en: "Which ShotStudio features use AI, who provides the underlying models, and the limits and watermarking choices we apply.",
       ar: "أيّ ميزات سناب برو تستخدم الذكاء الاصطناعي، من يُوفّر النماذج الأساسية، وحدود استخدامها وخيارات العلامات المائية.",
     },
     h1: { en: "AI Transparency", ar: "شفافية الذكاء الاصطناعي" },
@@ -180,7 +180,7 @@ export const POLICY_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Most editing services in Snap Pro rely on a mix of in-house models, open-source models we host, and third-party APIs. See AI Provider Disclosure for the per-feature mapping.",
+            "Most editing services in ShotStudio rely on a mix of in-house models, open-source models we host, and third-party APIs. See AI Provider Disclosure for the per-feature mapping.",
           ],
           ar: [
             "تعتمد معظم خدمات التحرير في سناب برو على مزيج من نماذجنا الداخلية، ونماذج مفتوحة المصدر نستضيفها، وواجهات برمجية لأطراف ثالثة. راجع صفحة الإفصاح عن مزوّدي الذكاء الاصطناعي للتعيين التفصيلي.",
@@ -222,11 +222,11 @@ export const POLICY_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "AI Content Ownership — Snap Pro",
+      en: "AI Content Ownership — ShotStudio",
       ar: "ملكية محتوى الذكاء الاصطناعي — سناب برو",
     },
     meta: {
-      en: "Who owns AI-generated images on Snap Pro: you do. The exceptions, jurisdictional caveats, and what happens after cancellation.",
+      en: "Who owns AI-generated images on ShotStudio: you do. The exceptions, jurisdictional caveats, and what happens after cancellation.",
       ar: "من يملك الصور المُنشَأة بالذكاء الاصطناعي على سناب برو؟ أنت. مع استثناءات وملاحظات قضائية وما يحدث بعد الإلغاء.",
     },
     h1: {
@@ -234,7 +234,7 @@ export const POLICY_PAGES: LegalPage[] = [
       ar: "من يملك الصور المُنشَأة بالذكاء الاصطناعي",
     },
     summary: {
-      en: "Subject to applicable law, you own the AI-generated images you create on Snap Pro and may use them commercially. Snap Pro retains no rights beyond the operational license needed to deliver the service to you.",
+      en: "Subject to applicable law, you own the AI-generated images you create on ShotStudio and may use them commercially. ShotStudio retains no rights beyond the operational license needed to deliver the service to you.",
       ar: "بموجب القانون المعمول به، تملك الصور التي تُنشئها على سناب برو وتستطيع استخدامها تجارياً. لا تحتفظ سناب برو بأي حقوق سوى الترخيص التشغيلي اللازم لتقديم الخدمة لك.",
     },
     sections: [
@@ -243,7 +243,7 @@ export const POLICY_PAGES: LegalPage[] = [
         heading: { en: "Your ownership", ar: "ملكيتك" },
         paragraphs: {
           en: [
-            "You retain all ownership rights to inputs you upload and to outputs generated using Snap Pro. We grant you a worldwide, perpetual, royalty-free license to use, modify, and distribute those outputs commercially.",
+            "You retain all ownership rights to inputs you upload and to outputs generated using ShotStudio. We grant you a worldwide, perpetual, royalty-free license to use, modify, and distribute those outputs commercially.",
           ],
           ar: [
             "تحتفظ بجميع حقوق الملكية للملفات التي ترفعها وللمخرجات المُنشَأة باستخدام سناب برو. ونمنحك ترخيصاً عالمياً ودائماً ومجانياً لاستخدامها وتعديلها وتوزيعها تجارياً.",
@@ -285,7 +285,7 @@ export const POLICY_PAGES: LegalPage[] = [
       ar: "الإبلاغ عن إساءة استخدام الذكاء الاصطناعي",
     },
     meta: {
-      en: "Report AI-generated content that violates Snap Pro's policies — deepfakes, NCII, CSAM, or IP infringement.",
+      en: "Report AI-generated content that violates ShotStudio's policies — deepfakes, NCII, CSAM, or IP infringement.",
       ar: "أبلِغ عن محتوى مُنشَأ بالذكاء الاصطناعي يُخالف سياسات سناب برو — التزييف العميق، الصور الحميمة دون رضا، مواد الأطفال، أو انتهاك الملكية الفكرية.",
     },
     h1: { en: "Report Abuse", ar: "بلِّغ عن إساءة" },
@@ -326,10 +326,10 @@ export const POLICY_PAGES: LegalPage[] = [
         heading: { en: "How to report", ar: "كيفية الإبلاغ" },
         paragraphs: {
           en: [
-            "Email abuse@snappro.app with the URL or content reference, the policy violated, and any evidence. We acknowledge within 24 hours.",
+            "Email abuse@shotstudio.ai with the URL or content reference, the policy violated, and any evidence. We acknowledge within 24 hours.",
           ],
           ar: [
-            "راسِل abuse@snappro.app مع رابط أو مرجع المحتوى، السياسة التي تمّ خرقها، وأي أدلّة. نؤكّد الاستلام خلال 24 ساعة.",
+            "راسِل abuse@shotstudio.ai مع رابط أو مرجع المحتوى، السياسة التي تمّ خرقها، وأي أدلّة. نؤكّد الاستلام خلال 24 ساعة.",
           ],
         },
       },
@@ -344,7 +344,7 @@ export const POLICY_PAGES: LegalPage[] = [
       ar: "الإفصاح عن مزوّدي الذكاء الاصطناعي",
     },
     meta: {
-      en: "Per-feature mapping of which AI provider or in-house model handles each Snap Pro capability.",
+      en: "Per-feature mapping of which AI provider or in-house model handles each ShotStudio capability.",
       ar: "تعيين تفصيلي يوضّح أيّ مزوّد ذكاء اصطناعي أو نموذج داخلي يُشغّل كل قدرة في سناب برو.",
     },
     h1: { en: "Which AI Models We Use", ar: "النماذج التي نستخدمها" },
@@ -385,7 +385,7 @@ export const POLICY_PAGES: LegalPage[] = [
       ar: "الانسحاب من تدريب الذكاء الاصطناعي",
     },
     meta: {
-      en: "Snap Pro does not train production AI models on customer uploads by default. This page explains how to verify and revoke any opt-ins.",
+      en: "ShotStudio does not train production AI models on customer uploads by default. This page explains how to verify and revoke any opt-ins.",
       ar: "لا تُدرّب سناب برو نماذج الذكاء الاصطناعي على ملفات العملاء افتراضياً. توضّح هذه الصفحة كيف تتحقّق من ذلك وكيف تسحب أي موافقات.",
     },
     h1: { en: "AI Training Opt-Out", ar: "الانسحاب من تدريب الذكاء الاصطناعي" },

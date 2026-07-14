@@ -1,18 +1,18 @@
-import type { LegalPage } from "../types";
+﻿import type { LegalPage } from "../types";
 
 export const TRUST_PAGES: LegalPage[] = [
   {
     slug: "index",
     tree: "trust",
     status: "draft",
-    title: { en: "Trust Center — Snap Pro", ar: "مركز الثقة — سناب برو" },
+    title: { en: "Trust Center — ShotStudio", ar: "مركز الثقة — سناب برو" },
     meta: {
-      en: "Snap Pro's Trust Center: security, compliance, privacy commitments, sub-processors, status, and incident response.",
+      en: "ShotStudio's Trust Center: security, compliance, privacy commitments, sub-processors, status, and incident response.",
       ar: "مركز الثقة في سناب برو: الأمن، الامتثال، التزامات الخصوصية، المعالجون الفرعيون، حالة الخدمة، والاستجابة للحوادث.",
     },
     h1: { en: "Trust Center", ar: "مركز الثقة" },
     summary: {
-      en: "Everything procurement, security, and privacy teams need to evaluate Snap Pro — in one place.",
+      en: "Everything procurement, security, and privacy teams need to evaluate ShotStudio — in one place.",
       ar: "كل ما تحتاجه فرق المشتريات والأمن والخصوصية لتقييم سناب برو — في مكان واحد.",
     },
     sections: [
@@ -49,11 +49,11 @@ export const TRUST_PAGES: LegalPage[] = [
     tree: "trust",
     status: "draft",
     title: {
-      en: "Security Overview — Snap Pro",
+      en: "Security Overview — ShotStudio",
       ar: "نظرة عامة على الأمن — سناب برو",
     },
     meta: {
-      en: "Encryption, access control, perimeter, application security, vendor management, and physical security measures at Snap Pro.",
+      en: "Encryption, access control, perimeter, application security, vendor management, and physical security measures at ShotStudio.",
       ar: "التشفير، التحكم بالوصول، حماية المحيط، أمن التطبيقات، إدارة الموردين، والأمن المادي في سناب برو.",
     },
     h1: { en: "Security Overview", ar: "نظرة عامة على الأمن" },
@@ -139,11 +139,11 @@ export const TRUST_PAGES: LegalPage[] = [
     tree: "trust",
     status: "draft",
     title: {
-      en: "Compliance Center — Snap Pro",
+      en: "Compliance Center — ShotStudio",
       ar: "مركز الامتثال — سناب برو",
     },
     meta: {
-      en: "Snap Pro's compliance roadmap and current alignments with global and regional frameworks.",
+      en: "ShotStudio's compliance roadmap and current alignments with global and regional frameworks.",
       ar: "خارطة طريق الامتثال في سناب برو وتوافقاتها الحالية مع الأطر العالمية والإقليمية.",
     },
     h1: { en: "Compliance Center", ar: "مركز الامتثال" },
@@ -187,11 +187,11 @@ export const TRUST_PAGES: LegalPage[] = [
     tree: "trust",
     status: "draft",
     title: {
-      en: "Vulnerability Disclosure Program — Snap Pro",
+      en: "Vulnerability Disclosure Program — ShotStudio",
       ar: "برنامج الإفصاح عن الثغرات — سناب برو",
     },
     meta: {
-      en: "How to report a security vulnerability to Snap Pro — scope, safe harbor, and rewards.",
+      en: "How to report a security vulnerability to ShotStudio — scope, safe harbor, and rewards.",
       ar: "كيفية الإبلاغ عن ثغرة أمنية إلى سناب برو — النطاق، الملاذ الآمن، والمكافآت.",
     },
     h1: { en: "Report a vulnerability", ar: "بلِّغ عن ثغرة" },
@@ -200,9 +200,9 @@ export const TRUST_PAGES: LegalPage[] = [
         id: "scope",
         heading: { en: "Scope", ar: "النطاق" },
         bullets: {
-          en: ["snappro.app and api.snappro.app", "Mobile apps (iOS, Android)"],
+          en: ["shotstudio.ai and api.shotstudio.ai", "Mobile apps (iOS, Android)"],
           ar: [
-            "snappro.app و api.snappro.app",
+            "shotstudio.ai و api.shotstudio.ai",
             "التطبيقات المحمولة (iOS و Android)",
           ],
         },
@@ -224,10 +224,10 @@ export const TRUST_PAGES: LegalPage[] = [
         heading: { en: "How to report", ar: "كيف تُبلّغ" },
         paragraphs: {
           en: [
-            "Email security@snappro.app with steps to reproduce. PGP key available at /.well-known/pgp.txt.",
+            "Email security@shotstudio.ai with steps to reproduce. PGP key available at /.well-known/pgp.txt.",
           ],
           ar: [
-            "راسِل security@snappro.app مع خطوات إعادة الإنتاج. مفتاح PGP متاح على /.well-known/pgp.txt.",
+            "راسِل security@shotstudio.ai مع خطوات إعادة الإنتاج. مفتاح PGP متاح على /.well-known/pgp.txt.",
           ],
         },
       },
@@ -238,11 +238,11 @@ export const TRUST_PAGES: LegalPage[] = [
     tree: "trust",
     status: "draft",
     title: {
-      en: "Incident Response — Snap Pro",
+      en: "Incident Response — ShotStudio",
       ar: "الاستجابة للحوادث — سناب برو",
     },
     meta: {
-      en: "How Snap Pro detects, classifies, contains, and notifies on security incidents — including PDPL and GDPR 72-hour timelines.",
+      en: "How ShotStudio detects, classifies, contains, and notifies on security incidents — including PDPL and GDPR 72-hour timelines.",
       ar: "كيف ترصد سناب برو الحوادث الأمنية وتُصنّفها وتحتويها وتُخطر بها، بما في ذلك حدود الـ72 ساعة في PDPL و GDPR.",
     },
     h1: { en: "Incident Response", ar: "الاستجابة للحوادث" },
@@ -292,11 +292,11 @@ export const TRUST_PAGES: LegalPage[] = [
     tree: "trust",
     status: "draft",
     title: {
-      en: "Business Continuity & DR — Snap Pro",
+      en: "Business Continuity & DR — ShotStudio",
       ar: "استمرارية الأعمال والتعافي من الكوارث — سناب برو",
     },
     meta: {
-      en: "Snap Pro's RTO and RPO targets, multi-region failover, backup strategy, and tested recovery plans.",
+      en: "ShotStudio's RTO and RPO targets, multi-region failover, backup strategy, and tested recovery plans.",
       ar: "أهداف RTO و RPO لسناب برو، التحويل بين المناطق، استراتيجية النسخ الاحتياطي، وخطط التعافي المُختبرَة.",
     },
     h1: {

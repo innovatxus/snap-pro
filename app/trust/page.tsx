@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LegalArticle from "@/components/legal/LegalArticle";
 import { getPage } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Trust Center — Snap Pro",
+  title: "Trust Center — ShotStudio",
   description:
-    "Snap Pro's Trust Center: security, compliance, privacy, sub-processors, status, and incident response.",
+    "ShotStudio's Trust Center: security, compliance, privacy, sub-processors, status, and incident response.",
 };
 
 export default function TrustHubPage() {

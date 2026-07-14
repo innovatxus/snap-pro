@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   Certification,
   FaqItem,
   Instructor,
@@ -166,7 +166,7 @@ export const TUTORIALS: Tutorial[] = [
     title: "Platform Overview",
     blurb: "A 6-minute tour of the dashboard, services, and credit system.",
     description:
-      "The fastest way to feel at home in Snap Pro. We'll walk through every workspace, the credit meter, and the keyboard shortcuts seasoned operators rely on.",
+      "The fastest way to feel at home in ShotStudio. We'll walk through every workspace, the credit meter, and the keyboard shortcuts seasoned operators rely on.",
     kind: "tutorial",
     difficulty: "beginner",
     durationMin: 6,
@@ -771,7 +771,7 @@ export const RESOURCES: Resource[] = [
 export const CERTIFICATIONS: Certification[] = [
   {
     id: "cert-foundations",
-    name: "Snap Pro Foundations",
+    name: "ShotStudio Foundations",
     blurb: "Validate the basics — dashboard, credits, and first edits.",
     pathId: "path-beginner",
     requiredTutorialIds: [

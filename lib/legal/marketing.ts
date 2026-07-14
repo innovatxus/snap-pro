@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import type { BiText } from "./types";
 
 export interface MarketingPageContent {
@@ -28,11 +28,11 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "المبيعات، الدعم، الشراكات، الصحافة، أو الجانب القانوني — اختر الفريق المناسب لسؤالك.",
     },
     body: {
-      en: "Email general@snappro.app for general inquiries, sales@snappro.app for plans and quotes, support@snappro.app for help with your account, legal@snappro.app for legal notices, dpo@snappro.app for privacy requests, and security@snappro.app for vulnerability reports.",
-      ar: "راسِل general@snappro.app للاستفسارات العامة، و sales@snappro.app للخطط والعروض، و support@snappro.app للمساعدة بحسابك، و legal@snappro.app للإشعارات القانونية، و dpo@snappro.app لطلبات الخصوصية، و security@snappro.app لتقارير الثغرات.",
+      en: "Email general@shotstudio.ai for general inquiries, sales@shotstudio.ai for plans and quotes, support@shotstudio.ai for help with your account, legal@shotstudio.ai for legal notices, dpo@shotstudio.ai for privacy requests, and security@shotstudio.ai for vulnerability reports.",
+      ar: "راسِل general@shotstudio.ai للاستفسارات العامة، و sales@shotstudio.ai للخطط والعروض، و support@shotstudio.ai للمساعدة بحسابك، و legal@shotstudio.ai للإشعارات القانونية، و dpo@shotstudio.ai لطلبات الخصوصية، و security@shotstudio.ai لتقارير الثغرات.",
     },
     ctaPrimary: {
-      href: "mailto:general@snappro.app",
+      href: "mailto:general@shotstudio.ai",
       label: { en: "Email us", ar: "راسِلنا" },
     },
   },
@@ -62,8 +62,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "أدلّة، شروحات، وإجابات للأسئلة الشائعة عبر الخدمات الـ17.",
     },
     body: {
-      en: "Detailed Help Center articles are rolling out per service. In the meantime, contact support@snappro.app and a real human will reply within one business day.",
-      ar: "نُصدِر مقالات مركز المساعدة تباعاً لكل خدمة. في غضون ذلك، راسِل support@snappro.app وسيردّ عليك إنسان حقيقي خلال يوم عمل واحد.",
+      en: "Detailed Help Center articles are rolling out per service. In the meantime, contact support@shotstudio.ai and a real human will reply within one business day.",
+      ar: "نُصدِر مقالات مركز المساعدة تباعاً لكل خدمة. في غضون ذلك، راسِل support@shotstudio.ai وسيردّ عليك إنسان حقيقي خلال يوم عمل واحد.",
     },
     draft: true,
   },
@@ -89,12 +89,12 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "ابنِ الجيل القادم من أدوات التجارة الإلكترونية",
     },
     lede: {
-      en: "Snap Pro is a remote-first team building AI tools for the MENA e-commerce ecosystem.",
+      en: "ShotStudio is a remote-first team building AI tools for the MENA e-commerce ecosystem.",
       ar: "سناب برو فريق يعمل عن بُعد يبني أدوات ذكاء اصطناعي لمنظومة التجارة الإلكترونية في الشرق الأوسط وشمال إفريقيا.",
     },
     body: {
-      en: "Active openings publish here. To express interest before we list a role, send your CV and portfolio to careers@snappro.app.",
-      ar: "تُنشر الوظائف المفتوحة هنا. للتعبير عن اهتمامك قبل إعلان دور محدد، أرسل سيرتك الذاتية ومعرض أعمالك إلى careers@snappro.app.",
+      en: "Active openings publish here. To express interest before we list a role, send your CV and portfolio to careers@shotstudio.ai.",
+      ar: "تُنشر الوظائف المفتوحة هنا. للتعبير عن اهتمامك قبل إعلان دور محدد، أرسل سيرتك الذاتية ومعرض أعمالك إلى careers@shotstudio.ai.",
     },
     draft: true,
   },
@@ -107,22 +107,22 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "الشعارات، إرشادات العلامة، نُبَذ المؤسّسين، ولقطات المنتج للصحفيين والمحلّلين.",
     },
     body: {
-      en: "Reporters covering AI in MENA e-commerce can email press@snappro.app for interviews, embargoes, and figures.",
-      ar: "للصحفيين الذين يُغطّون الذكاء الاصطناعي في تجارة الشرق الأوسط الإلكترونية: راسِلنا على press@snappro.app للمقابلات والتغطية الحصرية والأرقام.",
+      en: "Reporters covering AI in MENA e-commerce can email press@shotstudio.ai for interviews, embargoes, and figures.",
+      ar: "للصحفيين الذين يُغطّون الذكاء الاصطناعي في تجارة الشرق الأوسط الإلكترونية: راسِلنا على press@shotstudio.ai للمقابلات والتغطية الحصرية والأرقام.",
     },
     draft: true,
   },
   {
     slug: "partners",
     eyebrow: { en: "Partners", ar: "الشركاء" },
-    title: { en: "Partner with Snap Pro", ar: "كُن شريكاً مع سناب برو" },
+    title: { en: "Partner with ShotStudio", ar: "كُن شريكاً مع سناب برو" },
     lede: {
       en: "Agency, platform, and reseller partnerships across MENA.",
       ar: "شراكات وكالات، منصّات، ومُعيدي بيع عبر الشرق الأوسط وشمال إفريقيا.",
     },
     body: {
-      en: "Apply via partners@snappro.app. We respond within 5 business days with next steps and a partnership tier proposal.",
-      ar: "قدِّم طلبك عبر partners@snappro.app. نردّ خلال 5 أيام عمل بالخطوات التالية ومستوى شراكة مقترح.",
+      en: "Apply via partners@shotstudio.ai. We respond within 5 business days with next steps and a partnership tier proposal.",
+      ar: "قدِّم طلبك عبر partners@shotstudio.ai. نردّ خلال 5 أيام عمل بالخطوات التالية ومستوى شراكة مقترح.",
     },
     draft: true,
   },
@@ -135,8 +135,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "احصل على نسبة متكرّرة من إيرادات اشتراك البائعين الذين تُحيلهم.",
     },
     body: {
-      en: "Launching soon. Pre-register at affiliates@snappro.app to be notified when the program opens.",
-      ar: "قريباً. سجّل اهتمامك على affiliates@snappro.app ليتمّ إخطارك عند فتح البرنامج.",
+      en: "Launching soon. Pre-register at affiliates@shotstudio.ai to be notified when the program opens.",
+      ar: "قريباً. سجّل اهتمامك على affiliates@shotstudio.ai ليتمّ إخطارك عند فتح البرنامج.",
     },
     draft: true,
   },
@@ -144,7 +144,7 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     slug: "integrations",
     eyebrow: { en: "Integrations", ar: "التكاملات" },
     title: {
-      en: "Connect Snap Pro to your stack",
+      en: "Connect ShotStudio to your stack",
       ar: "اربط سناب برو بأدواتك",
     },
     lede: {
@@ -152,8 +152,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "تكاملات أصلية مع Shopify و WooCommerce وسلّة وزِد وبونات والمزيد.",
     },
     body: {
-      en: "See the Integrations section on the home page for the live list. Need an integration not shown? Email product@snappro.app.",
-      ar: "اطّلع على قسم التكاملات في الصفحة الرئيسية للقائمة الحيّة. تحتاج تكاملاً غير معروض؟ راسِل product@snappro.app.",
+      en: "See the Integrations section on the home page for the live list. Need an integration not shown? Email product@shotstudio.ai.",
+      ar: "اطّلع على قسم التكاملات في الصفحة الرئيسية للقائمة الحيّة. تحتاج تكاملاً غير معروض؟ راسِل product@shotstudio.ai.",
     },
   },
   {
@@ -188,11 +188,11 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     slug: "blog",
     eyebrow: { en: "Blog", ar: "المدوّنة" },
     title: {
-      en: "Notes from the Snap Pro team",
+      en: "Notes from the ShotStudio team",
       ar: "ملاحظات من فريق سناب برو",
     },
     lede: {
-      en: "Behind-the-scenes posts on AI in e-commerce, prompt craft, and Snap Pro engineering.",
+      en: "Behind-the-scenes posts on AI in e-commerce, prompt craft, and ShotStudio engineering.",
       ar: "تدوينات من خلف الكواليس حول الذكاء الاصطناعي في التجارة الإلكترونية، صياغة الموجِّهات، وهندسة سناب برو.",
     },
     body: {
@@ -206,7 +206,7 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     eyebrow: { en: "Tutorials", ar: "الدروس" },
     title: { en: "Video tutorials", ar: "دروس مرئية" },
     lede: {
-      en: "Short, focused tutorials for each Snap Pro service.",
+      en: "Short, focused tutorials for each ShotStudio service.",
       ar: "دروس قصيرة ومُركّزة لكل خدمة من خدمات سناب برو.",
     },
     body: {
@@ -219,7 +219,7 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     slug: "community",
     eyebrow: { en: "Community", ar: "المجتمع" },
     title: {
-      en: "Join the Snap Pro community",
+      en: "Join the ShotStudio community",
       ar: "انضمّ إلى مجتمع سناب برو",
     },
     lede: {
@@ -227,8 +227,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "شارك الموجِّهات، اكتشف حالات الاستخدام، واطلب الميزات مع بائعين آخرين.",
     },
     body: {
-      en: "Community channels (Discord, WhatsApp groups by region) launch with public beta. Email community@snappro.app to be invited early.",
-      ar: "تنطلق قنوات المجتمع (Discord ومجموعات واتساب حسب المنطقة) مع النسخة التجريبية العامة. راسِل community@snappro.app للحصول على دعوة مبكرة.",
+      en: "Community channels (Discord, WhatsApp groups by region) launch with public beta. Email community@shotstudio.ai to be invited early.",
+      ar: "تنطلق قنوات المجتمع (Discord ومجموعات واتساب حسب المنطقة) مع النسخة التجريبية العامة. راسِل community@shotstudio.ai للحصول على دعوة مبكرة.",
     },
     draft: true,
   },
@@ -241,8 +241,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "التزامنا بمعيار WCAG 2.2 AA والتحسين المستمرّ للوصول للمستخدمين ذوي الإعاقات.",
     },
     body: {
-      en: "We audit Snap Pro against WCAG 2.2 AA. Report accessibility issues to accessibility@snappro.app and we will respond within 5 business days with a remediation plan.",
-      ar: "نراجع سناب برو وفقاً لمعيار WCAG 2.2 AA. أبلِغ عن أي مشكلات في الوصول إلى accessibility@snappro.app وسنردّ خلال 5 أيام عمل بخطة معالجة.",
+      en: "We audit ShotStudio against WCAG 2.2 AA. Report accessibility issues to accessibility@shotstudio.ai and we will respond within 5 business days with a remediation plan.",
+      ar: "نراجع سناب برو وفقاً لمعيار WCAG 2.2 AA. أبلِغ عن أي مشكلات في الوصول إلى accessibility@shotstudio.ai وسنردّ خلال 5 أيام عمل بخطة معالجة.",
     },
     draft: true,
   },
@@ -251,12 +251,12 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     eyebrow: { en: "Customers", ar: "العملاء" },
     title: { en: "Customer stories", ar: "قصص العملاء" },
     lede: {
-      en: "How sellers across MENA use Snap Pro to ship faster and convert better.",
+      en: "How sellers across MENA use ShotStudio to ship faster and convert better.",
       ar: "كيف يستخدم البائعون عبر الشرق الأوسط سناب برو لإصدار محتواهم أسرع وتحقيق تحويل أفضل.",
     },
     body: {
-      en: "Case studies publish here. To nominate your store, email stories@snappro.app.",
-      ar: "تُنشَر دراسات الحالة هنا. لترشيح متجرك، راسِل stories@snappro.app.",
+      en: "Case studies publish here. To nominate your store, email stories@shotstudio.ai.",
+      ar: "تُنشَر دراسات الحالة هنا. لترشيح متجرك، راسِل stories@shotstudio.ai.",
     },
     draft: true,
   },
@@ -272,8 +272,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
       ar: "أرصدة بكميات كبيرة، اتفاقيات مستوى خدمة، تسجيل دخول موحّد، ومسار مشتريات مخصّص للمتاجر والعلامات التجارية.",
     },
     body: {
-      en: "Email sales@snappro.app to request a custom quote, vendor questionnaire, or DPA. Typical onboarding is 2-4 weeks.",
-      ar: "راسِل sales@snappro.app لطلب عرض سعر مخصّص أو استبيان مورّد أو اتفاقية معالجة بيانات. عادةً ما يستغرق التأهيل من 2 إلى 4 أسابيع.",
+      en: "Email sales@shotstudio.ai to request a custom quote, vendor questionnaire, or DPA. Typical onboarding is 2-4 weeks.",
+      ar: "راسِل sales@shotstudio.ai لطلب عرض سعر مخصّص أو استبيان مورّد أو اتفاقية معالجة بيانات. عادةً ما يستغرق التأهيل من 2 إلى 4 أسابيع.",
     },
   },
   {
@@ -281,8 +281,8 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     eyebrow: { en: "Sitemap", ar: "خريطة الموقع" },
     title: { en: "Sitemap", ar: "خريطة الموقع" },
     lede: {
-      en: "Every public page on snappro.app, in one place.",
-      ar: "كل الصفحات العامّة في snappro.app، في مكان واحد.",
+      en: "Every public page on shotstudio.ai, in one place.",
+      ar: "كل الصفحات العامّة في shotstudio.ai، في مكان واحد.",
     },
     body: {
       en: "A human-readable site index will replace this stub. The machine-readable sitemap.xml is generated by Next.js at /sitemap.xml.",
@@ -295,12 +295,12 @@ export const MARKETING_PAGES: MarketingPageContent[] = [
     eyebrow: { en: "Status", ar: "حالة الخدمة" },
     title: { en: "System status", ar: "حالة النظام" },
     lede: {
-      en: "Real-time uptime for snappro.app, the API, and queued AI jobs.",
-      ar: "حالة تشغيل لحظيّة لـ snappro.app وواجهة البرمجة وطوابير مهام الذكاء الاصطناعي.",
+      en: "Real-time uptime for shotstudio.ai, the API, and queued AI jobs.",
+      ar: "حالة تشغيل لحظيّة لـ shotstudio.ai وواجهة البرمجة وطوابير مهام الذكاء الاصطناعي.",
     },
     body: {
-      en: "Hosted status page launching with public beta. Subscribe to incident emails at status@snappro.app.",
-      ar: "صفحة حالة مستضافة تنطلق مع النسخة التجريبية العامة. اشترك بإشعارات الحوادث على status@snappro.app.",
+      en: "Hosted status page launching with public beta. Subscribe to incident emails at status@shotstudio.ai.",
+      ar: "صفحة حالة مستضافة تنطلق مع النسخة التجريبية العامة. اشترك بإشعارات الحوادث على status@shotstudio.ai.",
     },
     draft: true,
   },
@@ -321,7 +321,7 @@ export function getMarketingMetadata(slug: string): Metadata {
   const page = getMarketingPage(slug);
   if (!page) return {};
   return {
-    title: `${page.title.en} — Snap Pro`,
+    title: `${page.title.en} — ShotStudio`,
     description: page.lede.en,
     ...(page.draft ? { robots: { index: false, follow: false } } : {}),
   };

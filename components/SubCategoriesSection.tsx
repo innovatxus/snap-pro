@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
@@ -107,27 +107,6 @@ const PERSONAL: Tool[] = [
         <circle cx='8' cy='10' r='2.5' />
         <path d='M5.5 5V4C5.5 3 6 2 7.5 2H8.5C10 2 10.5 3 10.5 4V5' />
         <circle cx='12' cy='7.5' r='0.5' fill='currentColor' stroke='none' />
-      </svg>
-    ),
-  },
-  {
-    id: "hajj-umrah",
-    name: "Hajj & Umrah",
-    desc: "Restore family pilgrimage archives. Old photo repair, face recovery, warm-tone grading, and print export.",
-    image: "/assets/images/old photo.png",
-    icon: (
-      <svg {...S}>
-        <rect x='1' y='3' width='11' height='9' rx='1' />
-        <path
-          d='M1 8.5L3.5 6.5L6.5 8.5L9.5 6'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        />
-        <path
-          d='M13.5 1L14 3L15.5 3.5L14 4L13.5 6L13 4L11.5 3.5L13 3L13.5 1Z'
-          fill='currentColor'
-          strokeWidth='0.5'
-        />
       </svg>
     ),
   },

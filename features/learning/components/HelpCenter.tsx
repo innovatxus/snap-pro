@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Icon, type IconName } from "./Icon";
 
 interface HelpCenterProps {
@@ -10,7 +10,7 @@ interface HelpCenterProps {
 }
 
 export function HelpCenter({
-  contactHref = "mailto:support@snappro.app",
+  contactHref = "mailto:support@shotstudio.ai",
   featureRequestHref = "#",
   communityHref = "#",
   knowledgeBaseHref = "#",
@@ -37,7 +37,7 @@ export function HelpCenter({
     {
       icon: "sparkles",
       title: "Request a feature",
-      body: "Tell us what you wish Snap Pro could do.",
+      body: "Tell us what you wish ShotStudio could do.",
       href: featureRequestHref,
     },
     {

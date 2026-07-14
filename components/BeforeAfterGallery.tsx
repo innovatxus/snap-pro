@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
@@ -173,50 +173,6 @@ const GALLERY_ITEMS = [
 ];
 
 function BACard({ item }: { item: (typeof GALLERY_ITEMS)[0] }) {
-  const stageRef = useRef<HTMLDivElement>(null);
-  const [pct, setPct] = useState(50);
-  const dragging = useRef(false);
-
-  const update = useCallback((clientX: number) => {
-    const el = stageRef.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    if (r.width === 0) return;
-    const raw = ((clientX - r.left) / r.width) * 100;
-    setPct(Math.max(4, Math.min(96, raw)));
-  }, []);
-
-  const onPointerDown = useCallback(
-    (e: React.PointerEvent<HTMLDivElement>) => {
-      const el = stageRef.current;
-      if (!el) return;
-      dragging.current = true;
-      try {
-        el.setPointerCapture(e.pointerId);
-      } catch {
-        /* setPointerCapture can throw on some browsers if the pointer is no longer active */
-      }
-      update(e.clientX);
-    },
-    [update],
-  );
-
-  const onPointerMove = useCallback(
-    (e: React.PointerEvent<HTMLDivElement>) => {
-      if (!dragging.current) return;
-      update(e.clientX);
-    },
-    [update],
-  );
-
-  const onPointerEnd = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-    dragging.current = false;
-    const el = stageRef.current;
-    if (el && el.hasPointerCapture(e.pointerId)) {
-      el.releasePointerCapture(e.pointerId);
-    }
-  }, []);
-
   return (
     <div
       className='shrink-0 overflow-hidden relative'
@@ -228,98 +184,14 @@ function BACard({ item }: { item: (typeof GALLERY_ITEMS)[0] }) {
         boxShadow: "var(--shadow-card)",
       }}
     >
-      {/* ba-stage */}
-      <div
-        ref={stageRef}
-        className='ba-stage absolute inset-0'
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerEnd}
-        onPointerCancel={onPointerEnd}
-        onLostPointerCapture={() => {
-          dragging.current = false;
-        }}
-        onDragStart={(e) => e.preventDefault()}
-        style={{ touchAction: "none", userSelect: "none" }}
-      >
-        {/* After layer — the polished royalty-free photo */}
-        <div
-          className='ba-after-img'
-          style={{ background: "var(--surface-2)" }}
-        >
-          <Image
-            src={item.src}
-            alt={item.alt}
-            fill
-            sizes='280px'
-            style={{ objectFit: "cover" }}
-            draggable={false}
-          />
-        </div>
-
-        {/* Before layer (clipped) — same photo with a moody filter */}
-        <div
-          className='ba-before-img'
-          style={{
-            background: "#050505",
-            clipPath: `inset(0 ${100 - pct}% 0 0)`,
-            filter: item.beforeFilter,
-          }}
-        >
-          <Image
-            src={item.src}
-            alt=''
-            aria-hidden
-            fill
-            sizes='280px'
-            style={{ objectFit: "cover" }}
-            draggable={false}
-          />
-        </div>
-
-        {/* Divider */}
-        <div className='ba-divider-wrap' style={{ left: `${pct}%` }}>
-          <div className='ba-divider-line' />
-          <div className='ba-handle'>
-            <svg width='12' height='10' viewBox='0 0 12 10' fill='none'>
-              <path
-                d='M1 5H11M1 5L4 2M1 5L4 8M11 5L8 2M11 5L8 8'
-                stroke='#0EA5E9'
-                strokeWidth='1.4'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
-          </div>
-        </div>
-
-        {/* Labels */}
-        <div className='absolute top-3 left-3 z-10'>
-          <span
-            className='chip'
-            style={{
-              fontSize: 9,
-              padding: "3px 8px",
-              background: "rgba(0,0,0,0.55)",
-            }}
-          >
-            Before
-          </span>
-        </div>
-        <div className='absolute top-3 right-3 z-10'>
-          <span
-            className='chip'
-            style={{
-              fontSize: 9,
-              padding: "3px 8px",
-              background: "rgba(0,0,0,0.55)",
-              color: "var(--silver-2)",
-            }}
-          >
-            After
-          </span>
-        </div>
-      </div>
+      <Image
+        src={item.src}
+        alt={item.alt}
+        fill
+        sizes='280px'
+        style={{ objectFit: "cover" }}
+        draggable={false}
+      />
 
       {/* Service name overlay */}
       <div
@@ -395,31 +267,7 @@ export default function BeforeAfterGallery() {
                 lineHeight: 1.55,
               }}
             >
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                }}
-              >
-                <span
-                  className='text-silver-grad'
-                  aria-hidden='true'
-                  style={{
-                    flexShrink: 0,
-                    display: "inline-block",
-                    fontSize: 16,
-                    lineHeight: 1,
-                    fontWeight: 700,
-                  }}
-                >
-                  ↔
-                </span>
-                <span>
-                  Drag the slider on any card to compare before and after. Real
-                  products, real results.
-                </span>
-              </span>
+              Real products, real results.
             </p>
           </div>
           <div

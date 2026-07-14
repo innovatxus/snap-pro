@@ -7,7 +7,7 @@ import { NICHES, toolSlug } from "@/features/editor/data/niches";
 // "Special Events" and "Wedding & Events" moved to the Personal Tools group
 // in SubCategoriesSection; "News & Editorial" is hidden entirely. All three
 // stay in NICHES (so their /edit/* routes keep working) but none render here.
-const HIDDEN_FROM_GRID = new Set(["events", "weddings", "editorial"]);
+const HIDDEN_FROM_GRID = new Set(["events", "weddings", "editorial", "hotels"]);
 const GRID_NICHES = NICHES.filter((n) => !HIDDEN_FROM_GRID.has(n.id));
 
 export default function NichesSection() {
@@ -192,7 +192,7 @@ export default function NichesSection() {
                       href={`/edit/${niche.id}/${toolSlug(svc.name)}`}
                       className={`chip ${svc.featured ? "chip-blue" : ""}`}
                       style={{
-                        fontSize: 6.2,
+                        fontSize: 10,
                         gap: 4.4,
                         position: "relative",
                         zIndex: 20,

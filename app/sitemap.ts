@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import {
   NICHES,
   SOCIAL_NICHES,
@@ -9,7 +9,7 @@ import {
 import { LEGAL_PAGES, POLICY_PAGES, TRUST_PAGES } from "@/lib/legal";
 import { MARKETING_PAGES } from "@/lib/legal/marketing";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://snappro.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shotstudio.ai";
 
 /**
  * Production sitemap.

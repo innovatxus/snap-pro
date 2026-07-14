@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces, Syne } from "next/font/google";
 import ScrollFloater from "@/components/ScrollFloater";
 import { LocaleProvider } from "@/components/legal/LocaleProvider";
@@ -38,12 +38,12 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://snappro.app",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://shotstudio.ai",
   ),
-  title: "Snap Pro — AI Studio for Everyone",
+  title: "ShotStudio — AI Studio for Everyone",
   description:
     "Upload a photo. Pick a service. Download a hero image. 17 professional AI editing services for e-commerce sellers. 25 free credits monthly.",
-  applicationName: "Snap Pro",
+  applicationName: "ShotStudio",
   icons: {
     // SVG is served at any resolution — modern Chrome/Firefox/Edge/Safari use this first
     icon: [{ url: "/icon.svg", type: "image/svg+xml", sizes: "any" }],
@@ -53,29 +53,29 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Snap Pro",
-    title: "Snap Pro — AI Studio for Everyone",
+    siteName: "ShotStudio",
+    title: "ShotStudio — AI Studio for Everyone",
     description:
       "17 professional AI editing services for e-commerce sellers. 25 free credits monthly.",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Snap Pro logo card — AI Studio for Everyone",
+        url: "/assets/video/hero-videos/hero-main-poster.jpg",
+        width: 1920,
+        height: 1080,
+        alt: "ShotStudio — AI Studio for Everyone",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Snap Pro — AI Studio for Everyone",
+    title: "ShotStudio — AI Studio for Everyone",
     description:
       "17 professional AI editing services for e-commerce sellers. 25 free credits monthly.",
     images: [
       {
-        url: "/twitter-image",
-        alt: "Snap Pro logo card — AI Studio for Everyone",
+        url: "/assets/video/hero-videos/hero-main-poster.jpg",
+        alt: "ShotStudio — AI Studio for Everyone",
       },
     ],
   },

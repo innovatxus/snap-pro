@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import type { ReactNode, CSSProperties } from "react";
 import { useState, type FormEvent } from "react";
@@ -801,7 +801,7 @@ export default function Footer() {
                 color: "var(--mute)",
               }}
             >
-              © {YEAR} Snap Pro, Inc. — {UI.footer.rights[locale]}
+              © {YEAR} ShotStudio, Inc. — {UI.footer.rights[locale]}
             </span>
           </div>
 

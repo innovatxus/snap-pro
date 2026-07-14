@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -109,7 +109,7 @@ export default function BentoSection() {
                 fontFamily: "var(--font-geist-sans)",
               }}
             >
-              From raw snapshots to hero images — Snap Pro handles every step,
+              From raw snapshots to hero images — ShotStudio handles every step,
               every format, every channel.
             </p>
           </div>

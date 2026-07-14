@@ -1,6 +1,6 @@
-/**
+﻿/**
  * Shared logo mark — used in Navbar and Footer.
- * Renders the snap-pro-logo.svg mark + the two-tone "SNAP PRO" wordmark.
+ * Renders the snap-pro-logo.svg mark + the two-tone "ShotStudio" wordmark.
  *
  * Props
  *   size        — logo image px (default 64)
@@ -24,7 +24,7 @@ export default function Logo({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/logo/snap-pro-logo.svg"
-        alt="Snap Pro logo"
+        alt="ShotStudio logo"
         width={size}
         height={size}
         style={{
@@ -48,7 +48,7 @@ export default function Logo({
           lineHeight: 1,
         }}
       >
-        {/* SNAP — blue gradient */}
+        {/* SHOT — blue gradient */}
         <span
           style={{
             background:
@@ -59,9 +59,9 @@ export default function Logo({
             color: "transparent",
           }}
         >
-          SNAP
+          SHOT
         </span>
-        {/* PRO — silver chrome gradient */}
+        {/* STUDIO — silver chrome gradient */}
         <span
           style={{
             background:
@@ -73,7 +73,7 @@ export default function Logo({
             marginLeft: 4,
           }}
         >
-          PRO
+          STUDIO
         </span>
       </span>
     </div>

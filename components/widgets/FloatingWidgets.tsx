@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import WidgetShell from "./WidgetShell";
@@ -146,9 +146,7 @@ function OrbFab({ variant, label, icon, isActive, buttonRef, onClick }: OrbFabPr
  */
 export default function FloatingWidgets() {
   const [openPanel, setOpenPanel] = useState<PanelKey>(null);
-  const [tabHidden, setTabHidden] = useState(() =>
-    typeof document !== "undefined" ? document.hidden : false,
-  );
+  const [tabHidden, setTabHidden] = useState(false);
   const howToRef = useRef<HTMLButtonElement>(null);
   const feedbackRef = useRef<HTMLButtonElement>(null);
   const howToTitleId = useId();
@@ -200,7 +198,7 @@ export default function FloatingWidgets() {
         onClose={() => setOpenPanel(null)}
         triggerRef={howToRef}
         titleId={howToTitleId}
-        title='How to Use Snap Pro'
+        title='How to Use ShotStudio'
         accentIcon={<BookIcon />}
       >
         <HowToUsePanelContent />

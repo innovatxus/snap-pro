@@ -161,7 +161,7 @@ export default function HeroVideo({ sources }: HeroVideoProps) {
               }}
               /* Poster on both slots: prevents a black flash if the standby
                  clip hasn't fully decoded by the time a crossfade begins. */
-              poster='/assets/images/apperal-snap-pro.png'
+              poster='/assets/video/hero-videos/hero-main-poster.jpg'
             >
               {/* WebM/VP9 first: gives playback an independent decode path
                   on devices where the H.264 hardware decoder misbehaves. */}

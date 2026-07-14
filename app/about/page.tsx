@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -7,9 +7,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { Icon, type IconName } from "@/features/learning/components/Icon";
 
 export const metadata: Metadata = {
-  title: "About · Snap Pro",
+  title: "About · ShotStudio",
   description:
-    "Why Snap Pro exists, the principles we build by, and how a simple AI studio in your pocket levels the playing field for every seller, creator, and small business.",
+    "Why ShotStudio exists, the principles we build by, and how a simple AI studio in your pocket levels the playing field for every seller, creator, and small business.",
 };
 
 // ── Section wrapper ──────────────────────────────────────────────────────────
@@ -208,7 +208,7 @@ export default function AboutPage() {
                     boxShadow: "0 0 14px var(--blue-glow)",
                   }}
                 />
-                About Snap Pro
+                About ShotStudio
               </span>
             </ScrollReveal>
 
@@ -241,7 +241,7 @@ export default function AboutPage() {
                   lineHeight: 1.6,
                 }}
               >
-                Snap Pro is an AI photography studio built for the
+                ShotStudio is an AI photography studio built for the
                 ninety-something percent of sellers, creators, and small
                 businesses who will never hire a retoucher. We turn a phone, a
                 photo, and a tap into a finished asset you can ship.
@@ -307,7 +307,7 @@ export default function AboutPage() {
                     },
                     {
                       title: "Raise the ceiling",
-                      body: "Pros use Snap Pro to compress hours of retouch into minutes, and ship more, better.",
+                      body: "Pros use ShotStudio to compress hours of retouch into minutes, and ship more, better.",
                     },
                     {
                       title: "Stay out of the way",
@@ -371,7 +371,7 @@ export default function AboutPage() {
                 },
                 {
                   step: "Now",
-                  title: "Snap Pro",
+                  title: "ShotStudio",
                   body: "Industry-tuned services that respect what your product actually is. Refined, not reinvented.",
                 },
               ].map((s, i) => (
@@ -509,7 +509,7 @@ export default function AboutPage() {
                   What you can <em className='silver'>actually</em> ship.
                 </>
               }
-              body='No vanity stats. These are the numbers that decide whether Snap Pro fits into your week.'
+              body='No vanity stats. These are the numbers that decide whether ShotStudio fits into your week.'
             />
 
             <ScrollReveal
@@ -579,7 +579,7 @@ export default function AboutPage() {
                   the loudest.
                 </>
               }
-              body='Snap Pro fits the workflows of the people big software usually overlooks, and gives professionals a sharper edge on top.'
+              body='ShotStudio fits the workflows of the people big software usually overlooks, and gives professionals a sharper edge on top.'
             />
 
             <ScrollReveal

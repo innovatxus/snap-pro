@@ -1,4 +1,4 @@
-import type { LegalPage } from "../types";
+﻿import type { LegalPage } from "../types";
 
 /**
  * Legal pages mounted under /legal/[slug].
@@ -17,17 +17,17 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-07-13",
     title: {
-      en: "Privacy Policy — Snap Pro",
-      ar: "Privacy Policy — Snap Pro",
+      en: "Privacy Policy — ShotStudio",
+      ar: "Privacy Policy — ShotStudio",
     },
     meta: {
-      en: "How Snap Pro collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
-      ar: "How Snap Pro collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
+      en: "How ShotStudio collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
+      ar: "How ShotStudio collects, uses, stores, and protects your personal data. Compliant with Egyptian Personal Data Protection Law No. 151/2020 (PDPL) and applicable international frameworks.",
     },
     h1: { en: "Privacy Policy", ar: "Privacy Policy" },
     summary: {
-      en: "We collect the minimum personal data needed to operate Snap Pro. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@snappro.app.",
-      ar: "We collect the minimum personal data needed to operate Snap Pro. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@snappro.app.",
+      en: "We collect the minimum personal data needed to operate ShotStudio. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@shotstudio.ai.",
+      ar: "We collect the minimum personal data needed to operate ShotStudio. We never sell your data. We never train our production AI models on your uploaded images without your explicit, separate consent. You have full rights over your data under Egyptian Personal Data Protection Law No. 151/2020 — including access, rectification, erasure, and portability — and you can exercise them at any time by emailing privacy@shotstudio.ai.",
     },
     sections: [
       // ── 1. CONTROLLER IDENTITY ──────────────────────────────────────────────
@@ -39,14 +39,14 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
-            "Data Protection Officer (DPO): privacy@snappro.app. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
-            "This Privacy Policy applies to personal data processed through the Snap Pro platform at snappro.app and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
+            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"ShotStudio\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
+            "Data Protection Officer (DPO): privacy@shotstudio.ai. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
+            "This Privacy Policy applies to personal data processed through the ShotStudio platform at shotstudio.ai and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
           ],
           ar: [
-            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
-            "Data Protection Officer (DPO): privacy@snappro.app. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
-            "This Privacy Policy applies to personal data processed through the Snap Pro platform at snappro.app and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
+            "The data controller responsible for your personal data is [COMPANY LEGAL NAME] (trading as \"ShotStudio\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER]. Complete commercial disclosures are published at /legal/business-info.",
+            "Data Protection Officer (DPO): privacy@shotstudio.ai. You may also write to us at [REGISTERED ADDRESS], Egypt, marked \"Attn: Data Protection Officer\".",
+            "This Privacy Policy applies to personal data processed through the ShotStudio platform at shotstudio.ai and any associated APIs or integrations (the \"Service\"). It does not apply to third-party websites or services that we link to.",
           ],
         },
       },
@@ -100,8 +100,8 @@ export const LEGAL_PAGES: LegalPage[] = [
           {
             term: { en: "Support communications", ar: "Support communications" },
             meaning: {
-              en: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@snappro.app or appeals@snappro.app.",
-              ar: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@snappro.app or appeals@snappro.app.",
+              en: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@shotstudio.ai or appeals@shotstudio.ai.",
+              ar: "Messages, attachments, and metadata from support tickets, live chat, or email you send to support@shotstudio.ai or appeals@shotstudio.ai.",
             },
           },
           {
@@ -198,13 +198,13 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "When you upload an image to a Snap Pro AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
+            "When you upload an image to a ShotStudio AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
             "Transient processing: by default, uploaded images are processed transiently and are not retained after your AI Output is returned to you. If you choose to save an image to your library, it is stored in your Account until you delete it.",
             "No training on your uploads by default: we do not use your uploaded images or AI Outputs to train or fine-tune production AI models without your explicit, granular opt-in consent. This opt-in is separate from acceptance of these Terms and is entirely voluntary. You may review and revoke any training consent at any time from Account → Privacy → AI training preferences, or by visiting /policies/ai-training-opt-out.",
             "Images of people: if your uploads contain images of identifiable individuals, you are responsible for holding the necessary consents from those individuals under applicable privacy law before uploading. We apply heightened data-handling standards to images that appear to contain biometric data (facial features) as required by PDPL Art. 1 (definition of sensitive personal data).",
           ],
           ar: [
-            "When you upload an image to a Snap Pro AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
+            "When you upload an image to a ShotStudio AI tool (e.g. background removal, ghost mannequin, scene staging, jewellery retouching), the image is transmitted securely over TLS to our processing infrastructure and, where the relevant AI capability is provided by a third-party model or inference provider, to that provider's API. The image is used solely to generate your requested AI Output. A full list of the AI providers used by each tool is published at /policies/ai-providers.",
             "Transient processing: by default, uploaded images are processed transiently and are not retained after your AI Output is returned to you. If you choose to save an image to your library, it is stored in your Account until you delete it.",
             "No training on your uploads by default: we do not use your uploaded images or AI Outputs to train or fine-tune production AI models without your explicit, granular opt-in consent. This opt-in is separate from acceptance of these Terms and is entirely voluntary. You may review and revoke any training consent at any time from Account → Privacy → AI training preferences, or by visiting /policies/ai-training-opt-out.",
             "Images of people: if your uploads contain images of identifiable individuals, you are responsible for holding the necessary consents from those individuals under applicable privacy law before uploading. We apply heightened data-handling standards to images that appear to contain biometric data (facial features) as required by PDPL Art. 1 (definition of sensitive personal data).",
@@ -250,11 +250,11 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Snap Pro is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
+            "ShotStudio is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
             "The safeguards we rely on for each transfer destination are:",
           ],
           ar: [
-            "Snap Pro is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
+            "ShotStudio is built on global cloud infrastructure. When you use the Service, your personal data — including uploaded images — may be transferred to and processed in countries outside Egypt, including the United States and the European Union. Under Article 14 of Egyptian Personal Data Protection Law No. 151/2020, cross-border transfers of personal data are permitted only under specified conditions.",
             "The safeguards we rely on for each transfer destination are:",
           ],
         },
@@ -263,13 +263,13 @@ export const LEGAL_PAGES: LegalPage[] = [
             "United States (Vercel, Stripe, Firebase/Google, AI inference providers): we rely on (a) your explicit, informed consent given at the point of uploading images to the Service, and (b) the contractual necessity exception in PDPL Art. 14 — the transfer is necessary to perform the Service contract with you. We additionally apply Standard Contractual Clause-equivalent data-processing agreements with each US-based sub-processor.",
             "European Union (certain AI providers, analytics): we rely on the EU adequacy framework and, where applicable, Standard Contractual Clauses. EU-based processing benefits from GDPR-level protections.",
             "Egypt (Paymob — primary payment processing for Egyptian customers): data processed within Egypt is subject to PDPL Law No. 151/2020 in full.",
-            "Full details of transfer mechanisms per sub-processor are available on request from privacy@snappro.app and are summarised at /legal/international-transfers.",
+            "Full details of transfer mechanisms per sub-processor are available on request from privacy@shotstudio.ai and are summarised at /legal/international-transfers.",
           ],
           ar: [
             "United States (Vercel, Stripe, Firebase/Google, AI inference providers): we rely on (a) your explicit, informed consent given at the point of uploading images to the Service, and (b) the contractual necessity exception in PDPL Art. 14 — the transfer is necessary to perform the Service contract with you. We additionally apply Standard Contractual Clause-equivalent data-processing agreements with each US-based sub-processor.",
             "European Union (certain AI providers, analytics): we rely on the EU adequacy framework and, where applicable, Standard Contractual Clauses. EU-based processing benefits from GDPR-level protections.",
             "Egypt (Paymob — primary payment processing for Egyptian customers): data processed within Egypt is subject to PDPL Law No. 151/2020 in full.",
-            "Full details of transfer mechanisms per sub-processor are available on request from privacy@snappro.app and are summarised at /legal/international-transfers.",
+            "Full details of transfer mechanisms per sub-processor are available on request from privacy@shotstudio.ai and are summarised at /legal/international-transfers.",
           ],
         },
       },
@@ -337,8 +337,8 @@ export const LEGAL_PAGES: LegalPage[] = [
           ar: "9. Your Rights Under PDPL (Arts. 17–25)",
         },
         lede: {
-          en: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@snappro.app with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
-          ar: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@snappro.app with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
+          en: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@shotstudio.ai with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
+          ar: "Egyptian Personal Data Protection Law No. 151/2020 grants you the following rights in respect of your personal data. These rights apply to the extent that we act as data controller of the relevant data. To exercise any right, email privacy@shotstudio.ai with the subject line \"Privacy Right Request — [right name]\" and include your account email address. We will respond within 30 days. Where we are unable to fulfil your request, we will explain why in writing.",
         },
         defs: [
           {
@@ -415,11 +415,11 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@snappro.app immediately. We will verify the report and delete the child's data within 15 business days.",
+            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@shotstudio.ai immediately. We will verify the report and delete the child's data within 15 business days.",
             "If a paid Account is found to belong to a person under 18, we will suspend the Account, refund any unused credits or subscription fees pro-rata, and notify the registered email address as required by consumer protection law.",
           ],
           ar: [
-            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@snappro.app immediately. We will verify the report and delete the child's data within 15 business days.",
+            "The Service is not directed at children under 18 years of age. We do not knowingly collect personal data from children. If you are a parent or guardian and believe your child has created an Account or provided personal data to us, contact privacy@shotstudio.ai immediately. We will verify the report and delete the child's data within 15 business days.",
             "If a paid Account is found to belong to a person under 18, we will suspend the Account, refund any unused credits or subscription fees pro-rata, and notify the registered email address as required by consumer protection law.",
           ],
         },
@@ -481,11 +481,11 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at snappro.app/legal/privacy with a new \"Last updated\" date.",
+            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at shotstudio.ai/legal/privacy with a new \"Last updated\" date.",
             "For non-material changes (updated contact details, clarifications, typographical corrections), we may update the Policy immediately on posting. Continued use of the Service after the effective date of any change constitutes acceptance of the updated Policy.",
           ],
           ar: [
-            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at snappro.app/legal/privacy with a new \"Last updated\" date.",
+            "We may update this Privacy Policy from time to time. For material changes — including changes that expand the categories of data we collect, add new processing purposes, or reduce your rights — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Policy will be posted at shotstudio.ai/legal/privacy with a new \"Last updated\" date.",
             "For non-material changes (updated contact details, clarifications, typographical corrections), we may update the Policy immediately on posting. Continued use of the Service after the effective date of any change constitutes acceptance of the updated Policy.",
           ],
         },
@@ -499,13 +499,13 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "For any privacy-related query, request, or complaint, contact us at: privacy@snappro.app · Subject line: \"Privacy — [your query type]\".",
+            "For any privacy-related query, request, or complaint, contact us at: privacy@shotstudio.ai · Subject line: \"Privacy — [your query type]\".",
             "Postal address: [COMPANY LEGAL NAME], [REGISTERED ADDRESS], Egypt. Attn: Data Protection Officer.",
             "Egypt PDPL supervisory authority: Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt · pdpc.gov.eg.",
             "Attorney Review Notice: This Privacy Policy has been drafted with reference to Egyptian Personal Data Protection Law No. 151/2020 as at 13 July 2026 but has not yet been reviewed by a licensed Egyptian attorney. It should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched.",
           ],
           ar: [
-            "For any privacy-related query, request, or complaint, contact us at: privacy@snappro.app · Subject line: \"Privacy — [your query type]\".",
+            "For any privacy-related query, request, or complaint, contact us at: privacy@shotstudio.ai · Subject line: \"Privacy — [your query type]\".",
             "Postal address: [COMPANY LEGAL NAME], [REGISTERED ADDRESS], Egypt. Attn: Data Protection Officer.",
             "Egypt PDPL supervisory authority: Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt · pdpc.gov.eg.",
             "Attorney Review Notice: This Privacy Policy has been drafted with reference to Egyptian Personal Data Protection Law No. 151/2020 as at 13 July 2026 but has not yet been reviewed by a licensed Egyptian attorney. It should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched.",
@@ -552,17 +552,17 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-07-13",
     title: {
-      en: "Terms of Service — Snap Pro",
-      ar: "Terms of Service — Snap Pro",
+      en: "Terms of Service — ShotStudio",
+      ar: "Terms of Service — ShotStudio",
     },
     meta: {
-      en: "The binding contract between you and Snap Pro. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
-      ar: "The binding contract between you and Snap Pro. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
+      en: "The binding contract between you and ShotStudio. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
+      ar: "The binding contract between you and ShotStudio. Covers account rules, user content, AI-output ownership, payments, refunds, acceptable use, liability, and Egyptian-law dispute resolution.",
     },
     h1: { en: "Terms of Service", ar: "Terms of Service" },
     summary: {
-      en: "These Terms form the binding contract between you (the \"User\") and Snap Pro. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
-      ar: "These Terms form the binding contract between you (the \"User\") and Snap Pro. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
+      en: "These Terms form the binding contract between you (the \"User\") and ShotStudio. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
+      ar: "These Terms form the binding contract between you (the \"User\") and ShotStudio. They explain what you can do on the platform, who owns the content you upload and the images you generate, how billing and refunds work, your rights as a consumer under Egyptian law, and how disputes are resolved. Please read them carefully before using the Service.",
     },
     sections: [
       // ── 1. PARTIES ──────────────────────────────────────────────────────────
@@ -574,12 +574,12 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Snap Pro is operated by [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@snappro.app · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
-            "These Terms of Service (\"Terms\") govern your access to and use of the Snap Pro AI photo-editing platform available at snappro.app and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
+            "ShotStudio is operated by [COMPANY LEGAL NAME] (trading as \"ShotStudio\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@shotstudio.ai · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
+            "These Terms of Service (\"Terms\") govern your access to and use of the ShotStudio AI photo-editing platform available at shotstudio.ai and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
           ],
           ar: [
-            "Snap Pro is operated by [COMPANY LEGAL NAME] (trading as \"Snap Pro\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@snappro.app · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
-            "These Terms of Service (\"Terms\") govern your access to and use of the Snap Pro AI photo-editing platform available at snappro.app and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
+            "ShotStudio is operated by [COMPANY LEGAL NAME] (trading as \"ShotStudio\"), registered under Commercial Registration No. [CR NUMBER] issued by [ISSUING CHAMBER], with its principal place of business at [REGISTERED ADDRESS], Egypt. Tax Card No.: [TAX CARD NUMBER] (Egyptian Tax Authority). ETA Simplified Vendor Registration No.: [ETA SIMPLIFIED VENDOR NUMBER] (pursuant to Law No. 3/2022 and Decree No. 24/2023). Authorised signatory: [AUTHORISED SIGNATORY NAME AND TITLE]. Customer service: support@shotstudio.ai · Tel: [CUSTOMER SERVICE PHONE — EGYPT]. Complete commercial disclosures are published at /legal/business-info in compliance with Article 49 of the Executive Regulations (Decree No. 822/2019) of Consumer Protection Law No. 181/2018.",
+            "These Terms of Service (\"Terms\") govern your access to and use of the ShotStudio AI photo-editing platform available at shotstudio.ai and any associated applications or APIs (the \"Service\"). By accessing or using the Service you enter into a binding legal contract with us on these Terms. If you do not agree, you must stop using the Service immediately.",
           ],
         },
       },
@@ -594,8 +594,8 @@ export const LEGAL_PAGES: LegalPage[] = [
           {
             term: { en: "Service", ar: "Service" },
             meaning: {
-              en: "The Snap Pro AI photo-editing platform at snappro.app, including all features, tools, APIs, and content made available through it.",
-              ar: "The Snap Pro AI photo-editing platform at snappro.app, including all features, tools, APIs, and content made available through it.",
+              en: "The ShotStudio AI photo-editing platform at shotstudio.ai, including all features, tools, APIs, and content made available through it.",
+              ar: "The ShotStudio AI photo-editing platform at shotstudio.ai, including all features, tools, APIs, and content made available through it.",
             },
           },
           {
@@ -685,13 +685,13 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Snap Pro is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
-            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at snappro.app/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
+            "ShotStudio is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
+            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at shotstudio.ai/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
             "Certain features are designated \"Beta\". Beta features are experimental, carry no service-level guarantee, and may be modified or withdrawn at any time with 14 days' notice for free-tier users and 30 days' notice for paid-tier users. We will not charge separately for Beta features unless we give you advance notice and an opportunity to opt out.",
           ],
           ar: [
-            "Snap Pro is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
-            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at snappro.app/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
+            "ShotStudio is an AI-powered photo-editing platform designed for e-commerce sellers, retail businesses, photographers, and creative professionals. The Service includes seventeen AI editing tools — such as background removal, ghost mannequin, scene staging, colour grading, jewellery retouching, face analysis, and textile processing — delivered through a credit-based usage model.",
+            "The Service operates on a tiered Subscription model (Free, Starter, Pro, Studio) with differing Credit allowances, batch-processing limits, and feature access, as described on the Pricing page at shotstudio.ai/pricing. Credits are consumed per AI operation. Free-tier Credits do not roll over; Subscription Credits roll over for one Billing Period then expire; Credit Packs do not expire.",
             "Certain features are designated \"Beta\". Beta features are experimental, carry no service-level guarantee, and may be modified or withdrawn at any time with 14 days' notice for free-tier users and 30 days' notice for paid-tier users. We will not charge separately for Beta features unless we give you advance notice and an opportunity to opt out.",
           ],
         },
@@ -707,13 +707,13 @@ export const LEGAL_PAGES: LegalPage[] = [
           en: [
             "To access most features, you must register for an Account by providing accurate, current, and complete information. You are responsible for keeping that information up to date. We may suspend Accounts that contain materially false or misleading registration information.",
             "You are solely responsible for maintaining the confidentiality of your Account credentials (username, password, and any authentication tokens). You agree not to share your credentials with any third party except where expressly permitted under a team or Studio plan. You are liable for all activity that occurs under your Account.",
-            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@snappro.app. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
+            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@shotstudio.ai. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
             "Accounts are personal and non-transferable. We reserve the right to limit the number of Accounts you may hold at any one time to prevent abuse.",
           ],
           ar: [
             "To access most features, you must register for an Account by providing accurate, current, and complete information. You are responsible for keeping that information up to date. We may suspend Accounts that contain materially false or misleading registration information.",
             "You are solely responsible for maintaining the confidentiality of your Account credentials (username, password, and any authentication tokens). You agree not to share your credentials with any third party except where expressly permitted under a team or Studio plan. You are liable for all activity that occurs under your Account.",
-            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@snappro.app. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
+            "If you suspect unauthorised access to or use of your Account, you must notify us immediately at support@shotstudio.ai. We will take reasonable steps to help you secure the Account but are not liable for losses arising from unauthorised access caused by your failure to keep your credentials confidential.",
             "Accounts are personal and non-transferable. We reserve the right to limit the number of Accounts you may hold at any one time to prevent abuse.",
           ],
         },
@@ -727,14 +727,14 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "You retain full ownership of all Content you upload to the Service. Snap Pro does not claim any ownership over your photographs, images, or other materials.",
-            "By uploading Content, you grant Snap Pro a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
+            "You retain full ownership of all Content you upload to the Service. ShotStudio does not claim any ownership over your photographs, images, or other materials.",
+            "By uploading Content, you grant ShotStudio a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
             "You represent and warrant that: (a) you own or hold all necessary rights, licences, and permissions in everything you upload; (b) your Content does not infringe the intellectual-property rights, privacy rights, or any other rights of any third party; (c) where your Content depicts an identifiable individual, you hold that person's valid and documented consent to upload, process, and use the resulting AI Output in the manner you intend; and (d) your Content and use of any AI Output complies with all applicable laws, including Intellectual Property Law No. 82/2002 and Anti-Cybercrime Law No. 175/2018 (Egypt).",
             "We reserve the right to remove or disable access to any Content that we reasonably believe violates these Terms, our Acceptable Use Policy (/legal/acceptable-use), or applicable law, without prior notice in urgent cases.",
           ],
           ar: [
-            "You retain full ownership of all Content you upload to the Service. Snap Pro does not claim any ownership over your photographs, images, or other materials.",
-            "By uploading Content, you grant Snap Pro a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
+            "You retain full ownership of all Content you upload to the Service. ShotStudio does not claim any ownership over your photographs, images, or other materials.",
+            "By uploading Content, you grant ShotStudio a worldwide, non-exclusive, royalty-free licence to host, store, transmit, process, and display your Content solely to operate the Service for you and fulfil our obligations under these Terms. This licence terminates when you delete the Content or close your Account, subject to our data-retention obligations described in the Privacy Policy.",
             "You represent and warrant that: (a) you own or hold all necessary rights, licences, and permissions in everything you upload; (b) your Content does not infringe the intellectual-property rights, privacy rights, or any other rights of any third party; (c) where your Content depicts an identifiable individual, you hold that person's valid and documented consent to upload, process, and use the resulting AI Output in the manner you intend; and (d) your Content and use of any AI Output complies with all applicable laws, including Intellectual Property Law No. 82/2002 and Anti-Cybercrime Law No. 175/2018 (Egypt).",
             "We reserve the right to remove or disable access to any Content that we reasonably believe violates these Terms, our Acceptable Use Policy (/legal/acceptable-use), or applicable law, without prior notice in urgent cases.",
           ],
@@ -749,13 +749,13 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. Snap Pro retains no rights in your AI Outputs beyond the operational licence in Section 6.",
+            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. ShotStudio retains no rights in your AI Outputs beyond the operational licence in Section 6.",
             "We grant you a worldwide, perpetual, royalty-free licence to use, reproduce, modify, distribute, and commercially exploit your AI Outputs. This licence is not conditioned on maintaining an active Subscription; AI Outputs you have already downloaded remain yours after cancellation.",
             "Jurisdictional note: Some legal systems — including Egypt under Law No. 82/2002 and the United States under current Copyright Office guidance — may not automatically recognise copyright in images that are wholly machine-generated without meaningful human creative contribution. Adding substantive human edits typically restores authorship eligibility. We do not provide legal advice; for important commercial uses consult a qualified intellectual-property attorney in your jurisdiction.",
             "You may not use AI Outputs to infringe third-party intellectual-property rights, to mislead consumers about the nature or origin of products, or for any purpose prohibited by Section 8 of these Terms.",
           ],
           ar: [
-            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. Snap Pro retains no rights in your AI Outputs beyond the operational licence in Section 6.",
+            "Subject to these Terms and applicable law, you own the AI Outputs generated from your Content and prompts on the Service. ShotStudio retains no rights in your AI Outputs beyond the operational licence in Section 6.",
             "We grant you a worldwide, perpetual, royalty-free licence to use, reproduce, modify, distribute, and commercially exploit your AI Outputs. This licence is not conditioned on maintaining an active Subscription; AI Outputs you have already downloaded remain yours after cancellation.",
             "Jurisdictional note: Some legal systems — including Egypt under Law No. 82/2002 and the United States under current Copyright Office guidance — may not automatically recognise copyright in images that are wholly machine-generated without meaningful human creative contribution. Adding substantive human edits typically restores authorship eligibility. We do not provide legal advice; for important commercial uses consult a qualified intellectual-property attorney in your jurisdiction.",
             "You may not use AI Outputs to infringe third-party intellectual-property rights, to mislead consumers about the nature or origin of products, or for any purpose prohibited by Section 8 of these Terms.",
@@ -817,16 +817,16 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Snap Pro acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
+            "ShotStudio acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
             "We collect the minimum data necessary to operate the Service: account profile, billing metadata, uploaded Content (processed transiently unless saved to your library), usage analytics (with your consent), and support communications. We do not sell your personal data. We do not train production AI models on your uploaded Content without your explicit, granular opt-in. Full details of what we collect, why, on what legal basis, and for how long are in our Privacy Policy at /legal/privacy.",
             "When you upload Content, it is transmitted to AI processing infrastructure located outside Egypt (United States and European Union). This constitutes a cross-border transfer under Article 14 of PDPL Law No. 151/2020. We rely on your explicit, informed consent given at the point of upload and on the contractual necessity basis (Article 14 statutory exceptions), and apply Standard Contractual Clause-equivalent safeguards with each overseas processor. Full details are in our Egypt PDPL Notice at /legal/egypt-pdpl.",
-            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@snappro.app.",
+            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@shotstudio.ai.",
           ],
           ar: [
-            "Snap Pro acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
+            "ShotStudio acts as data controller for personal data you provide during registration, billing, and general use of the Service, and as data processor for Content uploaded by enterprise customers under a written Data Processing Agreement. We process personal data in compliance with Egyptian Personal Data Protection Law No. 151/2020 (PDPL), its Executive Regulations, and applicable international data-protection frameworks.",
             "We collect the minimum data necessary to operate the Service: account profile, billing metadata, uploaded Content (processed transiently unless saved to your library), usage analytics (with your consent), and support communications. We do not sell your personal data. We do not train production AI models on your uploaded Content without your explicit, granular opt-in. Full details of what we collect, why, on what legal basis, and for how long are in our Privacy Policy at /legal/privacy.",
             "When you upload Content, it is transmitted to AI processing infrastructure located outside Egypt (United States and European Union). This constitutes a cross-border transfer under Article 14 of PDPL Law No. 151/2020. We rely on your explicit, informed consent given at the point of upload and on the contractual necessity basis (Article 14 statutory exceptions), and apply Standard Contractual Clause-equivalent safeguards with each overseas processor. Full details are in our Egypt PDPL Notice at /legal/egypt-pdpl.",
-            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@snappro.app.",
+            "Your rights under PDPL Arts. 17–25 include: access, rectification, erasure, portability, restriction, objection, and the right to lodge a complaint with the Personal Data Protection Center (PDPC), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt. To exercise any right, email privacy@shotstudio.ai.",
           ],
         },
       },
@@ -839,16 +839,16 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Current plan prices are published on the Pricing page at snappro.app/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. Snap Pro is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
+            "Current plan prices are published on the Pricing page at shotstudio.ai/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. ShotStudio is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
             "Subscriptions are billed in advance at the start of each Billing Period. Your Subscription automatically renews at the end of each Billing Period using your saved payment method unless you cancel before the renewal date. We send a renewal reminder by email at least 7 days before each renewal. You can cancel auto-renewal at any time from Account → Billing.",
-            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. Snap Pro does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
+            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. ShotStudio does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
             "If a payment fails, we will retry for up to 7 days and your Account will remain active during that period. After 7 days without successful payment, your Account will be downgraded to the free tier. We will not permanently delete your data without first giving you 30 additional days' written notice by email.",
             "We will give you at least 30 days' advance notice by email and in-app notification before any price increase takes effect. If you do not wish to continue at the new price, you may cancel before the new price applies without penalty. Continued use of the Service after the effective date constitutes your acceptance of the change.",
           ],
           ar: [
-            "Current plan prices are published on the Pricing page at snappro.app/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. Snap Pro is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
+            "Current plan prices are published on the Pricing page at shotstudio.ai/pricing. Prices are displayed in US Dollars (USD). Egyptian users are charged in USD; the EGP equivalent and the applicable 14% value-added tax (VAT) under VAT Law No. 67/2016 (as amended by Law No. 3/2022) are itemised separately at checkout. ShotStudio is registered with the Egyptian Tax Authority under the simplified vendor scheme and issues e-invoices in compliance with the ETA e-invoicing mandate.",
             "Subscriptions are billed in advance at the start of each Billing Period. Your Subscription automatically renews at the end of each Billing Period using your saved payment method unless you cancel before the renewal date. We send a renewal reminder by email at least 7 days before each renewal. You can cancel auto-renewal at any time from Account → Billing.",
-            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. Snap Pro does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
+            "Payments are processed by Stripe, Inc. (international) and Paymob (regional — Egypt and GCC), or such other processors as we may introduce with notice. By providing payment details you authorise the relevant processor to charge your payment method on the schedule set out in your plan. ShotStudio does not store full card numbers; payment data is handled directly by processors under their own PCI DSS certifications.",
             "If a payment fails, we will retry for up to 7 days and your Account will remain active during that period. After 7 days without successful payment, your Account will be downgraded to the free tier. We will not permanently delete your data without first giving you 30 additional days' written notice by email.",
             "We will give you at least 30 days' advance notice by email and in-app notification before any price increase takes effect. If you do not wish to continue at the new price, you may cancel before the new price applies without penalty. Continued use of the Service after the effective date constitutes your acceptance of the change.",
           ],
@@ -865,38 +865,38 @@ export const LEGAL_PAGES: LegalPage[] = [
           en: [
             "You may cancel your Subscription at any time from Account → Billing. Cancellation takes effect at the end of the current Billing Period; you retain full access to your plan's features until that date.",
             "Statutory 14-day withdrawal right — Egypt: Under Articles 9–11 of Consumer Protection Law No. 181/2018 and Article 27 of its Executive Regulations (Decree No. 822/2019), you have the right to withdraw from a distance contract for digital services within 14 calendar days of the date of purchase without giving any reason, unless you expressly consented to performance beginning before the withdrawal period expired and acknowledged that your right to withdraw would thereby be lost. Where Credits have been consumed prior to withdrawal, the value of those Credits will be deducted from any refund on a pro-rata basis.",
-            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@snappro.app with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
+            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@shotstudio.ai with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
             "Outside the 14-day statutory window, refunds are granted at our discretion for: (a) a verified technical failure that rendered the Service completely inoperable for more than 48 consecutive hours during a paid Billing Period; or (b) a duplicate charge caused by a billing error on our side. Requests must be submitted within 30 days of the charge.",
             "Credit Packs: used Credits are non-refundable. Unused, untouched Credit Packs purchased as a one-time add-on are refundable in full within 7 days of purchase.",
-            "To request any refund, email support@snappro.app with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
+            "To request any refund, email support@shotstudio.ai with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
           ],
           ar: [
             "You may cancel your Subscription at any time from Account → Billing. Cancellation takes effect at the end of the current Billing Period; you retain full access to your plan's features until that date.",
             "Statutory 14-day withdrawal right — Egypt: Under Articles 9–11 of Consumer Protection Law No. 181/2018 and Article 27 of its Executive Regulations (Decree No. 822/2019), you have the right to withdraw from a distance contract for digital services within 14 calendar days of the date of purchase without giving any reason, unless you expressly consented to performance beginning before the withdrawal period expired and acknowledged that your right to withdraw would thereby be lost. Where Credits have been consumed prior to withdrawal, the value of those Credits will be deducted from any refund on a pro-rata basis.",
-            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@snappro.app with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
+            "To exercise the 14-day withdrawal right, notify us clearly and in writing — email support@shotstudio.ai with the subject line \"Withdrawal — [your account email]\" — within 14 days of purchase. We will process your refund via the original payment method within 10 business days of receiving valid notice.",
             "Outside the 14-day statutory window, refunds are granted at our discretion for: (a) a verified technical failure that rendered the Service completely inoperable for more than 48 consecutive hours during a paid Billing Period; or (b) a duplicate charge caused by a billing error on our side. Requests must be submitted within 30 days of the charge.",
             "Credit Packs: used Credits are non-refundable. Unused, untouched Credit Packs purchased as a one-time add-on are refundable in full within 7 days of purchase.",
-            "To request any refund, email support@snappro.app with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
+            "To request any refund, email support@shotstudio.ai with your account email address, the order or transaction reference number, and a description of the reason. We aim to respond within 2 business days.",
           ],
         },
       },
-      // ── 12. SNAP PRO IP ─────────────────────────────────────────────────────
+      // ── 12. ShotStudio IP ─────────────────────────────────────────────────────
       {
         id: "ip",
         heading: {
-          en: "12. Snap Pro Intellectual Property",
-          ar: "12. Snap Pro Intellectual Property",
+          en: "12. ShotStudio Intellectual Property",
+          ar: "12. ShotStudio Intellectual Property",
         },
         paragraphs: {
           en: [
-            "The Service — including its software, source code, AI models owned or licensed by Snap Pro, user interface, design, graphics, documentation, and brand elements (collectively, \"Snap Pro IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. Snap Pro IP is owned by or licensed to Snap Pro and you acquire no ownership rights in it by using the Service.",
-            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of Snap Pro IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"Snap Pro\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
-            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant Snap Pro a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
+            "The Service — including its software, source code, AI models owned or licensed by ShotStudio, user interface, design, graphics, documentation, and brand elements (collectively, \"ShotStudio IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. ShotStudio IP is owned by or licensed to ShotStudio and you acquire no ownership rights in it by using the Service.",
+            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of ShotStudio IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"ShotStudio\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
+            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant ShotStudio a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
           ],
           ar: [
-            "The Service — including its software, source code, AI models owned or licensed by Snap Pro, user interface, design, graphics, documentation, and brand elements (collectively, \"Snap Pro IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. Snap Pro IP is owned by or licensed to Snap Pro and you acquire no ownership rights in it by using the Service.",
-            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of Snap Pro IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"Snap Pro\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
-            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant Snap Pro a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
+            "The Service — including its software, source code, AI models owned or licensed by ShotStudio, user interface, design, graphics, documentation, and brand elements (collectively, \"ShotStudio IP\") — is protected by copyright, trademark, trade-secret, and other intellectual-property laws. ShotStudio IP is owned by or licensed to ShotStudio and you acquire no ownership rights in it by using the Service.",
+            "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Service for your own personal or commercial purposes in accordance with your active plan. This licence does not permit you to: (a) copy, modify, or create derivative works of ShotStudio IP; (b) distribute, sell, or sublicense access to the Service; (c) reverse-engineer, decompile, or disassemble the Service; or (d) use the \"ShotStudio\" name or mark in any way that suggests endorsement by or affiliation with us without our prior written consent.",
+            "If you submit ideas, feedback, or suggestions about the Service (\"Feedback\"), you grant ShotStudio a perpetual, worldwide, royalty-free licence to use, copy, modify, and incorporate that Feedback into the Service or any successor product without restriction or compensation to you.",
           ],
         },
       },
@@ -910,12 +910,12 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "The Service relies on third-party services including: Stripe, Inc. and Paymob (payment processing); Cloudflare, Inc. (CDN and security); Vercel, Inc. (hosting and edge infrastructure); Firebase (authentication); and various AI model and inference providers. A current list of sub-processors that handle personal data is published at /legal/sub-processors.",
-            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. Snap Pro is not responsible for the availability, accuracy, or security of any third-party service.",
+            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. ShotStudio is not responsible for the availability, accuracy, or security of any third-party service.",
             "We are not liable for any loss, damage, or disruption caused by the failure or unavailability of a third-party service that is beyond our reasonable control, provided that we take commercially reasonable steps to mitigate the impact on you.",
           ],
           ar: [
             "The Service relies on third-party services including: Stripe, Inc. and Paymob (payment processing); Cloudflare, Inc. (CDN and security); Vercel, Inc. (hosting and edge infrastructure); Firebase (authentication); and various AI model and inference providers. A current list of sub-processors that handle personal data is published at /legal/sub-processors.",
-            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. Snap Pro is not responsible for the availability, accuracy, or security of any third-party service.",
+            "Where the Service integrates with third-party platforms such as Shopify, Amazon, or Salla, your use of those platforms is governed solely by their respective terms of service and privacy policies. ShotStudio is not responsible for the availability, accuracy, or security of any third-party service.",
             "We are not liable for any loss, damage, or disruption caused by the failure or unavailability of a third-party service that is beyond our reasonable control, provided that we take commercially reasonable steps to mitigate the impact on you.",
           ],
         },
@@ -953,14 +953,14 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "To the maximum extent permitted by applicable law, Snap Pro's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to Snap Pro in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
-            "To the maximum extent permitted by applicable law, Snap Pro is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
-            "Mandatory carve-outs — the limitations above do not apply to, and Snap Pro does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
+            "To the maximum extent permitted by applicable law, ShotStudio's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to ShotStudio in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
+            "To the maximum extent permitted by applicable law, ShotStudio is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
+            "Mandatory carve-outs — the limitations above do not apply to, and ShotStudio does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
           ],
           ar: [
-            "To the maximum extent permitted by applicable law, Snap Pro's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to Snap Pro in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
-            "To the maximum extent permitted by applicable law, Snap Pro is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
-            "Mandatory carve-outs — the limitations above do not apply to, and Snap Pro does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
+            "To the maximum extent permitted by applicable law, ShotStudio's total aggregate liability to you arising out of or in connection with these Terms or your use of the Service — whether in contract, tort (including negligence), statute, or otherwise — is limited to the greater of: (a) the total fees you paid to ShotStudio in the twelve months immediately preceding the event giving rise to the claim; or (b) USD 100 (or the equivalent in EGP at the prevailing Central Bank of Egypt mid-rate on the date the claim arises).",
+            "To the maximum extent permitted by applicable law, ShotStudio is not liable to you for any: (a) loss of profits, revenue, or business; (b) loss of data or Content beyond what is recoverable under our standard backup policy; (c) loss of goodwill or reputation; or (d) indirect, incidental, special, exemplary, or consequential damages of any kind — even if we have been advised of the possibility of such damages.",
+            "Mandatory carve-outs — the limitations above do not apply to, and ShotStudio does not exclude or limit liability for: (a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) wilful misconduct or gross negligence; (d) any liability that cannot lawfully be limited or excluded under Consumer Protection Law No. 181/2018, PDPL Law No. 151/2020, or any other mandatory Egyptian law; or (e) any liability for which limitation is prohibited by the applicable law of your jurisdiction.",
           ],
         },
       },
@@ -973,11 +973,11 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at snappro.app/status.",
+            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at shotstudio.ai/status.",
             "If we decide to discontinue the Service entirely, we will give at least 60 days' advance notice by email. During that notice period, you may export your Content and AI Outputs. We will refund any unused Subscription fees and unexpired Credit Pack balances on a pro-rata basis within 14 days of the discontinuation date.",
           ],
           ar: [
-            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at snappro.app/status.",
+            "We may add, modify, or remove features and tools from the Service at any time. For changes that materially reduce the functionality available to paying subscribers, we will give at least 30 days' advance notice by email. For planned maintenance windows, we aim to give at least 72 hours' advance notice via our status page at shotstudio.ai/status.",
             "If we decide to discontinue the Service entirely, we will give at least 60 days' advance notice by email. During that notice period, you may export your Content and AI Outputs. We will refund any unused Subscription fees and unexpired Credit Pack balances on a pro-rata basis within 14 days of the discontinuation date.",
           ],
         },
@@ -994,14 +994,14 @@ export const LEGAL_PAGES: LegalPage[] = [
             "You may close your Account at any time from Account → Settings → Close account. Any remaining Subscription access continues to the end of the current Billing Period unless you request earlier termination.",
             "We may suspend or restrict your Account if we have reasonable grounds to believe you have violated these Terms, our Acceptable Use Policy, or applicable law. Except where the violation is serious (see below), we will give you a warning and a reasonable opportunity to remedy the breach before suspending your Account.",
             "We may immediately suspend or terminate your Account without prior warning where the violation involves: (a) CSAM or NCII; (b) fraud, identity theft, or attempted unauthorised access to our systems; (c) any activity posing a material security threat to the Service or other users; or (d) any activity we are legally required to stop.",
-            "You may appeal a suspension by emailing appeals@snappro.app within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
+            "You may appeal a suspension by emailing appeals@shotstudio.ai within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
             "On termination: (a) your licence to use the Service ends immediately; (b) we retain your Content and Account data for 30 days to allow export, after which we delete it subject to legal-retention obligations in the Privacy Policy; (c) you remain liable for any fees accrued before termination; (d) Sections 6, 7, 9, 12, 14, 15, 20, and 21 survive termination.",
           ],
           ar: [
             "You may close your Account at any time from Account → Settings → Close account. Any remaining Subscription access continues to the end of the current Billing Period unless you request earlier termination.",
             "We may suspend or restrict your Account if we have reasonable grounds to believe you have violated these Terms, our Acceptable Use Policy, or applicable law. Except where the violation is serious (see below), we will give you a warning and a reasonable opportunity to remedy the breach before suspending your Account.",
             "We may immediately suspend or terminate your Account without prior warning where the violation involves: (a) CSAM or NCII; (b) fraud, identity theft, or attempted unauthorised access to our systems; (c) any activity posing a material security threat to the Service or other users; or (d) any activity we are legally required to stop.",
-            "You may appeal a suspension by emailing appeals@snappro.app within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
+            "You may appeal a suspension by emailing appeals@shotstudio.ai within 14 days of the suspension notice. We will review your appeal and respond within 5 business days.",
             "On termination: (a) your licence to use the Service ends immediately; (b) we retain your Content and Account data for 30 days to allow export, after which we delete it subject to legal-retention obligations in the Privacy Policy; (c) you remain liable for any fees accrued before termination; (d) Sections 6, 7, 9, 12, 14, 15, 20, and 21 survive termination.",
           ],
         },
@@ -1016,11 +1016,11 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "Neither party is liable for any failure or delay in performance under these Terms to the extent caused by circumstances beyond that party's reasonable control, including but not limited to: natural disasters, acts of God, war, terrorism, civil disturbance, government orders or sanctions, pandemics, power failures, internet backbone outages, or attacks on critical infrastructure (a \"Force Majeure Event\").",
-            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; Snap Pro will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
+            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; ShotStudio will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
           ],
           ar: [
             "Neither party is liable for any failure or delay in performance under these Terms to the extent caused by circumstances beyond that party's reasonable control, including but not limited to: natural disasters, acts of God, war, terrorism, civil disturbance, government orders or sanctions, pandemics, power failures, internet backbone outages, or attacks on critical infrastructure (a \"Force Majeure Event\").",
-            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; Snap Pro will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
+            "The affected party must notify the other in writing as soon as practicable and use commercially reasonable efforts to resume performance. If the Force Majeure Event continues for more than 30 consecutive days, either party may terminate the affected service on 14 days' written notice; ShotStudio will refund any prepaid fees for the period of non-performance on a pro-rata basis.",
           ],
         },
       },
@@ -1033,12 +1033,12 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at snappro.app/legal/terms with a new \"Last updated\" date and version number.",
+            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at shotstudio.ai/legal/terms with a new \"Last updated\" date and version number.",
             "If you do not accept a material change, you may close your Account before the effective date without penalty; any unused prepaid Subscription fees for the period after the effective date will be refunded pro-rata. Continued use of the Service after the effective date constitutes your acceptance of the updated Terms.",
             "For non-material changes (clarifications, typographical corrections, updated contact details) we may update the Terms immediately by posting the revised version; such changes take effect upon posting.",
           ],
           ar: [
-            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at snappro.app/legal/terms with a new \"Last updated\" date and version number.",
+            "We may update these Terms from time to time. For material changes — including changes that expand your obligations, reduce your rights, or affect billing — we will give you at least 30 days' advance notice by email to your registered address and by a prominent in-app notification. The updated Terms will be posted at shotstudio.ai/legal/terms with a new \"Last updated\" date and version number.",
             "If you do not accept a material change, you may close your Account before the effective date without penalty; any unused prepaid Subscription fees for the period after the effective date will be refunded pro-rata. Continued use of the Service after the effective date constitutes your acceptance of the updated Terms.",
             "For non-material changes (clarifications, typographical corrections, updated contact details) we may update the Terms immediately by posting the revised version; such changes take effect upon posting.",
           ],
@@ -1054,14 +1054,14 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "Users in Egypt: These Terms and any dispute arising out of or in connection with them — including non-contractual disputes — are governed by the laws of the Arab Republic of Egypt. The courts of Cairo, Egypt, including the Economic Courts established by Law No. 120/2008 where their jurisdiction applies to e-commerce and consumer disputes, shall have exclusive jurisdiction.",
-            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@snappro.app and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
+            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@shotstudio.ai and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
             "Users in Iraq: These Terms are governed by the laws of the Republic of Iraq. Disputes shall be submitted to the competent Iraqi courts.",
             "Enterprise customers: Parties to a signed enterprise order form may elect DIFC-seat arbitration under DIFC-LCIA Rules as the exclusive dispute resolution mechanism, provided that election is expressly stated in the order form.",
             "Users in all other jurisdictions: These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict-of-laws principles. Any dispute shall be submitted to the state or federal courts located in Delaware.",
           ],
           ar: [
             "Users in Egypt: These Terms and any dispute arising out of or in connection with them — including non-contractual disputes — are governed by the laws of the Arab Republic of Egypt. The courts of Cairo, Egypt, including the Economic Courts established by Law No. 120/2008 where their jurisdiction applies to e-commerce and consumer disputes, shall have exclusive jurisdiction.",
-            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@snappro.app and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
+            "Before commencing litigation, we ask that you follow the escalation process: (1) Contact our support team at support@shotstudio.ai and allow 10 business days for a response. (2) If unresolved, escalate your complaint to the Egyptian Consumer Protection Agency (Hotline 19588 · cpa.gov.eg), which has jurisdiction over consumer disputes under Consumer Protection Law No. 181/2018. (3) If the matter remains unresolved after the CPA process, either party may bring proceedings before the competent Egyptian court.",
             "Users in Iraq: These Terms are governed by the laws of the Republic of Iraq. Disputes shall be submitted to the competent Iraqi courts.",
             "Enterprise customers: Parties to a signed enterprise order form may elect DIFC-seat arbitration under DIFC-LCIA Rules as the exclusive dispute resolution mechanism, provided that election is expressly stated in the order form.",
             "Users in all other jurisdictions: These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict-of-laws principles. Any dispute shall be submitted to the state or federal courts located in Delaware.",
@@ -1078,22 +1078,22 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "Severability: If any provision of these Terms is found by a court of competent jurisdiction to be invalid, unlawful, or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.",
-            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and Snap Pro in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
+            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and ShotStudio in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
             "No Waiver: Our failure to enforce any provision of these Terms at any time does not constitute a waiver of our right to enforce that provision or any other provision in the future.",
-            "Assignment: Snap Pro may assign or transfer these Terms, in whole or in part, to any entity that acquires Snap Pro's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without Snap Pro's prior written consent.",
+            "Assignment: ShotStudio may assign or transfer these Terms, in whole or in part, to any entity that acquires ShotStudio's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without ShotStudio's prior written consent.",
             "Language: These Terms are currently published in English only. An Arabic translation will be made available in due course. When an Arabic version is published, in the event of any inconsistency between the English and Arabic versions the Arabic version shall prevail for users in Egypt and other Arabic-speaking jurisdictions.",
             "Electronic Signature: Acceptance of these Terms by electronic means — including by clicking an acceptance button or completing account registration — constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
-            "Legal Notices: Notices to Snap Pro under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
+            "Legal Notices: Notices to ShotStudio under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
             "Attorney Review Notice: These Terms have been drafted with reference to Egyptian law as at 13 July 2026 but have not yet been reviewed by a licensed Egyptian attorney. They should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched in Egypt and before each material revision.",
           ],
           ar: [
             "Severability: If any provision of these Terms is found by a court of competent jurisdiction to be invalid, unlawful, or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.",
-            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and Snap Pro in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
+            "Entire Agreement: These Terms, together with the Privacy Policy (/legal/privacy), Acceptable Use Policy (/legal/acceptable-use), Refund & Cancellation Policy (/legal/refunds), Subscription Terms (/legal/subscription), and any signed order form or addendum, constitute the entire agreement between you and ShotStudio in respect of the Service and supersede all prior oral or written representations, understandings, and agreements on the same subject matter.",
             "No Waiver: Our failure to enforce any provision of these Terms at any time does not constitute a waiver of our right to enforce that provision or any other provision in the future.",
-            "Assignment: Snap Pro may assign or transfer these Terms, in whole or in part, to any entity that acquires Snap Pro's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without Snap Pro's prior written consent.",
+            "Assignment: ShotStudio may assign or transfer these Terms, in whole or in part, to any entity that acquires ShotStudio's business or assets, with 30 days' written notice to you. You may not assign or transfer your rights or obligations under these Terms without ShotStudio's prior written consent.",
             "Language: These Terms are currently published in English only. An Arabic translation will be made available in due course. When an Arabic version is published, in the event of any inconsistency between the English and Arabic versions the Arabic version shall prevail for users in Egypt and other Arabic-speaking jurisdictions.",
             "Electronic Signature: Acceptance of these Terms by electronic means — including by clicking an acceptance button or completing account registration — constitutes a valid and binding electronic signature under E-Signature Law No. 15/2004 (Egypt) and has the same legal force as a handwritten signature.",
-            "Legal Notices: Notices to Snap Pro under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
+            "Legal Notices: Notices to ShotStudio under these Terms must be sent by email to [LEGAL NOTICES EMAIL] and are deemed received 24 hours after sending to a confirmed address. Notices to you will be sent to your registered account email address. For formal legal process, notices must also be served by registered post to [REGISTERED ADDRESS], Egypt.",
             "Attorney Review Notice: These Terms have been drafted with reference to Egyptian law as at 13 July 2026 but have not yet been reviewed by a licensed Egyptian attorney. They should be reviewed by qualified Egyptian legal counsel before the Service is commercially launched in Egypt and before each material revision.",
           ],
         },
@@ -1147,11 +1147,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Cookie Policy — Snap Pro",
+      en: "Cookie Policy — ShotStudio",
       ar: "سياسة ملفات تعريف الارتباط — سناب برو",
     },
     meta: {
-      en: "Which cookies Snap Pro uses, why, how long they last, and how to manage your preferences. Compliant with ePrivacy and Egyptian PDPL Article 12.",
+      en: "Which cookies ShotStudio uses, why, how long they last, and how to manage your preferences. Compliant with ePrivacy and Egyptian PDPL Article 12.",
       ar: "ملفات تعريف الارتباط التي تستخدمها سناب برو، أسباب استخدامها، مدة بقائها، وكيفية إدارتها. متوافقة مع ePrivacy والمادة 12 من قانون حماية البيانات المصري.",
     },
     h1: { en: "Cookie Policy", ar: "سياسة ملفات تعريف الارتباط" },
@@ -1277,16 +1277,16 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Acceptable Use Policy — Snap Pro",
+      en: "Acceptable Use Policy — ShotStudio",
       ar: "سياسة الاستخدام المقبول — سناب برو",
     },
     meta: {
-      en: "Rules for using Snap Pro safely and legally. Covers prohibited content, prohibited activities, enforcement, and reporting.",
+      en: "Rules for using ShotStudio safely and legally. Covers prohibited content, prohibited activities, enforcement, and reporting.",
       ar: "قواعد استخدام سناب برو بأمان وقانونية: المحتوى المحظور، الأنشطة المحظورة، الإنفاذ، والإبلاغ.",
     },
     h1: { en: "Acceptable Use Policy", ar: "سياسة الاستخدام المقبول" },
     summary: {
-      en: "Use Snap Pro for legitimate creative and commercial purposes. Don't generate harmful, illegal, or deceptive content. Don't abuse the platform or other users.",
+      en: "Use ShotStudio for legitimate creative and commercial purposes. Don't generate harmful, illegal, or deceptive content. Don't abuse the platform or other users.",
       ar: "استخدم سناب برو للأغراض الإبداعية والتجارية المشروعة. لا تُنشئ محتوى ضاراً أو غير قانوني أو مضلِّلاً. ولا تسيء استخدام المنصّة أو المستخدمين الآخرين.",
     },
     sections: [
@@ -1326,7 +1326,7 @@ export const LEGAL_PAGES: LegalPage[] = [
             "Reverse-engineering, decompiling, or attempting to bypass safety filters.",
             "Sharing your account or selling generated credits to third parties outside team plans.",
             "Automated scraping or excessive load that affects other users.",
-            "Using Snap Pro to compete by training a substitute AI service.",
+            "Using ShotStudio to compete by training a substitute AI service.",
             "Probing security without using our Vulnerability Disclosure program.",
           ],
           ar: [
@@ -1389,11 +1389,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Refund & Cancellation Policy — Snap Pro",
+      en: "Refund & Cancellation Policy — ShotStudio",
       ar: "سياسة الاسترداد والإلغاء — سناب برو",
     },
     meta: {
-      en: "How and when Snap Pro issues refunds, the 14-day cooling-off rights for Egyptian and EU consumers, and how to cancel.",
+      en: "How and when ShotStudio issues refunds, the 14-day cooling-off rights for Egyptian and EU consumers, and how to cancel.",
       ar: "متى وكيف نُصدر استرداداً، حق التراجع خلال 14 يوماً للعملاء في مصر والاتحاد الأوروبي، وكيفية الإلغاء.",
     },
     h1: { en: "Refund & Cancellation Policy", ar: "سياسة الاسترداد والإلغاء" },
@@ -1473,10 +1473,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "How to request a refund", ar: "كيفية طلب الاسترداد" },
         paragraphs: {
           en: [
-            "Email support@snappro.app with your account email, order number, and reason. We respond within 2 business days.",
+            "Email support@shotstudio.ai with your account email, order number, and reason. We respond within 2 business days.",
           ],
           ar: [
-            "أرسل إلى support@snappro.app بريد حسابك ورقم الطلب وسبب الاسترداد. نردّ خلال يومي عمل.",
+            "أرسل إلى support@shotstudio.ai بريد حسابك ورقم الطلب وسبب الاسترداد. نردّ خلال يومي عمل.",
           ],
         },
       },
@@ -1500,7 +1500,7 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Subscription Terms — Snap Pro",
+      en: "Subscription Terms — ShotStudio",
       ar: "شروط الاشتراك — سناب برو",
     },
     meta: {
@@ -1602,11 +1602,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Data Processing Agreement — Snap Pro",
+      en: "Data Processing Agreement — ShotStudio",
       ar: "اتفاقية معالجة البيانات — سناب برو",
     },
     meta: {
-      en: "Snap Pro's DPA for enterprise customers — controller-processor terms, sub-processing, security, audit rights, and SCC annexes.",
+      en: "ShotStudio's DPA for enterprise customers — controller-processor terms, sub-processing, security, audit rights, and SCC annexes.",
       ar: "اتفاقية معالجة البيانات لعملاء الشركات — أحكام المعالج والمراقب، المعالجة الفرعية، الأمن، حقوق التدقيق، وملاحق البنود التعاقدية القياسية.",
     },
     h1: { en: "Data Processing Agreement", ar: "اتفاقية معالجة البيانات" },
@@ -1699,11 +1699,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     status: "draft",
     updated: "2026-06-05",
     title: {
-      en: "Sub-processors — Snap Pro",
+      en: "Sub-processors — ShotStudio",
       ar: "المعالجون الفرعيون — سناب برو",
     },
     meta: {
-      en: "Live list of vendors that process personal data on Snap Pro's behalf, with region and transfer mechanism. Subscribe for change alerts.",
+      en: "Live list of vendors that process personal data on ShotStudio's behalf, with region and transfer mechanism. Subscribe for change alerts.",
       ar: "قائمة محدّثة بالمورّدين الذين يعالجون البيانات الشخصية بالنيابة عن سناب برو، مع المنطقة وآلية النقل. اشترك للحصول على تنبيهات التغيير.",
     },
     h1: { en: "Sub-processors", ar: "المعالجون الفرعيون" },
@@ -1773,10 +1773,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Change alerts", ar: "تنبيهات التغيير" },
         paragraphs: {
           en: [
-            "Email subprocessors@snappro.app to receive 30-day advance notice of any addition or replacement.",
+            "Email subprocessors@shotstudio.ai to receive 30-day advance notice of any addition or replacement.",
           ],
           ar: [
-            "راسِل subprocessors@snappro.app للحصول على إشعار قبل 30 يوماً من أي إضافة أو استبدال.",
+            "راسِل subprocessors@shotstudio.ai للحصول على إشعار قبل 30 يوماً من أي إضافة أو استبدال.",
           ],
         },
       },
@@ -1787,11 +1787,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     tree: "legal",
     status: "draft",
     title: {
-      en: "International Data Transfers — Snap Pro",
+      en: "International Data Transfers — ShotStudio",
       ar: "نقل البيانات الدولي — سناب برو",
     },
     meta: {
-      en: "How Snap Pro transfers data across borders, the safeguards we apply, and the adequacy / SCC framework we rely on.",
+      en: "How ShotStudio transfers data across borders, the safeguards we apply, and the adequacy / SCC framework we rely on.",
       ar: "كيف تنقل سناب برو البيانات عبر الحدود، الضمانات المطبَّقة، وإطار قرارات الكفاية والبنود التعاقدية القياسية.",
     },
     h1: { en: "International Data Transfers", ar: "نقل البيانات الدولي" },
@@ -1827,11 +1827,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     tree: "legal",
     status: "draft",
     title: {
-      en: "Government Requests — Snap Pro",
+      en: "Government Requests — ShotStudio",
       ar: "طلبات الحكومات — سناب برو",
     },
     meta: {
-      en: "How Snap Pro handles legal process from government authorities and the principles we apply when responding.",
+      en: "How ShotStudio handles legal process from government authorities and the principles we apply when responding.",
       ar: "كيف تتعامل سناب برو مع الإجراءات القانونية من السلطات الحكومية، والمبادئ التي نطبّقها عند الردّ.",
     },
     h1: { en: "Government Requests", ar: "طلبات الحكومات" },
@@ -1880,7 +1880,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       ar: "إشعار حماية البيانات للعملاء في مصر",
     },
     summary: {
-      en: "If you reside in Egypt, this page summarizes how PDPL Law 151/2020 applies to your use of Snap Pro and how to exercise your rights.",
+      en: "If you reside in Egypt, this page summarizes how PDPL Law 151/2020 applies to your use of ShotStudio and how to exercise your rights.",
       ar: "إذا كنت مقيماً في مصر، تلخّص هذه الصفحة كيف يُطبَّق قانون حماية البيانات الشخصية رقم 151/2020 على استخدامك سناب برو وكيف تمارس حقوقك.",
     },
     sections: [
@@ -1889,7 +1889,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Controller status", ar: "صفة المراقب" },
         paragraphs: {
           en: [
-            "Snap Pro is the data controller for Egyptian users in respect of account data, billing, and product analytics, and acts as a processor for content uploaded by enterprise customers under a written Data Processing Agreement.",
+            "ShotStudio is the data controller for Egyptian users in respect of account data, billing, and product analytics, and acts as a processor for content uploaded by enterprise customers under a written Data Processing Agreement.",
             "Our legal entity, commercial registration, and tax-card details are listed on the Business & Registration Information page (Article 49 of the Executive Regulations of Consumer Protection Law 181/2018).",
           ],
           ar: [
@@ -1980,7 +1980,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "Article 14 of PDPL Law 151/2020 requires a licence from the Personal Data Protection Center (PDPC) before transferring personal data outside Egypt, save for limited statutory exceptions. The Center's licensing regime is supplied by the PDPL Executive Regulations, which had not yet issued at the time of writing.",
-            "Snap Pro relies on third-party AI inference and infrastructure providers located outside Egypt (United States and European Union). Pending issuance of the Executive Regulations and our PDPC licence application, we transfer personal data on the basis of:",
+            "ShotStudio relies on third-party AI inference and infrastructure providers located outside Egypt (United States and European Union). Pending issuance of the Executive Regulations and our PDPC licence application, we transfer personal data on the basis of:",
           ],
           ar: [
             "تُلزم المادة 14 من القانون رقم 151/2020 بالحصول على ترخيص من مركز حماية البيانات الشخصية قبل نقل البيانات خارج مصر، باستثناء حالات محدودة. تفاصيل الترخيص واردة في اللائحة التنفيذية للقانون التي لم تصدر بعد عند كتابة هذا الإشعار.",
@@ -2008,10 +2008,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Submit a request via privacy@snappro.app with reasonable proof of identity. We respond within 30 days; for complex or voluminous requests we may extend by a further 30 days and notify you of the reason.",
+            "Submit a request via privacy@shotstudio.ai with reasonable proof of identity. We respond within 30 days; for complex or voluminous requests we may extend by a further 30 days and notify you of the reason.",
           ],
           ar: [
-            "قدّم طلبك عبر privacy@snappro.app مع إثبات معقول للهوية. نردّ خلال 30 يوماً؛ وفي الطلبات المعقّدة أو الكبيرة الحجم قد نمدّ المهلة 30 يوماً إضافية مع إخطارك بسبب التمديد.",
+            "قدّم طلبك عبر privacy@shotstudio.ai مع إثبات معقول للهوية. نردّ خلال 30 يوماً؛ وفي الطلبات المعقّدة أو الكبيرة الحجم قد نمدّ المهلة 30 يوماً إضافية مع إخطارك بسبب التمديد.",
           ],
         },
       },
@@ -2023,7 +2023,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "Where a personal-data breach is likely to result in risk to data subjects, Snap Pro will notify the PDPC within 72 hours of becoming aware of the breach and will notify affected users without undue delay where the breach is likely to result in high risk to their rights or freedoms.",
+            "Where a personal-data breach is likely to result in risk to data subjects, ShotStudio will notify the PDPC within 72 hours of becoming aware of the breach and will notify affected users without undue delay where the breach is likely to result in high risk to their rights or freedoms.",
           ],
           ar: [
             "في حال وقوع اختراق بيانات شخصية يُحتمل أن يُلحق ضرراً بأصحابها، تُخطر سناب برو مركز حماية البيانات الشخصية خلال 72 ساعة من العلم بالاختراق، وتُخطر المستخدمين المتأثرين دون تأخير غير مبرّر متى كان الاختراق مرجّح التسبّب في خطر مرتفع على حقوقهم أو حرياتهم.",
@@ -2039,12 +2039,12 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "Article 8 of PDPL Law 151/2020 requires controllers and processors that handle sensitive personal data, conduct large-scale or systematic monitoring, or meet the thresholds set in the Executive Regulations to appoint a Data Protection Officer (DPO).",
-            "Snap Pro's Office of the DPO can be contacted at privacy@snappro.app. The named DPO will be published once Executive Regulations issue and our appointment is filed with the PDPC.",
+            "ShotStudio's Office of the DPO can be contacted at privacy@shotstudio.ai. The named DPO will be published once Executive Regulations issue and our appointment is filed with the PDPC.",
             "Supervisory authority: Personal Data Protection Center (مركز حماية البيانات الشخصية), Ministry of Communications and Information Technology, Smart Village, Giza, Egypt.",
           ],
           ar: [
             "تُلزم المادة 8 من القانون رقم 151/2020 المراقبَ والمعالج اللذَين يتعاملان مع البيانات الحسّاسة أو يُجريان مراقبة منهجية واسعة النطاق أو يستوفيان حدود اللائحة التنفيذية بتعيين مسؤول حماية بيانات.",
-            "يمكن التواصل مع مكتب مسؤول حماية البيانات في سناب برو عبر privacy@snappro.app. سيُنشَر اسم المسؤول المعيَّن فور صدور اللائحة التنفيذية وإيداع تعيينه لدى المركز.",
+            "يمكن التواصل مع مكتب مسؤول حماية البيانات في سناب برو عبر privacy@shotstudio.ai. سيُنشَر اسم المسؤول المعيَّن فور صدور اللائحة التنفيذية وإيداع تعيينه لدى المركز.",
             "الجهة الإشرافية: مركز حماية البيانات الشخصية، وزارة الاتصالات وتكنولوجيا المعلومات، القرية الذكية، الجيزة، جمهورية مصر العربية.",
           ],
         },
@@ -2057,10 +2057,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         },
         paragraphs: {
           en: [
-            "If you believe we have processed your data unlawfully you may complain directly to the Personal Data Protection Center using the channels published on the PDPC's official portal under the Ministry of Communications and Information Technology (MCIT). We encourage you to contact us first at privacy@snappro.app so we have an opportunity to address the issue.",
+            "If you believe we have processed your data unlawfully you may complain directly to the Personal Data Protection Center using the channels published on the PDPC's official portal under the Ministry of Communications and Information Technology (MCIT). We encourage you to contact us first at privacy@shotstudio.ai so we have an opportunity to address the issue.",
           ],
           ar: [
-            "إذا رأيت أننا عالجنا بياناتك بصورة مخالفة للقانون يمكنك تقديم شكوى مباشرة إلى مركز حماية البيانات الشخصية عبر القنوات المنشورة على البوّابة الرسمية للمركز التابع لوزارة الاتصالات وتكنولوجيا المعلومات. ونشجّعك على التواصل معنا أولاً عبر privacy@snappro.app لمنحنا فرصة للمعالجة.",
+            "إذا رأيت أننا عالجنا بياناتك بصورة مخالفة للقانون يمكنك تقديم شكوى مباشرة إلى مركز حماية البيانات الشخصية عبر القنوات المنشورة على البوّابة الرسمية للمركز التابع لوزارة الاتصالات وتكنولوجيا المعلومات. ونشجّعك على التواصل معنا أولاً عبر privacy@shotstudio.ai لمنحنا فرصة للمعالجة.",
           ],
         },
       },
@@ -2105,7 +2105,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Merchant identity", ar: "هوية التاجر" },
         paragraphs: {
           en: [
-            "Snap Pro, Inc., operating Snap Pro AI photo studio. See our Business Information page for legal entity details.",
+            "ShotStudio, Inc., operating ShotStudio AI photo studio. See our Business Information page for legal entity details.",
           ],
           ar: [
             "سناب برو، إنك.، مشغّل استوديو سناب برو للذكاء الاصطناعي. راجع صفحة معلومات الشركة لتفاصيل الكيان القانوني.",
@@ -2141,10 +2141,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Complaints", ar: "الشكاوى" },
         paragraphs: {
           en: [
-            "Email support@snappro.app. If unresolved within 30 days you may escalate to the Iraqi consumer-protection authorities.",
+            "Email support@shotstudio.ai. If unresolved within 30 days you may escalate to the Iraqi consumer-protection authorities.",
           ],
           ar: [
-            "راسِل support@snappro.app. وإذا لم يتم الحلّ خلال 30 يوماً يمكنك التصعيد إلى السلطات العراقية المعنية بحماية المستهلك.",
+            "راسِل support@shotstudio.ai. وإذا لم يتم الحلّ خلال 30 يوماً يمكنك التصعيد إلى السلطات العراقية المعنية بحماية المستهلك.",
           ],
         },
       },
@@ -2159,7 +2159,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       ar: "معلومات الشركة والتسجيل",
     },
     meta: {
-      en: "Snap Pro's legal entity, commercial registration number, tax ID, registered address, and electronic invoicing status.",
+      en: "ShotStudio's legal entity, commercial registration number, tax ID, registered address, and electronic invoicing status.",
       ar: "الكيان القانوني لسناب برو، السجل التجاري، الرقم الضريبي، العنوان المسجل، وحالة الفوترة الإلكترونية.",
     },
     h1: {
@@ -2178,7 +2178,7 @@ export const LEGAL_PAGES: LegalPage[] = [
           head: { en: ["Field", "Value"], ar: ["الحقل", "القيمة"] },
           rows: [
             {
-              en: ["Legal name (Latin)", "Snap Pro, Inc."],
+              en: ["Legal name (Latin)", "ShotStudio, Inc."],
               ar: ["الاسم القانوني (لاتيني)", "سناب برو، إنك."],
             },
             {
@@ -2243,8 +2243,8 @@ export const LEGAL_PAGES: LegalPage[] = [
               ],
             },
             {
-              en: ["Customer service email", "support@snappro.app"],
-              ar: ["البريد الإلكتروني لخدمة العملاء", "support@snappro.app"],
+              en: ["Customer service email", "support@shotstudio.ai"],
+              ar: ["البريد الإلكتروني لخدمة العملاء", "support@shotstudio.ai"],
             },
             {
               en: [
@@ -2279,7 +2279,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         paragraphs: {
           en: [
             "The fields above are published in compliance with Article 49 of the Executive Regulations (Decree 822/2019) of Consumer Protection Law 181/2018, which obliges online traders serving customers in Egypt to disclose their identity, registration details, contact channels, total price (including VAT), and the route to file a complaint with the Egyptian Consumer Protection Agency (CPA, hotline 19588).",
-            'Snap Pro\'s prices on this site are inclusive of value-added tax at the rate prescribed by VAT Law 67/2016 (as amended by Law 3/2022) where applicable. Any item not yet finalised is marked "pending" and will be filled in before commercial launch in Egypt.',
+            'ShotStudio\'s prices on this site are inclusive of value-added tax at the rate prescribed by VAT Law 67/2016 (as amended by Law 3/2022) where applicable. Any item not yet finalised is marked "pending" and will be filled in before commercial launch in Egypt.',
           ],
           ar: [
             "تُنشر الحقول أعلاه التزاماً بالمادة 49 من اللائحة التنفيذية (قرار 822/2019) لقانون حماية المستهلك رقم 181/2018، التي تُلزم التجار الإلكترونيين الذين يخدمون عملاء في مصر بالإفصاح عن هويتهم وبيانات تسجيلهم وقنوات التواصل والسعر الإجمالي (شاملاً ضريبة القيمة المضافة) وآلية تقديم الشكوى لجهاز حماية المستهلك (الخط الساخن 19588).",
@@ -2304,11 +2304,11 @@ export const LEGAL_PAGES: LegalPage[] = [
     tree: "legal",
     status: "draft",
     title: {
-      en: "DMCA / Takedown — Snap Pro",
+      en: "DMCA / Takedown — ShotStudio",
       ar: "إزالة المحتوى المنتهِك — سناب برو",
     },
     meta: {
-      en: "How to report copyright infringement on Snap Pro under the DMCA and analogous laws in Egypt, Iraq, and the EU.",
+      en: "How to report copyright infringement on ShotStudio under the DMCA and analogous laws in Egypt, Iraq, and the EU.",
       ar: "كيفية الإبلاغ عن انتهاك حقوق النشر على سناب برو وفقاً لقانون DMCA الأمريكي والأنظمة المماثلة في مصر والعراق والاتحاد الأوروبي.",
     },
     h1: { en: "DMCA / Takedown", ar: "DMCA / إزالة المحتوى" },
@@ -2317,8 +2317,8 @@ export const LEGAL_PAGES: LegalPage[] = [
         id: "agent",
         heading: { en: "Designated agent", ar: "الوكيل المعتمد" },
         paragraphs: {
-          en: ["Snap Pro Copyright Agent · copyright@snappro.app"],
-          ar: ["وكيل حقوق النشر في سناب برو · copyright@snappro.app"],
+          en: ["ShotStudio Copyright Agent · copyright@shotstudio.ai"],
+          ar: ["وكيل حقوق النشر في سناب برو · copyright@shotstudio.ai"],
         },
       },
       {
@@ -2327,7 +2327,7 @@ export const LEGAL_PAGES: LegalPage[] = [
         bullets: {
           en: [
             "Identification of the work claimed to be infringed.",
-            "Identification of the material on Snap Pro that is allegedly infringing (URL).",
+            "Identification of the material on ShotStudio that is allegedly infringing (URL).",
             "Your contact information.",
             "A statement of good-faith belief.",
             "A statement under penalty of perjury.",
@@ -2348,10 +2348,10 @@ export const LEGAL_PAGES: LegalPage[] = [
         heading: { en: "Counter-notification", ar: "إشعار مضاد" },
         paragraphs: {
           en: [
-            "If your content was removed and you believe in good faith that the removal is mistaken, you may submit a counter-notice to copyright@snappro.app.",
+            "If your content was removed and you believe in good faith that the removal is mistaken, you may submit a counter-notice to copyright@shotstudio.ai.",
           ],
           ar: [
-            "إذا أُزيل محتواك وكنت تعتقد بحُسن نيّة أن الإزالة خاطئة، يمكنك تقديم إشعار مضاد إلى copyright@snappro.app.",
+            "إذا أُزيل محتواك وكنت تعتقد بحُسن نيّة أن الإزالة خاطئة، يمكنك تقديم إشعار مضاد إلى copyright@shotstudio.ai.",
           ],
         },
       },

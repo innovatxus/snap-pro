@@ -3,10 +3,7 @@ import HeroVideo from "./HeroVideo";
 import Navbar from "./Navbar";
 
 const HERO_VIDEO_SOURCES = [
-  "/assets/video/main_hero_web.mp4",
-  "/assets/video/niches-videos/Textile_Fabrics_refined_web.mp4",
-  "/assets/video/niches-videos/antiques_Vintage_timeless_web.mp4",
-  "/assets/video/niches-videos/Products_Perfect_web.mp4",
+  "/assets/video/hero-videos/hero-main-web.webm",
 ];
 
 /**
@@ -25,7 +22,7 @@ export default function Hero() {
   preload(HERO_VIDEO_SOURCES[0], { as: "video", fetchPriority: "high" });
   // Also preload the poster so it's ready the instant the video element mounts,
   // giving users a styled fallback frame rather than a blank well.
-  preload("/assets/images/apperal-snap-pro.png", { as: "image", fetchPriority: "high" });
+  preload("/assets/video/hero-videos/hero-main-poster.jpg", { as: "image", fetchPriority: "high" });
 
   return (
     <section
@@ -192,7 +189,7 @@ export default function Hero() {
                 fontFamily: "var(--font-geist-sans), sans-serif",
               }}
             >
-              Upload a photo. Pick a service. Download a hero image.{" "}
+              Upload a photo. Pick a service. Get a professional made image in seconds.{" "}
               <strong
                 style={{ color: "rgba(255,255,255,0.85)", fontWeight: 500 }}
               >

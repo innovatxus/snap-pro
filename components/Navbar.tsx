@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect, useId } from "react";
 import Link from "next/link";
@@ -17,6 +17,8 @@ type Service = {
   desc: string;
   cat: "Cut" | "Stage" | "Enhance" | "Format";
   badge?: string;
+  href?: string;
+  comingSoon?: boolean;
 };
 
 const SERVICES: Service[] = [
@@ -25,50 +27,64 @@ const SERVICES: Service[] = [
     desc: "Isolate any product instantly",
     cat: "Cut",
     badge: "AI",
+    href: "/edit/studio/background-remove",
   },
-  { name: "Ghost Mannequin", desc: "Invisible mannequin effect", cat: "Cut" },
+  {
+    name: "Ghost Mannequin",
+    desc: "Invisible mannequin effect",
+    cat: "Cut",
+    href: "/edit/studio/ghost-mannequin",
+  },
   {
     name: "Object Removal",
     desc: "Erase distractions cleanly",
     cat: "Cut",
     badge: "NEW",
+    href: "/edit/studio/object-erase",
   },
   {
     name: "AI Scene Staging",
     desc: "Drop into 200+ curated environments",
     cat: "Stage",
     badge: "HOT",
+    href: "/edit/studio/auto-backdrop",
   },
   {
     name: "Flat Lay Studio",
     desc: "Overhead product photography",
     cat: "Stage",
+    comingSoon: true,
   },
   {
     name: "Lifestyle Composite",
     desc: "Place product in lifestyle shots",
     cat: "Stage",
+    comingSoon: true,
   },
   {
     name: "Color Grading",
     desc: "Professional color correction",
     cat: "Enhance",
+    comingSoon: true,
   },
   {
     name: "4× Upscaling",
     desc: "AI-powered resolution boost",
     cat: "Enhance",
     badge: "NEW",
+    comingSoon: true,
   },
   {
     name: "Shadow Generator",
     desc: "Add realistic drop shadows",
     cat: "Enhance",
+    href: "/edit/studio/cast-shadow",
   },
   {
     name: "Social Resize",
     desc: "9 platform exports in one click",
     cat: "Format",
+    comingSoon: true,
   },
 ];
 
@@ -95,10 +111,16 @@ const CATEGORIES: {
    SMALL HELPERS
 ───────────────────────────────────────────────────────── */
 
-/** Tiny badge pill — AI / NEW / HOT */
+/** Tiny badge pill — AI / NEW / HOT / SOON */
 function Badge({ label }: { label: string }) {
   const accent =
-    label === "AI" ? "#38BDF8" : label === "HOT" ? "#FFC857" : "#C8B6FF";
+    label === "AI"
+      ? "#38BDF8"
+      : label === "HOT"
+        ? "#FFC857"
+        : label === "SOON"
+          ? "#9CA3AF"
+          : "#C8B6FF";
   return (
     <span
       style={{
@@ -298,81 +320,104 @@ function ToolsDropdown({ pos, onEnter, onLeave }: DropdownProps) {
         </div>
 
         {/* Service rows */}
-        {SERVICES.map((svc) => (
-          <button
-            key={svc.name}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              padding: "8px 20px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              textAlign: "left",
-              transition: "background 0.15s ease",
-              width: "100%",
-            }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.background =
-                "rgba(255,255,255,0.04)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.background =
-                "transparent")
-            }
-          >
-            <IconBox type={svc.cat} />
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                  marginBottom: 2,
-                }}
-              >
+        {SERVICES.map((svc) => {
+          const rowContent = (
+            <>
+              <IconBox type={svc.cat} />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    marginBottom: 2,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-geist-sans), sans-serif",
+                      fontSize: 13,
+                      fontWeight: 500,
+                      color: "var(--ink)",
+                      letterSpacing: "-0.01em",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {svc.name}
+                  </span>
+                  {svc.badge && <Badge label={svc.badge} />}
+                  {svc.comingSoon && <Badge label="SOON" />}
+                </div>
                 <span
                   style={{
                     fontFamily: "var(--font-geist-sans), sans-serif",
-                    fontSize: 13,
-                    fontWeight: 500,
-                    color: "var(--ink)",
-                    letterSpacing: "-0.01em",
-                    whiteSpace: "nowrap",
+                    fontSize: 11,
+                    color: "var(--mute)",
+                    letterSpacing: "-0.005em",
                   }}
                 >
-                  {svc.name}
+                  {svc.desc}
                 </span>
-                {svc.badge && <Badge label={svc.badge} />}
               </div>
               <span
                 style={{
-                  fontFamily: "var(--font-geist-sans), sans-serif",
-                  fontSize: 11,
-                  color: "var(--mute)",
-                  letterSpacing: "-0.005em",
+                  fontFamily: "var(--font-geist-mono), monospace",
+                  fontSize: 8,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: CAT_ACCENT[svc.cat],
+                  opacity: 0.7,
+                  flexShrink: 0,
                 }}
               >
-                {svc.desc}
+                {svc.cat}
               </span>
-            </div>
-            {/* Category tag */}
-            <span
-              style={{
-                fontFamily: "var(--font-geist-mono), monospace",
-                fontSize: 8,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: CAT_ACCENT[svc.cat],
-                opacity: 0.7,
-                flexShrink: 0,
-              }}
+            </>
+          );
+
+          const baseRowStyle = {
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            padding: "8px 20px",
+            background: "transparent",
+            border: "none",
+            textAlign: "left" as const,
+            transition: "background 0.15s ease",
+            width: "100%",
+            textDecoration: "none",
+          };
+
+          if (svc.href) {
+            return (
+              <Link
+                key={svc.name}
+                href={svc.href}
+                style={{ ...baseRowStyle, cursor: "pointer" }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.background =
+                    "rgba(255,255,255,0.04)")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.background =
+                    "transparent")
+                }
+              >
+                {rowContent}
+              </Link>
+            );
+          }
+
+          return (
+            <div
+              key={svc.name}
+              aria-disabled='true'
+              style={{ ...baseRowStyle, cursor: "not-allowed", opacity: 0.45 }}
             >
-              {svc.cat}
-            </span>
-          </button>
-        ))}
+              {rowContent}
+            </div>
+          );
+        })}
 
         {/* View all footer */}
         <div
@@ -382,19 +427,18 @@ function ToolsDropdown({ pos, onEnter, onLeave }: DropdownProps) {
             borderTop: "1px solid var(--line)",
           }}
         >
-          <button
+          <Link
+            href='/#services'
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 6,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
               fontFamily: "var(--font-geist-mono), monospace",
               fontSize: 10,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               color: "#38BDF8",
+              textDecoration: "none",
               padding: 0,
             }}
           >
@@ -408,7 +452,7 @@ function ToolsDropdown({ pos, onEnter, onLeave }: DropdownProps) {
                 strokeLinejoin='round'
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -676,7 +720,7 @@ export default function Navbar() {
           <div className='flex items-center min-w-0'>
             <Link
               href='/'
-              aria-label='Snap Pro — home'
+              aria-label='ShotStudio — home'
               style={{ display: "inline-flex", textDecoration: "none" }}
             >
               {/* Compact logo on phones so the right-side CTA has room */}
@@ -979,7 +1023,7 @@ export default function Navbar() {
         onClose={() => setAuthOpen(false)}
         triggerRef={authTriggerRef}
         titleId={authTitleId}
-        title={isSignedIn ? "Account" : "Sign in to Snap Pro"}
+        title={isSignedIn ? "Account" : "Sign in to ShotStudio"}
         accentIcon={<AccountIcon />}
         widthPx={380}
       >

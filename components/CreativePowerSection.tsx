@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 
 /**
- * CreativePowerSection — "Snap Pro Intelligence"
+ * CreativePowerSection — "ShotStudio Intelligence"
  *
  * Layout mirrors the Higgsfield Supercomputer section:
  *   · Contained rounded-card on the page (surface bg, site-blue glow)
@@ -52,7 +52,7 @@ export default function CreativePowerSection() {
 
   return (
     <section
-      aria-label='Snap Pro Intelligence'
+      aria-label='ShotStudio Intelligence'
       style={{ padding: "200px 40px" }}
       className='max-[720px]:px-4 max-[720px]:py-32'
     >
@@ -179,18 +179,18 @@ export default function CreativePowerSection() {
                 </span>
               </div>
               <div
+                className='text-silver-grad'
                 style={{
                   fontFamily: "var(--font-geist-mono), monospace",
                   fontSize: 9,
                   letterSpacing: "0.08em",
-                  color: "var(--mute-2)",
                   marginBottom: 12,
                 }}
               >
                 Product · Hero Image
               </div>
 
-              {/* Thumbnail — chrome checkerboard + product silhouette */}
+              {/* Thumbnail — video with crosshair + corner overlay */}
               <div
                 style={{
                   height: 174,
@@ -201,54 +201,36 @@ export default function CreativePowerSection() {
                   border: "1px solid var(--line)",
                 }}
               >
-                <div
-                  className='shimmer-bg'
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    borderRadius: 12,
-                  }}
-                />
-                <svg
-                  viewBox='0 0 236 174'
-                  fill='none'
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload='auto'
+                  disablePictureInPicture
+                  disableRemotePlayback
                   style={{
                     position: "absolute",
                     inset: 0,
                     width: "100%",
                     height: "100%",
+                    objectFit: "cover",
                   }}
                 >
-                  {/* Checker pattern */}
-                  {Array.from({ length: 7 }).flatMap((_, r) =>
-                    Array.from({ length: 9 }).map((_, c) =>
-                      (r + c) % 2 === 0 ? (
-                        <rect
-                          key={`cb-${r}-${c}`}
-                          x={c * 28}
-                          y={r * 25}
-                          width={28}
-                          height={25}
-                          fill='rgba(255,255,255,0.022)'
-                        />
-                      ) : null,
-                    ),
-                  )}
-                  {/* Product silhouette */}
-                  <ellipse
-                    cx='118'
-                    cy='87'
-                    rx='52'
-                    ry='64'
-                    fill='rgba(56,189,248,0.09)'
-                  />
-                  <ellipse
-                    cx='118'
-                    cy='87'
-                    rx='34'
-                    ry='44'
-                    fill='rgba(56,189,248,0.14)'
-                  />
+                  <source src='/assets/video/carosel-videos/studio-carosel.mp4' type='video/mp4' />
+                </video>
+                <svg
+                  viewBox='0 0 236 174'
+                  fill='none'
+                  aria-hidden='true'
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    pointerEvents: "none",
+                  }}
+                >
                   {/* Corner crop marks — silver */}
                   <path
                     d='M10 22 L10 10 L22 10'
@@ -385,7 +367,7 @@ export default function CreativePowerSection() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Snap Pro Intelligence
+                ShotStudio Intelligence
               </span>
               <span
                 style={{
@@ -775,7 +757,6 @@ export default function CreativePowerSection() {
                     style={{
                       height: 54,
                       borderRadius: 9,
-                      background: t.bg,
                       border: `1px solid ${t.border}`,
                       position: "relative",
                       overflow: "hidden",
@@ -784,11 +765,16 @@ export default function CreativePowerSection() {
                       padding: "5px 7px",
                     }}
                   >
-                    <div
-                      className='shimmer-bg'
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/assets/images/carosel-images/${t.label.toLowerCase()}.png`}
+                      alt={t.label}
                       style={{
                         position: "absolute",
                         inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
                         borderRadius: 9,
                       }}
                     />
@@ -797,9 +783,14 @@ export default function CreativePowerSection() {
                         fontFamily: "var(--font-geist-mono), monospace",
                         fontSize: 8,
                         letterSpacing: "0.06em",
-                        color: "var(--mute)",
+                        color: "#fff",
                         position: "relative",
                         zIndex: 1,
+                        background: "rgba(0,0,0,0.55)",
+                        backdropFilter: "blur(4px)",
+                        borderRadius: 4,
+                        padding: "2px 5px",
+                        lineHeight: 1.4,
                       }}
                     >
                       {t.label}

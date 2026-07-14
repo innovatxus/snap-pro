@@ -1,4 +1,4 @@
-/**
+﻿/**
  * UI chrome strings used by the locale switcher, draft banners, regional strip,
  * and footer columns. Page-level body content lives in `lib/legal/content/*`.
  */
@@ -25,7 +25,7 @@ export const UI = {
       ar: "مسودة — قيد المراجعة القانونية",
     },
     body: {
-      en: "This page is a structural draft prepared by Snap Pro. Final copy will be published after review by qualified counsel and is not legally binding in this preview state.",
+      en: "This page is a structural draft prepared by ShotStudio. Final copy will be published after review by qualified counsel and is not legally binding in this preview state.",
       ar: "هذه الصفحة مسودة هيكلية أعدّتها سناب برو. سيتم نشر الصياغة النهائية بعد مراجعتها من قِبل مستشار قانوني مختص، وهي غير ملزِمة قانونياً في هذه الحالة الأولية.",
     },
   },
@@ -85,7 +85,7 @@ export const UI = {
       ar: "خصوصيتك بيدك.",
     },
     body: {
-      en: "We use essential cookies to make Snap Pro work. With your consent we may also use analytics to understand usage and marketing to improve outreach. You can change this anytime from the footer.",
+      en: "We use essential cookies to make ShotStudio work. With your consent we may also use analytics to understand usage and marketing to improve outreach. You can change this anytime from the footer.",
       ar: "نستخدم ملفات تعريف ارتباط أساسية لتشغيل سناب برو. وبموافقتك قد نستخدم أيضاً تحليلات لفهم الاستخدام وتسويقاً لتحسين التواصل. يمكنك تغيير ذلك في أي وقت من تذييل الصفحة.",
     },
     accept: { en: "Accept all", ar: "قبول الكل" },
