@@ -34,7 +34,7 @@ export default function LazyVideo({
   loop = true,
   muted = true,
   playsInline = true,
-  preload = "auto",
+  preload = "metadata",
   videoStyle,
 }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -90,7 +90,7 @@ export default function LazyVideo({
           }, 1000);
         }
       },
-      { rootMargin: "300px" },
+      { rootMargin: "120px" },
     );
 
     observer.observe(containerRef.current);
