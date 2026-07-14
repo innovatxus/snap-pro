@@ -690,10 +690,11 @@ export default function Navbar() {
           </div>
 
           {/* ── Center: Nav links ── */}
-          <div className='hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2'>
+          <div className='hidden lg:flex items-center gap-5 xl:gap-6 absolute left-1/2 -translate-x-1/2'>
             {NAV_LINKS.map(({ label, key, href }, i) => (
               <div
                 key={label}
+                className={(i === 4 || i === 6) ? 'hidden xl:block' : undefined}
                 style={{ position: "relative" }}
                 onMouseEnter={key ? (e) => handleNavEnter(key, e) : undefined}
                 onMouseLeave={key ? scheduleClose : undefined}

@@ -23,6 +23,9 @@ export default function Hero() {
   // Kick off the fetch for the first (above-the-fold) clip as early as
   // possible — before HeroVideo even hydrates — via React's resource hint API.
   preload(HERO_VIDEO_SOURCES[0], { as: "video", fetchPriority: "high" });
+  // Also preload the poster so it's ready the instant the video element mounts,
+  // giving users a styled fallback frame rather than a blank well.
+  preload("/assets/images/apperal-snap-pro.png", { as: "image", fetchPriority: "high" });
 
   return (
     <section

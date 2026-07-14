@@ -159,10 +159,9 @@ export default function HeroVideo({ sources }: HeroVideoProps) {
                 opacity: activeSlot === slot && isVisible ? 1 : 0,
                 transition: `opacity ${CROSSFADE_MS}ms ease`,
               }}
-              /* Poster is the fallback visual before the first clip decodes — use niche asset image */
-              poster={
-                slot === 0 ? "/assets/images/apperal-snap-pro.png" : undefined
-              }
+              /* Poster on both slots: prevents a black flash if the standby
+                 clip hasn't fully decoded by the time a crossfade begins. */
+              poster='/assets/images/apperal-snap-pro.png'
             >
               {/* WebM/VP9 first: gives playback an independent decode path
                   on devices where the H.264 hardware decoder misbehaves. */}

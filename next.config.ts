@@ -78,6 +78,22 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      // Video files are large and never change without a filename change —
+      // cache them for a full year so repeat visits and navigation are instant.
+      {
+        source: "/assets/video/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      // Static images (posters, product shots) — 30-day cache with a 1-day
+      // stale-while-revalidate window so CDN edge nodes refresh quietly.
+      {
+        source: "/assets/images/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
+        ],
+      },
     ];
   },
 };
