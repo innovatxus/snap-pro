@@ -7,6 +7,8 @@
  *   fontSize    — wordmark font-size px (default 32)
  *   borderRadius — logo image border-radius px (default 18)
  */
+import Image from "next/image";
+
 export interface LogoProps {
   size?: number;
   fontSize?: number;
@@ -20,20 +22,14 @@ export default function Logo({
 }: LogoProps) {
   return (
     <div className="flex items-center gap-[10px]">
-      {/* Mark */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/logo/snap-pro-logo.svg"
+      {/* Mark — served via next/image so AVIF/WebP conversion applies */}
+      <Image
+        src="/logo/snap-pro-logo.png"
         alt="ShotStudio logo"
         width={size}
         height={size}
-        style={{
-          width: size,
-          height: size,
-          borderRadius,
-          flexShrink: 0,
-          display: "block",
-        }}
+        style={{ borderRadius, flexShrink: 0, display: "block" }}
+        priority
       />
 
       {/* Wordmark */}
