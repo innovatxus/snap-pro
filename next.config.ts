@@ -23,7 +23,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://images.unsplash.com https://picsum.photos",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com",
   "media-src 'self'",
   "manifest-src 'self'",
   "worker-src 'self' blob:",
