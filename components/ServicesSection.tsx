@@ -30,7 +30,7 @@ const SERVICES = [
     catLabel: "CUT",
     credit: "2 cr",
     desc: "Auto-fills the inside of garments. Perfect for apparel listings.",
-    video: "/assets/video/tools-videos/ghost manquin.mp4",
+    video: "/assets/video/tools-videos/Ghost Mannequin.mp4",
   },
   {
     id: 3,
