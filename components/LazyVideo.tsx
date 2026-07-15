@@ -6,6 +6,10 @@ import Image from "next/image";
 interface LazyVideoProps {
   src: string;
   poster?: string;
+  /** sizes attribute forwarded to the poster <Image> — set this to match the card's display width */
+  posterSizes?: string;
+  /** Set true for cards that are above the fold so the poster loads eagerly */
+  posterPriority?: boolean;
   alt: string;
   className?: string;
   autoPlay?: boolean;
@@ -28,6 +32,8 @@ interface LazyVideoProps {
 export default function LazyVideo({
   src,
   poster,
+  posterSizes = "100vw",
+  posterPriority = false,
   alt,
   className = "",
   autoPlay = true,
@@ -176,12 +182,13 @@ export default function LazyVideo({
           src={poster}
           alt={alt}
           fill
+          sizes={posterSizes}
           className='absolute inset-0 w-full h-full object-cover'
           style={{
             opacity: isPlaying ? 0 : 1,
             transition: "opacity 0.3s ease-out",
           }}
-          priority={false}
+          priority={posterPriority}
         />
       )}
 

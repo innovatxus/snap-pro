@@ -527,6 +527,7 @@ export default function ServicesSection() {
                   {"video" in svc && svc.video ? (
                     <LazyVideo
                       src={svc.video}
+                      poster={svc.video.replace(/\.mp4$/i, ".jpg")}
                       alt={`${svc.name} ${svc.italic} demo`}
                       className='absolute inset-0'
                       autoPlay

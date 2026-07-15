@@ -70,7 +70,7 @@ export default function NichesSection() {
           threshold={0}
           className='grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5'
         >
-          {GRID_NICHES.map((niche) => (
+          {GRID_NICHES.map((niche, i) => (
             <div
               key={niche.id}
               className='stagger-item card-hover sheen tilt rounded-[22px] overflow-hidden flex flex-col relative h-82 sm:h-135'
@@ -94,6 +94,8 @@ export default function NichesSection() {
                 <LazyVideo
                   src={niche.video}
                   poster={niche.poster}
+                  posterSizes='(max-width: 768px) 50vw, 33vw'
+                  posterPriority={i < 2}
                   alt={`${niche.name}${niche.suffix ? " " + niche.suffix : ""} photography`}
                   className='absolute inset-0 z-0'
                   autoPlay
