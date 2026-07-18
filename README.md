@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="public/logo/snap-pro-logo.svg" alt="Snap Pro" width="80" />
+  <img src="public/logo/snap-pro-logo.svg" alt="Shot Studio" width="80" />
 
-  # Snap Pro
+  # Shot Studio
 
   **AI-powered product photo editing for e-commerce sellers, photographers, and content creators.**
 
@@ -33,11 +33,11 @@
 
 ## Overview
 
-Snap Pro is a web-based AI photo editing studio that transforms raw product photographs into publication-ready assets. Users upload an image, select a niche-specific tool from a curated catalogue, and receive an edited result in seconds — no design software, no photography studio, no technical skill required.
+Shot Studio is a web-based AI photo editing studio that transforms raw product photographs into publication-ready assets. Users upload an image, select a niche-specific tool from a curated catalogue, and receive an edited result in seconds — no design software, no photography studio, no technical skill required.
 
-The primary audience is e-commerce sellers who need consistent, professional imagery across product listings, marketplace platforms, and social media channels. Snap Pro covers 20 commercial verticals — from fashion and jewelry to real estate and automotive — each with a hand-tuned service catalogue. A separate social format engine handles every major platform's export dimensions (Facebook, Instagram, TikTok, Twitter/X, LinkedIn, Pinterest, Snapchat, YouTube), so a single edited image can be correctly sized for any channel without manual cropping.
+The primary audience is e-commerce sellers who need consistent, professional imagery across product listings, marketplace platforms, and social media channels. Shot Studio covers 20 commercial verticals — from fashion and jewelry to real estate and automotive — each with a hand-tuned service catalogue. A separate social format engine handles every major platform's export dimensions (Facebook, Instagram, TikTok, Twitter/X, LinkedIn, Pinterest, Snapchat, YouTube), so a single edited image can be correctly sized for any channel without manual cropping.
 
-What separates Snap Pro from a generic image editor is vertical specificity. Every tool preset is named, priced, and tuned for its domain: Ghost Mannequin for fashion, Room Stage for furniture, Twilight Convert for real estate, Sparkle Boost for jewelry. The editor surface is fully data-driven; adding a niche or tool in `features/editor/data/niches.ts` propagates it to the marketing page, editor routes, and static generation with no further changes.
+What separates Shot Studio from a generic image editor is vertical specificity. Every tool preset is named, priced, and tuned for its domain: Ghost Mannequin for fashion, Room Stage for furniture, Twilight Convert for real estate, Sparkle Boost for jewelry. The editor surface is fully data-driven; adding a niche or tool in `features/editor/data/niches.ts` propagates it to the marketing page, editor routes, and static generation with no further changes.
 
 The application ships at version 1.0.0 as a fully rendered marketing and editor front-end. The editor UI presents a simulated AI pipeline — progress bar, before/after compare slider, credit cost — ready for a real inference backend to be wired to the `onApply` handler in `features/editor/components/EditorCanvas.tsx`. The learning center, pricing, template gallery, and all static routes are production-ready.
 
@@ -108,7 +108,7 @@ Four tiers are defined in `components/Pricing.tsx`: Free ($0/mo, 25 credits, 5 s
 ## Project structure
 
 ```
-snap-pro/
+shot-studio/
 ├── app/                         # Next.js App Router pages and layouts
 │   ├── about/
 │   │   └── page.tsx             # About page
